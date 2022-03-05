@@ -1,0 +1,80 @@
+<script context="module" lang="ts">
+	import './prism.css';
+	import type { Load } from '@sveltejs/kit';
+
+	const capitalizeFirstLetter = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+
+	export const load: Load = async ({ url }) => {
+		const path = url.pathname
+			.replace(/\/$/gi, '') // remove trailing slash
+			.replace('/VKSUI', ''); // remove /VKSUI
+
+		const rawName = path.split('/').pop();
+
+		const name = 'VKSUI - ' + (capitalizeFirstLetter(rawName) || 'svelte components');
+
+		const capitalize = path.includes('/components/')
+			? path
+					.split('/')
+					.map((v, i) => (i !== 1 ? capitalizeFirstLetter(v) : v))
+					.join('/') +
+			  '/' +
+			  capitalizeFirstLetter(rawName)
+			: undefined;
+
+		const currentPage = {
+			path,
+			name,
+			capitalize
+		};
+		return {
+			props: {
+				currentPage
+			}
+		};
+	};
+</script>
+
+<script lang="ts">
+	import { base } from '$app/paths';
+	import { ConfigProvider } from '$lib/index';
+	import Sidebar from '$site/lib/Sidebar/Sidebar.svelte';
+	import Header from '$site/lib/Header/Header.svelte';
+	import Article from '$site/lib/Article/Article.svelte';
+
+	export let currentPage = {
+		path: '',
+		capitalize: '',
+		name: 'VKSUI'
+	};
+
+	const repositoryURL = 'https://github.com/sveltevk/VKSUI';
+</script>
+
+<svelte:head>
+	<title>{currentPage.name}</title>
+</svelte:head>
+
+<ConfigProvider>
+	<Header {base} {repositoryURL} />
+	<main>
+		<Sidebar {base} />
+		<Article {currentPage} {repositoryURL}><slot /></Article>
+	</main>
+</ConfigProvider>
+
+<style>
+	main {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	:global(body) {
+		background: var(--content_tint_background);
+		margin: 0;
+		padding: 0;
+		--styleguide_header_height: 56px;
+	}
+</style>

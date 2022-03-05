@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"module": "es2020",
+		"lib": ["es2020", "DOM"],
+		"target": "es2020",
+		"importsNotUsedAsValues": "error",
+		"preserveValueImports": true,
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"allowJs": true,
+		"checkJs": true,
+		"paths": {
+			"@sveltevk/vksui": ["src/lib"],
+			"@sveltevk/vksui/*": ["src/lib/*"],
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"],
+			"$site": ["src/site"],
+			"$site/*": ["src/site/*"],
+			"$site/lib": ["src/site/lib"],
+			"$site/lib/*": ["src/site/lib/*"]
+		}
+	},
+	"include": ["src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+}
