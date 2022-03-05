@@ -1,8 +1,6 @@
-name: Publish Package and Deploy Site
+name: Publish Package
 on:
   push:
-    branches:
-      - master
     tags:
       - v*
 
@@ -19,22 +17,10 @@ jobs:
       - name: Install 🔧
         run: yarn
 
-      # - name: Lint 👀
-      #   run: yarn lint
-
       - name: Build 🏗️
-        run: yarn build && yarn package
+        run: yarn package
 
       - name: Publish Package  📦
-        if: startsWith(github.ref, 'refs/tags/')
         run: cd package && yarn publish && cd ..
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publishing docs
-        if: github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          BRANCH: gh-pages
-          FOLDER: public
-          CLEAN: false
