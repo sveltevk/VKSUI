@@ -73,8 +73,8 @@
 
 <div
 	class={classNames(
-		getClassName('Avatar', $platform),
 		$$props.class,
+		getClassName('Avatar', $platform),
 		`Avatar--type-${mode}`,
 		`Avatar--sz-${size}`,
 		{
@@ -139,9 +139,13 @@
 		flex-shrink: 0;
 		box-sizing: border-box;
 		color: var(--placeholder_icon_background);
-		background: currentColor;
 		background-size: cover;
 		position: relative;
+	}
+
+	/* InitialsAvatar не может переназначить цвет без :global() */
+	:global(.Avatar) {
+		background: currentColor;
 	}
 
 	.Avatar--failed .Avatar__img {

@@ -94,16 +94,29 @@
 					header: 'Block',
 					child: [
 						{
-							name: 'Header',
-							link: '/components/Blocks/Header'
-						},
-						{
 							name: 'Div',
 							link: '/components/Blocks/Div'
 						},
 						{
 							name: 'Link',
 							link: '/components/Blocks/Link'
+						},
+						{
+							name: 'Header',
+							link: '/components/Blocks/Header'
+						},
+
+						{
+							name: 'Avatar',
+							link: '/components/Blocks/Avatar'
+						},
+						{
+							name: 'GridAvatar',
+							link: '/components/Blocks/GridAvatar'
+						},
+						{
+							name: 'InitialsAvatar',
+							link: '/components/Blocks/InitialsAvatar'
 						}
 					]
 				},
@@ -168,6 +181,10 @@
 				//   name: "Серверный рендеринг",
 				//   link: "/ssr",
 				// },
+				{
+					name: 'Утилиты',
+					link: '/utils'
+				},
 				{
 					name: 'Иконки',
 					link: '/icons'

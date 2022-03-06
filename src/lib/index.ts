@@ -97,6 +97,7 @@ export { useAdaptivity } from './hooks/useAdaptivity';
  * Utils
  */
 export { platform, ANDROID, IOS, VKCOM, Platform } from './lib/platform';
+export { calcInitialsAvatarColor } from './helpers/avatar';
 
 /**
  * Types

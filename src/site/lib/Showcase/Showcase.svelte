@@ -126,7 +126,7 @@
 		class="Example"
 		class:mini
 		class:scroll
-		style={`width:${windowWidth}px;` + (mini ? '' : `height:${windowHeight}px;`)}
+		style={mini ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
 	>
 		<slot />
 	</div>
@@ -135,7 +135,7 @@
 <style>
 	.Example {
 		height: 667px;
-		width: 375px;
+		width: 320px;
 		/* overflow-y: auto; */
 		border: 1px solid var(--background_highlighted);
 		display: block;
@@ -145,6 +145,7 @@
 
 	.mini {
 		height: auto;
+		width: 100%;
 	}
 
 	.scroll {

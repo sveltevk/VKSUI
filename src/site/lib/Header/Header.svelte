@@ -47,7 +47,7 @@
 		background: var(--background_content);
 		box-shadow: inset 0 0 0 1px var(--image_border);
 		position: fixed;
-		z-index: 1;
+		z-index: 4;
 	}
 	.Header__in {
 		max-width: 1700px;

@@ -60,7 +60,7 @@
 		margin-bottom: 20px;
 		margin-top: calc(20px + var(--styleguide_header_height));
 	}
-	article > :global(a) {
+	article :global(a:not([class])) {
 		color: var(--accent);
 		text-decoration: none;
 		border: 0;
@@ -72,7 +72,7 @@
 		display: inline;
 		border-radius: 0;
 	}
-	article > :global(a:hover) {
+	article :global(a:not([class]):hover) {
 		opacity: 0.8;
 	}
 
@@ -101,5 +101,6 @@
 		padding: 20px;
 		border-radius: 16px;
 		box-shadow: inset 0 0 0 1px var(--image_border);
+		max-height: 400px;
 	}
 </style>
