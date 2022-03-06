@@ -38,7 +38,7 @@
 	import useBrowserInfo from '$lib/hooks/useBrowserInfo';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 
 	/**
 	 * Массив ссылок на фотографии

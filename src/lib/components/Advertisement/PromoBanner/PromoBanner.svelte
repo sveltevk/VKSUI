@@ -28,7 +28,7 @@
 </script>
 
 <script lang="ts">
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import Icon24Dismiss from '@sveltevk/icons/dist/24/dismiss';

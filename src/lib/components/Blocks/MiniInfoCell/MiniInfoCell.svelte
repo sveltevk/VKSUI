@@ -1,5 +1,5 @@
 <script lang="ts">
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import Text from '$lib/components/Typography/Text/Text.svelte';

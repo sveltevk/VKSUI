@@ -81,3 +81,20 @@ export { default as FormLayout } from './components/Forms/FormLayout/FormLayout.
 export { default as FormStatus } from './components/Forms/FormStatus/FormStatus.svelte';
 export { default as Input } from './components/Forms/Input/Input.svelte';
 export { default as File } from './components/Forms/File/File.svelte';
+
+/**
+ * Hooks
+ */
+export { usePlatform } from './hooks/usePlatform';
+export { useAdaptivity } from './hooks/useAdaptivity';
+
+/**
+ * Utils
+ */
+export { platform, ANDROID, IOS, VKCOM, Platform } from './lib/platform';
+
+/**
+ * Types
+ */
+export type { AlignType, HasPlatform, HasInsets } from './types';
+export type { PlatformType } from './lib/platform';

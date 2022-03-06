@@ -1,6 +1,6 @@
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <script lang="ts">
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import Caption from '$lib/components/Typography/Caption/Caption.svelte';

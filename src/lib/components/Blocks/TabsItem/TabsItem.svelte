@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Tappable, { ACTIVE_EFFECT_DELAY } from '$lib/components/Service/Tappable/Tappable.svelte';
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import { IOS } from '$lib/lib/platform';

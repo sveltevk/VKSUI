@@ -61,8 +61,8 @@
 
 <script lang="ts">
 	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import useAdaptivity from '$lib/hooks/useAdaptivity';
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import button from '$lib/components/Elements/button/button.svelte';
 	import a from '$lib/components/Elements/a/a.svelte';

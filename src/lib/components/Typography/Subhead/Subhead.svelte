@@ -1,5 +1,5 @@
 <script lang="ts">
-	import useAdaptivity from '$lib/hooks/useAdaptivity';
+	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
 	import classNames from '$lib/lib/classNames';
 
 	export let component: string = undefined;

@@ -5,7 +5,7 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { getScheme } from '../../../helpers/getScheme';
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import { ContextKey } from '$lib/lib/config';
 	import { Platform } from '$lib/lib/platform';
 

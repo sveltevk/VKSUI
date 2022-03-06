@@ -5,6 +5,7 @@ import preprocess from 'svelte-preprocess';
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import slug from 'rehype-slug';
 import github from 'remark-github';
+import remarkExample from './remark-example.js';
 
 import sveld from 'vite-plugin-sveld';
 
@@ -18,7 +19,7 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.svx', '.md'],
-			remarkPlugins: [github, a11yEmoji],
+			remarkPlugins: [remarkExample, github, a11yEmoji],
 			rehypePlugins: [slug]
 		}),
 		preprocess()
@@ -26,8 +27,8 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		paths:{
-			base: dev ? '' : '/VKSUI',
+		paths: {
+			base: dev ? '' : '/VKSUI'
 		},
 		vite: {
 			define: {

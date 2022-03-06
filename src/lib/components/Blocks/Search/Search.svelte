@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import { IOS } from '$lib/lib/platform';

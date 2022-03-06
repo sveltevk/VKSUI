@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { get_current_component } from 'svelte/internal';
-	import useAdaptivity from '$lib/hooks/useAdaptivity';
-	import usePlatform from '$lib/hooks/usePlatform';
+	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
+	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import { createEventForwarder } from '$lib/lib/events';
 	import getClassName from '$lib/lib/getClassName';
