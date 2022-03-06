@@ -48,6 +48,96 @@
 		name: 'VKSUI'
 	};
 
+	let tree = [
+		{
+			header: '',
+			child: [
+				{
+					name: 'О VKSUI',
+					link: '/'
+				}
+				// {
+				// 	name: 'Быстрый старт',
+				// 	link: '/quickStart'
+				// }
+			]
+		},
+		// {
+		// 	header: 'Основа',
+		// 	child: [
+		// 		{
+		// 			name: 'О VKSUI',
+		// 			link: '/'
+		// 		},
+		// 		{
+		// 			name: 'Быстрый старт',
+		// 			link: '/quickStart'
+		// 		}
+		// 	]
+		// },
+		{
+			header: 'Компоненты',
+			tree: [
+				{
+					header: 'Block',
+					child: [
+						{
+							name: 'Header',
+							link: '/components/blocks/header'
+						},
+						{
+							name: 'Div',
+							link: '/components/blocks/div'
+						},
+						{
+							name: 'Link',
+							link: '/components/blocks/link'
+						}
+					]
+				},
+				{
+					header: 'Service',
+					child: [
+						{
+							name: 'AdaptivityProvider',
+							link: '/components/service/adaptivityProvider'
+						},
+						{
+							name: 'ConfigProvider',
+							link: '/components/service/configProvider'
+						},
+						{
+							name: 'Touch',
+							link: '/components/service/touch'
+						}
+					]
+				},
+			],
+			child: []
+		},
+		{
+			header: 'Прочее',
+			child: [
+				// {
+				//   name: "Серверный рендеринг",
+				//   link: "/ssr",
+				// },
+				{
+					name: 'Иконки',
+					link: '/icons'
+				},
+				{
+					name: 'Дизайн',
+					link: '/design'
+				},
+				{
+					name: 'Кастомизация',
+					link: '/customize'
+				}
+			]
+		}
+	];
+
 	const repositoryURL = 'https://github.com/sveltevk/VKSUI';
 </script>
 
@@ -58,7 +148,7 @@
 <ConfigProvider>
 	<Header {base} {repositoryURL} />
 	<main>
-		<Sidebar {base} />
+		<Sidebar {tree} {base} />
 		<Article {currentPage} {repositoryURL}><slot /></Article>
 	</main>
 </ConfigProvider>

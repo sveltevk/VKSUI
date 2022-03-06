@@ -15,7 +15,7 @@
 	<div class="header">
 		{#if currentPage.capitalize}
 			<Link
-				href="{repositoryURL}/tree/master/src{currentPage.capitalize}.svelte"
+				href="{repositoryURL}/tree/master/src/lib{currentPage.capitalize}.svelte"
 				target="_blank"
 				rel="noopener noreferrer"><Caption weight="regular" level="1">GitHub</Caption></Link
 			>

@@ -3,7 +3,7 @@
 	import Components from './Components.svelte';
 	export let base = '';
 
-	let tree = [
+	export let tree = [
 		{
 			header: '',
 			child: [
