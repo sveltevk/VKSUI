@@ -96,6 +96,31 @@
 					]
 				},
 				{
+					header: 'Typography',
+					child: [
+						{
+							name: 'Title',
+							link: '/components/typography/title'
+						},
+						{
+							name: 'Headline',
+							link: '/components/typography/headline'
+						},
+						{
+							name: 'Text',
+							link: '/components/typography/text'
+						},
+						{
+							name: 'Subhead',
+							link: '/components/typography/subhead'
+						},
+						{
+							name: 'Caption',
+							link: '/components/typography/caption'
+						}
+					]
+				},
+				{
 					header: 'Service',
 					child: [
 						{
@@ -111,7 +136,7 @@
 							link: '/components/service/touch'
 						}
 					]
-				},
+				}
 			],
 			child: []
 		},

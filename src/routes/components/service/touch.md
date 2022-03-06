@@ -6,90 +6,88 @@ Touch – это компонент для удобной работы с pointe
 
 ```svelte scroll
 <script lang="ts">
-  import { getContext, onMount } from 'svelte';
-  import { Touch, Header } from '@sveltevk/vksui';
+	import { getContext, onMount } from 'svelte';
+	import { Touch, Header } from '@sveltevk/vksui';
 
-  let container;
-  let block;
+	let container;
+	let block;
 
-  let shiftX = 0;
-  let shiftY = 0;
+	let shiftX = 0;
+	let shiftY = 0;
 
-  let startX = 0;
-  let startY = 0;
-  let limitX = 0;
-  let limitY = 0;
+	let startX = 0;
+	let startY = 0;
+	let limitX = 0;
+	let limitY = 0;
 
-  const resize = () => {
-    if (container) {
-      limitX = container.offsetLeft;
-      limitY = container.offsetTop;
-      shiftX = shiftX > limitX ? limitX : shiftX < -limitX ? -limitX : shiftX;
-      shiftY = shiftY > limitY ? limitY : shiftY < -limitY ? -limitY : shiftY;
-      onEnd();
-    }
-  };
+	const resize = () => {
+		if (container) {
+			limitX = container.offsetLeft;
+			limitY = container.offsetTop;
+			shiftX = shiftX > limitX ? limitX : shiftX < -limitX ? -limitX : shiftX;
+			shiftY = shiftY > limitY ? limitY : shiftY < -limitY ? -limitY : shiftY;
+			onEnd();
+		}
+	};
 
-  onMount(() => {
-    window.addEventListener('resize', resize);
-    
-    if (document.readyState === 'complete') {
-      resize();
-    } else {
-      window.addEventListener('load', resize);
-    }
-  });
+	onMount(() => {
+		window.addEventListener('resize', resize);
 
-  const onMove = (e) => {
-    let newShiftX = startX + e.detail.shiftX;
-    let newShiftY = startY + e.detail.shiftY;
+		if (document.readyState === 'complete') {
+			resize();
+		} else {
+			window.addEventListener('load', resize);
+		}
+	});
 
-    shiftX =
-      newShiftX > limitX ? limitX : newShiftX < -limitX ? -limitX : newShiftX;
-    shiftY =
-      newShiftY > limitY ? limitY : newShiftY < -limitY ? -limitY : newShiftY;
-  };
+	const onMove = (e) => {
+		let newShiftX = startX + e.detail.shiftX;
+		let newShiftY = startY + e.detail.shiftY;
 
-  const onEnd = () => {
-    startX = shiftX;
-    startY = shiftY;
-  };
+		shiftX = newShiftX > limitX ? limitX : newShiftX < -limitX ? -limitX : newShiftX;
+		shiftY = newShiftY > limitY ? limitY : newShiftY < -limitY ? -limitY : newShiftY;
+	};
 
-  $: limitExceeded = Math.abs(shiftX) >= limitX || Math.abs(shiftY) >= limitY;
+	const onEnd = () => {
+		startX = shiftX;
+		startY = shiftY;
+	};
+
+	$: limitExceeded = Math.abs(shiftX) >= limitX || Math.abs(shiftY) >= limitY;
 </script>
 
 <Header mode="secondary">Перетащите кружок</Header>
-<div bind:this="{block}" class="container" class:limitExceeded>
-  <Touch
-    bind:container
-    on:end="{onEnd}"
-    on:move="{onMove}"
-    class="circle"
-    style="{`transform: translate(${shiftX}px, ${shiftY}px)`}"
-  />
+<div bind:this={block} class="container" class:limitExceeded>
+	<Touch
+		bind:container
+		on:end={onEnd}
+		on:move={onMove}
+		class="circle"
+		style={`transform: translate(${shiftX}px, ${shiftY}px)`}
+	/>
 </div>
 
 <style>
-  .container {
-    height: 200px;
-    border: 8px solid var(--icon_secondary);
-    position: relative;
-    border-color: var(--icon_secondary);
-  }
-  .limitExceeded {
-    border-color: var(--destructive);
-  }
+	.container {
+		height: 200px;
+		border: 8px solid var(--icon_secondary);
+		position: relative;
+		border-color: var(--icon_secondary);
+	}
+	.limitExceeded {
+		border-color: var(--destructive);
+	}
 
-  .circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--accent);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -20px;
-    margin-top: -20px;
-  }
+	.circle {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: var(--accent);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -20px;
+		margin-top: -20px;
+	}
 </style>
 ```

@@ -4,8 +4,8 @@
 	import getClassName from '$lib/lib/getClassName';
 	import { ANDROID } from '$lib/lib/platform';
 
-	export let component: string = undefined;
-	export let weight: 'regular' | 'medium' | 'semibold';
+	export let component: string = 'span';
+	export let weight: 'regular' | 'medium' | 'semibold' = 'regular';
 
 	const platform = usePlatform();
 

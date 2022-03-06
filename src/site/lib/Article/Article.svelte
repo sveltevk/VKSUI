@@ -48,6 +48,7 @@
 		flex-direction: column;
 		padding: 0 40px 50px;
 		max-width: 1360px;
+		width: 100%;
 		min-width: 320px;
 		background: var(--background_content);
 		box-shadow: inset 0 0 0 1px var(--image_border);

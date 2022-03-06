@@ -18,6 +18,7 @@
 	import Frame from '$site/lib/Frame/Frame.svelte';
 
 	export let scroll: boolean = false;
+	export let mini: boolean = false;
 
 	const { window } = getDOM();
 
@@ -79,47 +80,54 @@
 			{/each}
 		</select>
 	</div>
-	<div>
-		webviewType:
-		<select
-			bind:value={webviewType}
-			on:change={() => window.localStorage.setItem('webviewType', webviewType)}
-		>
-			{#each [WebviewType.VKAPPS, WebviewType.INTERNAL] as name}
-				<option value={name}>{name}</option>
-			{/each}
-		</select>
-	</div>
-	<div>
-		windowWidth:
-		<select
-			bind:value={windowWidth}
-			on:change={() => window.localStorage.setItem('windowWidth', windowWidth.toString())}
-		>
-			{#each [DESKTOP_SIZE, TABLET_SIZE, SMALL_TABLET_SIZE, MOBILE_SIZE] as name}
-				<option value={name}>{name}px</option>
-			{/each}
-		</select>
-	</div>
-	<div>
-		windowHeight:
-		<select
-			bind:value={windowHeight}
-			on:change={() => window.localStorage.setItem('windowHeight', windowHeight.toString())}
-		>
-			{#each [MOBILE_LANDSCAPE_HEIGHT, MEDIUM_HEIGHT] as name}
-				<option value={name}>{name}px</option>
-			{/each}
-		</select>
-	</div>
-	<div>
-		hasMouse:
-		<Switch bind:checked={hasMouse} />
-	</div>
+	{#if !mini}
+		<div>
+			webviewType:
+			<select
+				bind:value={webviewType}
+				on:change={() => window.localStorage.setItem('webviewType', webviewType)}
+			>
+				{#each [WebviewType.VKAPPS, WebviewType.INTERNAL] as name}
+					<option value={name}>{name}</option>
+				{/each}
+			</select>
+		</div>
+		<div>
+			windowWidth:
+			<select
+				bind:value={windowWidth}
+				on:change={() => window.localStorage.setItem('windowWidth', windowWidth.toString())}
+			>
+				{#each [DESKTOP_SIZE, TABLET_SIZE, SMALL_TABLET_SIZE, MOBILE_SIZE] as name}
+					<option value={name}>{name}px</option>
+				{/each}
+			</select>
+		</div>
+		<div>
+			windowHeight:
+			<select
+				bind:value={windowHeight}
+				on:change={() => window.localStorage.setItem('windowHeight', windowHeight.toString())}
+			>
+				{#each [MOBILE_LANDSCAPE_HEIGHT, MEDIUM_HEIGHT] as name}
+					<option value={name}>{name}px</option>
+				{/each}
+			</select>
+		</div>
+		<div>
+			hasMouse:
+			<Switch bind:checked={hasMouse} />
+		</div>
+	{/if}
 </div>
 
 <ConfigProvider platform={os} {scheme} {webviewType} {sizeY} {sizeX} {hasMouse}>
-	<div class="Example" class:scroll style={`width:${windowWidth}px;height:${windowHeight}px;`}>
+	<div
+		class="Example"
+		class:mini
+		class:scroll
+		style={`width:${windowWidth}px;` + (mini ? '' : `height:${windowHeight}px;`)}
+	>
 		<slot />
 	</div>
 </ConfigProvider>
@@ -133,6 +141,10 @@
 		display: block;
 		background: var(--background_content);
 		border-radius: 12px;
+	}
+
+	.mini {
+		height: auto;
 	}
 
 	.scroll {
