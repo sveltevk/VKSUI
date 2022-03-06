@@ -14,6 +14,11 @@ import '@vkontakte/vkui-tokens/themes/vkCom/cssVars/declarations/onlyVariablesLo
 import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariablesLocal.css';
 
 /**
+ * Layout
+ */
+export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLayout.svelte';
+
+/**
  * Advertisement
  */
 export { default as PromoBanner } from './components/Advertisement/PromoBanner/PromoBanner.svelte';

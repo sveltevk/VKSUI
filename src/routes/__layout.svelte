@@ -82,6 +82,15 @@
 			header: 'Компоненты',
 			tree: [
 				{
+					header: 'Layout',
+					child: [
+						{
+							name: 'FixedLayout',
+							link: '/components/Layout/FixedLayout'
+						}
+					]
+				},
+				{
 					header: 'Block',
 					child: [
 						{
@@ -120,6 +129,15 @@
 						{
 							name: 'Caption',
 							link: '/components/Typography/Caption'
+						}
+					]
+				},
+				{
+					header: 'Advertisement',
+					child: [
+						{
+							name: 'PromoBanner',
+							link: '/components/Advertisement/PromoBanner'
 						}
 					]
 				},
