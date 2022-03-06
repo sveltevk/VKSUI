@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/VKSUI/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>VKSUI - Avatar</title>
+	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-82e248c6.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-5d46a39d.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/Showcase-03f4f9b5.css">
+	<link rel="modulepreload" href="/VKSUI/_app/start-3b0ab894.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/vendor-107f5108.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/__layout.svelte-c4e9fb3b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/File.svelte_svelte_type_style_lang-ec30d4c1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/SimpleCell-c5074890.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Tappable-7c7eeb6a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Touch-da745c48.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/a-3a4ccca5.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Header-f2b2184c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Group-4a9ded10.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Div-f91b8121.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-36419abd.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-c0a23f4a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-90397005.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Blocks/Avatar.svelte-eae14fcc.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Showcase-370d926b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Button-ac8cbd18.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Headline-f5a58810.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Subhead-fba28212.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Text-217413e1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Avatar-782b7479.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/utils-dd70d81d.js">
+	</head>
+	<body>
+		<div class="vkui vkui__root">
+
+
+
+
+
+
+<header class="svelte-1kil2u8"><div class="Header__in svelte-1kil2u8"><div class="Logo svelte-1kil2u8">
+
+<h1 class="Title Title--l-1 svelte-1tkij5y"><a href="/VKSUI" class="svelte-1kil2u8">@sveltevk/vksui</a></h1></div>
+		<div class="Links svelte-1kil2u8">
+
+<a href="https://www.npmjs.com/package/@sveltevk/vksui" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">0.0.1
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">GitHub
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI/releases" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">Релизы
+</a></div>
+		<div></div></div>
+</header>
+	<main class="svelte-l2ybjc"><div class="Sidebar svelte-vfs5c9"><div class="Sidebar__in svelte-vfs5c9">
+
+<section class="Group Group--android svelte-1r67g2k">
+				
+	
+				
+
+
+
+<a href="/VKSUI/" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">О VKSUI</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</a>
+			
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+<section class="Group Group--android svelte-1r67g2k"><div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Компоненты
+			</div>
+		
+		</div>
+</div>
+				
+	
+
+<div class="Div Div--android svelte-qune13">
+
+<div class="FormField FormField--android Input Input--android Input--sizeY-compact"><input placeholder="Поиск" class="Input__el svelte-1qbk9aq" value="">
+	<div class="FormField__border svelte-17rb6yt"></div></div>
+</div>
+
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Layout</div>
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Block</div>
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Typography</div>
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Advertisement</div>
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Service</div>
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+<div class="Element svelte-1jb4zvh">
+</div>
+				
+			
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+<section class="Group Group--android svelte-1r67g2k"><div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Прочее
+			</div>
+		
+		</div>
+</div>
+				
+	
+				
+
+
+
+<a href="/VKSUI/utils" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Утилиты</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</a>
+
+
+
+<a href="/VKSUI/icons" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Иконки</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</a>
+
+
+
+<a href="/VKSUI/design" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Дизайн</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</a>
+
+
+
+<a href="/VKSUI/customize" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Кастомизация</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</a>
+			
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section></div>
+</div>
+		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Blocks/Avatar/Avatar.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">GitHub</div>
+</a>
+		
+
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/components/Blocks/Avatar/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">Редактировать страницу</div>
+</a></div>
+	<article class="svelte-18wea6a"><h1 id="avatar">Avatar</h1>
+<p>Надстройка над <code>&lt;img /&gt;</code>. Компонент принимает все валидные для этого элемента свойства.</p>
+
+
+<div class="fixable svelte-1pweym3"><div class="svelte-1pweym3">platform:
+		<select><option value="android">android</option><option value="ios">ios</option><option value="vkcom">vkcom</option></select></div>
+	<div class="svelte-1pweym3">scheme:
+		<select><option value="bright_light">bright_light</option><option value="space_gray">space_gray</option><option value="vkcom_light">vkcom_light</option><option value="vkcom_dark">vkcom_dark</option></select></div>
+	<div class="svelte-1pweym3">webviewType:
+			<select><option value="vkapps">vkapps</option><option value="internal">internal</option></select></div>
+		<div class="svelte-1pweym3">windowWidth:
+			<select><option value="1280">1280px</option><option value="1024">1024px</option><option value="768">768px</option><option value="320">320px</option></select></div>
+		<div class="svelte-1pweym3">windowHeight:
+			<select><option value="414">414px</option><option value="720">720px</option></select></div>
+		<div class="svelte-1pweym3">hasMouse:
+			
+
+<label class="Switch Switch--android Switch--sizeY-compact svelte-198n22t"><input checked type="checkbox" class="Switch__self svelte-198n22t">
+	<span class="Switch__pseudo svelte-198n22t"></span>
+</label></div></div>
+
+
+
+<div class="Example svelte-1pweym3  scroll" style="width:320px;height:414px;">
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Дефолтный размер
+			</div>
+		
+		</div>
+</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-61.userapi.com/O-2f7t0yecmx38WXoF37RkhkJTG2rcjL4Yq88w/J39s0u1f90c.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Артур Стамбульцян
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">VKontakte</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">RichCell
+			</div>
+		
+		</div>
+</div>
+	<div component="[object Object]" disabled class="Tappable Tappable--android RichCell RichCell--android Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-34.userapi.com/c857132/v857132690/49628/r4wBoWw0mJI.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="RichCell__in svelte-lgj56g">
+		
+		
+<span class="Text Text--android Text--w-medium RichCell__content svelte-1ncu6iw"><div class="RichCell__children svelte-lgj56g">Илья Гришин
+	</div>
+			</span>
+
+		
+		<h5 class="RichCell__caption Subhead Subhead--sizeY-regular Subhead--w-undefined svelte-1j3e1cx">Команда ВКонтакте, Санкт-Петербург</h5>
+		<div class="RichCell__bottom">
+
+<div class="UsersStack UsersStack--android UsersStack--size-s UsersStack--l-horizontal svelte-1r1itkb"><div class="UsersStack__photos svelte-1r1itkb"><div class="UsersStack__photo svelte-1r1itkb" style="background-image: url(https://sun9-11.userapi.com/c858420/v858420276/5e9b7/WodDi1aEvFQ.jpg?ava=1)"></div><div class="UsersStack__photo svelte-1r1itkb" style="background-image: url(https://sun9-55.userapi.com/c848416/v848416376/1b82ab/K5YJ8Htn3as.jpg?ava=1)"></div><div class="UsersStack__photo svelte-1r1itkb" style="background-image: url(https://sun9-48.userapi.com/MTiajl5N6b467FGSPppTxnMvk3DSjWVaImgCjw/n4ajtifm__g.jpg?ava=1)"></div>
+		</div>
+	<div class="UsersStack__text svelte-1r1itkb">73 общих друга
+			</div>
+</div>
+		
+				<div class="RichCell__actions svelte-lgj56g">
+
+<button class="Tappable Tappable--android Button Button--sz-s Button--lvl-primary Button--clr-accent Button--aln-center Button--sizeY-regular Tappable--sizeX-compact Tappable--inactive" hoverMode="Button--hover" activeMode="Button--active">
+	<span class="Button__in">
+		<span class="Button__content Subhead Subhead--sizeY-regular Subhead--w-2 svelte-1j3e1cx">Добавить</span>
+		</span>
+	<span class="Tappable__waves"></span>
+	</button>
+			
+
+<button class="Tappable Tappable--android Button Button--sz-s Button--lvl-secondary Button--clr-accent Button--aln-center Button--sizeY-regular Tappable--sizeX-compact Tappable--inactive" hoverMode="Button--hover" activeMode="Button--active">
+	<span class="Button__in">
+		<span class="Button__content Subhead Subhead--sizeY-regular Subhead--w-2 svelte-1j3e1cx">Скрыть</span>
+		</span>
+	<span class="Tappable__waves"></span>
+	</button>
+		</div></div></div>
+	<span class="Tappable__waves"></span>
+	</div>
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Placeholder
+			</div>
+		
+		</div>
+</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 svelte-1q8vrtl" role="presentation" style="background: var(--accent);; width: 28px; height: 28px; border-radius:50%">
+	<div class="Avatar__children svelte-1q8vrtl" style="width: 28px; height: 28px; border-radius:50%"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--add_16 "><svg viewBox="0 0 16 16" width="16" height="16" style="display:block"><use xlink:href="#add_16" style="fill: currentColor;color: var(--white)"></use></svg></div></div>
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Заявки в друзья
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Только от друзей друзей</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 svelte-1q8vrtl" role="presentation" style="background: var(--destructive);; width: 28px; height: 28px; border-radius:50%">
+	<div class="Avatar__children svelte-1q8vrtl" style="width: 28px; height: 28px; border-radius:50%"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--like_16 "><svg viewBox="0 0 16 16" width="16" height="16" style="display:block"><use xlink:href="#like_16" style="fill: currentColor;color: var(--white)"></use></svg></div></div>
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Отметки «Мне нравится»
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Только важные</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Дефолтный тип
+			</div>
+		
+		</div>
+</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Евгений Авсиевич
+	</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Татьяна Плуталова
+	</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Олег Илларианов
+	</div>
+		</div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Group__description svelte-1r67g2k">Дефолтный стиль аватарки. Используется для юзеров, групп.</div>
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Значок
+			</div>
+		
+		</div>
+</div>
+	<div class="Avatars">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-24 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 24px; height: 24px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 28px; height: 28px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-32 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 32px; height: 32px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-36 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 36px; height: 36px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-40 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 40px; height: 40px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-44 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 44px; height: 44px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-56 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 56px; height: 56px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-64 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 64px; height: 64px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-80 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 80px; height: 80px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-88 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 88px; height: 88px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-96 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 96px; height: 96px; border-radius:50%"><img src="https://sun9-19.userapi.com/c846020/v846020298/1d0e79/R41LGoPtIK0.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--large Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div></div>
+	<div class="Avatars">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-24 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 24px; height: 24px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 28px; height: 28px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-32 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 32px; height: 32px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-36 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 36px; height: 36px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-40 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 40px; height: 40px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-44 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 44px; height: 44px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-56 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 56px; height: 56px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-64 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 64px; height: 64px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--circle_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-15 Icon--h-15 Icon--circle_12 "><svg viewBox="0 0 12 12" width="15" height="15" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-80 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 80px; height: 80px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-15 Icon--h-15 Icon--circle_12 "><svg viewBox="0 0 12 12" width="15" height="15" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-88 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 88px; height: 88px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-15 Icon--h-15 Icon--circle_12 "><svg viewBox="0 0 12 12" width="15" height="15" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-96 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 96px; height: 96px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--large svelte-1q8vrtl"><div class="Avatar__badge-online svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-15 Icon--h-15 Icon--circle_12 "><svg viewBox="0 0 12 12" width="15" height="15" style="display:block"><use xlink:href="#circle_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div></div>
+	<div class="Avatars">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-24 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 24px; height: 24px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 28px; height: 28px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-32 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 32px; height: 32px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-36 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 36px; height: 36px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-40 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 40px; height: 40px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-44 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 44px; height: 44px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-56 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 56px; height: 56px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-64 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 64px; height: 64px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-8 Icon--h-12 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="8" height="12" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-9 Icon--h-15 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="9" height="15" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-80 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 80px; height: 80px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-9 Icon--h-15 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="9" height="15" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-88 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 88px; height: 88px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-9 Icon--h-15 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="9" height="15" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-96 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 96px; height: 96px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	<div class="Avatar__badge Avatar__badge--large svelte-1q8vrtl"><div class="Avatar__badge-online-mobile svelte-1q8vrtl"><div role="presentation" class="Icon Icon--15 Icon--w-9 Icon--h-15 Icon--online_mobile_12 "><svg viewBox="0 0 8 12" width="9" height="15" style="display:block"><use xlink:href="#online_mobile_12" style="fill: currentColor;"></use></svg></div></div></div>
+</div></div>
+	<div class="Group__description svelte-1r67g2k">Значок аватарки. Используется для юзеров, групп.</div>
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Overlay, показывается всегда
+			</div>
+		
+		</div>
+</div>
+	<div class="Avatars">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-24 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 24px; height: 24px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="16" height="16" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 28px; height: 28px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--18 Icon--w-18 Icon--h-18 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="18" height="18" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-32 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 32px; height: 32px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-36 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 36px; height: 36px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-40 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 40px; height: 40px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-44 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 44px; height: 44px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="24" height="24" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--light Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="24" height="24" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-56 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 56px; height: 56px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-64 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 64px; height: 64px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-80 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 80px; height: 80px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-88 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 88px; height: 88px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-96 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 96px; height: 96px; border-radius:50%"><img src="https://sun9-70.userapi.com/c636327/v636327034/2be84/TYzZpZ8BL0k.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--visible Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #3F8AE0;" class="Icon Icon--32 Icon--w-32 Icon--h-32 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="32" height="32" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--large Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div></div>
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Overlay, показывается при наведении
+			</div>
+		
+		</div>
+</div>
+	<div class="Avatars">
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-24 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 24px; height: 24px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="16" height="16" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-28 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 28px; height: 28px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--18 Icon--w-18 Icon--h-18 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="18" height="18" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-32 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 32px; height: 32px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-36 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 36px; height: 36px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="12" height="12" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-40 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 40px; height: 40px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="20" height="20" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-44 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 44px; height: 44px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="24" height="24" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="24" height="24" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="16" height="16" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-56 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 56px; height: 56px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-64 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 64px; height: 64px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-72 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 72px; height: 72px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-80 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 80px; height: 80px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-88 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 88px; height: 88px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div>
+
+<div class="Avatar Avatar--android Avatar--type-default Avatar--sz-96 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 96px; height: 96px; border-radius:50%"><img src="https://sun9-18.userapi.com/c841629/v841629884/290aa/TUPsSYQXzKg.jpg?ava=1" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+
+<div Component="button" class="Tappable Tappable--android Avatar__overlay Avatar__overlay--dark Tappable--sizeX-compact Tappable--inactive" hoverMode="Avatar__overlay--visible" focusVisibleMode="Avatar__overlay--focus-visible" hasActive="false"><div role="presentation" style="color: #FFF;" class="Icon Icon--32 Icon--w-32 Icon--h-32 Icon--add_outline_28 "><svg viewBox="0 0 28 28" width="32" height="32" style="display:block"><use xlink:href="#add_outline_28" style="fill: currentColor;"></use></svg></div>
+				
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Avatar__badge Avatar__badge--large Avatar__badge--shadow svelte-1q8vrtl"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--gift_circle_fill_red_20 "><svg viewBox="0 0 20 20" width="24" height="24" style="display:block"><use xlink:href="#gift_circle_fill_red_20" style="fill: currentColor;"></use></svg></div>
+				</div>
+</div></div>
+	
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Приложения
+			</div>
+		
+		</div>
+</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-app Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:10px"><img src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Шторм онлайн
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Ролевая</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-app Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:10px"><img src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Шашки - 3 вида: шашки, уголки, поддавки
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Настольная</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-app Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:10px"><img src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Вега Микс на даче
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Головоломка</div></div>
+	
+	
+	
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Group__description svelte-1r67g2k">Аватарки для приложений. Радиус скургления зависит от значения свойства size.</div>
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+
+<section class="Group Group--android svelte-1r67g2k">
+	<div class="Header Header--android Header--mode-secondary svelte-jre1qn"><div class="Header__in svelte-jre1qn"><div class="Header__content svelte-jre1qn">Обложки
+			</div>
+		
+		</div>
+</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-image Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:4px"><img src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">I Wanna Be Yours
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Arctic Monkeys</div></div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--more_horizontal_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#more_horizontal_24" style="fill: currentColor;color: var(--accent)"></use></svg></div>
+		
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-image Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:4px"><img src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">6 утра
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Лето (звери)</div></div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--more_horizontal_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#more_horizontal_24" style="fill: currentColor;color: var(--accent)"></use></svg></div>
+		
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+	
+
+
+
+<div class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-image Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:4px"><img src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Enjoy the Silence
+	</div>
+		<div class="SimpleCell__description svelte-ow13di">Depeche Mode</div></div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--more_horizontal_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#more_horizontal_24" style="fill: currentColor;color: var(--accent)"></use></svg></div>
+		
+			</div>
+	<span class="Tappable__waves"></span>
+	</div>
+	<div class="Group__description svelte-1r67g2k">Используется для остальных случаев. Например, для музыки и плейлистов.</div>
+	
+
+<div class="Separator Separator--android Group__separator svelte-16xtblz"><div class="Separator__in svelte-16xtblz"></div>
+</div>
+</section>
+
+<style>.Avatars {
+		display: flex;
+		padding: 12px;
+		gap: 8px;
+		flex-flow: row wrap;
+	}
+</style></div>
+<h2 id="код">Код</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Group<span class="token punctuation">,</span> Header<span class="token punctuation">,</span> SimpleCell<span class="token punctuation">,</span> RichCell<span class="token punctuation">,</span> UsersStack<span class="token punctuation">,</span> Button<span class="token punctuation">,</span> Avatar <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon16Add <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/16/add'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon16Like <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/16/like'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon20GiftCircleFillRed <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/20/gift_circle_fill_red'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon24MoreHorizontal <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/24/more_horizontal'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon28AddOutline <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/28/add_outline'</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> getAvatarUrl <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'$site/data/utils'</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">const</span> sizes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">72</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token function-variable function">getBadgeSize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>s <span class="token operator">&lt;</span> <span class="token number">40</span> <span class="token operator">?</span> <span class="token number">12</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">56</span> <span class="token operator">?</span> <span class="token number">16</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">72</span> <span class="token operator">?</span> <span class="token number">20</span> <span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token function-variable function">getOverlaySize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+		s <span class="token operator">&lt;</span> <span class="token number">28</span> <span class="token operator">?</span> <span class="token number">16</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">32</span> <span class="token operator">?</span> <span class="token number">18</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">44</span> <span class="token operator">?</span> <span class="token number">20</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">56</span> <span class="token operator">?</span> <span class="token number">24</span> <span class="token operator">:</span> s <span class="token operator">&lt;</span> <span class="token number">96</span> <span class="token operator">?</span> <span class="token number">28</span> <span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Дефолтный размер<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>VKontakte<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_arthurstam'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Артур Стамбульцян
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>RichCell<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RichCell</span> <span class="token attr-name">disabled</span> <span class="token attr-name">caption</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Команда ВКонтакте, Санкт-Петербург<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">size=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token number">72</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_ilyagrshn'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UsersStack</span>
+				<span class="token attr-name">photos=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">[</span>
+					<span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_ox'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+					<span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_vitalyavolyn'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+					<span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_eee'</span><span class="token punctuation">)</span>
+				<span class="token punctuation">]</span><span class="token punctuation">&#125;</span></span>
+			<span class="token punctuation">></span></span>
+				73 общих друга
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>UsersStack</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>actions<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span><span class="token punctuation">></span></span>Добавить<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Скрыть<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Илья Гришин
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RichCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Placeholder<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Только от друзей друзей<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>background: var(--accent);<span class="token punctuation">"</span></span> <span class="token attr-name">size=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token number">28</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">shadow=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token boolean">false</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon16Add</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>var(--white)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Avatar</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Заявки в друзья
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Только важные<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>background: var(--destructive);<span class="token punctuation">"</span></span> <span class="token attr-name">size=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token number">28</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">shadow=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token boolean">false</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon16Like</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>var(--white)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Avatar</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Отметки «Мне нравится»
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Дефолтный стиль аватарки. Используется для юзеров, групп.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Дефолтный тип<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_evg'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Евгений Авсиевич
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_id34'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Татьяна Плуталова
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_illarionov'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Олег Илларианов
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Значок аватарки. Используется для юзеров, групп.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Значок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Avatars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript">sizes </span><span class="token keyword">as</span> <span class="token language-javascript">size<span class="token punctuation">&#125;</span></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_evg'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon20GiftCircleFillRed</span> <span class="token attr-name">width=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">height=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Avatar</span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Avatars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript">sizes </span><span class="token keyword">as</span> <span class="token language-javascript">size<span class="token punctuation">&#125;</span></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_id34'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">badge</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>online<span class="token punctuation">"</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Avatars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript">sizes </span><span class="token keyword">as</span> <span class="token language-javascript">size<span class="token punctuation">&#125;</span></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_illarionov'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">badge</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>online-mobile<span class="token punctuation">"</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Overlay, показывается всегда<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Avatars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript">sizes </span><span class="token keyword">as</span> <span class="token language-javascript">size<span class="token punctuation">&#125;</span></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span>
+				<span class="token attr-name">overlayAction</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>always<span class="token punctuation">"</span></span>
+				<span class="token attr-name">overlayMode</span><span class="token attr-value"><span class="token punctuation">=</span>&#123;size</span> <span class="token punctuation">></span></span> 48 ? 'dark' : 'light'&#125;
+				src=<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_id34'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+				<span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span>
+			>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>overlayIcon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon28AddOutline</span>
+						<span class="token attr-name">width=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getOverlaySize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+						<span class="token attr-name">height=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getOverlaySize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+						<span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color: #3F8AE0;<span class="token punctuation">"</span></span>
+					<span class="token punctuation">/></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon20GiftCircleFillRed</span> <span class="token attr-name">width=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">height=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Avatar</span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Overlay, показывается при наведении<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Avatars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript">sizes </span><span class="token keyword">as</span> <span class="token language-javascript">size<span class="token punctuation">&#125;</span></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">overlayAction</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hover<span class="token punctuation">"</span></span> <span class="token attr-name">overlayMode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dark<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'user_illarionov'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>overlayIcon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon28AddOutline</span>
+						<span class="token attr-name">width=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getOverlaySize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+						<span class="token attr-name">height=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getOverlaySize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+						<span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color: #FFF;<span class="token punctuation">"</span></span>
+					<span class="token punctuation">/></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon20GiftCircleFillRed</span> <span class="token attr-name">width=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">height=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getBadgeSize</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Avatar</span><span class="token punctuation">></span></span>
+		<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Аватарки для приложений. Радиус скургления зависит от значения свойства size.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Приложения<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ролевая<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'app_shorm_online'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Шторм онлайн
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Настольная<span class="token punctuation">"</span></span> <span class="token attr-name">multiline=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token boolean">false</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'app_shashki'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Шашки - 3 вида: шашки, уголки, поддавки
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Головоломка<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'app_vega_mix'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Вега Микс на даче
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Используется для остальных случаев. Например, для музыки и плейлистов.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Обложки<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Header</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Arctic Monkeys<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'audio_arctic_monkeys'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>after<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon24MoreHorizontal</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>var(--accent)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		I Wanna Be Yours
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Лето (звери)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'audio_leto_zveri'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>after<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon24MoreHorizontal</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>var(--accent)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		6 утра
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SimpleCell</span> <span class="token attr-name">description</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Depeche Mode<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Avatar</span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">src=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token function">getAvatarUrl</span><span class="token punctuation">(</span><span class="token string">'audio_depeche_mode'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>after<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon24MoreHorizontal</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>var(--accent)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+		Enjoy the Silence
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SimpleCell</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.Avatars</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+		<span class="token property">padding</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+		<span class="token property">gap</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+		<span class="token property">flex-flow</span><span class="token punctuation">:</span> row wrap<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></article>
+</div></main>
+
+
+		<script type="module" data-hydrate="1yz2bxy">
+		import { start } from "/VKSUI/_app/start-3b0ab894.js";
+		start({
+			target: document.querySelector('[data-hydrate="1yz2bxy"]').parentNode,
+			paths: {"base":"/VKSUI","assets":"/VKSUI"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/VKSUI/_app/pages/__layout.svelte-c4e9fb3b.js"),
+						import("/VKSUI/_app/pages/components/Blocks/Avatar.svelte-eae14fcc.js")
+				],
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>

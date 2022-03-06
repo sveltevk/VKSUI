@@ -5,9 +5,10 @@
 		<meta name="description" content="Svelte demo app" />
 		<link rel="icon" href="/VKSUI/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content=""><title>VKSUI - QuickStart</title>
+		<meta http-equiv="content-security-policy" content=""><title>VKSUI - PromoBanner</title>
 	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-82e248c6.css">
 	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-5d46a39d.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/Showcase-03f4f9b5.css">
 	<link rel="modulepreload" href="/VKSUI/_app/start-3b0ab894.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/vendor-107f5108.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/paths-4b3c6e7e.js">
@@ -23,7 +24,13 @@
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-36419abd.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-c0a23f4a.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-90397005.js">
-	<link rel="modulepreload" href="/VKSUI/_app/pages/quickStart.md-b25bdd10.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Advertisement/PromoBanner.svelte-16df773b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Showcase-370d926b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Button-ac8cbd18.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Headline-f5a58810.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Subhead-fba28212.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Text-217413e1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Avatar-782b7479.js">
 	</head>
 	<body>
 		<div class="vkui vkui__root">
@@ -233,22 +240,108 @@
 </div>
 </section></div>
 </div>
-		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a"><div></div>
+		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Advertisement/PromoBanner/PromoBanner.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">GitHub</div>
+</a>
 		
 
-<a href="https://github.com/sveltevk/VKSUI/edit/master/src/routes/quickStart.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/components/Advertisement/PromoBanner/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
 
 <div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">Редактировать страницу</div>
 </a></div>
-	<article class="svelte-18wea6a"><h1 id="быстрый-старт">Быстрый старт</h1>
-<p>TODO: написать</p></article>
+	<article class="svelte-18wea6a"><h1 id="promobanner">PromoBanner</h1>
+
+
+<div class="fixable svelte-1pweym3"><div class="svelte-1pweym3">platform:
+		<select><option value="android">android</option><option value="ios">ios</option><option value="vkcom">vkcom</option></select></div>
+	<div class="svelte-1pweym3">scheme:
+		<select><option value="bright_light">bright_light</option><option value="space_gray">space_gray</option><option value="vkcom_light">vkcom_light</option><option value="vkcom_dark">vkcom_dark</option></select></div>
+	<div class="svelte-1pweym3">webviewType:
+			<select><option value="vkapps">vkapps</option><option value="internal">internal</option></select></div>
+		<div class="svelte-1pweym3">windowWidth:
+			<select><option value="1280">1280px</option><option value="1024">1024px</option><option value="768">768px</option><option value="320">320px</option></select></div>
+		<div class="svelte-1pweym3">windowHeight:
+			<select><option value="414">414px</option><option value="720">720px</option></select></div>
+		<div class="svelte-1pweym3">hasMouse:
+			
+
+<label class="Switch Switch--android Switch--sizeY-compact svelte-198n22t"><input checked type="checkbox" class="Switch__self svelte-198n22t">
+	<span class="Switch__pseudo svelte-198n22t"></span>
+</label></div></div>
+
+
+
+<div class="Example svelte-1pweym3  scroll" style="width:320px;height:414px;"><div class="PromoBanner PromoBanner--android svelte-1u65nqo"><div class="PromoBanner__head svelte-1u65nqo">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 PromoBanner__label svelte-8u9koe">Реклама</div>
+		
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 PromoBanner__age svelte-8u9koe">14+
+			</div>
+
+		<div class="PromoBanner__close svelte-1u65nqo"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--dismiss_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#dismiss_24" style="fill: currentColor;"></use></svg></div></div></div>
+	
+
+
+
+<a href="https://vk.com" rel="nofollow noopener noreferrer" target="_blank" class="Tappable Tappable--android SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable--sizeX-compact Tappable--inactive">
+
+<div class="Avatar Avatar--android Avatar--type-image Avatar--sz-48 Avatar--shadow svelte-1q8vrtl" role="img" style="; width: 48px; height: 48px; border-radius:4px"><img src="https://sun9-7.userapi.com/c846420/v846420985/1526c3/ISX7VF8NjZk.jpg" alt="" class="Avatar__img svelte-1q8vrtl">
+	
+	
+	
+</div>
+		
+	<div class="SimpleCell__main svelte-ow13di"><div class="SimpleCell__children svelte-ow13di">Заголовок</div>
+		<div class="SimpleCell__description svelte-ow13di">vk.com</div></div>
+	
+	
+	<div class="SimpleCell__after svelte-ow13di">
+
+<button class="Tappable Tappable--android Button Button--sz-s Button--lvl-outline Button--clr-accent Button--aln-center Button--sizeY-regular Tappable--sizeX-compact Tappable--inactive" hoverMode="Button--hover" activeMode="Button--active">
+	<span class="Button__in">
+		<span class="Button__content Subhead Subhead--sizeY-regular Subhead--w-2 svelte-1j3e1cx">Перейти</span>
+		</span>
+	<span class="Tappable__waves"></span>
+	</button>
+		
+			</div>
+	<span class="Tappable__waves"></span>
+	</a>
+
+	
+</div></div>
+<h2 id="код">Код</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> PromoBanner<span class="token punctuation">,</span> FixedLayout <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> promoBannerProps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Заголовок'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">'vk.com'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">trackingLink</span><span class="token operator">:</span> <span class="token string">'https://vk.com'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">ctaText</span><span class="token operator">:</span> <span class="token string">'Перейти'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">advertisingLabel</span><span class="token operator">:</span> <span class="token string">'Реклама'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">iconLink</span><span class="token operator">:</span> <span class="token string">'https://sun9-7.userapi.com/c846420/v846420985/1526c3/ISX7VF8NjZk.jpg'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">'Описание рекламы'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">ageRestrictions</span><span class="token operator">:</span> <span class="token string">'14+'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">statistics</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token punctuation">&#123;</span> <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'playbackStarted'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+			<span class="token punctuation">&#123;</span> <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'click'</span> <span class="token punctuation">&#125;</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PromoBanner</span> <span class="token attr-name">bannerData=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>promoBannerProps<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span></code><!-- HTML_TAG_END --></pre>
+</article>
 </div></main>
 
 
-		<script type="module" data-hydrate="12ifu71">
+		<script type="module" data-hydrate="1yfhkue">
 		import { start } from "/VKSUI/_app/start-3b0ab894.js";
 		start({
-			target: document.querySelector('[data-hydrate="12ifu71"]').parentNode,
+			target: document.querySelector('[data-hydrate="1yfhkue"]').parentNode,
 			paths: {"base":"/VKSUI","assets":"/VKSUI"},
 			session: {},
 			route: true,
@@ -259,7 +352,7 @@
 				error: null,
 				nodes: [
 					import("/VKSUI/_app/pages/__layout.svelte-c4e9fb3b.js"),
-						import("/VKSUI/_app/pages/quickStart.md-b25bdd10.js")
+						import("/VKSUI/_app/pages/components/Advertisement/PromoBanner.svelte-16df773b.js")
 				],
 				params: {}
 			}

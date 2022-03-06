@@ -5,7 +5,7 @@
 		<meta name="description" content="Svelte demo app" />
 		<link rel="icon" href="/VKSUI/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content=""><title>VKSUI - QuickStart</title>
+		<meta http-equiv="content-security-policy" content=""><title>VKSUI - Link</title>
 	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-82e248c6.css">
 	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-5d46a39d.css">
 	<link rel="modulepreload" href="/VKSUI/_app/start-3b0ab894.js">
@@ -23,7 +23,7 @@
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-36419abd.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-c0a23f4a.js">
 	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-90397005.js">
-	<link rel="modulepreload" href="/VKSUI/_app/pages/quickStart.md-b25bdd10.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Blocks/Link.svelte-68a83056.js">
 	</head>
 	<body>
 		<div class="vkui vkui__root">
@@ -233,22 +233,33 @@
 </div>
 </section></div>
 </div>
-		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a"><div></div>
+		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Blocks/Link/Link.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">GitHub</div>
+</a>
 		
 
-<a href="https://github.com/sveltevk/VKSUI/edit/master/src/routes/quickStart.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/components/Blocks/Link/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
 
 <div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">Редактировать страницу</div>
 </a></div>
-	<article class="svelte-18wea6a"><h1 id="быстрый-старт">Быстрый старт</h1>
-<p>TODO: написать</p></article>
+	<article class="svelte-18wea6a"><h1 id="link">Link</h1>
+<p>Надстройка над <code>&lt;a /&gt;</code>. Компонент принимает все валидные для этого элемента свойства.</p>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Link <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://google.com<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Google<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Link</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/profile<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Profile<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Link</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></article>
 </div></main>
 
 
-		<script type="module" data-hydrate="12ifu71">
+		<script type="module" data-hydrate="1ggzx5m">
 		import { start } from "/VKSUI/_app/start-3b0ab894.js";
 		start({
-			target: document.querySelector('[data-hydrate="12ifu71"]').parentNode,
+			target: document.querySelector('[data-hydrate="1ggzx5m"]').parentNode,
 			paths: {"base":"/VKSUI","assets":"/VKSUI"},
 			session: {},
 			route: true,
@@ -259,7 +270,7 @@
 				error: null,
 				nodes: [
 					import("/VKSUI/_app/pages/__layout.svelte-c4e9fb3b.js"),
-						import("/VKSUI/_app/pages/quickStart.md-b25bdd10.js")
+						import("/VKSUI/_app/pages/components/Blocks/Link.svelte-68a83056.js")
 				],
 				params: {}
 			}
