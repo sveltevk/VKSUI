@@ -69,9 +69,9 @@ VKSUI — это библиотека адаптивных Svelte-компоне
 [chat-url]: https://vk.me/join/AJQ1d3IXhxgxghIc5PFNiLCd
 [svelte]: https://img.shields.io/badge/svelte-v3-blueviolet.svg
 [svelte-url]: https://svelte.dev
-[license]: https://img.shields.io/github/license/sveltevk/vksui
-[license-url]: https://github.com/sveltevk/vksui/blob/master/LICENSE
-[site-url]: https://sveltevk.github.io/vksui/
+[license]: https://img.shields.io/github/license/sveltevk/VKSUI
+[license-url]: https://github.com/sveltevk/VKSUI/blob/master/LICENSE
+[site-url]: https://sveltevk.github.io/VKSUI/
 [changelog-url]: https://github.com/sveltevk/VKSUI/releases
-[github-url]: https://github.com/sveltevk/vksui
+[github-url]: https://github.com/sveltevk/VKSUI
 [repl]: https://img.shields.io/badge/svelte-REPL-red?logoColor=white&style=flat-square

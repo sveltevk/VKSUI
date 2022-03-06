@@ -13,7 +13,8 @@
 
 		const name = 'VKSUI - ' + (capitalizeFirstLetter(rawName) || 'svelte components');
 
-		const capitalize = path.includes('/components/')
+		const isComponent = path.includes('/components/');
+		const capitalize = isComponent
 			? path
 					.split('/')
 					.map((v, i) => (i !== 1 ? capitalizeFirstLetter(v) : v))
@@ -25,7 +26,8 @@
 		const currentPage = {
 			path,
 			name,
-			capitalize
+			capitalize,
+			isComponent
 		};
 		return {
 			props: {
@@ -45,7 +47,8 @@
 	export let currentPage = {
 		path: '',
 		capitalize: '',
-		name: 'VKSUI'
+		name: 'VKSUI',
+		isComponent: false
 	};
 
 	let tree = [
@@ -83,15 +86,15 @@
 					child: [
 						{
 							name: 'Header',
-							link: '/components/blocks/header'
+							link: '/components/Blocks/Header'
 						},
 						{
 							name: 'Div',
-							link: '/components/blocks/div'
+							link: '/components/Blocks/Div'
 						},
 						{
 							name: 'Link',
-							link: '/components/blocks/link'
+							link: '/components/Blocks/Link'
 						}
 					]
 				},
@@ -100,23 +103,23 @@
 					child: [
 						{
 							name: 'Title',
-							link: '/components/typography/title'
+							link: '/components/Typography/Title'
 						},
 						{
 							name: 'Headline',
-							link: '/components/typography/headline'
+							link: '/components/Typography/Headline'
 						},
 						{
 							name: 'Text',
-							link: '/components/typography/text'
+							link: '/components/Typography/Text'
 						},
 						{
 							name: 'Subhead',
-							link: '/components/typography/subhead'
+							link: '/components/Typography/Subhead'
 						},
 						{
 							name: 'Caption',
-							link: '/components/typography/caption'
+							link: '/components/Typography/Caption'
 						}
 					]
 				},
@@ -125,15 +128,15 @@
 					child: [
 						{
 							name: 'AdaptivityProvider',
-							link: '/components/service/adaptivityProvider'
+							link: '/components/Service/AdaptivityProvider'
 						},
 						{
 							name: 'ConfigProvider',
-							link: '/components/service/configProvider'
+							link: '/components/Service/ConfigProvider'
 						},
 						{
 							name: 'Touch',
-							link: '/components/service/touch'
+							link: '/components/Service/Touch'
 						}
 					]
 				}
