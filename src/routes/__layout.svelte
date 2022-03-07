@@ -118,6 +118,10 @@
 							name: 'Header',
 							link: '/components/Blocks/Header'
 						},
+						{
+							name: 'Group',
+							link: '/components/Blocks/Group'
+						},
 
 						{
 							name: 'Avatar',

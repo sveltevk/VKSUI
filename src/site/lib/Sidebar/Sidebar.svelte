@@ -17,7 +17,7 @@
 <div class="Sidebar">
 	<div class="Sidebar__in">
 		{#each tree as group}
-			<Group>
+			<Group mode="plain">
 				{#if group.header}
 					<Header mode="secondary">{group.header}</Header>
 				{/if}
