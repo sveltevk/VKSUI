@@ -135,7 +135,13 @@
 						{
 							name: 'Counter',
 							link: '/components/Blocks/Counter'
-						}
+						},
+
+
+						{
+							name: 'Separator',
+							link: '/components/Blocks/Separator'
+						},
 					]
 				},
 				{
