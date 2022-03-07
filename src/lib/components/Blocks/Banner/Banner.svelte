@@ -9,7 +9,7 @@
 	import Icon24DismissDark from '@sveltevk/icons/dist/24/dismiss_dark';
 	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import div from '$lib/components/Elements/div/div.svelte';
+	import svelteDiv from '$lib/components/Elements/div/div.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -81,7 +81,7 @@
 	 */
 	export let actions: any = undefined;
 
-	$: innerComponent = asideMode === 'expand' ? Tappable : div;
+	$: innerComponent = asideMode === 'expand' ? Tappable : svelteDiv;
 
 	const onDismiss = (e) => {
 		dispatch('dismiss', e);

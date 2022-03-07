@@ -25,7 +25,7 @@
 		{/if}
 		<Link
 			href="{repositoryURL}/edit/master/src{currentPage.isComponent
-				? currentPage.path + '/README.md'
+				? '/lib' + currentPage.path + '/README.md'
 				: '/routes' + (currentPage.path || '/index') + '.md'}"
 			target="_blank"
 			rel="noopener noreferrer"

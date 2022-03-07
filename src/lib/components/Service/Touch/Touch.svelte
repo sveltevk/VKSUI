@@ -257,6 +257,10 @@ Touch – это компонент для удобной работы с pointe
 	bind:this_={container}
 	on:click={onClick}
 	on:dragstart={onDragStart}
+	on:mouseleave={() => dispatch('leave')}
+	on:pointerleave={() => dispatch('leave')}
+	on:mouseenter={() => dispatch('enter')}
+	on:pointerenter={() => dispatch('enter')}
 >
 	<slot />
 </svelte:component>

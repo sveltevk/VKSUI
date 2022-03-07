@@ -7,9 +7,12 @@
 	import { getOffsetRect } from '$lib/lib/offset';
 	import Touch from '../Touch/Touch.svelte';
 	import div from '$lib/components/Elements/div/div.svelte';
+	import a from '$lib/components/Elements/a/a.svelte';
+	import button from '$lib/components/Elements/button/button.svelte';
 	// import type { TouchEventHandler, TouchEvent } from '../Touch/Touch.svelte';
 	import { coordX, coordY } from '$lib/lib/touch';
 	import type { VKUITouchEventHander, VKUITouchEvent } from '$lib/lib/touch';
+	import type { FocusVisibleMode } from '../FocusVisible/FocusVisible.svelte';
 
 	export interface StorageItem {
 		activeTimeout: number;
@@ -47,23 +50,65 @@
 </script>
 
 <script lang="ts">
+	import FocusVisible from '../FocusVisible/FocusVisible.svelte';
+	import Wave from './Wave.svelte';
+
 	// props
+	/**
+	 * Длительность показа active-состояния
+	 */
 	export let activeEffectDelay: number = ACTIVE_EFFECT_DELAY;
 	export let disabled: boolean = undefined;
 	export let stopPropagation: boolean = false;
 	export let component = div;
+	/**
+	 * Указывает, должен ли компонент реагировать на hover-состояние
+	 */
+	export let hasHover: boolean = true;
+	/**
+	 * Указывает, должен ли компонент реагировать на active-состояние
+	 */
+	export let hasActive: boolean = true;
+	/**
+	 * Стиль подсветки active-состояния. Если передать произвольную строку, она добавится как css-класс во время active
+	 */
+	export let activeMode: 'opacity' | 'background' | string = 'background';
+	/**
+	 * Стиль подсветки hover-состояния. Если передать произвольную строку, она добавится как css-класс во время hover
+	 */
+	export let hoverMode: 'opacity' | 'background' | string = 'background';
+	/**
+	 * Стиль аутлайна focus visible. Если передать произвольную строку, она добавится как css-класс во время focus-visible
+	 */
+	export let focusVisibleMode: FocusVisibleMode = 'inside';
 
 	// state
-	export let clicks: {
-		[index: string]: {
-			x: number;
-			y: number;
-		};
-	} = {};
-	export let hovered = false;
 	export let active: boolean = false;
 	export let ts: number = null;
-	export let deviceHasHover: boolean = false;
+	export let deviceHasHover: boolean = true;
+
+	interface Wave {
+		x: number;
+		y: number;
+		id: string;
+	}
+
+	const adaptivity = useAdaptivity();
+	const platform = usePlatform();
+	// const { focusVisible, onBlur, onFocus } = useFocusVisible();
+
+	export let clicks: Wave[] = [];
+	let childHover = false;
+	let _hovered = false;
+
+	$: hovered = _hovered && !disabled;
+	$: _hasActive = _hasActive && !childHover && !disabled;
+	$: _hasHover = deviceHasHover && hasHover && !childHover;
+	$: isCustomElement = component !== a && component !== button;
+	$: isPresetHoverMode = ['opacity', 'background'].includes(hoverMode);
+	$: isPresetActiveMode = ['opacity', 'background'].includes(activeMode);
+	$: isPresetFocusVisibleMode = ['inside', 'outside'].includes(focusVisibleMode);
+
 	// export let hasHover: boolean;
 	let container: HTMLElement;
 
@@ -72,10 +117,6 @@
 	let isSlide = false;
 	let insideTouchRoot = false;
 	let timeout = 0;
-	let wavesTimeout = 0;
-
-	const adaptivity = useAdaptivity();
-	const platform = usePlatform();
 
 	/*
 	 * Обрабатывает событие touchstart
@@ -89,7 +130,10 @@
 		}
 
 		if ($platform === ANDROID) {
-			onDown(originalEvent);
+			const { top, left } = getOffsetRect(container);
+			const x = coordX(originalEvent) - (left ?? 0);
+			const y = coordY(originalEvent) - (top ?? 0);
+			clicks = [...clicks, { x, y, id: Date.now().toString() }];
 		}
 
 		storage[id] = {
@@ -156,37 +200,6 @@
 	};
 
 	/*
-	 * Реализует эффект при тапе для Андроида
-	 */
-	const onDown: VKUITouchEventHander = (e: VKUITouchEvent) => {
-		if ($platform === ANDROID) {
-			const { top, left } = getOffsetRect(container);
-			const x = coordX(e) - left;
-			const y = coordY(e) - top;
-			const key = 'wave' + Date.now().toString();
-
-			clicks[key] = {
-				x,
-				y
-			};
-
-			wavesTimeout = window.setTimeout(() => {
-				const clicksNew = clicks;
-				delete clicksNew[key];
-				clicks = clicksNew;
-			}, 225);
-		}
-	};
-
-	const onEnter = () => {
-		hovered = true;
-	};
-
-	const onLeave = () => {
-		hovered = false;
-	};
-
-	/*
 	 * Устанавливает активное выделение
 	 */
 	const start: VoidFunction = () => {
@@ -234,71 +247,76 @@
 		return false;
 	};
 
-	$: _hasHover = deviceHasHover && _hasHover;
-	$: hoverClassModificator = containerHasTransparentBackground(container)
-		? 'shadowHovered'
-		: 'opacityHovered';
-
-	$: rootComponent = !disabled ? Touch : component;
-
 	$: $$restProps.class = classNames(
-		getClassName('Tappable', $platform),
 		$$props.class,
+		getClassName('Tappable', $platform),
 		`Tappable--sizeX-${$adaptivity.sizeX}`,
 		{
-			'Tappable--active': active,
+			'Tappable--active': hasActive && active,
 			'Tappable--mouse': $adaptivity.hasMouse,
-			'Tappable--inactive': !active,
-			[`Tappable--${hoverClassModificator}`]: _hasHover && hovered
+			[`Tappable--hover-${hoverMode}`]: _hasHover && hovered && isPresetHoverMode,
+			[`Tappable--active-${activeMode}`]: hasActive && active && isPresetActiveMode
+			// TODO: 'Tappable--focus-visible': focusVisible
 		}
 	);
+
+	$: role = $$props.href ? 'link' : 'button';
 </script>
 
-<svelte:component
-	this={rootComponent}
+<Touch
+	on:enter={() => (_hovered = true)}
+	on:leave={() => (_hovered = false)}
+	tabIndex={isCustomElement && !disabled ? 0 : undefined}
+	role={isCustomElement ? role : undefined}
+	aria-disabled={isCustomElement ? disabled : undefined}
 	bind:container
-	on:start={onStart}
-	on:move={onMove}
-	on:end={onEnd}
-	on:enter={onEnter}
-	on:leave={onLeave}
-	{component}
+	on:start={disabled ? undefined : onStart}
+	on:move={disabled ? undefined : onMove}
+	on:end={disabled ? undefined : onEnd}
 	on:click
-	{disabled}
+	{component}
 	{...$$restProps}
 >
 	<slot />
-	{#if $platform === ANDROID}
-		<span class="Tappable__waves">
-			{#each Object.keys(clicks) as k}
-				<span
-					class="Tappable__wave"
-					style={`top: ${clicks[k].y}px; left: ${clicks[k].x}px`}
-					id={k}
+	{#if $platform === ANDROID && !$adaptivity.hasMouse && _hasActive}
+		<span aria-hidden="true" class="Tappable__waves">
+			{#each clicks as wave}
+				<Wave
+					x={wave.x}
+					y={wave.y}
+					on:clear={() => (clicks = clicks.filter((c) => c.id !== wave.id))}
 				/>
 			{/each}
 		</span>
 	{/if}
-	{#if _hasHover}<span class="Tappable__hoverShadow" />{/if}
-</svelte:component>
+	{#if _hasHover && hoverMode === 'background'}<span
+			aria-hidden="true"
+			class="Tappable__hoverShadow"
+		/>{/if}
+	{#if !disabled}
+		<FocusVisible mode={focusVisibleMode} />
+	{/if}
+</Touch>
 
 <style>
 	:global(.Tappable) {
 		position: relative;
-	}
-
-	:global(.Tappable:not([disabled]):not([aria-disabled='true'])) {
 		cursor: pointer;
 	}
 
-	:global(.AppRoot--keyboard-input .Tappable:focus-visible) {
+	:global(.Tappable[disabled]),
+	:global(.Tappable[aria-disabled='true']) {
+		cursor: default;
+	}
+
+	:global(.Tappable--focus-visible) {
 		outline: none;
 	}
 
 	/**
- * active
- * increased specificity to override CellButton styles
- */
+	* active
+	* increased specificity to override CellButton styles
+	*/
 	:global(.Tappable--active-background.Tappable--active-background.Tappable--active-background) {
 		background: var(--background_highlighted);
 	}
@@ -308,9 +326,9 @@
 	}
 
 	/**
- * hover
- */
-	:global(.Tappable__hoverShadow) {
+	* hover
+	*/
+	.Tappable__hoverShadow {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -321,7 +339,7 @@
 		border-radius: inherit;
 	}
 
-	:global(.Tappable--hover-background > .Tappable__hoverShadow) {
+	:global(.Tappable--hover-background) > .Tappable__hoverShadow {
 		background: var(--background_hover);
 	}
 
@@ -336,7 +354,7 @@
 		transition: opacity 0.15s ease-out;
 	}
 
-	:global(.Tappable--mouse .Tappable__hoverShadow) {
+	:global(.Tappable--mouse) .Tappable__hoverShadow {
 		transition: background-color 0.15s ease-out;
 	}
 
@@ -362,7 +380,7 @@
 		border-radius: 8px;
 	}
 
-	:global(.Tappable--android .Tappable__waves) {
+	.Tappable__waves {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -375,51 +393,11 @@
 		will-change: transform;
 	}
 
-	:global(.Tappable--android .Tappable__wave) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 24px;
-		height: 24px;
-		margin: -12px 0 0 -12px;
-		opacity: 0;
-		content: '';
-		border-radius: 50%;
-		background: rgba(127, 127, 127, 0.1);
-		animation: vkui-animation-wave 0.3s var(--android-easing);
-	}
-
 	/**
  * VKCOM tappable
  */
 	:global(.Tappable--vkcom) {
 		transition: background-color 0.15s ease-out;
 		border-radius: 8px;
-	}
-
-	/**
- * overrides
- */
-	:global(.Tappable--sizeX-compact) {
-		border-radius: 0;
-	}
-
-	/**
- * Animations
- */
-	@keyframes vkui-animation-wave {
-		0% {
-			transform: scale(1);
-			opacity: 1;
-		}
-
-		30% {
-			opacity: 1;
-		}
-
-		100% {
-			transform: scale(8);
-			opacity: 0;
-		}
 	}
 </style>

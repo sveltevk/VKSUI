@@ -8,6 +8,7 @@
 	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
 	import Div from '$lib/components/Elements/div/div.svelte';
 	import a from '$lib/components/Elements/a/a.svelte';
+	import SimpleCellTypography from './SimpleCellTypography.svelte';
 
 	export let component = Div;
 
@@ -47,9 +48,9 @@ SimpleCell — это упрощенная и улучшенная с точки
 <Tappable {...$$restProps} {href} {disabled} on:click component={href ? a : component}>
 	<slot name="before" />
 	<div class="SimpleCell__main">
-		<div class="SimpleCell__children">
+		<SimpleCellTypography class="SimpleCell__children">
 			<slot />
-		</div>
+		</SimpleCellTypography>
 		{#if $$slots.description || description}
 			<div class="SimpleCell__description">
 				<slot name="description">{description}</slot>
@@ -58,9 +59,9 @@ SimpleCell — это упрощенная и улучшенная с точки
 	</div>
 	<!-- TODO: что насчет null? -->
 	{#if $$slots.indicator || typeof indicator !== 'undefined'}
-		<div class="SimpleCell__indicator">
+		<SimpleCellTypography class="SimpleCell__indicator">
 			<slot name="indicator">{indicator}</slot>
-		</div>
+		</SimpleCellTypography>
 	{/if}
 	{#if $$slots.after || (expandable && $platform === IOS)}
 		<div class="SimpleCell__after">
@@ -87,7 +88,7 @@ SimpleCell — это упрощенная и улучшенная с точки
 	}
 
 	:global(.SimpleCell--mult) .SimpleCell__description,
-	:global(.SimpleCell--mult) .SimpleCell__children {
+	:global(.SimpleCell--mult) :global(.SimpleCell__children) {
 		text-overflow: initial;
 	}
 
@@ -130,13 +131,13 @@ SimpleCell — это упрощенная и улучшенная с точки
 		margin-top: 2px;
 	}
 
-	.SimpleCell__children {
+	:global(.SimpleCell__children) {
 		color: inherit;
 		text-overflow: ellipsis;
 		overflow: hidden;
 	}
 
-	.SimpleCell__indicator {
+	:global(.SimpleCell__indicator) {
 		color: var(--text_secondary);
 		min-width: 0;
 		white-space: nowrap;
@@ -196,7 +197,7 @@ SimpleCell — это упрощенная и улучшенная с точки
 	}
 
 	:global(.SimpleCell--ios) .SimpleCell__main,
-	:global(.SimpleCell--ios) .SimpleCell__indicator {
+	:global(.SimpleCell--ios) :global(.SimpleCell__indicator) {
 		padding-top: 9px;
 		padding-bottom: 11px;
 	}
@@ -231,9 +232,9 @@ SimpleCell — это упрощенная и улучшенная с точки
 	}
 
 	:global(.SimpleCell--android) .SimpleCell__main,
-	:global(.SimpleCell--android) .SimpleCell__indicator,
+	:global(.SimpleCell--android) :global(.SimpleCell__indicator),
 	:global(.SimpleCell--vkcom) .SimpleCell__main,
-	:global(.SimpleCell--vkcom) .SimpleCell__indicator {
+	:global(.SimpleCell--vkcom) :global(.SimpleCell__indicator) {
 		padding-top: 11px;
 		padding-bottom: 10px;
 	}
@@ -247,7 +248,7 @@ SimpleCell — это упрощенная и улучшенная с точки
 	}
 
 	:global(.SimpleCell--sizeY-compact) .SimpleCell__main,
-	:global(.SimpleCell--sizeY-compact) .SimpleCell__indicator {
+	:global(.SimpleCell--sizeY-compact) :global(.SimpleCell__indicator) {
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
