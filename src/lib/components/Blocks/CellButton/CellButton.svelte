@@ -11,7 +11,6 @@
 	export let before: any = undefined;
 
 	export let mode: 'primary' | 'danger' = 'primary';
-	export let stopPropagation: boolean = true;
 	export let centered: boolean = false;
 
 	const platform = usePlatform();
@@ -19,7 +18,7 @@
 
 <SimpleCell
 	{...$$restProps}
-	{stopPropagation}
+	stopPropagation
 	on:click
 	component={$$restProps.href ? a : component}
 	class={classNames(
@@ -38,7 +37,6 @@
 <style>
 	:global(.CellButton) {
 		box-sizing: border-box;
-		outline: none;
 		text-decoration: none;
 		margin: 0;
 		border: none;
@@ -50,6 +48,12 @@
 		padding-bottom: 0;
 	}
 
+	:global(.FormItem .CellButton) {
+		width: 100%;
+		box-sizing: content-box;
+		margin: 0 calc(-1 * var(--formitem_padding));
+	}
+
 	:global(.CellButton[disabled]) {
 		opacity: 0.4;
 	}
@@ -59,24 +63,22 @@
 		text-align: center;
 	}
 
-	:global(.CellButton--centered) :global(.SimpleCell__main) {
+	:global(.CellButton--centered .SimpleCell__main) {
 		flex-grow: initial;
 		max-width: initial;
 	}
 
-	:global(.CellButton--centered) > :global(.Icon) {
+	:global(.CellButton--centered > .Icon) {
 		padding-right: 8px;
 	}
 
-	:global(.CellButton--primary),
-	:global(.CellButton--primary) > :global(.Icon),
-	:global(.CellButton--primary) > :global(.Avatar .Icon) {
-		color: var(--accent) !important;
+	:global(.CellButton),
+	:global(.CellButton > .Icon) {
+		color: var(--accent);
 	}
 
 	:global(.CellButton--danger),
-	:global(.CellButton--danger) > :global(.Icon),
-	:global(.CellButton--danger) > :global(.Avatar .Icon) {
-		color: var(--destructive) !important;
+	:global(.CellButton--danger > .Icon) {
+		color: var(--destructive);
 	}
 </style>
