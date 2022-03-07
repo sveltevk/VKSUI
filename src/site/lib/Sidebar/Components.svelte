@@ -5,6 +5,12 @@
 	export let base: string = '';
 	let search: string = '';
 
+	export let currentPage = {
+		path: '',
+		capitalize: '',
+		name: 'VKSUI',
+		isComponent: false
+	};
 	export let tree = [
 		{
 			header: 'Block',
@@ -26,5 +32,5 @@
 	<Input bind:value={search} placeholder="Поиск" />
 </Div>
 {#each tree as group}
-	<Group {group} {base} search={search.toLowerCase()} />
+	<Group {group} {currentPage} {base} search={search.toLowerCase()} />
 {/each}

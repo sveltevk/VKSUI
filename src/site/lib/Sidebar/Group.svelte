@@ -8,6 +8,12 @@
 	export let base: string = '';
 	let expand: boolean = false;
 
+	export let currentPage = {
+		path: '',
+		capitalize: '',
+		name: 'VKSUI',
+		isComponent: false
+	};
 	export let group = {
 		header: 'Block',
 		child: [
@@ -36,7 +42,10 @@
 <div class="Element">
 	{#each group.child as el}
 		{#if (search === '' && expand) || (search !== '' && el.name.toLowerCase().includes(search))}
-			<SimpleCell href="{base}{el.link}">{el.name}</SimpleCell>
+			<SimpleCell
+				class={el.link === currentPage.path ? 'Sidebar__selected' : ''}
+				href="{base}{el.link}">{el.name}</SimpleCell
+			>
 		{/if}
 	{/each}
 </div>

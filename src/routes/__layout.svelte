@@ -43,6 +43,7 @@
 	import Sidebar from '$site/lib/Sidebar/Sidebar.svelte';
 	import Header from '$site/lib/Header/Header.svelte';
 	import Article from '$site/lib/Article/Article.svelte';
+	import type { Tree } from '$site/lib/Sidebar/types';
 
 	export let currentPage = {
 		path: '',
@@ -51,7 +52,7 @@
 		isComponent: false
 	};
 
-	let tree = [
+	let tree: Tree[] = [
 		{
 			header: '',
 			child: [
@@ -216,7 +217,7 @@
 <ConfigProvider>
 	<Header {base} {repositoryURL} />
 	<main>
-		<Sidebar {tree} {base} />
+		<Sidebar {currentPage} {tree} {base} />
 		<Article {currentPage} {repositoryURL}><slot /></Article>
 	</main>
 </ConfigProvider>
