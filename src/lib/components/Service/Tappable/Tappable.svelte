@@ -80,7 +80,8 @@
 	/**
 	 * Стиль аутлайна focus visible. Если передать произвольную строку, она добавится как css-класс во время focus-visible
 	 */
-	export let focusVisibleMode: FocusVisibleMode = 'inside';
+	export let focusVisibleMode: FocusVisibleMode | string = 'inside';
+	$: _focusVisibleMode = focusVisibleMode as FocusVisibleMode
 
 	// state
 	export let active: boolean = false;
@@ -294,7 +295,7 @@
 			class="Tappable__hoverShadow"
 		/>{/if}
 	{#if !disabled}
-		<FocusVisible mode={focusVisibleMode} />
+		<FocusVisible mode={_focusVisibleMode} />
 	{/if}
 </Touch>
 
