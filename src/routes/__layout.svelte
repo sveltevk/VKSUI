@@ -99,6 +99,10 @@
 							link: '/components/Blocks/Badge'
 						},
 						{
+							name: 'IconButton',
+							link: '/components/Blocks/IconButton'
+						},
+						{
 							name: 'Div',
 							link: '/components/Blocks/Div'
 						},

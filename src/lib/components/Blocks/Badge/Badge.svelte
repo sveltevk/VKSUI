@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from '$lib/lib/classNames';
+	import classNames from '$lib/lib/classNames';
 	// import getClassName from '$lib/lib/getClassName';
 	// import { usePlatform } from '$lib/hooks/usePlatform';
 
@@ -10,8 +10,8 @@
 	$: $$restProps.class = classNames(
 		$$props.class,
 		// getClassName('Badge', $platform),
-    'Badge',
-		`Badge--${mode}`,
+		'Badge',
+		`Badge--${mode}`
 	);
 </script>
 

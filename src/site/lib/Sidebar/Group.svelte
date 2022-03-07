@@ -2,7 +2,7 @@
 	import Icon28ChevronUpOutline from '@sveltevk/icons/dist/28/chevron_up_outline';
 	import Icon28ChevronDownOutline from '@sveltevk/icons/dist/28/chevron_down_outline';
 
-	import { SimpleCell } from '@sveltevk/vksui';
+	import { IconButton, SimpleCell } from '@sveltevk/vksui';
 
 	export let search: string = '';
 	export let base: string = '';
@@ -32,11 +32,13 @@
 <SimpleCell on:click={() => (expand = !expand)}>
 	{group.header}
 	<svelte:fragment slot="after">
-		{#if expand || search !== ''}
-			<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
-		{:else}
-			<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
-		{/if}
+		<IconButton>
+			{#if expand || search !== ''}
+				<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
+			{:else}
+				<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
+			{/if}
+		</IconButton>
 	</svelte:fragment>
 </SimpleCell>
 <div class="Element">

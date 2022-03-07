@@ -6,11 +6,11 @@
 
 ```svelte mini
 <script>
-  import { Subhead } from '@sveltevk/vksui';
+	import { Subhead } from '@sveltevk/vksui';
 </script>
 
 <div style:padding="20px">
-  <Subhead>Subhead</Subhead>
+	<Subhead>Subhead</Subhead>
 </div>
 ```
 

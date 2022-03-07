@@ -4,46 +4,39 @@
 
 ```svelte scroll
 <script>
-  import {
-    Group,
-    Header,
-    SimpleCell,
-    Tabs,
-    TabsItem,
-    Badge,
-  } from '@sveltevk/vksui';
-  import Icon28Notifications from '@sveltevk/icons/dist/28/notifications';
+	import { Group, Header, SimpleCell, Tabs, TabsItem, Badge } from '@sveltevk/vksui';
+	import Icon28Notifications from '@sveltevk/icons/dist/28/notifications';
 </script>
 
 <Group>
-  <Header mode="secondary">В пунктах меню</Header>
-  <SimpleCell expandable>
-    <svelte:fragment slot="before">
-      <Icon28Notifications />
-    </svelte:fragment>
-    <svelte:fragment slot="badge">
-      <Badge aria-label="Есть новые" />
-    </svelte:fragment>
-    Уведомления
-  </SimpleCell>
+	<Header mode="secondary">В пунктах меню</Header>
+	<SimpleCell expandable>
+		<svelte:fragment slot="before">
+			<Icon28Notifications />
+		</svelte:fragment>
+		<svelte:fragment slot="badge">
+			<Badge aria-label="Есть новые" />
+		</svelte:fragment>
+		Уведомления
+	</SimpleCell>
 </Group>
 
 <Group>
-  <Header mode="secondary">В переключателях</Header>
-  <Tabs>
-    <TabsItem>
-      <svelte:fragment slot="after">
-        <Badge mode="prominent" aria-label="Есть новые" />
-      </svelte:fragment>
-      Диалоги
-    </TabsItem>
-    <TabsItem selected>
-      <svelte:fragment slot="after">
-        <Badge mode="prominent" aria-label="Есть новые" />
-      </svelte:fragment>
-      Сообщения
-    </TabsItem>
-  </Tabs>
+	<Header mode="secondary">В переключателях</Header>
+	<Tabs>
+		<TabsItem>
+			<svelte:fragment slot="after">
+				<Badge mode="prominent" aria-label="Есть новые" />
+			</svelte:fragment>
+			Диалоги
+		</TabsItem>
+		<TabsItem selected>
+			<svelte:fragment slot="after">
+				<Badge mode="prominent" aria-label="Есть новые" />
+			</svelte:fragment>
+			Сообщения
+		</TabsItem>
+	</Tabs>
 </Group>
 ```
 

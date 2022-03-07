@@ -81,7 +81,7 @@
 	 * Стиль аутлайна focus visible. Если передать произвольную строку, она добавится как css-класс во время focus-visible
 	 */
 	export let focusVisibleMode: FocusVisibleMode | string = 'inside';
-	$: _focusVisibleMode = focusVisibleMode as FocusVisibleMode
+	$: _focusVisibleMode = focusVisibleMode as FocusVisibleMode;
 
 	// state
 	export let active: boolean = false;
