@@ -11,6 +11,7 @@
 
 <div style:padding="20px">
   <Subhead>Subhead</Subhead>
+</div>
 ```
 
 ## Кастомизация
