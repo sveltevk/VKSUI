@@ -2,15 +2,20 @@
 	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
+	import Caption from '../../Typography/Caption/Caption.svelte';
+	import HeaderAside from './HeaderAside.svelte';
+	import HeaderContent from './HeaderContent.svelte';
+	import HeaderSubtitle from './HeaderSubtitle.svelte';
 
-	export let indicator: any = undefined;
+	export let mode: 'primary' | 'secondary' | 'tertiary' = 'primary';
 	export let subtitle: string = '';
-	export let mode: 'primary' | 'secondary' = 'primary';
+	export let indicator: any = undefined;
+	export let multiline: boolean = false;
 
 	const platform = usePlatform();
 </script>
 
-<div
+<header
 	{...$$restProps}
 	class={classNames(
 		getClassName('Header', $platform),
@@ -21,124 +26,192 @@
 		$$props.class
 	)}
 >
-	<div class="Header__in">
-		<div class="Header__content">
-			<slot />
-			{#if $$slots.subtitle || subtitle !== ''}
-				<div class="Header__subtitle">
-					<slot name="subtitle">{subtitle}</slot>
-				</div>
+	<div class="Header__main">
+		<HeaderContent class="Header__content" component="span" {mode} platform={$platform}>
+			<span
+				class={classNames('Header__content-in', {
+					'Header__content-in--multiline': multiline
+				})}
+			>
+				<slot />
+			</span>
+			{#if $$slots.indicator || typeof indicator !== 'undefined'}
+				<Caption
+					class="Header__indicator"
+					weight={mode === 'primary' || mode === 'secondary' ? 'medium' : 'regular'}
+					level="1"
+				>
+					<slot name="indicator">
+						{indicator}
+					</slot>
+				</Caption>
 			{/if}
-		</div>
-		{#if $$slots.indicator || typeof indicator !== 'undefined'}
-			<div class="Header__indicator">
-				<slot name="indicator">{indicator}</slot>
-			</div>
-		{/if}
-		{#if $$slots.aside}
-			<div class="Header__aside">
-				<slot name="aside" />
-			</div>
+		</HeaderContent>
+		{#if $$slots.subtitle || subtitle !== ''}
+			<HeaderSubtitle class="Header__subtitle" component="span" {mode}>
+				<slot name="subtitle">{subtitle}</slot>
+			</HeaderSubtitle>
 		{/if}
 	</div>
-</div>
+
+	{#if $$slots.aside}
+		<HeaderAside class="Header__aside" component="span" platform={$platform}>
+			<slot name="aside" />
+		</HeaderAside>
+	{/if}
+</header>
 
 <style>
 	.Header {
-		user-select: text;
-	}
-
-	.Header__in {
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
+		padding: 0 16px;
+		user-select: text;
 	}
 
-	.Header__content {
+	.Header__main {
 		min-width: 0;
 		overflow: hidden;
-		white-space: nowrap;
 		text-overflow: ellipsis;
-		font-weight: 600;
-	}
-
-	.Header__subtitle {
-		color: var(--text_secondary);
-		font-weight: normal;
-		font-size: 13px;
-		line-height: 16px;
-	}
-
-	.Header--mode-primary .Header__content {
 		color: var(--text_primary);
 	}
 
-	.Header--mode-secondary .Header__content {
-		color: var(--text_secondary);
-		text-transform: uppercase;
+	:global(.Header__content) {
+		display: flex;
+		align-items: baseline;
 	}
 
-	.Header--pi .Header__content {
+	.Header__content-in {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.Header__content-in--multiline {
+		white-space: initial;
+		word-break: break-word;
+	}
+
+	.Header--multiline {
+		white-space: normal;
+	}
+
+	:global(.Header__subtitle) {
+		color: var(--text_secondary);
+	}
+
+	.Header--mode-primary :global(.Header__content:not(:last-child)) {
+		margin-top: -1px;
+	}
+
+	.Header--mode-secondary .Header__main,
+	.Header--mode-tertiary .Header__main {
+		color: var(--text_secondary);
+	}
+
+	.Header--pi .Header__main {
 		color: var(--text_primary);
 	}
 
-	.Header__indicator {
-		margin-right: auto;
+	:global(.Header__indicator) {
 		color: var(--text_secondary);
-		font-size: 13px;
-		line-height: 16px;
+		margin-left: 6px;
+		flex-shrink: 0;
+	}
+
+	.Header--mode-primary :global(.Header__indicator) {
+		color: var(--text_subhead);
+	}
+
+	.Header:not(.Header--pi) :global(.Header__indicator) {
+		align-self: center;
+	}
+
+	.Header--mode-secondary :global(.Header__indicator) {
 		margin-left: 8px;
 	}
 
-	.Header__aside {
+	:global(.Header__aside) {
 		white-space: nowrap;
-		font-size: 15px;
-		line-height: 20px;
 		margin-left: 12px;
 	}
 
-	.Header__aside > .Icon {
+	:global(.Header__aside) > :global(.Icon) {
 		position: relative;
 		color: var(--icon_secondary);
 	}
 
-	.Header__aside > .Icon--24 {
+	:global(.Header__aside) > :global(.Icon--24) {
 		top: 3px;
 	}
 
-	.Header__aside > .Icon--16 {
+	:global(.Header__aside) > :global(.Icon--16) {
 		top: 1px;
 	}
 
+	/**
+ * ANDROID
+ */
+	.Header--android .Header__main {
+		margin: 15px 0 9px;
+	}
+
+	.Header--android.Header--mode-tertiary .Header__main {
+		margin-top: 11px;
+	}
+
+	/**
+ * iOS
+ */
 	.Header--ios {
 		padding: 0 12px;
 	}
 
-	.Header--ios.Header--mode-primary .Header__content {
-		font-size: 17px;
-		line-height: 22px;
-		padding: 13px 0 9px;
+	.Header--ios .Header__main {
+		margin: 13px 0 9px;
 	}
 
-	.Header--ios.Header--mode-secondary .Header__content {
-		padding: 14px 0 10px;
-		font-size: 13px;
-		line-height: 16px;
+	.Header--ios.Header--mode-secondary .Header__main {
+		margin: 14px 0 10px;
 	}
 
-	.Header--android {
-		padding: 0 16px;
+	.Header--ios.Header--mode-tertiary .Header__main {
+		margin-top: 9px;
 	}
 
-	.Header--android.Header--mode-primary .Header__content {
-		padding: 15px 0 9px;
-		font-size: 16px;
-		line-height: 20px;
+	/**
+ * VKCOM
+ */
+	.Header--vkcom {
+		height: 64px;
+		align-items: center;
 	}
 
-	.Header--android.Header--mode-secondary .Header__content {
-		padding: 15px 0 9px;
-		font-size: 13px;
-		line-height: 16px;
+	.Header--vkcom .Header__main {
+		color: var(--text_primary);
+	}
+
+	.Header--vkcom.Header--mode-primary .Header__content:not(:last-child) {
+		margin-top: 0;
+	}
+
+	.Header--vkcom.Header--mode-secondary {
+		height: 56px;
+	}
+
+	.Header--vkcom.Header--mode-tertiary {
+		height: 40px;
+	}
+
+	/**
+ * .Group
+ */
+	:global(.Group--plain:not(:first-of-type) .Group__inner) > .Header:first-child {
+		margin-top: -16px;
+	}
+
+	:global(.Group--card > .Group__inner) > .Header:not(.Header--mode-tertiary):first-child {
+		margin-top: -4px;
 	}
 </style>
