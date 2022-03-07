@@ -95,6 +95,10 @@
 					header: 'Block',
 					child: [
 						{
+							name: 'Badge',
+							link: '/components/Blocks/Badge'
+						},
+						{
 							name: 'Div',
 							link: '/components/Blocks/Div'
 						},

@@ -51,6 +51,9 @@ SimpleCell — это упрощенная и улучшенная с точки
 		<SimpleCellTypography class="SimpleCell__children">
 			<slot />
 		</SimpleCellTypography>
+		{#if $$slots.badge}
+			<span class="SimpleCell__badge"><slot name="badge" /></span>
+		{/if}
 		{#if $$slots.description || description}
 			<div class="SimpleCell__description">
 				<slot name="description">{description}</slot>
@@ -135,6 +138,31 @@ SimpleCell — это упрощенная и улучшенная с точки
 		color: inherit;
 		text-overflow: ellipsis;
 		overflow: hidden;
+	}
+
+	.SimpleCell__badge {
+		display: inline-block;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-left: 4px;
+		color: var(--blue_200);
+	}
+
+	.SimpleCell__badge :global(.Badge) {
+		margin-top: 2px;
+		margin-left: 3px;
+	}
+
+	:global(.SimpleCell--mult) .SimpleCell__badge {
+		vertical-align: top;
+	}
+
+	:global(.SimpleCell--mult) .SimpleCell__badge :global(.Icon) {
+		transform: translateY(2px);
+	}
+
+	:global(.SimpleCell--mult) .SimpleCell__badge :global(.Badge) {
+		margin-top: 8px;
 	}
 
 	:global(.SimpleCell__indicator) {

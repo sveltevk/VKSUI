@@ -44,6 +44,7 @@ export { default as Caption } from './components/Typography/Caption/Caption.svel
 /**
  * Blocks
  */
+export { default as Badge } from './components/Blocks/Badge/Badge.svelte';
 export { default as MiniInfoCell } from './components/Blocks/MiniInfoCell/MiniInfoCell.svelte';
 export { default as Cell } from './components/Blocks/Cell/Cell.svelte';
 export { default as Switch } from './components/Blocks/Switch/Switch.svelte';
