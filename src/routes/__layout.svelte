@@ -117,6 +117,11 @@
 						{
 							name: 'InitialsAvatar',
 							link: '/components/Blocks/InitialsAvatar'
+						},
+
+						{
+							name: 'Counter',
+							link: '/components/Blocks/Counter'
 						}
 					]
 				},

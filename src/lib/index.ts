@@ -17,7 +17,7 @@ import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariabl
  * Layout
  */
 export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLayout.svelte';
-
+export { default as HorizontalScroll } from './components/Layout/HorizontalScroll/HorizontalScroll.svelte';
 /**
  * Advertisement
  */
