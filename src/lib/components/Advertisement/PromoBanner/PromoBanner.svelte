@@ -80,12 +80,8 @@
 		target="_blank"
 		description={bannerData.domain}
 	>
-		<svelte:fragment slot="before">
-			<Avatar mode="image" size={48} src={bannerData.iconLink} alt={bannerData.title} />
-		</svelte:fragment>
-		<svelte:fragment slot="after">
-			<Button mode="outline">{bannerData.ctaText}</Button>
-		</svelte:fragment>
+		<Avatar slot="before" mode="image" size={48} src={bannerData.iconLink} alt={bannerData.title} />
+		<Button slot="after" mode="outline">{bannerData.ctaText}</Button>
 		{bannerData.title}
 	</SimpleCell>
 

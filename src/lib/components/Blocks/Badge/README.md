@@ -11,12 +11,8 @@
 <Group>
 	<Header mode="secondary">В пунктах меню</Header>
 	<SimpleCell expandable>
-		<svelte:fragment slot="before">
-			<Icon28Notifications />
-		</svelte:fragment>
-		<svelte:fragment slot="badge">
-			<Badge aria-label="Есть новые" />
-		</svelte:fragment>
+		<Icon28Notifications slot="before" />
+		<Badge slot="badge" aria-label="Есть новые" />
 		Уведомления
 	</SimpleCell>
 </Group>
@@ -25,15 +21,11 @@
 	<Header mode="secondary">В переключателях</Header>
 	<Tabs>
 		<TabsItem>
-			<svelte:fragment slot="after">
-				<Badge mode="prominent" aria-label="Есть новые" />
-			</svelte:fragment>
+			<Badge slot="after" mode="prominent" aria-label="Есть новые" />
 			Диалоги
 		</TabsItem>
 		<TabsItem selected>
-			<svelte:fragment slot="after">
-				<Badge mode="prominent" aria-label="Есть новые" />
-			</svelte:fragment>
+			<Badge slot="after" mode="prominent" aria-label="Есть новые" />
 			Сообщения
 		</TabsItem>
 	</Tabs>
@@ -45,19 +37,15 @@
     <Icon28NewsfeedOutline />
   </TabbarItem>
   <TabbarItem text="Сообщения">
-    <svelte:fragment slot="indicator">
-      <Counter size="s" mode="prominent">
-        12
-      </Counter>
-    </svelte:fragment>
+		<Counter slot="indicator" size="s" mode="prominent">
+			12
+		</Counter>
     <Icon28MessageOutline />
   </TabbarItem>
   <TabbarItem
     text="Клипы"
   >
-    <svelte:fragment slot="indicator">
-      <Badge mode="prominent" aria-label="Новый раздел" />
-    </svelte:fragment>
+		<Badge slot="indicator" mode="prominent" aria-label="Новый раздел" />
     <Icon28ClipOutline />
   </TabbarItem>
 </Tabbar> -->

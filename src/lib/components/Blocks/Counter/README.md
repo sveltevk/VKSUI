@@ -25,146 +25,96 @@
 </script>
 
 <Group>
-	<svelte:fragment slot="header">
-		<Header mode="secondary">Счётчики в ячейках</Header>
-	</svelte:fragment>
+	<Header mode="secondary">Счётчики в ячейках</Header>
 	<List>
 		<SimpleCell>
-			<svelte:fragment slot="indicator">
-				<Counter>4</Counter>
-			</svelte:fragment>
-			<svelte:fragment slot="before">
-				<Icon28UserOutline />
-			</svelte:fragment>
+			<Counter slot="indicator">4</Counter>
+			<Icon28UserOutline slot="before" />
 			Друзья
 		</SimpleCell>
 		<SimpleCell>
-			<svelte:fragment slot="indicator">
-				<Counter mode="primary">2</Counter>
-			</svelte:fragment>
-			<svelte:fragment slot="before">
-				<Icon28UsersOutline />
-			</svelte:fragment>
+			<Counter slot="indicator" mode="primary">2</Counter>
+			<Icon28UsersOutline slot="before" />
 			Группы
 		</SimpleCell>
 		<SimpleCell>
-			<svelte:fragment slot="indicator">
-				<Counter>224</Counter>
-			</svelte:fragment>
-			<svelte:fragment slot="before">
-				<Icon28MessageOutline />
-			</svelte:fragment>
+			<Counter slot="indicator">224</Counter>
+			<Icon28MessageOutline slot="before" />
 			Сообщения
 		</SimpleCell>
 		<SimpleCell>
-			<svelte:fragment slot="indicator">
-				<Counter mode="primary">1</Counter>
-			</svelte:fragment>
-			<svelte:fragment slot="before">
-				<Icon28FavoriteOutline />
-			</svelte:fragment>
+			<Counter slot="indicator" mode="primary">1</Counter>
+			<Icon28FavoriteOutline slot="before" />
 			Закладки
 		</SimpleCell>
 	</List>
 </Group>
 <Group>
-	<svelte:fragment slot="header">
-		<Header mode="secondary">Счётчики в кнопках</Header>
-	</svelte:fragment>
+	<Header mode="secondary">Счётчики в кнопках</Header>
 	<Div>
 		<Button mode="secondary" size="m">
-			<svelte:fragment slot="after">
-				<Counter>16</Counter>
-			</svelte:fragment>
+			<Counter slot="after">16</Counter>
 			Secondary medium
 		</Button>
 	</Div>
 	<Div>
 		<Button mode="tertiary">
-			<svelte:fragment slot="after">
-				<Counter>6</Counter>
-			</svelte:fragment>
+			<Counter slot="after">6</Counter>
 			Tertiary small
 		</Button>
 	</Div>
 	<Div>
 		<Button mode="outline" size="m">
-			<svelte:fragment slot="after">
-				<Counter>20</Counter>
-			</svelte:fragment>
+			<Counter slot="after">20</Counter>
 			Outline medium
 		</Button>
 	</Div>
 	<Div>
 		<Button mode="commerce" size="m">
-			<svelte:fragment slot="after">
-				<Counter>4</Counter>
-			</svelte:fragment>
+			<Counter slot="after">4</Counter>
 			Commerce medium
 		</Button>
 	</Div>
 	<Div>
 		<Button size="l">
-			<svelte:fragment slot="after">
-				<Counter>8</Counter>
-			</svelte:fragment>
+			<Counter slot="after">8</Counter>
 			Primary large
 		</Button>
 	</Div>
 </Group>
 <Group>
-	<svelte:fragment slot="header">
-		<Header>
-			<svelte:fragment slot="indicator">
-				<Counter size="s" mode="prominent">5</Counter>
-			</svelte:fragment>
-			<svelte:fragment slot="aside">
-				<Link>Посмотреть все</Link>
-			</svelte:fragment>
-			Заявки в друзья
-		</Header>
-	</svelte:fragment>
+	<Header slot="header">
+		<Counter slot="indicator" size="s" mode="prominent">5</Counter>
+		<Link slot="aside">Посмотреть все</Link>
+		Заявки в друзья
+	</Header>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar />
-		</svelte:fragment>
+		<Avatar slot="before" />
 		Александр Сорокин
 	</SimpleCell>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar />
-		</svelte:fragment>
+		<Avatar slot="before" />
 		Виктор Пелевин
 	</SimpleCell>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar />
-		</svelte:fragment>
+		<Avatar slot="before" />
 		Михаил Зыгарь
 	</SimpleCell>
 </Group>
 <Group>
-	<svelte:fragment slot="header">
-		<Header mode="secondary">В переключателях</Header>
-	</svelte:fragment>
+	<Header mode="secondary">В переключателях</Header>
 	<Tabs mode="buttons">
 		<HorizontalScroll>
 			<TabsItem>
-				<svelte:fragment slot="after">
-					<Counter size="s">8</Counter>
-				</svelte:fragment>
+				<Counter slot="after" size="s">8</Counter>
 				Все
 			</TabsItem>
 			<TabsItem selected>
-				<svelte:fragment slot="after">
-					<Counter size="s">24</Counter>
-				</svelte:fragment>
+				<Counter slot="after" size="s">24</Counter>
 				Люди
 			</TabsItem>
 			<TabsItem>
-				<svelte:fragment slot="after">
-					<Counter size="s">2</Counter>
-				</svelte:fragment>
+				<Counter slot="after" size="s">2</Counter>
 				Сообщества
 			</TabsItem>
 			<TabsItem>Музыка</TabsItem>
@@ -172,15 +122,11 @@
 	</Tabs>
 	<Tabs>
 		<TabsItem>
-			<svelte:fragment slot="after">
-				<Counter size="s" mode="prominent">6</Counter>
-			</svelte:fragment>
+			<Counter slot="after" size="s" mode="prominent">6</Counter>
 			Диалоги
 		</TabsItem>
 		<TabsItem selected>
-			<svelte:fragment slot="after">
-				<Counter size="s">24</Counter>
-			</svelte:fragment>
+			<Counter slot="after" size="s">24</Counter>
 			Сообщения
 		</TabsItem>
 	</Tabs>

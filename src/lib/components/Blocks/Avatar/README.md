@@ -22,29 +22,24 @@
 <Group>
 	<Header mode="secondary">Дефолтный размер</Header>
 	<SimpleCell description="VKontakte">
-		<svelte:fragment slot="before">
-			<Avatar src={getAvatarUrl('user_arthurstam')} />
-		</svelte:fragment>
+		<Avatar slot="before" src={getAvatarUrl('user_arthurstam')} />
 		Артур Стамбульцян
 	</SimpleCell>
 </Group>
 <Group>
 	<Header mode="secondary">RichCell</Header>
 	<RichCell disabled caption="Команда ВКонтакте, Санкт-Петербург">
-		<svelte:fragment slot="before">
-			<Avatar size={72} src={getAvatarUrl('user_ilyagrshn')} />
-		</svelte:fragment>
-		<svelte:fragment slot="bottom">
-			<UsersStack
-				photos={[
-					getAvatarUrl('user_ox'),
-					getAvatarUrl('user_vitalyavolyn'),
-					getAvatarUrl('user_eee')
-				]}
-			>
-				73 общих друга
-			</UsersStack>
-		</svelte:fragment>
+		<Avatar slot="before" size={72} src={getAvatarUrl('user_ilyagrshn')} />
+		<UsersStack
+			slot="bottom"
+			photos={[
+				getAvatarUrl('user_ox'),
+				getAvatarUrl('user_vitalyavolyn'),
+				getAvatarUrl('user_eee')
+			]}
+		>
+			73 общих друга
+		</UsersStack>
 		<svelte:fragment slot="actions">
 			<Button>Добавить</Button>
 			<Button mode="secondary">Скрыть</Button>
@@ -55,40 +50,30 @@
 <Group>
 	<Header mode="secondary">Placeholder</Header>
 	<SimpleCell description="Только от друзей друзей">
-		<svelte:fragment slot="before">
-			<Avatar style="background: var(--accent);" size={28} shadow={false}>
-				<Icon16Add fill="var(--white)" />
-			</Avatar>
-		</svelte:fragment>
+		<Avatar slot="before" style="background: var(--accent);" size={28} shadow={false}>
+			<Icon16Add fill="var(--white)" />
+		</Avatar>
 		Заявки в друзья
 	</SimpleCell>
 	<SimpleCell description="Только важные">
-		<svelte:fragment slot="before">
-			<Avatar style="background: var(--destructive);" size={28} shadow={false}>
-				<Icon16Like fill="var(--white)" />
-			</Avatar>
-		</svelte:fragment>
+		<Avatar slot="before" style="background: var(--destructive);" size={28} shadow={false}>
+			<Icon16Like fill="var(--white)" />
+		</Avatar>
 		Отметки «Мне нравится»
 	</SimpleCell>
 </Group>
 <Group description="Дефолтный стиль аватарки. Используется для юзеров, групп.">
 	<Header mode="secondary">Дефолтный тип</Header>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar src={getAvatarUrl('user_evg')} />
-		</svelte:fragment>
+		<Avatar slot="before" src={getAvatarUrl('user_evg')} />
 		Евгений Авсиевич
 	</SimpleCell>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar src={getAvatarUrl('user_id34')} />
-		</svelte:fragment>
+		<Avatar slot="before" src={getAvatarUrl('user_id34')} />
 		Татьяна Плуталова
 	</SimpleCell>
 	<SimpleCell>
-		<svelte:fragment slot="before">
-			<Avatar src={getAvatarUrl('user_illarionov')} />
-		</svelte:fragment>
+		<Avatar slot="before" src={getAvatarUrl('user_illarionov')} />
 		Олег Илларианов
 	</SimpleCell>
 </Group>
@@ -98,9 +83,11 @@
 	<div class="Avatars">
 		{#each sizes as size}
 			<Avatar src={getAvatarUrl('user_evg')} {size}>
-				<svelte:fragment slot="badge">
-					<Icon20GiftCircleFillRed width={getBadgeSize(size)} height={getBadgeSize(size)} />
-				</svelte:fragment>
+				<Icon20GiftCircleFillRed
+					slot="badge"
+					width={getBadgeSize(size)}
+					height={getBadgeSize(size)}
+				/>
 			</Avatar>
 		{/each}
 	</div>
@@ -125,16 +112,17 @@
 				src={getAvatarUrl('user_id34')}
 				{size}
 			>
-				<svelte:fragment slot="overlayIcon">
-					<Icon28AddOutline
-						width={getOverlaySize(size)}
-						height={getOverlaySize(size)}
-						style="color: #3F8AE0;"
-					/>
-				</svelte:fragment>
-				<svelte:fragment slot="badge">
-					<Icon20GiftCircleFillRed width={getBadgeSize(size)} height={getBadgeSize(size)} />
-				</svelte:fragment>
+				<Icon28AddOutline
+					slot="overlayIcon"
+					width={getOverlaySize(size)}
+					height={getOverlaySize(size)}
+					style="color: #3F8AE0;"
+				/>
+				<Icon20GiftCircleFillRed
+					slot="badge"
+					width={getBadgeSize(size)}
+					height={getBadgeSize(size)}
+				/>
 			</Avatar>
 		{/each}
 	</div>
@@ -142,16 +130,17 @@
 	<div class="Avatars">
 		{#each sizes as size}
 			<Avatar overlayAction="hover" overlayMode="dark" src={getAvatarUrl('user_illarionov')} {size}>
-				<svelte:fragment slot="overlayIcon">
-					<Icon28AddOutline
-						width={getOverlaySize(size)}
-						height={getOverlaySize(size)}
-						style="color: #FFF;"
-					/>
-				</svelte:fragment>
-				<svelte:fragment slot="badge">
-					<Icon20GiftCircleFillRed width={getBadgeSize(size)} height={getBadgeSize(size)} />
-				</svelte:fragment>
+				<Icon28AddOutline
+					slot="overlayIcon"
+					width={getOverlaySize(size)}
+					height={getOverlaySize(size)}
+					style="color: #FFF;"
+				/>
+				<Icon20GiftCircleFillRed
+					slot="badge"
+					width={getBadgeSize(size)}
+					height={getBadgeSize(size)}
+				/>
 			</Avatar>
 		{/each}
 	</div>
@@ -160,51 +149,33 @@
 <Group description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">
 	<Header mode="secondary">Приложения</Header>
 	<SimpleCell description="Ролевая">
-		<svelte:fragment slot="before">
-			<Avatar mode="app" src={getAvatarUrl('app_shorm_online')} />
-		</svelte:fragment>
+		<Avatar slot="before" mode="app" src={getAvatarUrl('app_shorm_online')} />
 		Шторм онлайн
 	</SimpleCell>
 	<SimpleCell description="Настольная" multiline={false}>
-		<svelte:fragment slot="before">
-			<Avatar mode="app" src={getAvatarUrl('app_shashki')} />
-		</svelte:fragment>
+		<Avatar slot="before" mode="app" src={getAvatarUrl('app_shashki')} />
 		Шашки - 3 вида: шашки, уголки, поддавки
 	</SimpleCell>
 	<SimpleCell description="Головоломка">
-		<svelte:fragment slot="before">
-			<Avatar mode="app" src={getAvatarUrl('app_vega_mix')} />
-		</svelte:fragment>
+		<Avatar slot="before" mode="app" src={getAvatarUrl('app_vega_mix')} />
 		Вега Микс на даче
 	</SimpleCell>
 </Group>
 <Group description="Используется для остальных случаев. Например, для музыки и плейлистов.">
 	<Header mode="secondary">Обложки</Header>
 	<SimpleCell description="Arctic Monkeys">
-		<svelte:fragment slot="before">
-			<Avatar mode="image" src={getAvatarUrl('audio_arctic_monkeys')} />
-		</svelte:fragment>
-		<svelte:fragment slot="after">
-			<Icon24MoreHorizontal fill="var(--accent)" />
-		</svelte:fragment>
+		<Avatar slot="before" mode="image" src={getAvatarUrl('audio_arctic_monkeys')} />
+		<Icon24MoreHorizontal slot="after" fill="var(--accent)" />
 		I Wanna Be Yours
 	</SimpleCell>
 	<SimpleCell description="Лето (звери)">
-		<svelte:fragment slot="before">
-			<Avatar mode="image" src={getAvatarUrl('audio_leto_zveri')} />
-		</svelte:fragment>
-		<svelte:fragment slot="after">
-			<Icon24MoreHorizontal fill="var(--accent)" />
-		</svelte:fragment>
+		<Avatar slot="before" mode="image" src={getAvatarUrl('audio_leto_zveri')} />
+		<Icon24MoreHorizontal slot="after" fill="var(--accent)" />
 		6 утра
 	</SimpleCell>
 	<SimpleCell description="Depeche Mode">
-		<svelte:fragment slot="before">
-			<Avatar mode="image" src={getAvatarUrl('audio_depeche_mode')} />
-		</svelte:fragment>
-		<svelte:fragment slot="after">
-			<Icon24MoreHorizontal fill="var(--accent)" />
-		</svelte:fragment>
+		<Avatar slot="before" mode="image" src={getAvatarUrl('audio_depeche_mode')} />
+		<Icon24MoreHorizontal slot="after" fill="var(--accent)" />
 		Enjoy the Silence
 	</SimpleCell>
 </Group>

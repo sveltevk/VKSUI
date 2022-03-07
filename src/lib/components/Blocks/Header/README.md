@@ -12,67 +12,49 @@
 
 <Group>
 	<Header mode="primary">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
 		Плейлисты
 	</Header>
 	<Header mode="primary" subtitle="SOHN — Conrad">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
 		Плейлисты
 	</Header>
 	<Header mode="primary" indicator="12">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
 		Плейлисты
 	</Header>
 	<Header mode="primary">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
-		<svelte:fragment slot="indicator">
-			<Counter size="s" mode="prominent">3</Counter>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
+		<Counter slot="indicator" size="s" mode="prominent">3</Counter>
 		Заявки в друзья
 	</Header>
 </Group>
 <Group>
 	<Header mode="secondary">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
 		Приглашения
 	</Header>
 	<Header mode="secondary" indicator="667">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
 		Фотографии
 	</Header>
 	<Header mode="secondary">
-		<svelte:fragment slot="aside">
-			<Link>
-				Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
-			</Link>
-		</svelte:fragment>
-		<svelte:fragment slot="indicator">
-			<Counter size="s" mode="prominent">3</Counter>
-		</svelte:fragment>
+		<Link slot="aside">
+			Показать все{#if platform === VKCOM}<Icon12ChevronOutline />{/if}
+		</Link>
+		<Counter slot="indicator" size="s" mode="prominent">3</Counter>
 		Приглашения
 	</Header>
 </Group>

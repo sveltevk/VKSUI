@@ -44,8 +44,8 @@
 	{style}
 	disabled={$$restProps.disabled}
 >
-	<svelte:fragment slot="before"><slot name="before" /></svelte:fragment>
-	<svelte:fragment slot="after"><slot name="after" /></svelte:fragment>
+	<slot name="before" slot="before" />
+	<slot name="after" slot="after" />
 	<input {...$$restProps} class="File__input" type="file" />
 	<slot>Выберите файл</slot>
 </Button>

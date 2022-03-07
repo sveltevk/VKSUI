@@ -31,15 +31,13 @@
 
 <SimpleCell on:click={() => (expand = !expand)}>
 	{group.header}
-	<svelte:fragment slot="after">
-		<IconButton>
-			{#if expand || search !== ''}
-				<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
-			{:else}
-				<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
-			{/if}
-		</IconButton>
-	</svelte:fragment>
+	<IconButton slot="after">
+		{#if expand || search !== ''}
+			<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
+		{:else}
+			<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
+		{/if}
+	</IconButton>
 </SimpleCell>
 <div class="Element">
 	{#each group.child as el}

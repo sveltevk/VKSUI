@@ -18,11 +18,9 @@
 	<div class="Sidebar__in">
 		{#each tree as group}
 			<Group>
-				<svelte:fragment slot="header">
-					{#if group.header}
-						<Header mode="secondary">{group.header}</Header>
-					{/if}
-				</svelte:fragment>
+				{#if group.header}
+					<Header mode="secondary">{group.header}</Header>
+				{/if}
 				{#if group.header === 'Компоненты'}
 					<Components tree={group.tree} {currentPage} {base} />
 				{/if}
