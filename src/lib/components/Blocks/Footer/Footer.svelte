@@ -1,5 +1,6 @@
 <script lang="ts">
 	import classNames from '$lib/lib/classNames';
+	import Caption from '../../Typography/Caption/Caption.svelte';
 	import Div from '../Div/Div.svelte';
 </script>
 
@@ -8,22 +9,17 @@
 Подвал для списков.
 -->
 
-<Div class={classNames('Footer', $$props.class)}>
+<Caption level="1" weight="regular" component="footer" class={classNames('Footer', $$props.class)}>
 	<slot />
-</Div>
+</Caption>
 
 <style>
 	:global(.Footer) {
+		display: block;
 		margin: 24px 0;
-		font-size: 13px;
-		color: var(--text_secondary);
-		line-height: 16px;
-		font-weight: normal;
-		text-align: center;
-	}
-
-	:global(.Div.Footer) {
 		padding-top: 0;
 		padding-bottom: 0;
+		text-align: center;
+		color: var(--text_secondary);
 	}
 </style>

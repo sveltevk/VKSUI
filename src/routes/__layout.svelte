@@ -141,6 +141,10 @@
 						},
 
 						{
+							name: 'Footer',
+							link: '/components/Blocks/Footer'
+						},
+						{
 							name: 'Spinner',
 							link: '/components/Blocks/Spinner'
 						},

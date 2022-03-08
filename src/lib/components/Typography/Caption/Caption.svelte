@@ -4,7 +4,7 @@
 	import getClassName from '$lib/lib/getClassName';
 	import { ANDROID } from '$lib/lib/platform';
 
-	export let component: string = undefined;
+	export let component: 'footer' | 'span' | 'div' = 'div';
 	export let weight: 'regular' | 'medium' | 'semibold' | 'bold';
 	export let level: '1' | '2' | '3' | '4';
 	export let caps: boolean = false;
@@ -53,6 +53,10 @@
 	<span {...$$restProps}>
 		<slot />
 	</span>
+{:else if component === 'footer'}
+	<footer {...$$restProps}>
+		<slot />
+	</footer>
 {:else}
 	<div {...$$restProps}>
 		<slot />
