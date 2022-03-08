@@ -137,6 +137,11 @@
 						},
 
 						{
+							name: 'InfoRow',
+							link: '/components/Blocks/InfoRow'
+						},
+
+						{
 							name: 'Avatar',
 							link: '/components/Blocks/Avatar'
 						},

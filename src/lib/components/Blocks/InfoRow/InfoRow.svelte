@@ -37,19 +37,11 @@
 	}
 
 	:global(.InfoRow__header) {
+		display: block;
 		margin-bottom: 2px;
 		color: var(--text_subhead);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
-
-	/* margin у .Subhead перекрывает margin-bottom */
-	/* :global(.InfoRow__header) {
-    margin-bottom: 2px;
-    color: var(--text_secondary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  } */
 </style>
