@@ -122,6 +122,14 @@
 							name: 'Group',
 							link: '/components/Blocks/Group'
 						},
+						{
+							name: 'Card',
+							link: '/components/Blocks/Card'
+						},
+						{
+							name: 'CardGrid',
+							link: '/components/Blocks/CardGrid'
+						},
 
 						{
 							name: 'Avatar',
@@ -141,11 +149,10 @@
 							link: '/components/Blocks/Counter'
 						},
 
-
 						{
 							name: 'Separator',
 							link: '/components/Blocks/Separator'
-						},
+						}
 					]
 				},
 				{
