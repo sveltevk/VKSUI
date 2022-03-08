@@ -148,7 +148,10 @@
 							name: 'InitialsAvatar',
 							link: '/components/Blocks/InitialsAvatar'
 						},
-
+						{
+							name: 'Progress',
+							link: '/components/Blocks/Progress'
+						},
 						{
 							name: 'Counter',
 							link: '/components/Blocks/Counter'
