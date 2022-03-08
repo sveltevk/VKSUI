@@ -180,6 +180,15 @@
 					]
 				},
 				{
+					header: 'Forms',
+					child: [
+						{
+							name: 'Checkbox',
+							link: '/components/Forms/Checkbox'
+						}
+					]
+				},
+				{
 					header: 'Typography',
 					child: [
 						{

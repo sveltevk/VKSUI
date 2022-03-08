@@ -5,12 +5,18 @@
 	import getClassName from '$lib/lib/getClassName';
 	import Caption from '$lib/components/Typography/Caption/Caption.svelte';
 	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 
 	export let top: string = undefined;
 	export let bottom: string = undefined;
 	export let status: 'default' | 'error' | 'valid' = 'default';
+	/**
+	 * Дает возможность удалить `FormItem`. Рекомендуется использовать только для `Input` или `Select`.
+	 */
+	export let removable = false; // TODO: Removable
 
 	const platform = usePlatform();
+	const adaptivity = useAdaptivity();
 </script>
 
 <!-- 
@@ -22,30 +28,71 @@
 
 <label
 	{...$$restProps}
-	class={classNames(getClassName('FormItem', $platform), `FormItem--${status}`, $$props.class)}
+	class={classNames(
+		getClassName('FormItem', $platform),
+		`FormItem--${status}`,
+		`FormItem--sizeY-${$adaptivity.sizeY}`,
+		{
+			'FormItem--withTop': Boolean($$slots.top || top),
+			'FormItem--removable': removable
+		},
+		$$props.class
+	)}
 >
-	{#if $$slots.top || top}
-		<Subhead class="FormItem__top"><slot name="top">{top}</slot></Subhead>
-	{/if}
-	<slot />
-	{#if $$slots.bottom || bottom}
-		<Caption level="1" weight="regular" class="FormItem__bottom"
-			><slot name="bottom">{bottom}</slot></Caption
-		>
+	{#if removable}
+		<div class="FormItem__removable">
+			{#if $$slots.top || top}
+				<Subhead class="FormItem__top">
+					<slot name="top">{top}</slot>
+				</Subhead>
+			{/if}
+			<slot />
+			{#if $$slots.bottom || bottom}
+				<Caption level="1" weight="regular" class="FormItem__bottom">
+					<slot name="bottom">{bottom}</slot>
+				</Caption>
+			{/if}
+		</div>
+	{:else}
+		{#if $$slots.top || top}
+			<Subhead class="FormItem__top">
+				<slot name="top">{top}</slot>
+			</Subhead>
+		{/if}
+		<slot />
+		{#if $$slots.bottom || bottom}
+			<Caption level="1" weight="regular" class="FormItem__bottom">
+				<slot name="bottom">{bottom}</slot>
+			</Caption>
+		{/if}
 	{/if}
 </label>
 
 <style>
 	.FormItem {
-		padding-top: 12px;
-		padding-bottom: 12px;
 		display: block;
+		padding: 12px var(--formitem_padding);
+	}
+
+	.FormItem--removable {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.FormItem__removable {
+		flex-grow: 1;
+		min-width: 0;
+		max-width: 100%;
+		overflow: hidden;
 	}
 
 	:global(.FormItem__top) {
 		padding-top: 2px;
 		padding-bottom: 8px;
-		color: var(--text_secondary);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var(--text_subhead);
 	}
 
 	:global(.FormItem__bottom) {
@@ -63,51 +110,45 @@
 	}
 
 	/**
- * iOS
+ * sizeY COMPACT
  */
-
-	.FormItem--ios {
-		padding-left: 12px;
-		padding-right: 12px;
+	.FormItem--sizeY-compact :global(.FormItem__top) {
+		padding-bottom: 6px;
 	}
 
-	.FormItem--ios :global(.Cell),
-	.FormItem--ios :global(.SimpleCell),
-	.FormItem--ios :global(.RichCell),
-	.FormItem--ios :global(.CellButton),
-	.FormItem--ios :global(.Radio),
-	.FormItem--ios :global(.Checkbox) {
-		width: 100%;
-		box-sizing: content-box;
-		margin-left: -12px;
-		margin-right: -12px;
+	.FormItem--sizeY-compact :global(.FormItem__bottom) {
+		padding-top: 6px;
 	}
 
 	/**
- * Android & VKCOM
+ * iOS
  */
-
-	.FormItem--android,
-	.FormItem--vkcom {
-		padding-left: 16px;
-		padding-right: 16px;
+	.FormItem--ios {
+		--formitem_padding: 12px;
 	}
 
-	.FormItem--android :global(.Cell),
-	.FormItem--vkcom :global(.Cell),
-	.FormItem--android :global(.SimpleCell),
-	.FormItem--vkcom :global(.SimpleCell),
-	.FormItem--android :global(.RichCell),
-	.FormItem--vkcom :global(.RichCell),
-	.FormItem--android :global(.CellButton),
-	.FormItem--vkcom :global(.CellButton),
-	.FormItem--android :global(.Radio),
-	.FormItem--vkcom :global(.Radio),
-	.FormItem--android :global(.Checkbox),
-	.FormItem--vkcom :global(.Checkbox) {
-		width: 100%;
-		box-sizing: content-box;
-		margin-left: -16px;
-		margin-right: -16px;
+	/**
+ * CMP:
+ * FormLayoutGroup
+ */
+	:global(.FormLayoutGroup--horizontal) .FormItem {
+		max-width: 100%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 0;
+		padding: 0;
+		min-width: 0;
+	}
+
+	:global(.FormLayoutGroup--horizontal) .FormItem + .FormItem {
+		margin-left: 24px;
+	}
+
+	:global(.FormLayoutGroup--removable) .FormItem--ios.FormItem--withTop {
+		margin-top: -28px;
+	}
+
+	:global(.FormLayoutGroup--removable) .FormItem--ios.FormItem--withTop.FormItem--sizeY-compact {
+		margin-top: -26px;
 	}
 </style>

@@ -82,6 +82,7 @@ export { default as PanelSpinner } from './components/Blocks/PanelSpinner/PanelS
 /**
  * Forms
  */
+export { default as Checkbox } from './components/Forms/Checkbox/Checkbox.svelte';
 export { default as FormItem } from './components/Forms/FormItem/FormItem.svelte';
 export { default as FormLayoutGroup } from './components/Forms/FormLayoutGroup/FormLayoutGroup.svelte';
 export { default as FormLayout } from './components/Forms/FormLayout/FormLayout.svelte';
