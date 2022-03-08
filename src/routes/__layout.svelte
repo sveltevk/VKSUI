@@ -99,6 +99,10 @@
 							link: '/components/Blocks/Badge'
 						},
 						{
+							name: 'Button',
+							link: '/components/Blocks/Button'
+						},
+						{
 							name: 'CellButton',
 							link: '/components/Blocks/CellButton'
 						},

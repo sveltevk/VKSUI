@@ -251,6 +251,9 @@
 	$: $$restProps.class = classNames(
 		$$props.class,
 		getClassName('Tappable', $platform),
+		_hasHover && hovered && !isPresetHoverMode && hoverMode,
+		hasActive && active && !isPresetActiveMode && activeMode,
+		// TODO: focusVisible && !isPresetFocusVisibleMode && focusVisibleMode,
 		`Tappable--sizeX-${$adaptivity.sizeX}`,
 		{
 			'Tappable--active': hasActive && active,

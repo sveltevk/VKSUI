@@ -111,7 +111,7 @@
 		`Button--aln-${align}`,
 		`Button--sizeY-${$adaptivity.sizeY}`,
 		{
-			['Button--str']: stretched,
+			['Button--stretched']: stretched,
 			['Button--with-icon']: hasIcons,
 			['Button--singleIcon']: hasSingleIcon
 		}
@@ -122,8 +122,9 @@
 
 <Tappable
 	{...$$restProps}
-	on:click
 	component={$$restProps.href ? a : component}
+	on:click
+	focusVisibleMode="outside"
 	hoverMode={hasNewTokens ? 'Button--hover' : 'background'}
 	activeMode={hasNewTokens ? 'Button--active' : 'opacity'}
 >
