@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/VKSUI/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>VKSUI - Button</title>
+	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-28ea88b5.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-e8fd220d.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/Showcase-29bf653a.css">
+	<link rel="modulepreload" href="/VKSUI/_app/start-39fb9f00.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/vendor-0c96926e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/__layout.svelte-ede120c3.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/File.svelte_svelte_type_style_lang-1d3c311e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/SimpleCell-06da21c8.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Tappable-b9f6c3d1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Touch-445b1a2c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Headline-a652b6cd.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Text-8ff0e3dd.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-53b10d3f.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Header-b2934da1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-3355185c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Subhead-7c274b37.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Group-31f75528.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Div-8e766e27.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/IconButton-01418127.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-8dfe4f64.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Blocks/Button.svelte-382653f7.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Showcase-d13b75be.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Button-aaf46c6f.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Spinner-753ccf80.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Counter-200b9ce6.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormItem-52434964.js">
+	</head>
+	<body>
+		<div class="vkui vkui__root">
+
+
+
+
+
+
+<header class="svelte-1kil2u8"><div class="Header__in svelte-1kil2u8"><div class="Logo svelte-1kil2u8">
+
+<h1 class="Title Title--l-1 svelte-1tkij5y"><a href="/VKSUI" class="svelte-1kil2u8">@sveltevk/vksui</a></h1></div>
+		<div class="Links svelte-1kil2u8">
+
+<a href="https://www.npmjs.com/package/@sveltevk/vksui" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">0.0.1
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">GitHub
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI/releases" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">Релизы
+</a></div>
+		<div></div></div>
+</header>
+	<main class="svelte-l2ybjc"><div class="Sidebar svelte-obh89p"><div class="Sidebar__in svelte-obh89p">
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		
+				
+				
+
+
+
+<a href="/VKSUI/" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">О VKSUI</span>
+		
+		</div>
+	
+	
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		<header class="Header Header--android Header--mode-secondary svelte-pwrmxj"><div class="Header__main svelte-pwrmxj">
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Caption--caps Header__content svelte-8u9koe"><span class="Header__content-in svelte-pwrmxj">Компоненты</span>
+			</span>
+		</div>
+
+	
+</header>
+				
+
+<div class="Div Div--android svelte-qune13">
+
+<div class="FormField FormField--android Input Input--android Input--sizeY-compact"><input placeholder="Поиск" class="Input__el svelte-1qbk9aq" value="">
+	<div class="FormField__border svelte-17rb6yt"></div></div>
+</div>
+
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Layout</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Block</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Forms</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Typography</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Advertisement</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Service</span>
+		
+		</div>
+	
+	
+	<div class="SimpleCell__after svelte-158z5kd">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+<div class="Element svelte-1jb4zvh">
+</div>
+				
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		<header class="Header Header--android Header--mode-secondary svelte-pwrmxj"><div class="Header__main svelte-pwrmxj">
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Caption--caps Header__content svelte-8u9koe"><span class="Header__content-in svelte-pwrmxj">Прочее</span>
+			</span>
+		</div>
+
+	
+</header>
+				
+				
+
+
+
+<a href="/VKSUI/utils" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Утилиты</span>
+		
+		</div>
+	
+	
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/icons" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Иконки</span>
+		
+		</div>
+	
+	
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/design" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Дизайн</span>
+		
+		</div>
+	
+	
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/customize" class="SimpleCell SimpleCell--android SimpleCell--sizeX-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-158z5kd">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Кастомизация</span>
+		
+		</div>
+	
+	
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section></div>
+</div>
+		<div class="article svelte-18wea6a"><div class="header svelte-18wea6a">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Blocks/Button/Button.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">GitHub</div>
+</a>
+		
+
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/lib/components/Blocks/Button/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">Редактировать страницу</div>
+</a></div>
+	<article class="svelte-18wea6a"><h1 id="button">Button</h1>
+<h2 id="пример">Пример</h2>
+
+
+<div class="fixable svelte-1pweym3"><div class="svelte-1pweym3">platform:
+		<select><option value="android">android</option><option value="ios">ios</option><option value="vkcom">vkcom</option></select></div>
+	<div class="svelte-1pweym3">scheme:
+		<select><option value="bright_light">bright_light</option><option value="space_gray">space_gray</option><option value="vkcom_light">vkcom_light</option><option value="vkcom_dark">vkcom_dark</option></select></div>
+	</div>
+
+
+
+<div class="Example svelte-1pweym3 mini" style=""><div style="display: flex; flex-direction: row-reverse;"><div class="Container" style="background: unset;">
+
+<div class="Div Div--android svelte-qune13">
+
+<button class="Button Button--sz-s Button--lvl-primary Button--clr-accent Button--aln-center Button--sizeY-compact Button--with-icon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in"><div class="Button__before"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--add_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#add_12" style="fill: currentColor;"></use></svg></div>
+						</div>
+		
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Button__content svelte-8u9koe">Button
+					</span>
+		<span class="Button__after"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--tag_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#tag_12" style="fill: currentColor;"></use></svg></div>
+						</span></span>
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></button>
+				
+</div>
+
+<div class="Div Div--android svelte-qune13">
+
+<button class="Button Button--sz-s Button--lvl-secondary Button--clr-accent Button--aln-center Button--sizeY-compact Button--with-icon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in"><div class="Button__before"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--add_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#add_12" style="fill: currentColor;"></use></svg></div>
+						</div>
+		
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Button__content svelte-8u9koe">Button
+					</span>
+		<span class="Button__after"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--tag_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#tag_12" style="fill: currentColor;"></use></svg></div>
+						</span></span>
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></button>
+				
+</div>
+
+<div class="Div Div--android svelte-qune13">
+
+<button class="Button Button--sz-s Button--lvl-tertiary Button--clr-accent Button--aln-center Button--sizeY-compact Button--with-icon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in"><div class="Button__before"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--add_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#add_12" style="fill: currentColor;"></use></svg></div>
+						</div>
+		
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Button__content svelte-8u9koe">Button
+					</span>
+		<span class="Button__after"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--tag_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#tag_12" style="fill: currentColor;"></use></svg></div>
+						</span></span>
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></button>
+				
+</div>
+
+<div class="Div Div--android svelte-qune13">
+
+<button class="Button Button--sz-s Button--lvl-outline Button--clr-accent Button--aln-center Button--sizeY-compact Button--with-icon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in"><div class="Button__before"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--add_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#add_12" style="fill: currentColor;"></use></svg></div>
+						</div>
+		
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Button__content svelte-8u9koe">Button
+					</span>
+		<span class="Button__after"><div role="presentation" class="Icon Icon--12 Icon--w-12 Icon--h-12 Icon--tag_12 "><svg viewBox="0 0 12 12" width="12" height="12" style="display:block"><use xlink:href="#tag_12" style="fill: currentColor;"></use></svg></div>
+						</span></span>
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></button>
+				
+</div></div>
+	<div style="min-width: 200px;">
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-regular FormItem--withTop svelte-l2f0gh"><h5 class="FormItem__top Subhead Subhead--sizeY-regular Subhead--w-undefined svelte-1j3e1cx">appearance</h5>
+		<select><option value="accent">accent</option><option value="positive">positive</option><option value="negative">negative</option><option value="neutral">neutral</option><option value="overlay">overlay</option></select>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-regular FormItem--withTop svelte-l2f0gh"><h5 class="FormItem__top Subhead Subhead--sizeY-regular Subhead--w-undefined svelte-1j3e1cx">size</h5>
+		<select><option value="s">s</option><option value="m">m</option><option value="l">l</option></select>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-regular FormItem--withTop svelte-l2f0gh"><h5 class="FormItem__top Subhead Subhead--sizeY-regular Subhead--w-undefined svelte-1j3e1cx">sizeY</h5>
+		<select><option value="compact">compact</option><option value="regular">regular</option></select>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-regular FormItem--withTop svelte-l2f0gh"><h5 class="FormItem__top Subhead Subhead--sizeY-regular Subhead--w-undefined svelte-1j3e1cx">props</h5>
+		
+
+
+<label tabIndex="0" role="button" class="Checkbox Checkbox--android Checkbox--sizeY-regular Tappable Tappable--android Tappable--sizeX-compact" style=""><input type="checkbox" class="Checkbox__input svelte-1wrc2qy">
+	<div class="Checkbox__container svelte-1wrc2qy"><div class="Checkbox__icon Checkbox__icon--on svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_on_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_on_24" style="fill: currentColor;"></use></svg></div></div>
+		<div class="Checkbox__icon Checkbox__icon--off svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_off_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_off_24" style="fill: currentColor;"></use></svg></div></div>
+		
+
+<h3 class="Headline Headline--android Headline--w-regular Checkbox__content svelte-9q56sk"><div class="Checkbox__children svelte-1wrc2qy">stretched</div>
+			</h3></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></label>
+			
+
+
+<label tabIndex="0" role="button" class="Checkbox Checkbox--android Checkbox--sizeY-regular Tappable Tappable--android Tappable--sizeX-compact" style=""><input type="checkbox" class="Checkbox__input svelte-1wrc2qy">
+	<div class="Checkbox__container svelte-1wrc2qy"><div class="Checkbox__icon Checkbox__icon--on svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_on_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_on_24" style="fill: currentColor;"></use></svg></div></div>
+		<div class="Checkbox__icon Checkbox__icon--off svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_off_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_off_24" style="fill: currentColor;"></use></svg></div></div>
+		
+
+<h3 class="Headline Headline--android Headline--w-regular Checkbox__content svelte-9q56sk"><div class="Checkbox__children svelte-1wrc2qy">loading</div>
+			</h3></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></label>
+			
+
+
+<label tabIndex="0" role="button" class="Checkbox Checkbox--android Checkbox--sizeY-regular Tappable Tappable--android Tappable--sizeX-compact" style=""><input type="checkbox" class="Checkbox__input svelte-1wrc2qy">
+	<div class="Checkbox__container svelte-1wrc2qy"><div class="Checkbox__icon Checkbox__icon--on svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_on_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_on_24" style="fill: currentColor;"></use></svg></div></div>
+		<div class="Checkbox__icon Checkbox__icon--off svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_off_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_off_24" style="fill: currentColor;"></use></svg></div></div>
+		
+
+<h3 class="Headline Headline--android Headline--w-regular Checkbox__content svelte-9q56sk"><div class="Checkbox__children svelte-1wrc2qy">disabled</div>
+			</h3></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></label>
+			
+			
+
+
+<label tabIndex="0" role="button" class="Checkbox Checkbox--android Checkbox--sizeY-regular Tappable Tappable--android Tappable--sizeX-compact" style=""><input type="checkbox" class="Checkbox__input svelte-1wrc2qy">
+	<div class="Checkbox__container svelte-1wrc2qy"><div class="Checkbox__icon Checkbox__icon--on svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_on_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_on_24" style="fill: currentColor;"></use></svg></div></div>
+		<div class="Checkbox__icon Checkbox__icon--off svelte-1wrc2qy"><div role="presentation" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--check_box_off_24 "><svg viewBox="0 0 24 24" width="24" height="24" style="display:block"><use xlink:href="#check_box_off_24" style="fill: currentColor;"></use></svg></div></div>
+		
+
+<h3 class="Headline Headline--android Headline--w-regular Checkbox__content svelte-9q56sk"><div class="Checkbox__children svelte-1wrc2qy">add href</div>
+			</h3></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-1kh1i5m"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></label>
+		
+</label></div></div>
+
+<style>.Container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
+</style></div>
+<h2 id="код">Код</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Button<span class="token punctuation">,</span> Div<span class="token punctuation">,</span> Counter<span class="token punctuation">,</span> AdaptivityProvider<span class="token punctuation">,</span> FormItem<span class="token punctuation">,</span> Checkbox <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon12Add <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/12/add'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon16Add <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/16/add'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon24Add <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/24/add'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon12Tag <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/12/tag'</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> Icon24ChevronCompactRight <span class="token keyword">from</span> <span class="token string">'@sveltevk/icons/dist/24/chevron_compact_right'</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// state</span>
+	<span class="token keyword">let</span> appearance <span class="token operator">=</span> <span class="token string">'accent'</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> sizeY <span class="token operator">=</span> <span class="token string">'compact'</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> stretched <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> size <span class="token operator">=</span> <span class="token string">'s'</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> loading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> addBefore <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> addAfter <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> addText <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> hasLink <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+	<span class="token literal-property property">$</span><span class="token operator">:</span> buttonLink <span class="token operator">=</span> hasLink <span class="token operator">?</span> <span class="token string">'#'</span> <span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+	<span class="token literal-property property">$</span><span class="token operator">:</span> buttonText <span class="token operator">=</span> addText <span class="token operator">?</span> <span class="token string">'Button'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">style:</span>display</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">style:</span>flex-direction</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row-reverse<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>AdaptivityProvider</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>sizeY<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Container<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">style:</span>background=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>appearance <span class="token operator">===</span> <span class="token string">'overlay'</span> <span class="token operator">?</span> <span class="token string">'#232323'</span> <span class="token operator">:</span> <span class="token string">'unset'</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+			<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript"><span class="token punctuation">[</span><span class="token string">'primary'</span><span class="token punctuation">,</span> <span class="token string">'secondary'</span><span class="token punctuation">,</span> <span class="token string">'tertiary'</span><span class="token punctuation">,</span> <span class="token string">'outline'</span><span class="token punctuation">]</span> </span><span class="token keyword">as</span> <span class="token language-javascript">mode<span class="token punctuation">&#125;</span></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Div</span><span class="token punctuation">></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">href=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>buttonLink<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>appearance<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>stretched<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>mode<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>disabled<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>loading<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span>#<span class="token keyword">if</span> size <span class="token operator">===</span> <span class="token string">'s'</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon12Add</span> <span class="token punctuation">/></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">:</span><span class="token keyword">else</span> <span class="token keyword">if</span> size <span class="token operator">===</span> <span class="token string">'m'</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon16Add</span> <span class="token punctuation">/></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">:</span><span class="token keyword">else</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon24Add</span> <span class="token punctuation">/></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token punctuation">&#125;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>fragment</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>after<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span>#<span class="token keyword">if</span> size <span class="token operator">===</span> <span class="token string">'s'</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon12Tag</span> <span class="token punctuation">/></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">:</span><span class="token keyword">else</span> <span class="token keyword">if</span> size <span class="token operator">===</span> <span class="token string">'m'</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Icon24ChevronCompactRight</span> <span class="token punctuation">/></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">:</span><span class="token keyword">else</span><span class="token punctuation">&#125;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Counter</span><span class="token punctuation">></span></span>16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Counter</span><span class="token punctuation">></span></span>
+							<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token punctuation">&#125;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>fragment</span><span class="token punctuation">></span></span>
+						<span class="token language-javascript"><span class="token punctuation">&#123;</span>buttonText<span class="token punctuation">&#125;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Button</span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Div</span><span class="token punctuation">></span></span>
+			<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>AdaptivityProvider</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">style:</span>min-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>200px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appearance<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name"><span class="token namespace">bind:</span>value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>appearance<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript"><span class="token punctuation">[</span><span class="token string">'accent'</span><span class="token punctuation">,</span> <span class="token string">'positive'</span><span class="token punctuation">,</span> <span class="token string">'negative'</span><span class="token punctuation">,</span> <span class="token string">'neutral'</span><span class="token punctuation">,</span> <span class="token string">'overlay'</span><span class="token punctuation">]</span> </span><span class="token keyword">as</span> <span class="token language-javascript">name<span class="token punctuation">&#125;</span></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>size<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name"><span class="token namespace">bind:</span>value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>size<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript"><span class="token punctuation">[</span><span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">]</span> </span><span class="token keyword">as</span> <span class="token language-javascript">name<span class="token punctuation">&#125;</span></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sizeY<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name"><span class="token namespace">bind:</span>value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>sizeY<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript"><span class="token punctuation">[</span><span class="token string">'compact'</span><span class="token punctuation">,</span> <span class="token string">'regular'</span><span class="token punctuation">]</span> </span><span class="token keyword">as</span> <span class="token language-javascript">name<span class="token punctuation">&#125;</span></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>props<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Checkbox</span> <span class="token attr-name"><span class="token namespace">bind:</span>checked=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>stretched<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>stretched<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Checkbox</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Checkbox</span> <span class="token attr-name"><span class="token namespace">bind:</span>checked=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>loading<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>loading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Checkbox</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Checkbox</span> <span class="token attr-name"><span class="token namespace">bind:</span>checked=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>disabled<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Checkbox</span><span class="token punctuation">></span></span>
+			<span class="token comment">&lt;!-- &lt;Checkbox disabled=&#123;!(addBefore || addAfter)&#125; bind:checked=&#123;addText&#125;>add text&lt;/Checkbox>
+			&lt;Checkbox disabled=&#123;!(addText || addAfter)&#125; bind:checked=&#123;addBefore&#125;>add before&lt;/Checkbox>
+			&lt;Checkbox disabled=&#123;!(addText || addBefore)&#125; bind:checked=&#123;addAfter&#125;>add after&lt;/Checkbox> --></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Checkbox</span> <span class="token attr-name"><span class="token namespace">bind:</span>checked=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>hasLink<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>add href<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Checkbox</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.Container</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+		<span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+		<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+		<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></article>
+</div></main>
+
+
+		<script type="module" data-hydrate="1swz88k">
+		import { start } from "/VKSUI/_app/start-39fb9f00.js";
+		start({
+			target: document.querySelector('[data-hydrate="1swz88k"]').parentNode,
+			paths: {"base":"/VKSUI","assets":"/VKSUI"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/VKSUI/_app/pages/__layout.svelte-ede120c3.js"),
+						import("/VKSUI/_app/pages/components/Blocks/Button.svelte-382653f7.js")
+				],
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>
