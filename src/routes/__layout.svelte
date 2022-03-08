@@ -132,6 +132,11 @@
 						},
 
 						{
+							name: 'Gradient',
+							link: '/components/Blocks/Gradient'
+						},
+
+						{
 							name: 'Avatar',
 							link: '/components/Blocks/Avatar'
 						},

@@ -14,23 +14,16 @@
 	} from '@sveltevk/vksui/lib/adaptivity';
 	import ConfigProvider from '@sveltevk/vksui/components/Service/ConfigProvider/ConfigProvider.svelte';
 	import Switch from '@sveltevk/vksui/components/Blocks/Switch/Switch.svelte';
-	import { getDOM } from '@sveltevk/vksui/lib/dom';
-	import Frame from '$site/lib/Frame/Frame.svelte';
 
 	export let scroll: boolean = false;
 	export let mini: boolean = false;
 
-	const { window } = getDOM();
-
-	let os = (window?.localStorage.getItem('os') as Platform) || Platform.ANDROID;
-	let scheme =
-		(window?.localStorage.getItem('scheme') as AppearanceSchemeType) || Scheme.BRIGHT_LIGHT;
-	let webviewType =
-		(window?.localStorage.getItem('webviewType') as WebviewType) || WebviewType.VKAPPS;
-	let sizeY = (window?.localStorage.getItem('sizeY') as SizeType) || SizeType.REGULAR;
-	let windowWidth = parseInt(window?.localStorage.getItem('windowWidth')) || MOBILE_SIZE;
-	let windowHeight =
-		parseInt(window?.localStorage.getItem('windowHeight')) || MOBILE_LANDSCAPE_HEIGHT;
+	let os = Platform.ANDROID;
+	let scheme = Scheme.BRIGHT_LIGHT;
+	let webviewType = WebviewType.VKAPPS;
+	let sizeY = SizeType.REGULAR;
+	let windowWidth = MOBILE_SIZE;
+	let windowHeight = MOBILE_LANDSCAPE_HEIGHT;
 	let hasMouse = true;
 
 	const frames: HTMLIFrameElement[] = [];
@@ -66,7 +59,7 @@
 <div class="fixable">
 	<div>
 		platform:
-		<select bind:value={os} on:change={() => window.localStorage.setItem('os', os)}>
+		<select bind:value={os}>
 			{#each [Platform.ANDROID, Platform.IOS, Platform.VKCOM] as name}
 				<option value={name}>{name}</option>
 			{/each}
@@ -74,7 +67,7 @@
 	</div>
 	<div>
 		scheme:
-		<select bind:value={scheme} on:change={() => window.localStorage.setItem('scheme', scheme)}>
+		<select bind:value={scheme}>
 			{#each [Scheme.BRIGHT_LIGHT, Scheme.SPACE_GRAY, 'vkcom_light', 'vkcom_dark'] as name}
 				<option value={name}>{name}</option>
 			{/each}
@@ -83,10 +76,7 @@
 	{#if !mini}
 		<div>
 			webviewType:
-			<select
-				bind:value={webviewType}
-				on:change={() => window.localStorage.setItem('webviewType', webviewType)}
-			>
+			<select bind:value={webviewType}>
 				{#each [WebviewType.VKAPPS, WebviewType.INTERNAL] as name}
 					<option value={name}>{name}</option>
 				{/each}
@@ -94,10 +84,7 @@
 		</div>
 		<div>
 			windowWidth:
-			<select
-				bind:value={windowWidth}
-				on:change={() => window.localStorage.setItem('windowWidth', windowWidth.toString())}
-			>
+			<select bind:value={windowWidth}>
 				{#each [DESKTOP_SIZE, TABLET_SIZE, SMALL_TABLET_SIZE, MOBILE_SIZE] as name}
 					<option value={name}>{name}px</option>
 				{/each}
@@ -105,10 +92,7 @@
 		</div>
 		<div>
 			windowHeight:
-			<select
-				bind:value={windowHeight}
-				on:change={() => window.localStorage.setItem('windowHeight', windowHeight.toString())}
-			>
+			<select bind:value={windowHeight}>
 				{#each [MOBILE_LANDSCAPE_HEIGHT, MEDIUM_HEIGHT] as name}
 					<option value={name}>{name}px</option>
 				{/each}

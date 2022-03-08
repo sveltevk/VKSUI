@@ -99,6 +99,7 @@ export { useAdaptivity } from './hooks/useAdaptivity';
  * Utils
  */
 export { platform, ANDROID, IOS, VKCOM, Platform } from './lib/platform';
+export { ViewWidth, ViewHeight, SizeType } from './lib/adaptivity';
 export { calcInitialsAvatarColor } from './helpers/avatar';
 
 /**
