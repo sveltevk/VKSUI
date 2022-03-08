@@ -137,6 +137,14 @@
 						},
 
 						{
+							name: 'Spinner',
+							link: '/components/Blocks/Spinner'
+						},
+						{
+							name: 'PanelSpinner',
+							link: '/components/Blocks/PanelSpinner'
+						},
+						{
 							name: 'Switch',
 							link: '/components/Blocks/Switch'
 						},

@@ -4,13 +4,11 @@
 	import Spinner44 from '@sveltevk/icons/dist/44/spinner';
 	import Spinner16 from '@sveltevk/icons/dist/16/spinner';
 
-	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
 
 	export let size: 'small' | 'regular' | 'large' | 'medium' = 'regular';
 
-	const platform = usePlatform();
+	$: $$restProps['aria-label'] = $$restProps['aria-label'] ?? 'Загружается..."';
 </script>
 
 <!-- 
@@ -19,23 +17,19 @@
 заблокировать интерфейс, то можно использовать надстройку над `Spinner` – `ScreenSpinner`.
 -->
 
-<div {...$$restProps} class={classNames(getClassName('Spinner', $platform), $$props.class)}>
+<span role="status" {...$$restProps} class={classNames('Spinner', $$props.class)}>
 	{#if size === 'large'}
-		<Spinner44 class="Spinner__self" />
+		<Spinner44 aria-hidden="true" class="Spinner__self" />
 	{:else if size === 'medium'}
-		<Spinner32 class="Spinner__self" />
+		<Spinner32 aria-hidden="true" class="Spinner__self" />
 	{:else if size === 'small'}
-		<Spinner16 class="Spinner__self" />
+		<Spinner16 aria-hidden="true" class="Spinner__self" />
 	{:else}
-		<Spinner24 class="Spinner__self" />
+		<Spinner24 aria-hidden="true" class="Spinner__self" />
 	{/if}
-</div>
+</span>
 
 <style>
-	:root {
-		--duration: 0.7s;
-	}
-
 	.Spinner {
 		width: 100%;
 		height: 100%;
@@ -46,29 +40,27 @@
 	}
 
 	:global(.Spinner__self) {
-		animation: rotator var(--duration) linear infinite;
+		animation: vkui-rotator var(--duration) linear infinite;
 		transform-origin: center;
 	}
 
-	:global(.Spinner__self) :global(svg) {
+	:global(.Spinner__self svg) {
 		transform: scale(1);
 	}
 
-	@keyframes rotator {
-		0% {
-			transform: rotate(0deg);
-		}
+	/**
+ * PanelHeader
+ */
 
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-
-	:global(.PanelHeader .Spinner) {
+	:global(.PanelHeader) .Spinner {
 		color: currentColor;
 	}
 
-	:global(.Button .Spinner) {
+	/**
+ * Button
+ */
+
+	:global(.Button) .Spinner {
 		color: currentColor;
 	}
 </style>
