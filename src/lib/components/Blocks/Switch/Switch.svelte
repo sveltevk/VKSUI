@@ -4,8 +4,11 @@
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 
+	export let style = '';
+
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
+	// TODO: need more update
 </script>
 
 <!-- 
@@ -19,7 +22,8 @@
 		$$props.class,
 		`Switch--sizeY-${$adaptivity.sizeY}`
 	)}
-	style={$$props.style}
+	{style}
+	role="presentation"
 >
 	<input {...$$restProps} type="checkbox" class="Switch__self" />
 	<span class="Switch__pseudo" />
