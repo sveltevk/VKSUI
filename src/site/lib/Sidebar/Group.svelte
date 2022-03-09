@@ -29,21 +29,28 @@
 			}
 		]
 	};
+
+	$: child =
+		search === ''
+			? expand
+				? group.child
+				: []
+			: group.child.filter(({ name }) => name.toLowerCase().indexOf(search) > -1);
 </script>
 
-<SimpleCell on:click={() => (expand = !expand)}>
-	{group.header}
-	<IconButton slot="after">
-		{#if expand || search !== ''}
-			<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
-		{:else}
-			<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
-		{/if}
-	</IconButton>
-</SimpleCell>
-<div class="Element">
-	{#each group.child as el}
-		{#if (search === '' && expand) || (search !== '' && el.name.toLowerCase().includes(search))}
+{#if child.length > 0 || !(expand || search !== '')}
+	<SimpleCell on:click={() => (expand = !expand)}>
+		{group.header}
+		<IconButton slot="after">
+			{#if expand || search !== ''}
+				<Icon28ChevronUpOutline fill="var(--text_tertiary)" />
+			{:else}
+				<Icon28ChevronDownOutline fill="var(--text_tertiary)" />
+			{/if}
+		</IconButton>
+	</SimpleCell>
+	<div class="Element">
+		{#each child as el}
 			<SimpleCell
 				class={el.link === currentPage.path ? 'Sidebar__selected' : ''}
 				href="{base}{el.link}"
@@ -55,9 +62,9 @@
 				</svelte:fragment>
 				{el.name}
 			</SimpleCell>
-		{/if}
-	{/each}
-</div>
+		{/each}
+	</div>
+{/if}
 
 <style>
 	.Element {

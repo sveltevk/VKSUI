@@ -185,6 +185,10 @@
 							link: '/components/Blocks/Progress'
 						},
 						{
+							name: 'Search',
+							link: '/components/Blocks/Search'
+						},
+						{
 							name: 'Counter',
 							link: '/components/Blocks/Counter'
 						},

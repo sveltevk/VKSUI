@@ -1,42 +1,37 @@
-<script context="module" lang="ts">
-	let globalSearchId = 0;
-</script>
-
 <script lang="ts">
 	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
-	import { IOS } from '$lib/lib/platform';
+	import { IOS, VKCOM } from '$lib/lib/platform';
 	import Touch from '$lib/components/Service/Touch/Touch.svelte';
 	// import type { TouchEventHandler, TouchEvent } from '$lib/components/Service/Touch/Touch.svelte';
 	import Icon16SearchOutline from '@sveltevk/icons/dist/16/search_outline';
 	import Icon16Clear from '@sveltevk/icons/dist/16/clear';
+	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 	import { createEventDispatcher } from 'svelte';
+	import SearchPlaceholderTypography from './SearchPlaceholderTypography.svelte';
+	import Separator from '../Separator/Separator.svelte';
 
 	const dispatch = createEventDispatcher();
+
+	export let style = '';
 
 	export let after: any = 'Отмена';
 	// export let autoComplete: string = 'off';
 	export let placeholder: string = 'Поиск';
-	export let defaultValue: string = '';
-
-	export let value = defaultValue;
-
-	const platform = usePlatform();
-
-	let focused = false;
-
-	const searchId = `search-${globalSearchId++}`;
 
 	let inputEl;
+	let isFocused = false;
+	export let value = '';
+	const platform = usePlatform();
 
 	const onFocus = (e) => {
-		focused = true;
+		isFocused = true;
 		dispatch('focus', e);
 	};
 
 	const onBlur = (e) => {
-		focused = false;
+		isFocused = false;
 		dispatch('blur', e);
 	};
 
@@ -58,9 +53,9 @@
 	};
 
 	const onIconCancelClickStart = (e) => {
-		e.originalEvent.preventDefault();
-		inputEl.focus();
+		e.detail.originalEvent.preventDefault();
 		onCancel();
+		inputEl.focus();
 	};
 </script>
 
@@ -73,17 +68,18 @@
 	class={classNames(
 		getClassName('Search', $platform),
 		{
-			'Search--focused': focused,
+			'Search--focused': isFocused,
 			'Search--has-value': !!value,
 			'Search--has-after': !!($$slots.after || after),
 			'Search--has-icon': !!$$slots.icon
 		},
 		$$props.class
 	)}
+	{style}
 >
 	<div class="Search__in">
 		<div class="Search__width" />
-		<div class="Search__control">
+		<label class="Search__control">
 			<input
 				{...$$restProps}
 				bind:this={inputEl}
@@ -101,15 +97,20 @@
 			{/if}
 			<div class="Search__placeholder">
 				<div class="Search__placeholder-in">
-					<Icon16SearchOutline />
-					<div class="Search__placeholder-text">
-						{@html placeholder}
-					</div>
+					<slot name="before"><Icon16SearchOutline /></slot>
+					<SearchPlaceholderTypography class="Search__placeholder-text" platform={$platform}>
+						{placeholder}
+					</SearchPlaceholderTypography>
 				</div>
+				{#if isFocused && $platform === IOS && ($$slots.after || after)}
+					<div class="Search__after-width">
+						<slot name="after">{after}</slot>
+					</div>
+				{/if}
 			</div>
-		</div>
+		</label>
 
-		<div class="Search__after" onClick={this.onCancel}>
+		<div class="Search__after" on:click={onCancel}>
 			<div class="Search__icons">
 				{#if $$slots.icon}
 					<Touch on:start={onIconClickStart} class="Search__icon">
@@ -118,7 +119,11 @@
 				{/if}
 				{#if !!value}
 					<Touch on:start={onIconCancelClickStart} class="Search__icon">
-						<Icon16Clear />
+						{#if $platform === IOS}
+							<Icon16Clear />
+						{:else}
+							<Icon24Cancel />
+						{/if}
 					</Touch>
 				{/if}
 			</div>
@@ -129,10 +134,13 @@
 			{/if}
 		</div>
 	</div>
+	{#if $platform === VKCOM}
+		<Separator class="Search__separator" wide />
+	{/if}
 </div>
 
 <style>
-	.Search {
+	:global(.Search) {
 		overflow: hidden;
 		font-weight: normal;
 		font-family: var(--font-common);
@@ -140,18 +148,18 @@
 		line-height: normal;
 	}
 
-	.Search__in {
+	:global(.Search__in) {
 		position: relative;
 	}
 
-	.Search__width {
+	:global(.Search__width) {
 		height: var(--search_default_height);
 		white-space: nowrap;
 		color: transparent;
 		width: 10000px;
 	}
 
-	.Search__control {
+	:global(.Search__control) {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -163,7 +171,8 @@
 		border-radius: 10px;
 	}
 
-	.Search__input {
+	:global(.Search__input) {
+		-webkit-appearance: none; /* не используем textfield из-за бага в iOS 15.1 http://www.openradar.me/FB9744107 */
 		border: none;
 		margin: 0;
 		height: var(--search_default_height);
@@ -171,7 +180,6 @@
 		padding: 0 22px 0 36px;
 		box-sizing: border-box;
 		font-size: 17px;
-		outline: none;
 		border-radius: 10px;
 		max-width: 100%;
 		flex-grow: 1;
@@ -181,57 +189,77 @@
 		color: var(--text_primary);
 	}
 
-	.Search--has-after .Search__input {
+	:global(.Search__input::-webkit-search-decoration),
+	:global(.Search__input::-webkit-search-cancel-button),
+	:global(.Search__input::-webkit-search-results-button),
+	:global(.Search__input::-webkit-search-results-decoration) {
+		display: none;
+	}
+
+	:global(.Search--has-after .Search__input) {
 		border-radius: 10px 0 0 10px;
 	}
 
-	.Search--has-value .Search__input {
+	:global(.Search--has-value .Search__input),
+	:global(.Search--has-icon .Search__input),
+	:global(.Search--has-value .Search__placeholder),
+	:global(.Search--has-icon .Search__placeholder) {
 		padding-right: 40px;
 	}
 
-	.Search--has-icon.Search--has-value .Search__input {
+	:global(.Search--has-icon.Search--has-value .Search__input),
+	:global(.Search--has-icon.Search--has-value .Search__placeholder) {
 		padding-right: 80px;
 	}
 
-	.Search__after-width {
+	:global(.Search__after-width) {
 		font-size: 17px;
 		height: var(--search_default_height);
 		line-height: var(--search_default_height);
 		padding-left: 12px;
 		padding-right: 4px;
+		flex-shrink: 0;
+		pointer-events: none;
+		cursor: text;
 	}
 
-	.Search__placeholder {
+	:global(.Search__placeholder) {
 		position: absolute;
 		left: 0;
 		width: 100%;
 		cursor: text;
 		z-index: 1;
 		text-align: left;
-		display: block;
 		height: var(--search_default_height);
 		font-size: 0;
 		padding-left: 12px;
+		padding-right: 22px;
 		pointer-events: none;
+		box-sizing: border-box;
+		display: flex;
 	}
 
-	.Search__placeholder-in {
+	:global(.Search__placeholder-in) {
 		height: var(--search_default_height);
 		display: flex;
 		align-items: center;
+		overflow: hidden;
+		flex-grow: 1;
+		max-width: 100%;
 	}
 
-	.Search__placeholder-text {
-		margin-left: 8px;
-		line-height: 22px;
-		font-size: 17px;
+	:global(.Search__placeholder-text) {
+		margin-left: 8px !important;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 
-	.Search--has-value .Search__placeholder-text {
+	:global(.Search--has-value .Search__placeholder-text) {
 		opacity: 0;
 	}
 
-	.Search__icons {
+	:global(.Search__icons) {
 		position: absolute;
 		right: 100%;
 		top: 0;
@@ -249,11 +277,7 @@
 		justify-content: center;
 	}
 
-	:global(.Search__icon.Tappable--active) {
-		opacity: 0.7;
-	}
-
-	.Search__after {
+	:global(.Search__after) {
 		position: absolute;
 		left: 100%;
 		top: 0;
@@ -264,12 +288,12 @@
 		cursor: default;
 	}
 
-	.Search--focused .Search__after,
-	.Search--has-value .Search__after {
+	:global(.Search--focused .Search__after),
+	:global(.Search--has-value .Search__after) {
 		transform: translate(-100%);
 	}
 
-	.Search__after::before {
+	:global(.Search__after::before) {
 		position: absolute;
 		right: calc(100% - 1px);
 		display: block;
@@ -279,7 +303,7 @@
 		pointer-events: none;
 	}
 
-	.Search__after-in {
+	:global(.Search__after-in) {
 		position: relative;
 		z-index: 2;
 		cursor: pointer;
@@ -288,7 +312,7 @@
 		padding-right: 4px;
 	}
 
-	.Search__after::after {
+	:global(.Search__after::after) {
 		position: absolute;
 		right: 100%;
 		display: block;
@@ -301,6 +325,10 @@
 		pointer-events: none;
 	}
 
+	:global(.Group--plain .Search) {
+		padding-top: 4px;
+	}
+
 	/*
   Themes
  */
@@ -308,88 +336,167 @@
 	/*
   default
  */
-	.Search {
+	:global(.Search) {
 		background: var(--search_bar_background);
 	}
 
-	.Search__control {
+	:global(.Search__control) {
 		background-color: var(--search_bar_field_background);
 	}
 
-	.Search__input {
+	:global(.Search__input) {
 		color: var(--text_primary);
 	}
 
-	.Search__placeholder {
+	:global(.Search__placeholder) {
 		color: var(--search_bar_field_tint);
 	}
 
-	.Search__after-width {
+	:global(.Search__after-width) {
 		background: var(--search_bar_field_background);
 		color: var(--search_bar_field_background);
 	}
 
-	.Search__after {
+	:global(.Search__after) {
 		background: var(--search_bar_background);
 		color: var(--accent);
 	}
 
-	.Search__after::after {
+	:global(.Search__after::after) {
 		background-color: var(--search_bar_field_background);
 	}
 
-	.Search__after::before {
+	:global(.Search__after::before) {
 		background-color: var(--search_bar_background);
 	}
 
 	/*
   header
  */
-	:global(.PanelHeader) .Search {
+	:global(.PanelHeader .Search) {
 		background: var(--header_background);
 	}
 
-	:global(.PanelHeader) .Search__control {
+	:global(.PanelHeader .Search__control) {
 		background-color: var(--header_search_field_background);
 	}
 
-	:global(.PanelHeader) .Search__input {
+	:global(.PanelHeader .Search__input) {
 		color: var(--text_primary);
 	}
 
-	:global(.PanelHeader) .Search__placeholder {
+	:global(.PanelHeader .Search__placeholder) {
 		color: var(--header_search_field_tint);
 	}
 
-	:global(.PanelHeader) .Search__after-width {
+	:global(.PanelHeader .Search__after-width) {
 		background: var(--header_search_field_background);
 		color: var(--header_search_field_background);
 	}
 
-	:global(.PanelHeader) .Search__after {
+	:global(.PanelHeader .Search__after) {
 		background: var(--header_background);
 		color: var(--header_tint);
 	}
 
-	:global(.PanelHeader) .Search__after::after {
+	:global(.PanelHeader .Search__after::after) {
 		background-color: var(--header_search_field_background);
 	}
 
-	:global(.PanelHeader) .Search__after::before {
+	:global(.PanelHeader .Search__after::before) {
 		background-color: var(--header_background);
 	}
 
 	/**
   iOS
  */
-	.Search--ios {
+	:global(.Search--ios) {
 		padding: 8px 12px;
 	}
 
 	/**
   Android
  */
-	.Search--android {
+	:global(.Search--android) {
 		padding: 8px 16px;
+	}
+
+	/**
+  VKCOM
+*/
+
+	:global(.Search--vkcom),
+	:global(.PanelHeader--vkcom .Search) {
+		background: transparent;
+	}
+
+	:global(.Search--vkcom .Search__in) {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	:global(.Search--vkcom .Search__input) {
+		font-size: 15px;
+		line-height: 20px;
+		padding-left: 40px;
+	}
+
+	:global(.Search--vkcom .Search__placeholder) {
+		padding-left: 16px;
+	}
+
+	:global(.Search--vkcom .Search__icons) {
+		top: 4px;
+		right: calc(100% + 8px);
+	}
+
+	:global(.Search--vkcom.Search--has-value .Search__input) {
+		padding-right: 56px;
+	}
+
+	:global(.Search--vkcom.Search--has-icon.Search--has-value .Search__input) {
+		padding-right: 92px;
+	}
+
+	:global(.Search--vkcom .Search__icon) {
+		width: 40px;
+		height: 40px;
+	}
+
+	:global(.Search--vkcom .Search__icon:hover) {
+		background-color: var(--background_hover);
+		border-radius: 50%;
+	}
+
+	:global(.Search--vkcom .Search__control) {
+		background-color: transparent;
+	}
+
+	:global(.PanelHeader--vkcom .Search__separator) {
+		display: none;
+	}
+
+	:global(.Search--vkcom .Search__separator) {
+		color: var(--input_border);
+	}
+
+	:global(.Group--card .Search--vkcom) {
+		margin: 0 -8px;
+	}
+
+	:global(.Group--card .Search--vkcom:first-child) {
+		margin-top: -8px;
+	}
+
+	:global(.Group--card .Search--vkcom:not(:last-child)) {
+		margin-bottom: 8px;
+	}
+
+	:global(.Group--card .Search--vkcom .Search__placeholder) {
+		padding-left: 20px;
+	}
+
+	:global(.Group--card .Search--vkcom .Search__input) {
+		padding-left: 44px;
 	}
 </style>

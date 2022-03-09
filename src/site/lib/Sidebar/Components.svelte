@@ -27,7 +27,7 @@
 	];
 </script>
 
-<Search bind:value={search} placeholder="Поиск" style="background:none"/>
+<Search bind:value={search} placeholder="Поиск" style="background:none" />
 {#each tree as group}
 	<Group {group} {currentPage} {base} search={search.toLowerCase()} />
 {/each}
