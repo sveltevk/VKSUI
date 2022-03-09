@@ -318,9 +318,9 @@
 	}
 
 	/**
-	* active
-	* increased specificity to override CellButton styles
-	*/
+ * active
+ * increased specificity to override CellButton styles
+ */
 	:global(.Tappable--active-background.Tappable--active-background.Tappable--active-background) {
 		background: var(--background_highlighted);
 	}
@@ -330,8 +330,8 @@
 	}
 
 	/**
-	* hover
-	*/
+ * hover
+ */
 	.Tappable__hoverShadow {
 		position: absolute;
 		top: 0;
@@ -403,5 +403,12 @@
 	:global(.Tappable--vkcom) {
 		transition: background-color 0.15s ease-out;
 		border-radius: 8px;
+	}
+
+	/**
+ * overrides
+ */
+	:global(.Tappable--sizeX-compact) {
+		border-radius: 0;
 	}
 </style>

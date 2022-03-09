@@ -143,6 +143,10 @@
 							name: 'Gradient',
 							link: '/components/Blocks/Gradient'
 						},
+						{
+							name: 'SimpleCell',
+							link: '/components/Blocks/SimpleCell'
+						},
 
 						{
 							name: 'Footer',
