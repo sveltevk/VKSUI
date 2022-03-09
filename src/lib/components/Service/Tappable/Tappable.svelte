@@ -46,11 +46,15 @@
 				delete storage[id];
 			});
 	}
+
+	const TappableContextKey = 'vkui_tappableContext';
+	type TappableContextInterface = { onHoverChange: (s: boolean) => void };
 </script>
 
 <script lang="ts">
 	import FocusVisible from '../FocusVisible/FocusVisible.svelte';
 	import Wave from './Wave.svelte';
+	import { getContext, setContext } from 'svelte';
 
 	// props
 	/**
@@ -93,6 +97,9 @@
 		id: string;
 	}
 
+	const { onHoverChange } =
+		(getContext(TappableContextKey) as TappableContextInterface) ||
+		({ onHoverChange: () => {} } as TappableContextInterface);
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
 	// const { focusVisible, onBlur, onFocus } = useFocusVisible();
@@ -117,6 +124,17 @@
 	let isSlide = false;
 	let insideTouchRoot = false;
 	let timeout = 0;
+
+	// hover propagation
+	setContext(TappableContextKey, { onHoverChange: (s: boolean) => (childHover = s) });
+
+	$: {
+		if (!hovered) {
+			onHoverChange(false);
+		} else {
+			onHoverChange(true);
+		}
+	}
 
 	/*
 	 * Обрабатывает событие touchstart
