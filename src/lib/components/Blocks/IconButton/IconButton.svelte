@@ -23,6 +23,7 @@
 
 <Tappable
 	{...$$restProps}
+	on:click
 	component={$$restProps.href ? A : component}
 	activeEffectDelay={200}
 	activeMode={$platform === IOS ? 'opacity' : 'IconButton--active'}

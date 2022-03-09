@@ -203,6 +203,27 @@
 					header: 'Forms',
 					child: [
 						{
+							name: 'FormLayout',
+							link: '/components/Forms/FormLayout'
+						},
+						{
+							name: 'FormItem',
+							link: '/components/Forms/FormItem'
+						},
+						{
+							name: 'FormLayoutGroup',
+							link: '/components/Forms/FormLayoutGroup'
+						},
+						{
+							name: 'FormField',
+							link: '/components/Forms/FormField'
+						},
+						{
+							name: 'FormStatus',
+							link: '/components/Forms/FormStatus'
+						},
+
+						{
 							name: 'Checkbox',
 							link: '/components/Forms/Checkbox'
 						}

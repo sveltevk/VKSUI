@@ -7,6 +7,7 @@
 	import getClassName from '$lib/lib/getClassName';
 	import FormField from '../FormField/FormField.svelte';
 
+	export let style = '';
 	export let align: 'left' | 'center' | 'right' = undefined;
 	export let value: any = undefined;
 
@@ -22,19 +23,22 @@
 
 <FormField
 	class={classNames(
-		getClassName('Input', $platform),
 		$$props.class,
+		getClassName('Input', $platform),
 		{ [`Input--${align}`]: !!align },
 		`Input--sizeY-${$adaptivity.sizeY}`
 	)}
+	{style}
+	disabled={$$restProps.disabled}
 >
+	<slot name="after" slot="after" />
 	<input use:forwardEvents bind:value {...$$restProps} class="Input__el" />
 </FormField>
 
 <style>
 	:global(.Input) {
 		position: relative;
-		line-height: 19px;
+		line-height: 20px;
 		font-size: 16px;
 	}
 
@@ -53,23 +57,22 @@
 		box-sizing: border-box;
 		box-shadow: none;
 		border: none;
-		outline: none;
 		appearance: none;
 		text-overflow: ellipsis;
-		height: 44px;
-		line-height: 19px;
+		height: 42px;
+		line-height: 20px;
 		font-size: 16px;
 		color: var(--text_primary);
-		padding: 12px;
+		padding: 11px;
 		position: relative;
 		z-index: 2;
 		background: transparent;
 	}
 
 	:global(.Input--sizeY-compact) .Input__el {
-		height: 40px;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		height: 34px;
+		padding-top: 9px;
+		padding-bottom: 9px;
 		line-height: 20px;
 		font-size: 15px;
 	}

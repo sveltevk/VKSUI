@@ -3,6 +3,8 @@
 	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
+	import Caption from '../../Typography/Caption/Caption.svelte';
+	import Headline from '../../Typography/Headline/Headline.svelte';
 
 	export let mode: 'default' | 'error' = 'default';
 	export let header: any = undefined;
@@ -19,33 +21,34 @@
 
 <div
 	{...$$restProps}
-	class={classNames(
-		getClassName('FormStatus', $platform),
-		`FormStatus--${mode}`,
-		$$props.class,
-		`FormStatus--sizeY-${$adaptivity.sizeY}`
-	)}
+	class={classNames($$props.class, getClassName('FormStatus', $platform), `FormStatus--${mode}`)}
 >
 	{#if $$slots.header || header}
-		<div class="FormStatus__header"><slot name="header">{header}</slot></div>
+		<Headline weight="medium" class="FormStatus__header"
+			><slot name="header">{header}</slot></Headline
+		>
 	{/if}
 	{#if $$slots.default}
-		<div class="FormStatus__content"><slot /></div>
+		<Caption level="1" weight="regular" class="FormStatus__content"><slot /></Caption>
 	{/if}
-	<slot />
 </div>
 
 <style>
 	.FormStatus {
 		border-radius: 10px;
-		padding: 14px 12px;
+		padding: 12px;
 		background: var(--field_background);
+		color: var(--text_subhead);
+	}
+
+	:global(.FormStatus__header),
+	.FormStatus :global(b:first-child) {
 		color: var(--text_primary);
 	}
 
-	.FormStatus--sizeY-compact {
-		padding-top: 12px;
-		padding-bottom: 12px;
+	:global(.FormStatus__header:not(:last-child)),
+	.FormStatus :global(b:first-child) {
+		margin-bottom: 2px;
 	}
 
 	.FormStatus--error {
@@ -53,31 +56,16 @@
 		color: var(--field_error_border);
 	}
 
-	.FormStatus__header {
+	.FormStatus--error :global(.FormStatus__header),
+	.FormStatus--error :global(.FormStatus) :global(b:first-child) {
+		color: currentColor;
+	}
+
+	.FormStatus :global(b:first-child) {
+		/* хак для ошибок из API, текст в которых приходит с <b>в начале</b> */
+		display: block;
 		font-size: 16px;
+		line-height: 20px;
 		font-weight: 500;
-		line-height: 1.25;
-		margin-top: -2px;
-	}
-
-	.FormStatus__header:not(:last-child) {
-		margin-bottom: 2px;
-	}
-
-	.FormStatus__content {
-		font-size: 13px;
-		line-height: 16px;
-	}
-
-	.FormStatus__content :global(b) {
-		font-weight: 500;
-	}
-
-	/**
- * VKCOM
- */
-
-	.FormStatus--vkcom.FormStatus--default .FormStatus__content {
-		color: var(--text_subhead);
 	}
 </style>

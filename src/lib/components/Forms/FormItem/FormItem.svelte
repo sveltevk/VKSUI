@@ -1,11 +1,16 @@
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
 	import Caption from '$lib/components/Typography/Caption/Caption.svelte';
 	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import Removable from '../../Blocks/Removable/Removable.svelte';
+
+	let rootEl: HTMLElement;
 
 	export let top: string = undefined;
 	export let bottom: string = undefined;
@@ -13,10 +18,13 @@
 	/**
 	 * Дает возможность удалить `FormItem`. Рекомендуется использовать только для `Input` или `Select`.
 	 */
-	export let removable = false; // TODO: Removable
+	export let removable = false;
+	export let removePlaceholder = 'Удалить';
 
 	const platform = usePlatform();
 	const adaptivity = useAdaptivity();
+
+	const dispatch = createEventDispatcher();
 </script>
 
 <!-- 
@@ -28,6 +36,7 @@
 
 <label
 	{...$$restProps}
+	bind:this={rootEl}
 	class={classNames(
 		getClassName('FormItem', $platform),
 		`FormItem--${status}`,
@@ -40,19 +49,27 @@
 	)}
 >
 	{#if removable}
-		<div class="FormItem__removable">
-			{#if $$slots.top || top}
-				<Subhead class="FormItem__top">
-					<slot name="top">{top}</slot>
-				</Subhead>
-			{/if}
-			<slot />
-			{#if $$slots.bottom || bottom}
-				<Caption level="1" weight="regular" class="FormItem__bottom">
-					<slot name="bottom">{bottom}</slot>
-				</Caption>
-			{/if}
-		</div>
+		<Removable
+			align="start"
+			{removePlaceholder}
+			on:click={() => {
+				dispatch('remove', rootEl);
+			}}
+		>
+			<div class="FormItem__removable">
+				{#if $$slots.top || top}
+					<Subhead class="FormItem__top">
+						<slot name="top">{top}</slot>
+					</Subhead>
+				{/if}
+				<slot />
+				{#if $$slots.bottom || bottom}
+					<Caption level="1" weight="regular" class="FormItem__bottom">
+						<slot name="bottom">{bottom}</slot>
+					</Caption>
+				{/if}
+			</div>
+		</Removable>
 	{:else}
 		{#if $$slots.top || top}
 			<Subhead class="FormItem__top">
@@ -140,7 +157,7 @@
 		min-width: 0;
 	}
 
-	:global(.FormLayoutGroup--horizontal) .FormItem + .FormItem {
+	:global(.FormLayoutGroup--horizontal .FormItem + .FormItem) {
 		margin-left: 24px;
 	}
 

@@ -11,7 +11,6 @@
 	import button from '$lib/components/Elements/button/button.svelte';
 	// import type { TouchEventHandler, TouchEvent } from '../Touch/Touch.svelte';
 	import { coordX, coordY } from '$lib/lib/touch';
-	import type { VKUITouchEventHander, VKUITouchEvent } from '$lib/lib/touch';
 	import type { FocusVisibleMode } from '../FocusVisible/FocusVisible.svelte';
 
 	export interface StorageItem {
@@ -111,7 +110,7 @@
 	$: isPresetFocusVisibleMode = ['inside', 'outside'].includes(focusVisibleMode);
 
 	// export let hasHover: boolean;
-	let container: HTMLElement;
+	export let container: HTMLElement = undefined;
 
 	// other
 	const id = Math.round(Math.random() * 1e8).toString(16);

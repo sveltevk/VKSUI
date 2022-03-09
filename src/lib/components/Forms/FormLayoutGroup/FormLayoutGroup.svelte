@@ -2,10 +2,24 @@
 	import { usePlatform } from '$lib/hooks/usePlatform';
 	import classNames from '$lib/lib/classNames';
 	import getClassName from '$lib/lib/getClassName';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { createEventDispatcher } from 'svelte';
+	import Removable from '../../Blocks/Removable/Removable.svelte';
 
 	export let mode: 'vertical' | 'horizontal' = 'vertical';
+	/**
+	 * Только для режима horizontal. Дает возможность удалить всю группу `FormItem`.
+	 */
+	export let removable = false;
+	export let removePlaceholder = 'Удалить';
+
+	let rootEl;
 
 	const platform = usePlatform();
+	const adaptivity = useAdaptivity();
+	$: isRemovable = removable && mode === 'horizontal';
+
+	const dispatch = createEventDispatcher();
 </script>
 
 <!-- 
@@ -16,42 +30,54 @@
 
 <div
 	{...$$restProps}
+	bind:this={rootEl}
 	class={classNames(
+		$$props.class,
 		getClassName('FormLayoutGroup', $platform),
+		`FormLayoutGroup--sizeY-${$adaptivity.sizeY}`,
 		`FormLayoutGroup--${mode}`,
-		$$props.class
+		{
+			'FormLayoutGroup--removable': isRemovable
+		}
 	)}
 >
-	<slot />
+	{#if isRemovable}
+		<Removable
+			class="FormLayoutGroup__removable"
+			align="start"
+			{removePlaceholder}
+			on:click={() => {
+				dispatch('remove', rootEl);
+			}}
+		>
+			<slot />
+		</Removable>
+	{:else}
+		<slot />
+	{/if}
 </div>
 
 <style>
 	.FormLayoutGroup--horizontal {
-		flex-direction: row;
 		display: flex;
+		padding: 12px var(--formitem_padding);
 	}
 
-	.FormLayoutGroup--horizontal > :global(.FormItem) {
-		max-width: 100%;
+	:global(.FormLayoutGroup__removable) {
 		flex-grow: 1;
-		flex-shrink: 0;
-		flex-basis: 0;
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	/**
+ * iOS
+ */
+	.FormLayoutGroup--ios {
+		--formitem_padding: 12px;
+	}
+
+	.FormLayoutGroup--removable {
 		padding-left: 0;
 		padding-right: 0;
-	}
-
-	.FormLayoutGroup--horizontal > :global(.FormItem + .FormItem) {
-		margin-left: 24px;
-	}
-
-	.FormLayoutGroup--ios.FormLayoutGroup--horizontal {
-		padding-left: 12px;
-		padding-right: 12px;
-	}
-
-	.FormLayoutGroup--android.FormLayoutGroup--horizontal,
-	.FormLayoutGroup--vkcom.FormLayoutGroup--horizontal {
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 </style>

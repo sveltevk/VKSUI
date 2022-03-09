@@ -86,6 +86,7 @@ export { default as Checkbox } from './components/Forms/Checkbox/Checkbox.svelte
 export { default as FormItem } from './components/Forms/FormItem/FormItem.svelte';
 export { default as FormLayoutGroup } from './components/Forms/FormLayoutGroup/FormLayoutGroup.svelte';
 export { default as FormLayout } from './components/Forms/FormLayout/FormLayout.svelte';
+export { default as FormField } from './components/Forms/FormField/FormField.svelte';
 export { default as FormStatus } from './components/Forms/FormStatus/FormStatus.svelte';
 export { default as Input } from './components/Forms/Input/Input.svelte';
 export { default as File } from './components/Forms/File/File.svelte';

@@ -53,6 +53,7 @@
 
 	$: updateFrameScheme(scheme);
 	$: sizeX = calculateAdaptivity(windowWidth, windowHeight, {}).sizeX;
+	$: sizeY = calculateAdaptivity(windowWidth, windowHeight, {}).sizeY;
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->
@@ -125,6 +126,7 @@
 		display: block;
 		background: var(--background_content);
 		border-radius: 12px;
+		overflow-x: hidden;
 	}
 
 	.mini {
