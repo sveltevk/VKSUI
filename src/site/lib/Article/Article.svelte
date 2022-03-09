@@ -60,7 +60,7 @@
 		margin-bottom: 20px;
 		margin-top: calc(20px + var(--styleguide_header_height));
 	}
-	article :global(a:not([class])) {
+	article :global(a:not(.Example a)) {
 		color: var(--accent);
 		text-decoration: none;
 		border: 0;
@@ -72,7 +72,7 @@
 		display: inline;
 		border-radius: 0;
 	}
-	article :global(a:not([class]):hover) {
+	article :global(a:not(.Example a):hover) {
 		opacity: 0.8;
 	}
 

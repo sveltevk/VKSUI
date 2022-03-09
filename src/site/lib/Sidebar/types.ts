@@ -3,6 +3,7 @@ export interface Tree {
 	child: {
 		name: string;
 		link: string;
+		tokenized?: true;
 	}[];
 	tree?: Tree[];
 }

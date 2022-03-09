@@ -1,3 +1,7 @@
+<script>
+	import Icon28TokenizedOutline from '$site/lib/Icon28TokenizedOutline/Icon28TokenizedOutline.svelte';
+</script>
+
 # Кастомизация
 
 В стили библиотеки встроены стили для 3 платформ:
@@ -37,3 +41,12 @@
 
 Мы как и [VKUI](https://github.com/VKCOM/VKUI) плавно переходим на [новую систему токенов](https://github.com/VKCOM/vkui-tokens), которая
 позволит кастомизировать не только цвета, но и скругления, размеры, отступы и тени.
+
+Компоненты поддерживающие токены, обозначаются иконкой <Icon28TokenizedOutline class="icon-tokenized" fill="var(--accent)" title="Компонент поддерживает vkui-tokens"  /> .
+
+<style>
+	:global(.icon-tokenized),
+	:global(.icon-tokenized > svg) {
+		display: inline!important;
+	}
+</style>

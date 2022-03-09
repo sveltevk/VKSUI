@@ -3,6 +3,7 @@
 	import Icon28ChevronDownOutline from '@sveltevk/icons/dist/28/chevron_down_outline';
 
 	import { IconButton, SimpleCell } from '@sveltevk/vksui';
+	import Icon28TokenizedOutline from '../Icon28TokenizedOutline/Icon28TokenizedOutline.svelte';
 
 	export let search: string = '';
 	export let base: string = '';
@@ -23,7 +24,8 @@
 			},
 			{
 				name: 'Link',
-				link: '/quickStart'
+				link: '/quickStart',
+				tokenized: true
 			}
 		]
 	};
@@ -44,8 +46,15 @@
 		{#if (search === '' && expand) || (search !== '' && el.name.toLowerCase().includes(search))}
 			<SimpleCell
 				class={el.link === currentPage.path ? 'Sidebar__selected' : ''}
-				href="{base}{el.link}">{el.name}</SimpleCell
+				href="{base}{el.link}"
 			>
+				<svelte:fragment slot="after">
+					{#if el.tokenized}
+						<Icon28TokenizedOutline title="Компонент поддерживает vkui-tokens" />
+					{/if}
+				</svelte:fragment>
+				{el.name}
+			</SimpleCell>
 		{/if}
 	{/each}
 </div>

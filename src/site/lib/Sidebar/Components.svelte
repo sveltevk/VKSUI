@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Input } from '@sveltevk/vksui';
-	import Div from '@sveltevk/vksui/components/Blocks/Div/Div.svelte';
+	import Search from '@sveltevk/vksui/components/Blocks/Search/Search.svelte';
 	import Group from './Group.svelte';
 	export let base: string = '';
 	let search: string = '';
@@ -28,9 +27,7 @@
 	];
 </script>
 
-<Div>
-	<Input bind:value={search} placeholder="Поиск" />
-</Div>
+<Search bind:value={search} placeholder="Поиск" style="background:none"/>
 {#each tree as group}
 	<Group {group} {currentPage} {base} search={search.toLowerCase()} />
 {/each}

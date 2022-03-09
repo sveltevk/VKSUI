@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Group, Header, SimpleCell } from '@sveltevk/vksui';
+	import Icon28TokenizedOutline from '../Icon28TokenizedOutline/Icon28TokenizedOutline.svelte';
 	import Components from './Components.svelte';
 	import type { Tree } from './types';
 	export let base = '';
@@ -27,8 +28,15 @@
 				{#each group.child as el}
 					<SimpleCell
 						class={el.link === currentPage.path ? 'Sidebar__selected' : ''}
-						href="{base}{el.link}">{el.name}</SimpleCell
+						href="{base}{el.link}"
 					>
+						<svelte:fragment slot="after">
+							{#if el.tokenized}
+								<Icon28TokenizedOutline title="Компонент поддерживает vkui-tokens" />
+							{/if}
+						</svelte:fragment>
+						{el.name}
+					</SimpleCell>
 				{/each}
 			</Group>
 		{/each}

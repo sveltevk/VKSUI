@@ -11,7 +11,9 @@
 
 		const rawName = path.split('/').pop();
 
-		const name = 'VKSUI - ' + (capitalizeFirstLetter(rawName) || 'svelte components');
+		const name = capitalizeFirstLetter(rawName)
+			? capitalizeFirstLetter(rawName) + '— VKSUI'
+			: 'VKSUI';
 
 		const isComponent = path.includes('/components/');
 		const capitalize = isComponent
@@ -100,7 +102,8 @@
 						},
 						{
 							name: 'Button',
-							link: '/components/Blocks/Button'
+							link: '/components/Blocks/Button',
+							tokenized: true
 						},
 						{
 							name: 'CellButton',
@@ -128,7 +131,8 @@
 						},
 						{
 							name: 'Card',
-							link: '/components/Blocks/Card'
+							link: '/components/Blocks/Card',
+							tokenized: true
 						},
 						{
 							name: 'CardGrid',
@@ -201,7 +205,8 @@
 					child: [
 						{
 							name: 'Title',
-							link: '/components/Typography/Title'
+							link: '/components/Typography/Title',
+							tokenized: true
 						},
 						{
 							name: 'Headline',
@@ -213,7 +218,8 @@
 						},
 						{
 							name: 'Subhead',
-							link: '/components/Typography/Subhead'
+							link: '/components/Typography/Subhead',
+							tokenized: true
 						},
 						{
 							name: 'Caption',
@@ -271,7 +277,8 @@
 				},
 				{
 					name: 'Кастомизация',
-					link: '/customize'
+					link: '/customize',
+					tokenized: true
 				}
 			]
 		}
