@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/VKSUI/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>FormField— VKSUI</title>
+	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-52937920.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-11ff2805.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/Showcase-41a323d0.css">
+	<link rel="modulepreload" href="/VKSUI/_app/start-b5a1ba0a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/vendor-835c2034.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/__layout.svelte-d566cc20.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/File.svelte_svelte_type_style_lang-016c5e82.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/SimpleCell-93c60123.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Tappable-0f728fe6.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Touch-0517af0a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Headline-b8f1386d.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Text-a3f375dc.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-2d0fd6e1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Subhead-1702cee9.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Header-9af4273a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-56803e80.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Group-c15b3c2c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Icon28TokenizedOutline-ec65239b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Search-8eb4a5ca.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/IconButton-a3d25586.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-749c7260.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Forms/FormField.svelte-15c747d2.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Showcase-f6b037b2.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormItem-9483f95e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormLayout-2722c999.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormField-bf3c85b7.js">
+	</head>
+	<body>
+		<div class="vkui vkui__root">
+
+
+
+
+
+
+<header class="svelte-1kil2u8"><div class="Header__in svelte-1kil2u8"><div class="Logo svelte-1kil2u8">
+
+<h1 class="Title Title--l-1 svelte-1tkij5y"><a href="/VKSUI" class="svelte-1kil2u8">@sveltevk/vksui</a></h1></div>
+		<div class="Links svelte-1kil2u8">
+
+<a href="https://www.npmjs.com/package/@sveltevk/vksui" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">0.0.1
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">GitHub
+</a>
+			
+
+<a href="https://github.com/sveltevk/VKSUI/releases" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">Релизы
+</a></div>
+		<div></div></div>
+</header>
+	<main class="svelte-l2ybjc"><div class="Sidebar svelte-obh89p"><div class="Sidebar__in svelte-obh89p">
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		
+				
+				
+
+
+
+<a href="/VKSUI/" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">О VKSUI
+					</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+						
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		<header class="Header Header--android Header--mode-secondary svelte-pwrmxj"><div class="Header__main svelte-pwrmxj">
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Caption--caps Header__content svelte-8u9koe"><span class="Header__content-in svelte-pwrmxj">Компоненты</span>
+			</span>
+		</div>
+
+	
+</header>
+				
+
+<div class="Search Search--android Search--has-after" style="background:none"><div class="Search__in"><div class="Search__width"></div>
+		<label class="Search__control"><input type="text" class="Search__input" value="">
+			
+			<div class="Search__placeholder"><div class="Search__placeholder-in"><div role="presentation" class="Icon Icon--16 Icon--w-16 Icon--h-16 Icon--search_outline_16 "><svg viewBox="0 0 16 16" width="16" height="16" style="display:block"><use xlink:href="#search_outline_16" style="fill: currentColor;"></use></svg></div>
+					
+	
+
+<h3 class="Headline Headline--android Headline--w-regular Search__placeholder-text svelte-9q56sk">Поиск</h3></div>
+				</div></label>
+
+		<div class="Search__after"><div class="Search__icons">
+				</div>
+			</div></div>
+	
+</div>
+
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Layout</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Block</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Forms</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Typography</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Advertisement</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+
+
+
+<div tabIndex="0" role="button" aria-disabled="false" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Service</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+
+<button slot="after" class="IconButton IconButton--android IconButton IconButton--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--chevron_down_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#chevron_down_outline_28" style="fill: currentColor;color: var(--text_tertiary)"></use></svg></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></div>
+	<div class="Element svelte-1jb4zvh"></div>
+				
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		<header class="Header Header--android Header--mode-secondary svelte-pwrmxj"><div class="Header__main svelte-pwrmxj">
+
+<span class="Caption Caption--android Caption--w-medium Caption--l-1 Caption--caps Header__content svelte-8u9koe"><span class="Header__content-in svelte-pwrmxj">Прочее</span>
+			</span>
+		</div>
+
+	
+</header>
+				
+				
+
+
+
+<a href="/VKSUI/utils" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Утилиты
+					</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+						
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/icons" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Иконки
+					</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+						
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/design" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Дизайн
+					</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma">
+						
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+
+
+
+<a href="/VKSUI/customize" class="SimpleCell SimpleCell--android SimpleCell--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact">
+	<div class="SimpleCell__main svelte-1u118ma"><div class="SimpleCell__content">
+<span class="Text Text--android Text--w-regular SimpleCell__children svelte-1ncu6iw">Кастомизация
+					</span>
+			</div>
+		</div>
+	
+	<div class="SimpleCell__after svelte-1u118ma"><div role="presentation" title="Компонент поддерживает vkui-tokens" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--tokenized_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#tokenized_outline_28" style="fill: currentColor;"></use></svg></div>
+						
+			</div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></a>
+			
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section></div>
+</div>
+		<div class="article svelte-j5m3y6"><div class="header svelte-j5m3y6">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Forms/FormField/FormField.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">GitHub</div>
+</a>
+		
+
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/lib/components/Forms/FormField/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery">
+
+<div class="Caption Caption--android Caption--w-regular Caption--l-1 svelte-8u9koe">Редактировать страницу</div>
+</a></div>
+	<article class="svelte-j5m3y6"><h1 id="formfield">FormField</h1>
+<p>Компонент-оболочка для элементов форм (<code>Input</code>, <code>Select</code>, <code>Textarea</code> и другие).</p>
+
+
+<div class="fixable svelte-anic51"><div class="svelte-anic51">platform:
+		<select><option value="android">android</option><option value="ios">ios</option><option value="vkcom">vkcom</option></select></div>
+	<div class="svelte-anic51">scheme:
+		<select><option value="bright_light">bright_light</option><option value="space_gray">space_gray</option><option value="vkcom_light">vkcom_light</option><option value="vkcom_dark">vkcom_dark</option></select></div>
+	<div class="svelte-anic51">webviewType:
+			<select><option value="vkapps">vkapps</option><option value="internal">internal</option></select></div>
+		<div class="svelte-anic51">windowWidth:
+			<select><option value="1280">1280px</option><option value="1024">1024px</option><option value="768">768px</option><option value="320">320px</option></select></div>
+		<div class="svelte-anic51">windowHeight:
+			<select><option value="414">414px</option><option value="720">720px</option></select></div>
+		<div class="svelte-anic51">hasMouse:
+			
+
+<label class="Switch Switch--android Switch--sizeY-compact svelte-198n22t" style="" role="presentation"><input checked type="checkbox" class="Switch__self svelte-198n22t">
+	<span class="Switch__pseudo svelte-198n22t"></span>
+</label></div></div>
+
+
+
+<div class="Example svelte-anic51  scroll" style="width:320px;height:414px;">
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		
+
+<form class="FormLayout FormLayout--android"><div class="FormLayout__container">
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact svelte-fp7f3b">
+		<div class="FormField FormField--android FormField--sizeY-compact"><input type="text" class="CustomInput" placeholder="Кастомный инпут">
+	
+	<div role="presentation" class="FormField__border"></div></div>
+		
+</label></div>
+	<input type="submit" class="FormLayout__submit svelte-1oedzma" value=""></form>
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+
+<style>.CustomInput {
+		position: relative;
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 11px;
+		font-size: ;
+		line-height: 19px;
+		text-overflow: ellipsis;
+		color: #000;
+		border: none;
+		background: transparent;
+		z-index: 2;
+	}
+</style></div>
+<h2 id="код">Код</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> FormField<span class="token punctuation">,</span> FormItem<span class="token punctuation">,</span> FormLayout<span class="token punctuation">,</span> Group <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Group</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormLayout</span>
+		<span class="token attr-name"><span class="token namespace">on:</span>submit=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+			e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></span>
+	<span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormField</span><span class="token punctuation">></span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CustomInput<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Кастомный инпут<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormField</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormLayout</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Group</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.CustomInput</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+		<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+		<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token property">padding</span><span class="token punctuation">:</span> 11px<span class="token punctuation">;</span>
+		<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token punctuation">;</span>
+		<span class="token property">line-height</span><span class="token punctuation">:</span> 19px<span class="token punctuation">;</span>
+		<span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+		<span class="token property">background</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+		<span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre></article>
+</div></main>
+
+
+		<script type="module" data-hydrate="1xbn4fb">
+		import { start } from "/VKSUI/_app/start-b5a1ba0a.js";
+		start({
+			target: document.querySelector('[data-hydrate="1xbn4fb"]').parentNode,
+			paths: {"base":"/VKSUI","assets":"/VKSUI"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/VKSUI/_app/pages/__layout.svelte-d566cc20.js"),
+						import("/VKSUI/_app/pages/components/Forms/FormField.svelte-15c747d2.js")
+				],
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>
