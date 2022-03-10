@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-	import { getDOM } from '@sveltevk/vksui/lib/dom';
-
 	import type { AppearanceType } from '@vkontakte/vk-bridge';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -28,24 +26,13 @@
 
 		return `vkui--${tokensPlatform}--${appearance}`;
 	};
-
-	const setScheme = (scheme: AppearanceScheme, contextDocument?: Document): void => {
-		(contextDocument || getDOM().document)?.body.setAttribute('scheme', scheme);
-	};
-
-	const setTokens = (platform: string, appearance: string, contextDocument?: Document): void => {
-		(contextDocument || getDOM().document)?.body.setAttribute(
-			'class',
-			generateVKUITokensClassName(platform, appearance)
-		);
-	};
 </script>
 
 <script lang="ts">
+	const platform = usePlatform();
 	export let appearance: AppearanceType = 'light';
 	export let scheme: AppearanceScheme = undefined;
 
-	const platform = usePlatform();
 	$: _scheme =
 		scheme ||
 		getScheme({
@@ -53,19 +40,19 @@
 			appearance
 		});
 
+	$: className = `vkui${_scheme} ${generateVKUITokensClassName($platform, appearance)}`;
+
 	let wScheme = writable(_scheme);
 	let wAppearance = writable(appearance);
+	let wClassName = writable(className);
 
 	setContext(ContextKey.scheme, wScheme);
 	setContext(ContextKey.appearance, wAppearance);
+	setContext(ContextKey.classAppearance, wClassName);
 
 	$: wScheme.set(_scheme);
 	$: wAppearance.set(appearance);
-
-	$: {
-		setScheme(scheme, $$props.document);
-		setTokens($platform, appearance, $$props.document);
-	}
+	$: wClassName.set(className);
 </script>
 
-<slot />
+<slot class={className} />

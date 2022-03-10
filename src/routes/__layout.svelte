@@ -88,6 +88,14 @@
 					header: 'Layout',
 					child: [
 						{
+							name: 'SplitLayout',
+							link: '/components/Layout/SplitLayout'
+						},
+						{
+							name: 'SplitCol',
+							link: '/components/Layout/SplitCol'
+						},
+						{
 							name: 'FixedLayout',
 							link: '/components/Layout/FixedLayout'
 						}

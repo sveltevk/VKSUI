@@ -1,5 +1,5 @@
 import type { SvelteComponent } from 'svelte';
-import { bubble, listen } from 'svelte/internal';
+import { bubble, listen, noop } from 'svelte/internal';
 
 // Function for forwarding DOM events to the component's declaration
 // Adapted from rgossiaux/svelte-headlessui which is modified from hperrin/svelte-material-ui
@@ -15,8 +15,7 @@ export function createEventForwarder(component: SvelteComponent, exclude: string
 
 	// Monkeypatch SvelteComponent.$on with our own forward-compatible version
 	component.$on = (eventType: string, callback: EventCallback) => {
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
-		let destructor = () => {};
+		let destructor = noop;
 		if (exclude.includes(eventType)) {
 			// Bail out of the event forwarding and run the normal Svelte $on() code
 			const callbacks =

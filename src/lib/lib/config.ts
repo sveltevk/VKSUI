@@ -3,12 +3,11 @@ export enum ContextKey {
 	webviewType = 'vkui_webviewType',
 	scheme = 'vkui_scheme',
 	appearance = 'vkui_appearance',
+	classAppearance = 'vkui_classAppearance',
 	app = 'vkui_app',
 	transitionMotionEnabled = 'vkui_transitionMotionEnabled',
 	platform = 'vkui_platform',
-	hasNewTokens = 'vkui_hasNewTokens',
-	contentWindow = 'vkui_contentWindow',
-	contentDocument = 'vkui_contentDocument'
+	hasNewTokens = 'vkui_hasNewTokens'
 }
 
 export enum Appearance {

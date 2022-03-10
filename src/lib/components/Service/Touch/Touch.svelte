@@ -31,14 +31,14 @@
 
 <script lang="ts">
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { canUseDOM, getDOM } from '@sveltevk/vksui/lib/dom';
+	import { canUseDOM, useDOM } from '@sveltevk/vksui/lib/dom';
 	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { current_component } from 'svelte/internal';
 
 	const dispatch = createEventDispatcher();
 	const callbacks = current_component.$$.callbacks;
 
-	const { document } = getDOM();
+	const dom = useDOM();
 
 	export let component = div;
 
@@ -103,7 +103,7 @@
 
 		dispatch('startY', outputEvent);
 
-		!touchEnabled && subscribe(document);
+		!touchEnabled && subscribe($dom.document);
 	};
 
 	/**
@@ -195,7 +195,7 @@
 		cancelClick = target.tagName === 'A' && isSlide;
 		gesture = {};
 
-		!touchEnabled && unsubscribe(document);
+		!touchEnabled && unsubscribe($dom.document);
 	};
 
 	const subscribe = (element: HTMLElement | Document) => {

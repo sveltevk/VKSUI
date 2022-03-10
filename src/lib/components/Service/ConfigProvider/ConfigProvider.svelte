@@ -6,10 +6,11 @@
 	import { writable } from 'svelte/store';
 	import AdaptivityProvider from '../AdaptivityProvider/AdaptivityProvider.svelte';
 	import type { SizeType, ViewWidth } from '@sveltevk/vksui/lib/adaptivity';
-	import Appearance from '../Appearance/Appearance.svelte';
+	import AppearanceProvider from '../AppearanceProvider/AppearanceProvider.svelte';
 	import { getDOM } from '@sveltevk/vksui/lib/dom';
 	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 	import { hasMouse as _hasMouse } from '@vkontakte/vkjs';
+	import DomContext from './DOMContext.svelte';
 
 	/**
 	 * Цветовая схема приложения
@@ -44,6 +45,7 @@
 	export let hasMouse: boolean = _hasMouse;
 
 	export let contentWindow: Window | undefined = getDOM().window;
+	export let contentDocument: Document | undefined = getDOM().document;
 	export let sizeX: SizeType = undefined;
 	export let sizeY: SizeType = undefined;
 	export let viewWidth: ViewWidth = undefined;
@@ -53,7 +55,6 @@
 	let wApp = writable(app);
 	let wTransitionMotionEnabled = writable(transitionMotionEnabled);
 	let wPlatform = writable(platform);
-	let wContentWindow = writable(contentWindow);
 	let wHasNewTokens = writable(hasNewTokens);
 
 	setContext(ContextKey.isWebView, wIsWebView);
@@ -61,7 +62,6 @@
 	setContext(ContextKey.app, wApp);
 	setContext(ContextKey.transitionMotionEnabled, wTransitionMotionEnabled);
 	setContext(ContextKey.platform, wPlatform);
-	setContext(ContextKey.contentWindow, wContentWindow);
 	setContext(ContextKey.hasNewTokens, wHasNewTokens);
 
 	$: wIsWebView.set(isWebView);
@@ -69,7 +69,6 @@
 	$: wApp.set(app);
 	$: wTransitionMotionEnabled.set(transitionMotionEnabled);
 	$: wPlatform.set(platform);
-	$: wContentWindow.set(contentWindow);
 	$: wHasNewTokens.set(hasNewTokens);
 </script>
 
@@ -78,8 +77,10 @@
 Компонент для прокидывания конфигурации приложению.
 -->
 
-<AdaptivityProvider {contentWindow} {sizeX} {sizeY} {viewWidth} {hasMouse}>
-	<Appearance {appearance} {scheme}>
-		<slot />
-	</Appearance>
-</AdaptivityProvider>
+<DomContext value={{ window: contentWindow, document: contentDocument }}>
+	<AdaptivityProvider {sizeX} {sizeY} {viewWidth} {hasMouse}>
+		<AppearanceProvider {appearance} {scheme}>
+			<slot />
+		</AppearanceProvider>
+	</AdaptivityProvider>
+</DomContext>

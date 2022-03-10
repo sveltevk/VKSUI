@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getDOM } from '@sveltevk/vksui/lib/dom';
+	import { useDOM } from '@sveltevk/vksui/lib/dom';
 
 	import { setContext, onDestroy, beforeUpdate, onMount } from 'svelte';
 	import type { Writable } from 'svelte/store';
@@ -12,7 +12,7 @@
 		ViewWidth
 	} from '@sveltevk/vksui/lib/adaptivity';
 
-	export let contentWindow: Window | undefined = getDOM().window;
+	const dom = useDOM();
 	export let sizeX: SizeType = undefined;
 	export let sizeY: SizeType = undefined;
 	export let viewWidth: ViewWidth = undefined;
@@ -21,7 +21,7 @@
 	export let deviceHasHover: boolean = undefined;
 
 	let currentProps: Writable<AdaptivityContextInterface> = writable(
-		calculateAdaptivity(contentWindow?.innerWidth, contentWindow?.innerHeight, {
+		calculateAdaptivity($dom.window?.innerWidth, $dom.window?.innerHeight, {
 			sizeX,
 			sizeY,
 			viewWidth,
@@ -34,7 +34,7 @@
 	setContext(AdaptivityContextKey, currentProps);
 
 	const onResize = () => {
-		const calculated = calculateAdaptivity(contentWindow?.innerWidth, contentWindow?.innerHeight, {
+		const calculated = calculateAdaptivity($dom.window?.innerWidth, $dom.window?.innerHeight, {
 			sizeX,
 			sizeY,
 			viewWidth,
@@ -52,6 +52,7 @@
 			$currentProps.deviceHasHover !== calculated.deviceHasHover
 		) {
 			currentProps.set(calculated);
+			console.log('set');
 		}
 	};
 
@@ -60,11 +61,11 @@
 	});
 
 	onMount(() => {
-		contentWindow?.addEventListener('resize', onResize, false);
+		$dom.window?.addEventListener('resize', onResize, false);
 	});
 
 	onDestroy(() => {
-		contentWindow?.removeEventListener('resize', onResize, false);
+		$dom.window?.removeEventListener('resize', onResize, false);
 	});
 </script>
 

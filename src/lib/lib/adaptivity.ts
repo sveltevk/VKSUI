@@ -1,6 +1,6 @@
 import { hasMouse as _hasMouse, hasHover as _hasHover } from '@vkontakte/vkjs';
 
-export const AdaptivityContextKey = 'AdaptivityContext';
+export const AdaptivityContextKey = 'vkui_AdaptivityContext';
 
 export enum SizeType {
 	COMPACT = 'compact',

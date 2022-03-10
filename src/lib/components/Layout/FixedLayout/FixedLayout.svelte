@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 
-	import { getDOM } from '@sveltevk/vksui/lib/dom';
+	import { useDOM } from '@sveltevk/vksui/lib/dom';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { classNames } from '@vkontakte/vkjs';
 	import { onDestroy, onMount } from 'svelte';
@@ -12,18 +12,18 @@
 	export let style = '';
 
 	let _this: HTMLDivElement;
-	let contentWindow: Window | undefined = getDOM().window;
+	const dom = useDOM();
 
 	let width = '';
 	const doResize = () => (width = _this ? `${_this.offsetWidth}px` : '');
 
 	onMount(() => {
-		contentWindow?.addEventListener('resize', doResize, false);
+		$dom.window?.addEventListener('resize', doResize, false);
 		doResize();
 	});
 
 	onDestroy(() => {
-		contentWindow?.removeEventListener('resize', doResize, false);
+		$dom.window?.removeEventListener('resize', doResize, false);
 	});
 
 	const platform = usePlatform();
