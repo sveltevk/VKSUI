@@ -96,6 +96,10 @@
 							link: '/components/Layout/SplitCol'
 						},
 						{
+							name: 'Panel',
+							link: '/components/Layout/Panel'
+						},
+						{
 							name: 'FixedLayout',
 							link: '/components/Layout/FixedLayout'
 						}

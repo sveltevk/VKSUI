@@ -4,7 +4,8 @@
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { IOS } from '@sveltevk/vksui/lib/platform';
-	import Touch from '../Service/Touch.svelte';
+	import TooltipContainer from '../../Popouts/Tooltip/TooltipContainer.svelte';
+	import Touch from '../../Service/Touch/Touch.svelte';
 
 	export let centered = false;
 
@@ -12,7 +13,6 @@
 	const platform = usePlatform();
 </script>
 
-<!-- TODO: -->
 <div
 	{...$$restProps}
 	class={classNames(
@@ -25,7 +25,7 @@
 		$$props.class
 	)}
 >
-	<Touch class="Panel__in">
+	<Touch component={TooltipContainer} class="Panel__in">
 		{#if $platform === IOS}
 			<div class="Panel__fade" />
 		{/if}
@@ -58,10 +58,6 @@
 		content: '';
 	}
 
-	.Panel--centered :global(.Panel__in) {
-		height: 100%;
-	}
-
 	.Panel--centered :global(.PanelHeader) {
 		position: absolute;
 		left: 0;
@@ -69,44 +65,51 @@
 		width: 100%;
 	}
 
-	.Panel__in {
+	:global(.Panel__in) {
 		position: relative;
 		box-sizing: border-box;
 		width: 100%;
 		min-height: 100%;
 		z-index: 2;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.Panel__centered {
-		min-height: 100%;
 		display: flex;
+		flex: 1 0;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
 	}
 
-	:global(.Panel__centered .PanelHeader--ios.PanelHeader--vis + *) {
+	.Panel__centered :global(.PanelHeader--ios.PanelHeader--vis + *) {
 		margin-top: var(--panelheader_height_ios);
 	}
 
-	:global(.Panel__centered .PanelHeader--android.PanelHeader--vis + *) {
+	.Panel__centered :global(.PanelHeader--android.PanelHeader--vis + *),
+	.Panel__centered :global(.PanelHeader--vkcom.PanelHeader--vis + *) {
 		margin-top: var(--panelheader_height_android);
 	}
 
-	:global(.Panel--sizeX-compact .Panel__centered .PanelHeader--ios.PanelHeader--sep + *) {
+	.Panel--sizeX-compact .Panel__centered :global(.PanelHeader--ios.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_ios) + 5px);
 	}
 
-	:global(.Panel--sizeX-compact .Panel__centered .PanelHeader--android.PanelHeader--sep + *) {
+	.Panel--sizeX-compact .Panel__centered :global(.PanelHeader--android.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_android) + 5px);
 	}
 
-	:global(.Panel--sizeX-regular .Panel__centered .PanelHeader--ios.PanelHeader--sep + *) {
+	.Panel--sizeX-compact .Panel__centered :global(.PanelHeader--vkcom.PanelHeader--sep + *) {
+		margin-top: calc(var(--panelheader_height_vkcom) + 5px);
+	}
+
+	.Panel--sizeX-regular .Panel__centered :global(.PanelHeader--ios.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_ios) + 16px);
 	}
 
-	:global(.Panel--sizeX-regular .Panel__centered .PanelHeader--android.PanelHeader--sep + *) {
+	.Panel--sizeX-regular .Panel__centered :global(.PanelHeader--android.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_android) + 16px);
 	}
 

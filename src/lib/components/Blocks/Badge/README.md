@@ -4,32 +4,34 @@
 
 ```svelte scroll
 <script>
-	import { Group, Header, SimpleCell, Tabs, TabsItem, Badge } from '@sveltevk/vksui';
+	import { Panel, Group, Header, SimpleCell, Tabs, TabsItem, Badge } from '@sveltevk/vksui';
 	import Icon28Notifications from '@sveltevk/icons/dist/28/notifications';
 </script>
 
-<Group>
-	<Header mode="secondary">В пунктах меню</Header>
-	<SimpleCell expandable>
-		<Icon28Notifications slot="before" />
-		<Badge slot="badge" aria-label="Есть новые" />
-		Уведомления
-	</SimpleCell>
-</Group>
+<Panel>
+	<Group>
+		<Header mode="secondary">В пунктах меню</Header>
+		<SimpleCell expandable>
+			<Icon28Notifications slot="before" />
+			<Badge slot="badge" aria-label="Есть новые" />
+			Уведомления
+		</SimpleCell>
+	</Group>
 
-<Group>
-	<Header mode="secondary">В переключателях</Header>
-	<Tabs>
-		<TabsItem>
-			<Badge slot="after" mode="prominent" aria-label="Есть новые" />
-			Диалоги
-		</TabsItem>
-		<TabsItem selected>
-			<Badge slot="after" mode="prominent" aria-label="Есть новые" />
-			Сообщения
-		</TabsItem>
-	</Tabs>
-</Group>
+	<Group>
+		<Header mode="secondary">В переключателях</Header>
+		<Tabs>
+			<TabsItem>
+				<Badge slot="after" mode="prominent" aria-label="Есть новые" />
+				Диалоги
+			</TabsItem>
+			<TabsItem selected>
+				<Badge slot="after" mode="prominent" aria-label="Есть новые" />
+				Сообщения
+			</TabsItem>
+		</Tabs>
+	</Group>
+</Panel>
 ```
 
 <!-- TODO: <Tabbar>

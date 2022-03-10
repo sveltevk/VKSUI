@@ -19,6 +19,7 @@ import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariabl
 export { default as AppRoot } from './components/Layout/AppRoot/AppRoot.svelte';
 export { default as SplitLayout } from './components/Layout/SplitLayout/SplitLayout.svelte';
 export { default as SplitCol } from './components/Layout/SplitCol/SplitCol.svelte';
+export { default as Panel } from './components/Layout/Panel/Panel.svelte';
 export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLayout.svelte';
 export { default as HorizontalScroll } from './components/Layout/HorizontalScroll/HorizontalScroll.svelte';
 /**
