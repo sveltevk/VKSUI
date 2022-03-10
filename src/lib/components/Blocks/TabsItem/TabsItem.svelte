@@ -1,14 +1,16 @@
 <script lang="ts">
-	import Tappable, { ACTIVE_EFFECT_DELAY } from '$lib/components/Service/Tappable/Tappable.svelte';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { IOS } from '$lib/lib/platform';
+	import Tappable, {
+		ACTIVE_EFFECT_DELAY
+	} from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { IOS } from '@sveltevk/vksui/lib/platform';
 
 	const platform = usePlatform();
 
-	export let after: any = undefined;
-	export let selected: boolean = false;
+	export let after = '';
+	export let selected = false;
 
 	$: $$restProps.class = classNames(
 		getClassName('TabsItem', $platform),

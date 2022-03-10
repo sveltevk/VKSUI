@@ -7,11 +7,11 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	export let vertical: 'top' | 'bottom' = undefined;
-	export let filled: boolean = undefined;
+	export let filled = false;
 
-	export let style: string = '';
+	export let style = '';
 
-	let _this: any;
+	let _this: HTMLDivElement;
 	let contentWindow: Window | undefined = getDOM().window;
 
 	let width = '';

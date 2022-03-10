@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Forms/FormLayoutGroup/README.md';
+	import Doc from '@sveltevk/vksui/components/Forms/FormLayoutGroup/README.md';
 </script>
 
 <Doc />

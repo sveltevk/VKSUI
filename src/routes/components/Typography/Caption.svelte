@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Typography/Caption/README.md';
+	import Doc from '@sveltevk/vksui/components/Typography/Caption/README.md';
 </script>
 
 <Doc />

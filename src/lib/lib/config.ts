@@ -17,10 +17,10 @@ export enum Appearance {
 }
 
 export enum Scheme {
-	DEPRECATED_CLIENT_LIGHT = 'client_light',
-	DEPRECATED_CLIENT_DARK = 'client_dark',
 	BRIGHT_LIGHT = 'bright_light',
-	SPACE_GRAY = 'space_gray'
+	SPACE_GRAY = 'space_gray',
+	VKCOM_LIGHT = 'vkcom_light',
+	VKCOM_DARK = 'vkcom_dark'
 }
 
 export enum WebviewType {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
 	import { ANDROID, Platform } from '@sveltevk/vksui/lib/platform';
-	import Headline from '$lib/components/Typography/Headline/Headline.svelte';
-	import Text from '$lib/components/Typography/Text/Text.svelte';
-	import Title from '$lib/components/Typography/Title/Title.svelte';
+	import Headline from '@sveltevk/vksui/components/Typography/Headline/Headline.svelte';
+	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
+	import Title from '@sveltevk/vksui/components/Typography/Title/Title.svelte';
 
 	export let sizeY: SizeType;
 	export let platform: Platform;

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import { platform as getPlatform } from '$lib/lib/platform';
+	import { platform as getPlatform } from '@sveltevk/vksui/lib/platform';
 	import { writable } from 'svelte/store';
-	import { ContextKey } from '$lib/lib/config';
+	import { ContextKey } from '@sveltevk/vksui/lib/config';
 
 	export let userAgent: string;
 

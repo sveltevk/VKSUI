@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Blocks/PanelSpinner/README.md';
+	import Doc from '@sveltevk/vksui/components/Blocks/PanelSpinner/README.md';
 </script>
 
 <Doc />

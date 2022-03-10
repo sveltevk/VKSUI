@@ -4,7 +4,7 @@
 	import Spinner44 from '@sveltevk/icons/dist/44/spinner';
 	import Spinner16 from '@sveltevk/icons/dist/16/spinner';
 
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	export let size: 'small' | 'regular' | 'large' | 'medium' = 'regular';
 

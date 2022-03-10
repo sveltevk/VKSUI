@@ -60,29 +60,29 @@
 </script>
 
 <script lang="ts">
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import button from '$lib/components/Elements/button/button.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import Spinner from '../Spinner/Spinner.svelte';
 	import ButtonTypography from './ButtonTypography.svelte';
 	import { getContext } from 'svelte';
-	import { ContextKey } from '$lib/lib/config';
+	import { ContextKey } from '@sveltevk/vksui/lib/config';
 	import type { Writable } from 'svelte/store';
 
 	export let component = button;
 
-	export let before: any = undefined;
-	export let after: any = undefined;
+	export let before = '';
+	export let after = '';
 
 	export let mode: ResolvedButtonAppearance['resolvedMode'] = 'primary';
 	export let appearance: ResolvedButtonAppearance['resolvedAppearance'] = undefined;
 	export let size: 's' | 'm' | 'l' = 's';
-	export let stretched: boolean = false;
+	export let stretched = false;
 	export let align: 'left' | 'center' | 'right' = 'center';
-	export let loading: boolean = false;
+	export let loading = false;
 
 	let { resolvedMode, resolvedAppearance } = resolveButtonAppearance(appearance, mode);
 

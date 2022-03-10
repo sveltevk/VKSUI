@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Text from '$lib/components/Typography/Text/Text.svelte';
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import Div from '$lib/components/Elements/div/div.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 
 	/**
 	 * Тип ячейки:

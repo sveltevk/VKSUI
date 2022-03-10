@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
 	import Caption from '../../Typography/Caption/Caption.svelte';
 	import Separator from '../Separator/Separator.svelte';
 
-	export let description: string = '';
+	export let description = '';
 	/**
     show - разделитель всегда показывается,
     hide – разделитель всегда спрятан,

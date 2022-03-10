@@ -5,9 +5,9 @@
 	import { IconButton, SimpleCell } from '@sveltevk/vksui';
 	import Icon28TokenizedOutline from '../Icon28TokenizedOutline/Icon28TokenizedOutline.svelte';
 
-	export let search: string = '';
-	export let base: string = '';
-	let expand: boolean = false;
+	export let search = '';
+	export let base = '';
+	let expand = false;
 
 	export let currentPage = {
 		path: '',

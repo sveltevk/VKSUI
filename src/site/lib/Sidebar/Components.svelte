@@ -1,8 +1,9 @@
 <script lang="ts">
+	import Footer from '@sveltevk/vksui/components/Blocks/Footer/Footer.svelte';
 	import Search from '@sveltevk/vksui/components/Blocks/Search/Search.svelte';
 	import Group from './Group.svelte';
-	export let base: string = '';
-	let search: string = '';
+	export let base = '';
+	let search = '';
 
 	export let currentPage = {
 		path: '',
@@ -25,9 +26,18 @@
 			]
 		}
 	];
+
+	$: searchTree = search
+		? tree.filter(
+				({ child }) =>
+					child.filter(({ name }) => name.toLowerCase().indexOf(search) > -1).length > 0
+		  )
+		: tree;
 </script>
 
 <Search bind:value={search} placeholder="Поиск" style="background:none" />
-{#each tree as group}
+{#each searchTree as group}
 	<Group {group} {currentPage} {base} search={search.toLowerCase()} />
+{:else}
+	<Footer>Ничего не найдено</Footer>
 {/each}

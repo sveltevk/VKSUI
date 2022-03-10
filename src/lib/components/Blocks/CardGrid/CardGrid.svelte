@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 
 	export let size: 's' | 'm' | 'l' = 's';
 	const adaptivity = useAdaptivity();

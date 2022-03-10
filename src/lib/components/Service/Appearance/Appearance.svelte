@@ -1,13 +1,14 @@
 <script context="module" lang="ts">
-	import { getDOM } from '$lib/lib/dom';
+	import { getDOM } from '@sveltevk/vksui/lib/dom';
 
-	import type { AppearanceSchemeType, AppearanceType } from '@vkontakte/vk-bridge';
+	import type { AppearanceType } from '@vkontakte/vk-bridge';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { getScheme } from '../../../helpers/getScheme';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import { ContextKey } from '$lib/lib/config';
-	import { Platform } from '$lib/lib/platform';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import { ContextKey } from '@sveltevk/vksui/lib/config';
+	import { Platform } from '@sveltevk/vksui/lib/platform';
+	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 
 	const generateVKUITokensClassName = (platform: string, appearance: string): string => {
 		let tokensPlatform: string;
@@ -28,7 +29,7 @@
 		return `vkui--${tokensPlatform}--${appearance}`;
 	};
 
-	const setScheme = (scheme: AppearanceSchemeType, contextDocument?: Document): void => {
+	const setScheme = (scheme: AppearanceScheme, contextDocument?: Document): void => {
 		(contextDocument || getDOM().document)?.body.setAttribute('scheme', scheme);
 	};
 
@@ -42,7 +43,7 @@
 
 <script lang="ts">
 	export let appearance: AppearanceType = 'light';
-	export let scheme: AppearanceSchemeType = undefined;
+	export let scheme: AppearanceScheme = undefined;
 
 	const platform = usePlatform();
 	$: _scheme =

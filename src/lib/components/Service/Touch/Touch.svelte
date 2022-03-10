@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-	import { getSupportedEvents, coordX, coordY, touchEnabled } from '$lib/lib/touch';
-	import type { VKUITouchEventHander, VKUITouchEvent } from '$lib/lib/touch';
+	import { getSupportedEvents, coordX, coordY, touchEnabled } from '@sveltevk/vksui/lib/touch';
+	import type { VKUITouchEventHander, VKUITouchEvent } from '@sveltevk/vksui/lib/touch';
 
 	export interface Gesture {
 		startX?: number;
@@ -31,8 +31,8 @@
 
 <script lang="ts">
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { canUseDOM, getDOM } from '$lib/lib/dom';
-	import div from '$lib/components/Elements/div/div.svelte';
+	import { canUseDOM, getDOM } from '@sveltevk/vksui/lib/dom';
+	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { current_component } from 'svelte/internal';
 
 	const dispatch = createEventDispatcher();

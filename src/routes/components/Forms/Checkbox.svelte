@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Forms/Checkbox/README.md';
+	import Doc from '@sveltevk/vksui/components/Forms/Checkbox/README.md';
 </script>
 
 <Doc />

@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Layout/FixedLayout/README.md';
+	import Doc from '@sveltevk/vksui/components/Layout/FixedLayout/README.md';
 </script>
 
 <Doc />

@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import FormField from '../FormField/FormField.svelte';
 
 	import { Icon20Dropdown, Icon24Dropdown } from '@sveltevk/icons';
-	import { SizeType } from '$lib/lib/adaptivity';
+	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
 
-	export let placeholder: any = undefined;
+	export let placeholder = '';
 	export let align: 'left' | 'center' | 'right' = undefined;
-	export let multiline: boolean = false;
-	export let disabled: boolean = false;
-	export let tabIndex: number = 0;
+	export let multiline = false;
+	export let disabled = false;
+	export let tabIndex = 0;
 
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();

@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Caption from '../../Typography/Caption/Caption.svelte';
 	import HeaderAside from './HeaderAside.svelte';
 	import HeaderContent from './HeaderContent.svelte';
 	import HeaderSubtitle from './HeaderSubtitle.svelte';
 
 	export let mode: 'primary' | 'secondary' | 'tertiary' = 'primary';
-	export let subtitle: string = '';
-	export let indicator: any = undefined;
-	export let multiline: boolean = false;
+	export let subtitle = '';
+	export let indicator: string | number = undefined;
+	export let multiline = false;
 
 	const platform = usePlatform();
 </script>

@@ -1,15 +1,15 @@
 <script lang="ts">
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	/**
 	 * Заголовок плейсхолдера
 	 */
-	export let header: any = undefined;
+	export let header = '';
 
 	/**
 	 * Растягивает плейсхолдер на весь экран, но в таком случае на экране должен быть только плейсхолдер
 	 */
-	export let stretched: boolean = false;
+	export let stretched = false;
 </script>
 
 <!-- 

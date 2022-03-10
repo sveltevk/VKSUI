@@ -6,15 +6,15 @@
 <script lang="ts">
 	import Icon12Circle from '@sveltevk/icons/dist/12/circle';
 	import Icon12OnlineMobile from '@sveltevk/icons/dist/12/online_mobile';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
 
 	/**
 	 * Рекомендуемый сет значений: 96 | 88 | 80 | 72 | 64 | 56 | 48 | 44 | 40 | 36 | 32 | 28 | 24
 	 */
-	export let size: number = AVATAR_DEFAULT_SIZE;
+	export let size = AVATAR_DEFAULT_SIZE;
 	export let mode: 'default' | 'image' | 'app' = 'default';
 	export let shadow: boolean = AVATAR_DEFAULT_SHADOW;
 	export let badge: 'online' | 'online-mobile' = undefined;
@@ -24,7 +24,7 @@
 	 */
 	export let overlayAction: 'hover' | 'always' = undefined;
 
-	export let style: string = '';
+	export let style = '';
 	export let src: string = undefined;
 	export let srcSet: string = undefined;
 
@@ -40,7 +40,7 @@
 
 	const platform = usePlatform();
 
-	let borderRadius: string = '50%';
+	let borderRadius = '50%';
 
 	switch (mode) {
 		case 'image':

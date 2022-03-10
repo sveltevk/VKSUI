@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Button from '$lib/components/Blocks/Button/Button.svelte';
-	import label from '$lib/components/Elements/label/label.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Button from '@sveltevk/vksui/components/Blocks/Button/Button.svelte';
+	import label from '@sveltevk/vksui/components/Elements/label/label.svelte';
 
-	export let before: any = undefined;
-	export let after: any = undefined;
+	export let before = '';
+	export let after = '';
 
 	export let mode:
 		| 'primary'
@@ -19,9 +19,9 @@
 		| 'overlay_secondary'
 		| 'overlay_outline' = 'primary';
 	export let controlSize: 's' | 'm' | 'l' = 's';
-	export let stretched: boolean = false;
+	export let stretched = false;
 	export let align: 'left' | 'center' | 'right' = 'center';
-	export let style: string = '';
+	export let style = '';
 
 	const platform = usePlatform();
 </script>

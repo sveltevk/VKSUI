@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { ANDROID } from '$lib/lib/platform';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
 	export let component: 'footer' | 'span' | 'div' = 'div';
 	export let weight: 'regular' | 'medium' | 'semibold' | 'bold';
 	export let level: '1' | '2' | '3' | '4';
-	export let caps: boolean = false;
+	export let caps = false;
 
 	const platform = usePlatform();
 

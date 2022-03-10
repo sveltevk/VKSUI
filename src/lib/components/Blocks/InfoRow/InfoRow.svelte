@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
-	import Headline from '$lib/components/Typography/Headline/Headline.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
+	import Headline from '@sveltevk/vksui/components/Typography/Headline/Headline.svelte';
 
-	export let header: string = '';
+	export let header = '';
 
 	const platform = usePlatform();
 </script>

@@ -28,7 +28,7 @@
 		}
 	};
 
-	const onRemoveActivateClick = (e) => {
+	const onRemoveActivateClick = (e: Event) => {
 		e.stopPropagation();
 		if (!removeButtonRef) {
 			return;

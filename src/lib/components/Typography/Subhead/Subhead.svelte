@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import classNames from '$lib/lib/classNames';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	export let component: string = undefined;
 	export let weight: '1' | '2' | '3' = undefined;

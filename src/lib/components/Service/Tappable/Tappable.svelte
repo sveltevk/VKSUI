@@ -1,16 +1,16 @@
 <script context="module" lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { ANDROID } from '$lib/lib/platform';
-	import { getOffsetRect } from '$lib/lib/offset';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { ANDROID } from '@sveltevk/vksui/lib/platform';
+	import { getOffsetRect } from '@sveltevk/vksui/lib/offset';
 	import Touch from '../Touch/Touch.svelte';
-	import div from '$lib/components/Elements/div/div.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
-	import button from '$lib/components/Elements/button/button.svelte';
+	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
+	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
 	// import type { TouchEventHandler, TouchEvent } from '../Touch/Touch.svelte';
-	import { coordX, coordY } from '$lib/lib/touch';
+	import { coordX, coordY } from '@sveltevk/vksui/lib/touch';
 	import type { FocusVisibleMode } from '../FocusVisible/FocusVisible.svelte';
 
 	export interface StorageItem {
@@ -55,23 +55,24 @@
 	import FocusVisible from '../FocusVisible/FocusVisible.svelte';
 	import Wave from './Wave.svelte';
 	import { getContext, setContext } from 'svelte';
+	import { noop } from 'svelte/internal';
 
 	// props
 	/**
 	 * Длительность показа active-состояния
 	 */
 	export let activeEffectDelay: number = ACTIVE_EFFECT_DELAY;
-	export let disabled: boolean = undefined;
-	export let stopPropagation: boolean = false;
+	export let disabled = false;
+	export let stopPropagation = false;
 	export let component = div;
 	/**
 	 * Указывает, должен ли компонент реагировать на hover-состояние
 	 */
-	export let hasHover: boolean = true;
+	export let hasHover = true;
 	/**
 	 * Указывает, должен ли компонент реагировать на active-состояние
 	 */
-	export let hasActive: boolean = true;
+	export let hasActive = true;
 	/**
 	 * Стиль подсветки active-состояния. Если передать произвольную строку, она добавится как css-класс во время active
 	 */
@@ -87,11 +88,11 @@
 	$: _focusVisibleMode = focusVisibleMode as FocusVisibleMode;
 
 	// state
-	export let active: boolean = false;
+	export let active = false;
 	export let ts: number = null;
-	export let deviceHasHover: boolean = true;
+	export let deviceHasHover = true;
 
-	interface Wave {
+	interface IWave {
 		x: number;
 		y: number;
 		id: string;
@@ -99,12 +100,12 @@
 
 	const { onHoverChange } =
 		(getContext(TappableContextKey) as TappableContextInterface) ||
-		({ onHoverChange: () => {} } as TappableContextInterface);
+		({ onHoverChange: noop } as TappableContextInterface);
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
 	// const { focusVisible, onBlur, onFocus } = useFocusVisible();
 
-	export let clicks: Wave[] = [];
+	export let clicks: IWave[] = [];
 	let childHover = false;
 	let _hovered = false;
 
@@ -114,7 +115,7 @@
 	$: isCustomElement = component !== a && component !== button;
 	$: isPresetHoverMode = ['opacity', 'background'].includes(hoverMode);
 	$: isPresetActiveMode = ['opacity', 'background'].includes(activeMode);
-	$: isPresetFocusVisibleMode = ['inside', 'outside'].includes(focusVisibleMode);
+	// TODO: $: isPresetFocusVisibleMode = ['inside', 'outside'].includes(focusVisibleMode);
 
 	// export let hasHover: boolean;
 	export let container: HTMLElement = undefined;
@@ -123,7 +124,6 @@
 	const id = Math.round(Math.random() * 1e8).toString(16);
 	let isSlide = false;
 	let insideTouchRoot = false;
-	let timeout = 0;
 
 	// hover propagation
 	setContext(TappableContextKey, { onHoverChange: (s: boolean) => (childHover = s) });
@@ -209,8 +209,6 @@
 			if (getStorage()) {
 				clearTimeout(getStorage().activeTimeout);
 				getStorage().timeout = timeoutT;
-			} else {
-				timeout = timeoutT;
 			}
 		}
 
@@ -220,7 +218,7 @@
 	/*
 	 * Устанавливает активное выделение
 	 */
-	const start: VoidFunction = () => {
+	const start = () => {
 		if (!active) {
 			active = true;
 			ts = nowTs();
@@ -231,7 +229,7 @@
 	/*
 	 * Снимает активное выделение
 	 */
-	const stop: VoidFunction = () => {
+	const stop = () => {
 		if (active) {
 			active = false;
 			ts = null;
@@ -247,22 +245,6 @@
 	 */
 	const getStorage: GetStorage = () => {
 		return storage[id];
-	};
-
-	const containerHasTransparentBackground = (c: HTMLElement): boolean => {
-		if (!c) {
-			return true;
-		}
-
-		if (!c.style.backgroundColor) {
-			return true;
-		}
-
-		if (c.style.backgroundColor === 'transparent') {
-			return true;
-		}
-
-		return false;
 	};
 
 	$: $$restProps.class = classNames(

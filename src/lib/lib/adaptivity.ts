@@ -50,8 +50,8 @@ export const calculateAdaptivity = (
 	let viewHeight = ViewHeight.SMALL;
 	let sizeY = SizeType.REGULAR;
 	let sizeX = SizeType.REGULAR;
-	let hasMouse = props.hasMouse ?? _hasMouse;
-	let deviceHasHover = props.deviceHasHover ?? _hasHover;
+	const hasMouse = props.hasMouse ?? _hasMouse;
+	const deviceHasHover = props.deviceHasHover ?? _hasHover;
 
 	if (windowWidth >= DESKTOP_SIZE) {
 		viewWidth = ViewWidth.DESKTOP;

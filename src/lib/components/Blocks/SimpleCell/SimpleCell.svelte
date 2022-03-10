@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { IOS } from '$lib/lib/platform';
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { IOS } from '@sveltevk/vksui/lib/platform';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
 	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
-	import Div from '$lib/components/Elements/div/div.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
+	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import SimpleCellTypography from './SimpleCellTypography.svelte';
 	import Subhead from '../../Typography/Subhead/Subhead.svelte';
 
@@ -18,21 +18,21 @@
 	/**
 	 * Контейнер для текста справа от основного текста.
 	 */
-	export let indicator: any = undefined;
+	export let indicator = '';
 	/**
 	 * Контейнер для текста под основным текстом.
 	 */
-	export let description: string = '';
+	export let description = '';
 	/**
 	 * Убирает анимацию нажатия
 	 */
-	export let disabled: boolean = false;
+	export let disabled = false;
 
 	/**
 	 * В iOS добавляет chevron справа. Передавать `true`, если предполагается переход при клике по ячейке.
 	 */
-	export let expandable: boolean = false;
-	export let multiline: boolean = false;
+	export let expandable = false;
+	export let multiline = false;
 
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();

@@ -1,36 +1,41 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { IOS, VKCOM } from '$lib/lib/platform';
-	import Touch from '$lib/components/Service/Touch/Touch.svelte';
-	// import type { TouchEventHandler, TouchEvent } from '$lib/components/Service/Touch/Touch.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { IOS, VKCOM } from '@sveltevk/vksui/lib/platform';
+	import Touch, { type TouchEvent } from '@sveltevk/vksui/components/Service/Touch/Touch.svelte';
+	// import type { TouchEventHandler, TouchEvent } from '@sveltevk/vksui/components/Service/Touch/Touch.svelte';
 	import Icon16SearchOutline from '@sveltevk/icons/dist/16/search_outline';
 	import Icon16Clear from '@sveltevk/icons/dist/16/clear';
 	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 	import { createEventDispatcher } from 'svelte';
 	import SearchPlaceholderTypography from './SearchPlaceholderTypography.svelte';
 	import Separator from '../Separator/Separator.svelte';
+	import type { VKUITouchEvent } from '@sveltevk/vksui/lib/touch';
 
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher<{
+		focus: FocusEvent;
+		blur: FocusEvent;
+		iconClick: VKUITouchEvent;
+	}>();
 
 	export let style = '';
 
-	export let after: any = 'Отмена';
+	export let after = 'Отмена';
 	// export let autoComplete: string = 'off';
-	export let placeholder: string = 'Поиск';
+	export let placeholder = 'Поиск';
 
-	let inputEl;
+	let inputEl: HTMLInputElement;
 	let isFocused = false;
 	export let value = '';
 	const platform = usePlatform();
 
-	const onFocus = (e) => {
+	const onFocus = (e: FocusEvent) => {
 		isFocused = true;
 		dispatch('focus', e);
 	};
 
-	const onBlur = (e) => {
+	const onBlur = (e: FocusEvent) => {
 		isFocused = false;
 		dispatch('blur', e);
 	};
@@ -48,11 +53,11 @@
 		inputEl.dispatchEvent(ev2);
 	};
 
-	const onIconClickStart = (e) => {
-		dispatch('iconClick', e.originalEvent);
+	const onIconClickStart = (e: CustomEvent<TouchEvent>) => {
+		dispatch('iconClick', e.detail.originalEvent);
 	};
 
-	const onIconCancelClickStart = (e) => {
+	const onIconCancelClickStart = (e: CustomEvent<TouchEvent>) => {
 		e.detail.originalEvent.preventDefault();
 		onCancel();
 		inputEl.focus();

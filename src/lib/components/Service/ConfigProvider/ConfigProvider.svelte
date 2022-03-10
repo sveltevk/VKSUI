@@ -1,39 +1,24 @@
-<script lang="ts" context="module">
-	const mapOldScheme = (scheme: AppearanceSchemeType): AppearanceSchemeType => {
-		switch (scheme) {
-			case Scheme.DEPRECATED_CLIENT_LIGHT:
-				return Scheme.BRIGHT_LIGHT;
-			case Scheme.DEPRECATED_CLIENT_DARK:
-				return Scheme.SPACE_GRAY;
-			default:
-				return scheme;
-		}
-	};
-
-	const setScheme = (scheme: AppearanceSchemeType, contextDocument?: Document): void => {
-		(contextDocument || getDOM().document)?.body.setAttribute('scheme', scheme);
-	};
-</script>
-
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import type { AppearanceSchemeType, AppearanceType } from '@vkontakte/vk-bridge';
-	import { Scheme, WebviewType, ContextKey } from '$lib/lib/config';
-	import { Platform, platform as getPlatform } from '$lib/lib/platform';
+	import type { AppearanceType } from '@vkontakte/vk-bridge';
+	import { WebviewType, ContextKey } from '@sveltevk/vksui/lib/config';
+	import { Platform, platform as getPlatform } from '@sveltevk/vksui/lib/platform';
 	import { writable } from 'svelte/store';
 	import AdaptivityProvider from '../AdaptivityProvider/AdaptivityProvider.svelte';
-	import type { SizeType, ViewWidth } from '$lib/lib/adaptivity';
+	import type { SizeType, ViewWidth } from '@sveltevk/vksui/lib/adaptivity';
 	import Appearance from '../Appearance/Appearance.svelte';
-	import { getDOM } from '$lib/lib/dom';
+	import { getDOM } from '@sveltevk/vksui/lib/dom';
+	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
+	import { hasMouse as _hasMouse } from '@vkontakte/vkjs';
 
 	/**
 	 * Цветовая схема приложения
 	 */
-	export let scheme: AppearanceSchemeType = 'bright_light';
+	export let scheme: AppearanceScheme = 'bright_light';
 	/**
 	 * Подсказывает приложению, обёрнутому в `ConfigProvider`, где открыто приложение: внутри webview или в мобильном браузере
 	 */
-	export let isWebView: boolean = false; // FIXME: Check vkBridge.isWebView()
+	export let isWebView = false; // FIXME: Check vkBridge.isWebView()
 	/**
 	 * Тип вебвью.<br>
 	 * В случае `WebviewType.VKAPPS` интерфейс будет адаптирован для отображения в вебвью Mini Apps (системные контролы в правой части шапки)
@@ -42,7 +27,7 @@
 	/**
 	 * Тип приложения
 	 */
-	export let app: string = undefined;
+	export let app = '';
 	/**
 	 * Тип цветовой схемы – `light` или `dark`
 	 */
@@ -50,12 +35,13 @@
 	/**
 	 * Включена ли анимация переходов между экранами в `Root` и `View`
 	 */
-	export let transitionMotionEnabled: boolean = true;
+	export let transitionMotionEnabled = true;
 	/**
 	 * Платформа
 	 */
 	export let platform: Platform = getPlatform();
-	export let hasNewTokens: boolean = false;
+	export let hasNewTokens = false;
+	export let hasMouse: boolean = _hasMouse;
 
 	export let contentWindow: Window | undefined = getDOM().window;
 	export let sizeX: SizeType = undefined;
@@ -85,9 +71,6 @@
 	$: wPlatform.set(platform);
 	$: wContentWindow.set(contentWindow);
 	$: wHasNewTokens.set(hasNewTokens);
-	$: {
-		setScheme(mapOldScheme(scheme), $$props.document);
-	}
 </script>
 
 <!-- 
@@ -95,7 +78,7 @@
 Компонент для прокидывания конфигурации приложению.
 -->
 
-<AdaptivityProvider {contentWindow} {sizeX} {sizeY} {viewWidth}>
+<AdaptivityProvider {contentWindow} {sizeX} {sizeY} {viewWidth} {hasMouse}>
 	<Appearance {appearance} {scheme}>
 		<slot />
 	</Appearance>

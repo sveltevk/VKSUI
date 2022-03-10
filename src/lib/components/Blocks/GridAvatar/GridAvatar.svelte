@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	import Avatar, { AVATAR_DEFAULT_SHADOW, AVATAR_DEFAULT_SIZE } from '../Avatar/Avatar.svelte';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	export let component: string = undefined;
 	export let level: '1' | '2' | '3' = '1';

@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Forms/FormField/README.md';
+	import Doc from '@sveltevk/vksui/components/Forms/FormField/README.md';
 </script>
 
 <Doc />

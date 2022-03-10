@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { SizeType } from '$lib/lib/adaptivity';
-	import { ANDROID, IOS, VKCOM } from '$lib/lib/platform';
-	import type { PlatformType } from '$lib/lib/platform';
-	import Caption from '$lib/components/Typography/Caption/Caption.svelte';
-	import Headline from '$lib/components/Typography/Headline/Headline.svelte';
-	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
-	import Text from '$lib/components/Typography/Text/Text.svelte';
-	import Title from '$lib/components/Typography/Title/Title.svelte';
+	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
+	import { ANDROID, IOS, VKCOM } from '@sveltevk/vksui/lib/platform';
+	import type { PlatformType } from '@sveltevk/vksui/lib/platform';
+	import Caption from '@sveltevk/vksui/components/Typography/Caption/Caption.svelte';
+	import Headline from '@sveltevk/vksui/components/Typography/Headline/Headline.svelte';
+	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
+	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
+	import Title from '@sveltevk/vksui/components/Typography/Title/Title.svelte';
 
 	export let size: 's' | 'm' | 'l' = 's';
 	export let platform: PlatformType | undefined;

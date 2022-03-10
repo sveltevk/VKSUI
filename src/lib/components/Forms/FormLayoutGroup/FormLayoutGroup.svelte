@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import { createEventDispatcher } from 'svelte';
 	import Removable from '../../Blocks/Removable/Removable.svelte';
@@ -13,7 +13,7 @@
 	export let removable = false;
 	export let removePlaceholder = 'Удалить';
 
-	let rootEl;
+	let rootEl: HTMLDivElement;
 
 	const platform = usePlatform();
 	const adaptivity = useAdaptivity();

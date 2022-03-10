@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Service/AdaptivityProvider/README.md';
+	import Doc from '@sveltevk/vksui/components/Service/AdaptivityProvider/README.md';
 </script>
 
 <Doc />

@@ -1,13 +1,7 @@
 import { visit, SKIP } from 'unist-util-visit';
 
 const reScript = /<script.*?>(.*?)<\/script>/s;
-const reStyle = /<style.*?>.*?<\/style>/s;
-
-const script = [
-	'<script>',
-	`  import Showcase from '$site/lib/Showcase/Showcase.svelte'`,
-	'</script>'
-].join('\n');
+// const reStyle = /<style.*?>.*?<\/style>/s;
 
 export default function exampleCode() {
 	return (tree) => {

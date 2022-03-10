@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { getDOM } from '$lib/lib/dom';
+	import { getDOM } from '@sveltevk/vksui/lib/dom';
 
 	import { setContext, onDestroy, beforeUpdate, onMount } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import { writable } from 'svelte/store';
-	import type { AdaptivityContextInterface, ViewHeight } from '$lib/lib/adaptivity';
+	import type { AdaptivityContextInterface, ViewHeight } from '@sveltevk/vksui/lib/adaptivity';
 	import {
 		AdaptivityContextKey,
 		calculateAdaptivity,
 		SizeType,
 		ViewWidth
-	} from '$lib/lib/adaptivity';
+	} from '@sveltevk/vksui/lib/adaptivity';
 
 	export let contentWindow: Window | undefined = getDOM().window;
 	export let sizeX: SizeType = undefined;

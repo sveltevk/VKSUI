@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Blocks/CellButton/README.md';
+	import Doc from '@sveltevk/vksui/components/Blocks/CellButton/README.md';
 </script>
 
 <Doc />

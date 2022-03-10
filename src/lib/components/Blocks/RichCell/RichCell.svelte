@@ -1,44 +1,44 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import Div from '$lib/components/Elements/div/div.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
-	import Text from '$lib/components/Typography/Text/Text.svelte';
-	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
+	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
+	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
 
 	/**
 	 * Контейнер для текста под `children`.
 	 */
-	export let text: any = undefined;
+	export let text = '';
 
 	/**
 	 * Контейнер для текста под `text`.
 	 */
-	export let caption: any = undefined;
+	export let caption = '';
 
 	/**
 	 * Контейнер для контента под `caption`. Например `<UsersStack size="s" />`
 	 */
-	export let bottom: any = undefined;
+	export let bottom = '';
 
 	/**
 	 * Кнопка или набор кнопок `<Button size="m" />`. Располагается под `bottom`.
 	 */
-	// export let actions: any = undefined;
+	// export let actions = '';
 
 	/**
 	 * `<Avatar size={48|72} />`
 	 */
-	// export let before: any = undefined;
+	// export let before = '';
 
 	/**
 	 * Иконка 28 или текст
 	 */
-	export let after: any = undefined;
-	// export let disabled: boolean = false;
-	export let multiline: boolean = false;
+	export let after = '';
+	// export let disabled = false;
+	export let multiline = false;
 
 	const platform = usePlatform();
 	$: $$restProps.class = classNames($$props.class, getClassName('RichCell', $platform), {

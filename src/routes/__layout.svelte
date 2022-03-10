@@ -41,7 +41,7 @@
 
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { ConfigProvider } from '$lib/index';
+	import { ConfigProvider } from '@sveltevk/vksui/index';
 	import Sidebar from '$site/lib/Sidebar/Sidebar.svelte';
 	import Header from '$site/lib/Header/Header.svelte';
 	import Article from '$site/lib/Article/Article.svelte';

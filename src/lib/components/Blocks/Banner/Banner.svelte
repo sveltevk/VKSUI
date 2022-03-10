@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { ANDROID, IOS } from '$lib/lib/platform';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { ANDROID, IOS } from '@sveltevk/vksui/lib/platform';
 	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
 	import Icon24DismissSubstract from '@sveltevk/icons/dist/24/dismiss_substract';
 	import Icon24DismissDark from '@sveltevk/icons/dist/24/dismiss_dark';
 	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import svelteDiv from '$lib/components/Elements/div/div.svelte';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import svelteDiv from '@sveltevk/vksui/components/Elements/div/div.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -38,25 +38,25 @@
 	/**
 	 * Содержимое, отображаемое в левой части баннера.
 	 */
-	export let before: any = undefined;
+	export let before = '';
 
 	/**
 	 * Заголовок. <br />
 	 * При использовании этого свойства рекомендуется не указывать `text`.
 	 */
-	export let header: any = undefined;
+	export let header = '';
 
 	/**
 	 * Подзаголовок. <br />
 	 * При использовании этого свойства рекомендуется не указывать `text`.
 	 */
-	export let subheader: any = undefined;
+	export let subheader = '';
 
 	/**
 	 * Текст баннера. <br />
 	 * Это свойство следует использовать без указания `header` и `subheader`.
 	 */
-	export let text: any = undefined;
+	export let text = '';
 
 	/**
 	 * При использовании `mode="image"`.
@@ -71,7 +71,7 @@
 	 *
 	 * Элемент, который нужно стилизовать цветом и/или фоном. Этот элемент будет растянут на 100% ширины и высоты баннера.
 	 */
-	export let background: any = undefined;
+	export let background = '';
 
 	/**
 	 * Кнопки, отображаемые в баннере.
@@ -79,11 +79,11 @@
 	 * - В режиме `tint` или в `image` со светлым фоном рекомендуется использовать только `<Button mode="primary" />` или `<Button mode="tertiary" />`.
 	 * - В режиме `image` с тёмным фоном – `<Button mode="overlay_primary" />`.
 	 */
-	export let actions: any = undefined;
+	export let actions = '';
 
 	$: innerComponent = asideMode === 'expand' ? Tappable : svelteDiv;
 
-	const onDismiss = (e) => {
+	const onDismiss = (e: Event) => {
 		dispatch('dismiss', e);
 	};
 </script>

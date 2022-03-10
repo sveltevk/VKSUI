@@ -1,15 +1,13 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Caption from '../../Typography/Caption/Caption.svelte';
 	import Headline from '../../Typography/Headline/Headline.svelte';
 
 	export let mode: 'default' | 'error' = 'default';
-	export let header: any = undefined;
+	export let header = '';
 
-	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
 </script>
 

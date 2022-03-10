@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import button from '$lib/components/Elements/button/button.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import SimpleCell from '../SimpleCell/SimpleCell.svelte';
 
 	export let component = button;
 
-	export let before: any = undefined;
+	export let before = '';
 
 	export let mode: 'primary' | 'danger' = 'primary';
-	export let centered: boolean = false;
+	export let centered = false;
 
 	const platform = usePlatform();
 </script>

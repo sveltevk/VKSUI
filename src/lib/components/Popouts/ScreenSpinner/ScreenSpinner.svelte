@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Spinner from '$lib/components/Blocks/Spinner/Spinner.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Spinner from '@sveltevk/vksui/components/Blocks/Spinner/Spinner.svelte';
 	import PopoutWrapper from '../PopoutWrapper/PopoutWrapper.svelte';
 
 	const platform = usePlatform();

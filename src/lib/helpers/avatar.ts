@@ -1,4 +1,4 @@
-import type { InitialsAvatarNumberGradients } from '$lib/components/Blocks/InitialsAvatar/InitialsAvatar.svelte';
+import type { InitialsAvatarNumberGradients } from '@sveltevk/vksui/components/Blocks/InitialsAvatar/InitialsAvatar.svelte';
 
 /**
  * Вычисляет цвет InitialsAvatar на основании переданного идентификатора объекта

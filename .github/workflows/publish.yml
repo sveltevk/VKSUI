@@ -17,6 +17,9 @@ jobs:
       - name: Install 🔧
         run: yarn
 
+      - name: Lint 👀
+        run: yarn lint
+
       - name: Build 🏗️
         run: yarn package
 

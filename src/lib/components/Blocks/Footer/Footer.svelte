@@ -1,7 +1,6 @@
 <script lang="ts">
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 	import Caption from '../../Typography/Caption/Caption.svelte';
-	import Div from '../Div/Div.svelte';
 </script>
 
 <!-- 

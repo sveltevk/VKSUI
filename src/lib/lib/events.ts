@@ -5,16 +5,17 @@ import { bubble, listen } from 'svelte/internal';
 // Adapted from rgossiaux/svelte-headlessui which is modified from hperrin/svelte-material-ui
 // Source: https://github.com/Tropix126/fluent-svelte/blob/main/src/lib/internal.ts
 export function createEventForwarder(component: SvelteComponent, exclude: string[] = []) {
-	type EventCallback = (event: any) => void;
+	type EventCallback = (event: unknown) => void;
 
 	// This is our pseudo $on function. It is defined on component mount.
 	let $on: (eventType: string, callback: EventCallback) => () => void;
 
 	// This is a list of events bound before mount.
-	let events: [string, EventCallback][] = [];
+	const events: [string, EventCallback][] = [];
 
 	// Monkeypatch SvelteComponent.$on with our own forward-compatible version
 	component.$on = (eventType: string, callback: EventCallback) => {
+		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		let destructor = () => {};
 		if (exclude.includes(eventType)) {
 			// Bail out of the event forwarding and run the normal Svelte $on() code
@@ -42,9 +43,9 @@ export function createEventForwarder(component: SvelteComponent, exclude: string
 		// This function is responsible for listening and forwarding
 		// all bound events.
 		$on = (eventType, callback) => {
-			let handler = callback;
+			const handler = callback;
 			// DOM addEventListener options argument.
-			let options: boolean | AddEventListenerOptions = false;
+			const options: boolean | AddEventListenerOptions = false;
 
 			// Listen for the event directly, with the given options.
 			const off = listen(node, eventType, handler, options);
@@ -79,7 +80,7 @@ export function createEventForwarder(component: SvelteComponent, exclude: string
 				}
 
 				// Remove all event forwarders.
-				for (let entry of Object.entries(forwardDestructors)) {
+				for (const entry of Object.entries(forwardDestructors)) {
 					entry[1]();
 				}
 			}

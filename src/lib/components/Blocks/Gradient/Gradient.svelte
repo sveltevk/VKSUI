@@ -1,5 +1,5 @@
 <script lang="ts">
-	import classNames from '$lib/lib/classNames';
+	import classNames from '@sveltevk/vksui/lib/classNames';
 
 	export let mode: 'tint' | 'white' | 'black' = 'tint';
 	export let to: 'top' | 'bottom' = 'top';

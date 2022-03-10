@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Link, Title } from '$lib/index';
-	// import pkg from '../../../../package.json';
-	const version: string = __version__ || '0.0.0';
+	import { Link, Title } from '@sveltevk/vksui/index';
+	// eslint-disable-next-line no-undef
+	const version = __version__ || '0.0.0';
 
 	export let base: string;
 	export let repositoryURL: string;

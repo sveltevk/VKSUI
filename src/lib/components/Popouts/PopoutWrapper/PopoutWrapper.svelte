@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { ANDROID } from '$lib/lib/platform';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { ANDROID } from '@sveltevk/vksui/lib/platform';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 
-	export let hasMask: boolean = true;
+	export let hasMask = true;
 	export let alignY: 'top' | 'center' | 'bottom' = 'center';
 	export let alignX: 'left' | 'center' | 'right' = 'center';
-	export let closing: boolean = false;
+	export let closing = false;
 
 	let opened = false;
 

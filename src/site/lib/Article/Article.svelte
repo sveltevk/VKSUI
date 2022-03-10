@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from '$lib/index';
+	import { Link } from '@sveltevk/vksui/index';
 	import Caption from '@sveltevk/vksui/components/Typography/Caption/Caption.svelte';
 
 	export let currentPage = {

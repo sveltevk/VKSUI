@@ -8,7 +8,7 @@ function getRandomArrayElement<T>(items: Array<T>): T {
 	return items[Math.floor(Math.random() * items.length)];
 }
 
-function getRandomObjectKey(object: any): string {
+function getRandomObjectKey(object: { [key: string]: unknown }): string {
 	const keys = Object.keys(object);
 	return keys[(keys.length * Math.random()) << 0];
 }
@@ -51,7 +51,7 @@ const photos = {
 };
 
 export function getAvatarUrl(id: string, size: number): string {
-	let object;
+	let object: { photo_200?: string; photo_100: string };
 
 	if (id.indexOf('user_') === 0) {
 		object = users.find((user) => 'user_' + user.screen_name === id);
@@ -59,7 +59,7 @@ export function getAvatarUrl(id: string, size: number): string {
 			object = getRandomArrayElement(users);
 		}
 	} else {
-		if (!photos.hasOwnProperty(id)) {
+		if (!Object.prototype.hasOwnProperty.call(photos, id)) {
 			id = getRandomObjectKey(photos);
 		}
 		object = photos[id];
@@ -86,8 +86,8 @@ export function getRandomUser(): User {
 }
 
 export function getRandomUsers(count: number): User[] {
-	let items = [];
-	let names = {};
+	const items = [];
+	const names = {};
 
 	for (let i = 0; i < count; i++) {
 		let user = getRandomUser();

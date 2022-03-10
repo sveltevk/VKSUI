@@ -5,16 +5,16 @@
 	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 	import Icon24ReorderIos from '@sveltevk/icons/dist/24/reorder_ios';
 
-	import Tappable from '$lib/components/Service/Tappable/Tappable.svelte';
-	import Touch from '$lib/components/Service/Touch/Touch.svelte';
-	import label from '$lib/components/Elements/label/label.svelte';
-	import Div from '$lib/components/Elements/div/div.svelte';
-	import a from '$lib/components/Elements/a/a.svelte';
+	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
+	import Touch from '@sveltevk/vksui/components/Service/Touch/Touch.svelte';
+	import label from '@sveltevk/vksui/components/Elements/label/label.svelte';
+	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { ANDROID, IOS } from '$lib/lib/platform';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { ANDROID, IOS } from '@sveltevk/vksui/lib/platform';
 	import { onDestroy, createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -22,39 +22,39 @@
 	/**
 	 * Контейнер для контента слева от `children`.
 	 */
-	export let before: any = undefined;
+	export let before = '';
 
 	/**
 	 * Контейнер для текста справа от `children`.
 	 */
-	export let indicator: any = '';
+	export let indicator = '';
 
 	/**
 	 * Контейнер для контента справа от `children` и `indicator`.
 	 */
-	export let asideContent: any = '';
+	export let asideContent = '';
 
 	/**
 	 * Выставляйте этот флаг, если клик по ячейке вызывает переход на другую панель. Флаг нужен для корректной
 	 * стилизации такой ячейки.
 	 */
-	export let expandable: boolean = false;
+	export let expandable = false;
 
 	/**
 	 * Добавляет возможность переноса содержимого `children` и `description`. Без этого флага текст будет уходить
 	 * в троеточие.
 	 */
-	export let multiline: boolean = false;
+	export let multiline = false;
 
 	/**
 	 * Контейнер для дополнительного содержимого под `children`.
 	 */
-	export let description: any = undefined;
+	export let description = '';
 
 	/**
 	 * Контейнер для произвольного содержимого под `description`. Рисуется только если передать `size="l"`.
 	 */
-	export let bottomContent: any = undefined;
+	export let bottomContent = '';
 
 	/**
 	 * Размер влияет на выравнивание блоков по вертикали, вид сепаратора (iOS) и возможность вставлять `bottomContent`.
@@ -67,12 +67,12 @@
 	 * **Важно:** этот режим несовместим с `draggable`. В случае истинности двух этих флагов, приоритет отдается
 	 * `draggable`.
 	 */
-	export let selectable: boolean = false;
+	export let selectable = false;
 
 	/**
 	 * Флаг для перехода в режим удаляемых ячеек. **Важно:** в этом режиме обработчик `onClick` вызываться не будет.
 	 */
-	export let removable: boolean = false;
+	export let removable = false;
 
 	/**
 	 * Коллбэк срабатывает при клике на контрол удаления.
@@ -82,12 +82,12 @@
 	/**
 	 * iOS only. Текст в выезжаеющей кнопке для удаления ячейки.
 	 */
-	export let removePlaceholder: any = 'Удалить';
+	export let removePlaceholder = 'Удалить';
 
 	/**
 	 * Флаг для перехода в режим перетаскивания. **Важно:** в этом режиме обработчик `onClick` вызываться не будет.
 	 */
-	export let draggable: boolean = false;
+	export let draggable = false;
 
 	/**
 	 * Коллбэк срабатывает при завершении перетаскивания.
@@ -97,13 +97,11 @@
 	 */
 	export let onDragFinish: ({ from, to }: { from: number; to: number }) => void = undefined;
 
-	export let href: string = '';
+	export let href = '';
 
-	//
-
-	let isRemoveActivated: boolean = false;
-	let removeOffset: number = 0;
-	let dragging: boolean = false;
+	let isRemoveActivated = false;
+	let removeOffset = 0;
+	let dragging = false;
 
 	let rootEl: HTMLElement;
 	let removeButton: HTMLElement;
@@ -115,7 +113,7 @@
 	const IS_PLATFORM_ANDROID = $platform === ANDROID;
 	const IS_PLATFORM_IOS = $platform === IOS;
 
-	const onClick = (e) => {
+	const onClick = (e: Event) => {
 		const target = e.target as HTMLElement;
 		if (target.tagName.toLowerCase() === 'input') {
 			e.stopPropagation();

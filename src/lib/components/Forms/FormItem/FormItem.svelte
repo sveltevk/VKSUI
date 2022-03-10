@@ -2,11 +2,11 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import Caption from '$lib/components/Typography/Caption/Caption.svelte';
-	import Subhead from '$lib/components/Typography/Subhead/Subhead.svelte';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import Caption from '@sveltevk/vksui/components/Typography/Caption/Caption.svelte';
+	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import Removable from '../../Blocks/Removable/Removable.svelte';
 

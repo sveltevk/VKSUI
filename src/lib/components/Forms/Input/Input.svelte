@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { get_current_component } from 'svelte/internal';
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import { createEventForwarder } from '$lib/lib/events';
-	import getClassName from '$lib/lib/getClassName';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import { createEventForwarder } from '@sveltevk/vksui/lib/events';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import FormField from '../FormField/FormField.svelte';
 
 	export let style = '';
 	export let align: 'left' | 'center' | 'right' = undefined;
-	export let value: any = undefined;
+	export let value: unknown = undefined;
 
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();

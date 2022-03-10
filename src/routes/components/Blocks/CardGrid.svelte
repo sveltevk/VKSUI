@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Blocks/CardGrid/README.md';
+	import Doc from '@sveltevk/vksui/components/Blocks/CardGrid/README.md';
 </script>
 
 <Doc />

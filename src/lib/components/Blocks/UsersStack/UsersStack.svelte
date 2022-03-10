@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import { canUseDOM, onDOMLoaded } from '$lib/lib/dom';
+	import { canUseDOM, onDOMLoaded } from '@sveltevk/vksui/lib/dom';
 	if (canUseDOM) {
 		const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 		svgElement.setAttributeNS(null, 'id', '__SVG_MASKS_NODE__');
@@ -34,11 +34,11 @@
 </script>
 
 <script lang="ts">
-	import { IOS } from '$lib/lib/platform';
-	import useBrowserInfo from '$lib/hooks/useBrowserInfo';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { usePlatform } from '$lib/hooks/usePlatform';
+	import { IOS } from '@sveltevk/vksui/lib/platform';
+	import useBrowserInfo from '@sveltevk/vksui/hooks/useBrowserInfo';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 
 	/**
 	 * Массив ссылок на фотографии
@@ -56,7 +56,7 @@
 	 * Количество аватарок, которые будут показаны.
 	 * Если в массиве `photos` больше элементов и используется размер `m`, то будет показано количество остальных элементов
 	 */
-	export let visibleCount: number = 3;
+	export let visibleCount = 3;
 
 	const { platformVersion } = useBrowserInfo();
 	const platform = usePlatform();

@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Blocks/Avatar/README.md';
+	import Doc from '@sveltevk/vksui/components/Blocks/Avatar/README.md';
 </script>
 
 <Doc />

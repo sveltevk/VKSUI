@@ -22,20 +22,20 @@
 		navigationType?: string;
 		description?: string;
 		ageRestrictions?: string;
-		/** @deprecated */
+		/** deprecated */
 		ageRestriction?: number;
 	};
 </script>
 
 <script lang="ts">
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Icon24Dismiss from '@sveltevk/icons/dist/24/dismiss';
-	import Button from '$lib/components/Blocks/Button/Button.svelte';
-	import SimpleCell from '$lib/components/Blocks/SimpleCell/SimpleCell.svelte';
-	import Avatar from '$lib/components/Blocks/Avatar/Avatar.svelte';
-	import Caption from '$lib/components/Typography/Caption/Caption.svelte';
+	import Button from '@sveltevk/vksui/components/Blocks/Button/Button.svelte';
+	import SimpleCell from '@sveltevk/vksui/components/Blocks/SimpleCell/SimpleCell.svelte';
+	import Avatar from '@sveltevk/vksui/components/Blocks/Avatar/Avatar.svelte';
+	import Caption from '@sveltevk/vksui/components/Typography/Caption/Caption.svelte';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -44,9 +44,9 @@
 	export let bannerData: BannerData;
 
 	/** Флаг скрытия кнопки закрытия рекламы */
-	export let isCloseButtonHidden: boolean = false;
+	export let isCloseButtonHidden = false;
 
-	export let currentPixel: string = '';
+	export let currentPixel = '';
 
 	const ageRestrictions =
 		bannerData.ageRestrictions != null

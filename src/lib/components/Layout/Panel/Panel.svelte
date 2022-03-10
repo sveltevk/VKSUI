@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { useAdaptivity } from '$lib/hooks/useAdaptivity';
-	import { usePlatform } from '$lib/hooks/usePlatform';
-	import classNames from '$lib/lib/classNames';
-	import getClassName from '$lib/lib/getClassName';
-	import { IOS } from '$lib/lib/platform';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
+	import classNames from '@sveltevk/vksui/lib/classNames';
+	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { IOS } from '@sveltevk/vksui/lib/platform';
 	import Touch from '../Service/Touch.svelte';
 
-	export let centered: boolean = false;
+	export let centered = false;
 
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
@@ -86,27 +86,27 @@
 		box-sizing: border-box;
 	}
 
-	.Panel__centered .PanelHeader--ios.PanelHeader--vis + * {
+	:global(.Panel__centered .PanelHeader--ios.PanelHeader--vis + *) {
 		margin-top: var(--panelheader_height_ios);
 	}
 
-	.Panel__centered .PanelHeader--android.PanelHeader--vis + * {
+	:global(.Panel__centered .PanelHeader--android.PanelHeader--vis + *) {
 		margin-top: var(--panelheader_height_android);
 	}
 
-	.Panel--sizeX-compact .Panel__centered .PanelHeader--ios.PanelHeader--sep + * {
+	:global(.Panel--sizeX-compact .Panel__centered .PanelHeader--ios.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_ios) + 5px);
 	}
 
-	.Panel--sizeX-compact .Panel__centered .PanelHeader--android.PanelHeader--sep + * {
+	:global(.Panel--sizeX-compact .Panel__centered .PanelHeader--android.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_android) + 5px);
 	}
 
-	.Panel--sizeX-regular .Panel__centered .PanelHeader--ios.PanelHeader--sep + * {
+	:global(.Panel--sizeX-regular .Panel__centered .PanelHeader--ios.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_ios) + 16px);
 	}
 
-	.Panel--sizeX-regular .Panel__centered .PanelHeader--android.PanelHeader--sep + * {
+	:global(.Panel--sizeX-regular .Panel__centered .PanelHeader--android.PanelHeader--sep + *) {
 		margin-top: calc(var(--panelheader_height_android) + 16px);
 	}
 

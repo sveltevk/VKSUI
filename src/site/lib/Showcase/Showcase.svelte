@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Platform } from '@sveltevk/vksui/lib/platform';
-	import type { AppearanceSchemeType } from '@vkontakte/vk-bridge';
+	import type { AppearanceType } from '@vkontakte/vk-bridge';
 	import { Scheme, WebviewType } from '@sveltevk/vksui/lib/config';
 	import {
 		calculateAdaptivity,
@@ -14,46 +14,32 @@
 	} from '@sveltevk/vksui/lib/adaptivity';
 	import ConfigProvider from '@sveltevk/vksui/components/Service/ConfigProvider/ConfigProvider.svelte';
 	import Switch from '@sveltevk/vksui/components/Blocks/Switch/Switch.svelte';
+	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 
-	export let scroll: boolean = false;
-	export let mini: boolean = false;
+	export let scroll = false;
+	export let mini = false;
 
 	let os = Platform.ANDROID;
-	let scheme = Scheme.BRIGHT_LIGHT;
+	let scheme: AppearanceScheme = Scheme.BRIGHT_LIGHT;
 	let webviewType = WebviewType.VKAPPS;
 	let sizeY = SizeType.REGULAR;
 	let windowWidth = MOBILE_SIZE;
 	let windowHeight = MOBILE_LANDSCAPE_HEIGHT;
 	let hasMouse = true;
+	let appearance: AppearanceType = 'light';
 
-	const frames: HTMLIFrameElement[] = [];
-
-	const getRefFrame = (f: HTMLIFrameElement) => {
-		frames.push(f);
-
-		const sprite = document.getElementById('__SVG_SPRITE_NODE__');
-		const masks = document.getElementById('__SVG_MASKS_NODE__');
-
-		if (sprite) {
-			f.contentDocument.body.appendChild(sprite.cloneNode(true));
-		}
-
-		if (masks) {
-			f.contentDocument.body.appendChild(masks.cloneNode(true));
-		}
-
-		f.contentDocument.body.setAttribute('scheme', scheme);
-	};
-
-	const updateFrameScheme = (s: AppearanceSchemeType) => {
-		frames.forEach((f) => {
-			f.contentDocument.body.setAttribute('scheme', s);
-		});
-	};
-
-	$: updateFrameScheme(scheme);
 	$: sizeX = calculateAdaptivity(windowWidth, windowHeight, {}).sizeX;
 	$: sizeY = calculateAdaptivity(windowWidth, windowHeight, {}).sizeY;
+	$: windowWidth = os === Platform.VKCOM ? TABLET_SIZE : windowWidth;
+	$: hasMouse = os === Platform.VKCOM ? true : hasMouse;
+	$: scheme =
+		os === Platform.VKCOM
+			? appearance === 'light'
+				? Scheme.VKCOM_LIGHT
+				: Scheme.VKCOM_DARK
+			: appearance === 'light'
+			? Scheme.BRIGHT_LIGHT
+			: Scheme.SPACE_GRAY;
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->
@@ -67,25 +53,25 @@
 		</select>
 	</div>
 	<div>
-		scheme:
-		<select bind:value={scheme}>
-			{#each [Scheme.BRIGHT_LIGHT, Scheme.SPACE_GRAY, 'vkcom_light', 'vkcom_dark'] as name}
+		appearance:
+		<select bind:value={appearance}>
+			{#each ['light', 'dark'] as name}
 				<option value={name}>{name}</option>
 			{/each}
 		</select>
 	</div>
 	{#if !mini}
-		<div>
+		<!-- <div>
 			webviewType:
 			<select bind:value={webviewType}>
 				{#each [WebviewType.VKAPPS, WebviewType.INTERNAL] as name}
 					<option value={name}>{name}</option>
 				{/each}
 			</select>
-		</div>
+		</div> -->
 		<div>
 			windowWidth:
-			<select bind:value={windowWidth}>
+			<select bind:value={windowWidth} disabled={os === Platform.VKCOM}>
 				{#each [DESKTOP_SIZE, TABLET_SIZE, SMALL_TABLET_SIZE, MOBILE_SIZE] as name}
 					<option value={name}>{name}px</option>
 				{/each}
@@ -106,7 +92,7 @@
 	{/if}
 </div>
 
-<ConfigProvider platform={os} {scheme} {webviewType} {sizeY} {sizeX} {hasMouse}>
+<ConfigProvider platform={os} {scheme} {webviewType} {sizeY} {sizeX}>
 	<div
 		class="Example"
 		class:mini

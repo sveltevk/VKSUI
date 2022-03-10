@@ -1,5 +1,5 @@
 <script>
-	import Doc from '$lib/components/Blocks/Counter/README.md';
+	import Doc from '@sveltevk/vksui/components/Blocks/Counter/README.md';
 </script>
 
 <Doc />
