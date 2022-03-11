@@ -4,26 +4,41 @@
 	import { useDOM } from '@sveltevk/vksui/lib/dom';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { classNames } from '@vkontakte/vkjs';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
+	import { useSplitCol } from '../SplitCol/SplitColContext.svelte';
 
 	export let vertical: 'top' | 'bottom' = undefined;
 	export let filled = false;
 
 	export let style = '';
 
-	let _this: HTMLDivElement;
 	const dom = useDOM();
+	const splitCol = useSplitCol();
 
 	let width = '';
-	const doResize = () => (width = _this ? `${_this.offsetWidth}px` : '');
+	const doResize = () => {
+		width = $splitCol.colRef ? `${$splitCol.colRef.offsetWidth}px` : '';
+	};
+
+	let oldEvent: () => void;
+
+	const resizeEvent = (contentWindow: Window) => {
+		if (oldEvent) {
+			oldEvent();
+		}
+
+		contentWindow?.addEventListener('resize', doResize, false);
+		doResize();
+
+		return () => contentWindow?.removeEventListener('resize', doResize, false);
+	};
+
+	$: {
+		resizeEvent($dom.window);
+	}
 
 	onMount(() => {
-		$dom.window?.addEventListener('resize', doResize, false);
-		doResize();
-	});
-
-	onDestroy(() => {
-		$dom.window?.removeEventListener('resize', doResize, false);
+		return oldEvent;
 	});
 
 	const platform = usePlatform();
@@ -38,7 +53,7 @@
 	);
 </script>
 
-<div bind:this={_this} data-tooltip-container="fixed" {...$$restProps} {style} style:width>
+<div data-tooltip-container="fixed" {...$$restProps} {style} style:width>
 	<div class="FixedLayout__in">
 		<slot />
 	</div>

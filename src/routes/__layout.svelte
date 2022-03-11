@@ -100,6 +100,30 @@
 							link: '/components/Layout/Panel'
 						},
 						{
+							name: 'PanelHeader',
+							link: '/components/Layout/PanelHeader'
+						},
+						{
+							name: 'PanelHeaderButton',
+							link: '/components/Layout/PanelHeaderButton'
+						},
+						{
+							name: 'PanelHeaderBack',
+							link: '/components/Layout/PanelHeaderBack'
+						},
+						{
+							name: 'PanelHeaderClose',
+							link: '/components/Layout/PanelHeaderClose'
+						},
+						{
+							name: 'PanelHeaderSubmit',
+							link: '/components/Layout/PanelHeaderSubmit'
+						},
+						{
+							name: 'PanelHeaderEdit',
+							link: '/components/Layout/PanelHeaderEdit'
+						},
+						{
 							name: 'FixedLayout',
 							link: '/components/Layout/FixedLayout'
 						}

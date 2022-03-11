@@ -2,13 +2,23 @@
 
 Индикатор, с помощью которого можно привлечь внимание пользователя к определенному разделу.
 
-```svelte scroll
+```svelte frame
 <script>
-	import { Panel, Group, Header, SimpleCell, Tabs, TabsItem, Badge } from '@sveltevk/vksui';
+	import {
+		Panel,
+		PanelHeader,
+		Group,
+		Header,
+		SimpleCell,
+		Tabs,
+		TabsItem,
+		Badge
+	} from '@sveltevk/vksui';
 	import Icon28Notifications from '@sveltevk/icons/dist/28/notifications';
 </script>
 
 <Panel>
+	<PanelHeader>Бейдж</PanelHeader>
 	<Group>
 		<Header mode="secondary">В пунктах меню</Header>
 		<SimpleCell expandable>

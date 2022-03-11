@@ -17,7 +17,7 @@ export interface DOMContextInterface {
 export const DOMContextKey = 'vkui_DOMContext';
 
 /* eslint-disable no-restricted-globals */
-export const getDOM = () => ({
+export const getDOM = (): DOMContextInterface => ({
 	window: canUseDOM ? window : undefined,
 	document: canUseDOM ? document : undefined
 });

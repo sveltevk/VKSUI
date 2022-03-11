@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Platform } from '@sveltevk/vksui/lib/platform';
 	import type { AppearanceType } from '@vkontakte/vk-bridge';
-	import { Scheme, WebviewType } from '@sveltevk/vksui/lib/config';
+	import { WebviewType } from '@sveltevk/vksui/lib/config';
 	import {
 		calculateAdaptivity,
 		DESKTOP_SIZE,
@@ -14,14 +14,83 @@
 	} from '@sveltevk/vksui/lib/adaptivity';
 	import ConfigProvider from '@sveltevk/vksui/components/Service/ConfigProvider/ConfigProvider.svelte';
 	import Switch from '@sveltevk/vksui/components/Blocks/Switch/Switch.svelte';
-	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
+	import { onMount, tick } from 'svelte';
+	import { getDOM } from '@sveltevk/vksui/lib/dom';
+	import { noop } from 'svelte/internal';
+	import AppearanceProvider from '@sveltevk/vksui/components/Service/AppearanceProvider/AppearanceProvider.svelte';
 
 	export let scroll = false;
 	export let mini = false;
+	export let frame = false;
+
+	// Frame:
+	let iframe: HTMLIFrameElement;
+	let example: HTMLElement;
+	let hidden = frame;
+	const dom = getDOM();
+	let contentDocument = dom.document;
+	let contentWindow = dom.window;
+
+	const mountComponent = (el: HTMLElement, target: HTMLElement) => {
+		target.appendChild(el);
+		hidden = false;
+	};
+
+	const loadHandler = () => {
+		// import styles
+		Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).forEach((node) =>
+			iframe.contentDocument.head.appendChild(node.cloneNode(true))
+		);
+		const sprite = document.getElementById('__SVG_SPRITE_NODE__');
+		const masks = document.getElementById('__SVG_MASKS_NODE__');
+
+		if (sprite) {
+			let cloneNode = sprite.cloneNode(true);
+			iframe.contentDocument.body.appendChild(cloneNode);
+
+			const updateSprite = () => {
+				if (!iframe) {
+					sprite.removeEventListener('DOMNodeInserted', updateSprite);
+					return;
+				}
+
+				iframe.contentDocument.body.removeChild(cloneNode);
+				cloneNode = sprite.cloneNode(true);
+				iframe.contentDocument.body.appendChild(cloneNode);
+			};
+
+			// FIXME: DOMNodeInserted is Deprecated
+			sprite.addEventListener('DOMNodeInserted', updateSprite);
+		}
+
+		if (masks) {
+			iframe.contentDocument.body.appendChild(masks.cloneNode(true));
+		}
+
+		mountComponent(example, iframe.contentDocument.body);
+	};
+
+	onMount(async () => {
+		if (!frame) {
+			return noop;
+		}
+
+		await tick();
+		if (iframe.contentDocument.readyState === 'complete' && iframe.contentDocument.defaultView) {
+			loadHandler();
+		} else {
+			iframe.addEventListener('load', loadHandler);
+		}
+
+		contentDocument = iframe.contentDocument;
+		contentWindow = iframe.contentWindow;
+		return () => iframe.removeEventListener('load', loadHandler);
+	});
+
+	// Config:
 
 	let os = Platform.ANDROID;
-	let scheme: AppearanceScheme = Scheme.BRIGHT_LIGHT;
-	let webviewType = WebviewType.VKAPPS;
+	let webviewType = WebviewType.INTERNAL;
 	let sizeY = SizeType.REGULAR;
 	let windowWidth = MOBILE_SIZE;
 	let windowHeight = MOBILE_LANDSCAPE_HEIGHT;
@@ -32,14 +101,6 @@
 	$: sizeY = calculateAdaptivity(windowWidth, windowHeight, {}).sizeY;
 	$: windowWidth = os === Platform.VKCOM ? TABLET_SIZE : windowWidth;
 	$: hasMouse = os === Platform.VKCOM ? true : hasMouse;
-	$: scheme =
-		os === Platform.VKCOM
-			? appearance === 'light'
-				? Scheme.VKCOM_LIGHT
-				: Scheme.VKCOM_DARK
-			: appearance === 'light'
-			? Scheme.BRIGHT_LIGHT
-			: Scheme.SPACE_GRAY;
 </script>
 
 <!-- svelte-ignore a11y-no-onchange -->
@@ -92,16 +153,33 @@
 	{/if}
 </div>
 
-<ConfigProvider platform={os} {scheme} {webviewType} {sizeY} {sizeX}>
-	<div
+<ConfigProvider {contentWindow} {contentDocument} platform={os} {webviewType} {sizeY} {sizeX}>
+	<AppearanceProvider {appearance} let:class={className}>
+		<div
+			bind:this={example}
+			{hidden}
+			class="vkui vkui__root {className}"
+			class:Example={!frame}
+			class:mini
+			class:scroll
+			style={mini || frame ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
+		>
+			{#key hidden}
+				<slot />
+			{/key}
+		</div>
+	</AppearanceProvider>
+</ConfigProvider>
+
+{#if frame}
+	<iframe
+		bind:this={iframe}
 		class="Example"
 		class:mini
-		class:scroll
 		style={mini ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
-	>
-		<slot />
-	</div>
-</ConfigProvider>
+		title="frame"
+	/>
+{/if}
 
 <style>
 	.Example {
@@ -112,7 +190,6 @@
 		display: block;
 		background: var(--background_content);
 		border-radius: 12px;
-		overflow-x: hidden;
 	}
 
 	.mini {
@@ -132,5 +209,9 @@
 		display: flex;
 		margin-right: 16px;
 		margin-bottom: 28px;
+	}
+
+	.vkui__root {
+		background: var(--background_content);
 	}
 </style>

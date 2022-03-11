@@ -52,7 +52,6 @@
 			$currentProps.deviceHasHover !== calculated.deviceHasHover
 		) {
 			currentProps.set(calculated);
-			console.log('set');
 		}
 	};
 
