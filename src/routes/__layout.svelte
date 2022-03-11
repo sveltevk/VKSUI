@@ -68,19 +68,23 @@
 				// }
 			]
 		},
-		// {
-		// 	header: 'Основа',
-		// 	child: [
-		// 		{
-		// 			name: 'О VKSUI',
-		// 			link: '/'
-		// 		},
-		// 		{
-		// 			name: 'Быстрый старт',
-		// 			link: '/quickStart'
-		// 		}
-		// 	]
-		// },
+		{
+			header: 'Основа',
+			child: [
+				{
+					name: 'Режимы подключения',
+					link: '/modes'
+				},
+				{
+					name: 'Адаптивность',
+					link: '/adaptivity'
+				},
+				{
+					name: 'Платформы и темы',
+					link: '/platforms_and_themes'
+				}
+			]
+		},
 		{
 			header: 'Компоненты',
 			tree: [
