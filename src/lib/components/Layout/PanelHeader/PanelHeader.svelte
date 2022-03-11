@@ -13,7 +13,7 @@
 	import PanelHeaderIn from './PanelHeaderIn.svelte';
 
 	export let separator = true;
-	export let transparent = true;
+	export let transparent = false;
 	export let shadow = false;
 	/**
 	 * Если `false`, то шапка будет нулевой высоты и контент панели "залезет" под неё
