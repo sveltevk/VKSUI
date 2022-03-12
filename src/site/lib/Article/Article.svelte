@@ -117,6 +117,10 @@
 		margin: 0;
 	}
 
+	article :global(p:not(.Example p):not(:last-child)) {
+		margin-bottom: 8px;
+	}
+
 	article :global(code:not(pre[class*='language-'] code)) {
 		padding: 0 3px;
 		background: var(--button_secondary_background);

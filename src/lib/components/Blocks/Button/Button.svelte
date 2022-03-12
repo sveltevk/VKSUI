@@ -77,6 +77,9 @@
 	export let before = '';
 	export let after = '';
 
+	/**
+   Значения `commerce`, `destructive`, `overlay_...` будут упразднены в 5.0.0
+   */
 	export let mode: ResolvedButtonAppearance['resolvedMode'] = 'primary';
 	export let appearance: ResolvedButtonAppearance['resolvedAppearance'] = undefined;
 	export let size: 's' | 'm' | 'l' = 's';
