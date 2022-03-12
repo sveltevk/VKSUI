@@ -25,6 +25,8 @@ export { default as PanelHeaderBack } from './components/Layout/PanelHeaderBack/
 export { default as PanelHeaderClose } from './components/Layout/PanelHeaderClose/PanelHeaderClose.svelte';
 export { default as PanelHeaderSubmit } from './components/Layout/PanelHeaderSubmit/PanelHeaderSubmit.svelte';
 export { default as PanelHeaderEdit } from './components/Layout/PanelHeaderEdit/PanelHeaderEdit.svelte';
+export { default as Tabbar } from './components/Layout/Tabbar/Tabbar.svelte';
+export { default as TabbarItem } from './components/Layout/TabbarItem/TabbarItem.svelte';
 export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLayout.svelte';
 export { default as HorizontalScroll } from './components/Layout/HorizontalScroll/HorizontalScroll.svelte';
 /**

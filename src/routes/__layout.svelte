@@ -164,6 +164,14 @@
 							link: '/components/Layout/PanelHeaderEdit'
 						},
 						{
+							name: 'Tabbar',
+							link: '/components/Layout/Tabbar'
+						},
+						{
+							name: 'TabbarItem',
+							link: '/components/Layout/TabbarItem'
+						},
+						{
 							name: 'FixedLayout',
 							link: '/components/Layout/FixedLayout'
 						}
