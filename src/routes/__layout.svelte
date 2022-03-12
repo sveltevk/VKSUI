@@ -302,6 +302,19 @@
 						{
 							name: 'Checkbox',
 							link: '/components/Forms/Checkbox'
+						},
+
+						{
+							name: 'NativeSelect',
+							link: '/components/Forms/NativeSelect'
+						},
+						{
+							name: 'SelectMimicry',
+							link: '/components/Forms/SelectMimicry'
+						},
+						{
+							name: 'CustomSelectOption',
+							link: '/components/Forms/CustomSelectOption'
 						}
 					]
 				},

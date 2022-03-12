@@ -1,0 +1,59 @@
+.Select {
+	position: relative;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.Select__el {
+	display: block;
+	position: absolute;
+	appearance: none;
+	border: none;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 3;
+	font-size: 16px;
+}
+
+.Select__container {
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 11px;
+	color: var(--text_primary);
+	box-sizing: border-box;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.Select__title {
+	display: block;
+}
+
+.Select:not(.Select--multiline) .Select__title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.Select--not-selected .Select__title {
+	color: var(--field_text_placeholder);
+}
+
+.Select--align-right .Select__title {
+	text-align: right;
+}
+
+.Select--align-center .Select__title {
+	text-align: center;
+}
+
+/**
+ * sizeY === 'compact'
+ */
+.Select--sizeY--compact .Select__container {
+	padding: 7px 11px;
+}

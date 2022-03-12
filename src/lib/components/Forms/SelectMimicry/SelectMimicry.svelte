@@ -4,10 +4,12 @@
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import FormField from '../FormField/FormField.svelte';
-
-	import Icon20Dropdown from '@sveltevk/icons/dist/20/dropdown';
-	import Icon24Dropdown from '@sveltevk/icons/dist/24/dropdown';
 	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
+	import '../Select/Select.css';
+	import DropdownIcon from '../../Service/DropdownIcon/DropdownIcon.svelte';
+	import Text from '../../Typography/Text/Text.svelte';
+	import Headline from '../../Typography/Headline/Headline.svelte';
+	import { VKCOM } from '@sveltevk/vksui/lib/platform';
 
 	export let placeholder = '';
 	export let align: 'left' | 'center' | 'right' = undefined;
@@ -34,23 +36,23 @@
 		{
 			'Select--not-selected': !$$slots.default,
 			'Select--multiline': multiline,
-			'Select--disabled': disabled,
 			[`Select--align-${align}`]: !!align,
 			[`Select--sizeX--${$adaptivity.sizeX}`]: !!$adaptivity.sizeX,
 			[`Select--sizeY--${$adaptivity.sizeY}`]: !!$adaptivity.sizeY
 		},
 		$$props.class
 	)}
+	on:click
+	{disabled}
 >
-	<div class="Select__container">
-		<div class="Select__title"><slot>{placeholder}</slot></div>
-		{#if $adaptivity.sizeX === SizeType.COMPACT}
-			<Icon20Dropdown />
-		{:else}
-			<Icon24Dropdown />
-		{/if}
-	</div>
+	<DropdownIcon slot="after" />
+	{#if $platform === VKCOM || $adaptivity.sizeY === SizeType.COMPACT}
+		<Text component="div" weight="regular" class="Select__container">
+			<span class="Select__title"><slot>{placeholder}</slot></span>
+		</Text>
+	{:else}
+		<Headline component="div" weight="regular" class="Select__container">
+			<span class="Select__title"><slot>{placeholder}</slot></span>
+		</Headline>
+	{/if}
 </FormField>
-
-<style>
-</style>
