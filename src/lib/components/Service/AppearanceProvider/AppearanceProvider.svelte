@@ -5,7 +5,7 @@
 	import { getScheme } from '../../../helpers/getScheme';
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import { ContextKey } from '@sveltevk/vksui/lib/config';
-	import { Platform } from '@sveltevk/vksui/lib/platform';
+	import { Platform, type PlatformType } from '@sveltevk/vksui/lib/platform';
 	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 
 	const generateVKUITokensClassName = (platform: string, appearance: string): string => {
@@ -25,6 +25,15 @@
 		}
 
 		return `vkui--${tokensPlatform}--${appearance}`;
+	};
+
+	export const generateAppearanceClass = (platform: PlatformType, appearance: AppearanceType) => {
+		const scheme = getScheme({
+			platform: platform,
+			appearance
+		});
+
+		return `vkui${scheme} ${generateVKUITokensClassName(platform, appearance)}`;
 	};
 </script>
 

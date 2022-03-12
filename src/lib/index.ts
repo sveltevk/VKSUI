@@ -16,7 +16,6 @@ import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariabl
 /**
  * Layout
  */
-export { default as AppRoot } from './components/Layout/AppRoot/AppRoot.svelte';
 export { default as SplitLayout } from './components/Layout/SplitLayout/SplitLayout.svelte';
 export { default as SplitCol } from './components/Layout/SplitCol/SplitCol.svelte';
 export { default as Panel } from './components/Layout/Panel/Panel.svelte';
@@ -36,6 +35,7 @@ export { default as PromoBanner } from './components/Advertisement/PromoBanner/P
 /**
  * Service
  */
+export { default as AppRoot } from './components/Layout/AppRoot/AppRoot.svelte';
 export { default as AdaptivityProvider } from './components/Service/AdaptivityProvider/AdaptivityProvider.svelte';
 export { default as ConfigProvider } from './components/Service/ConfigProvider/ConfigProvider.svelte';
 export { default as SSRWrapper } from './components/Service/SSRWrapper/SSRWrapper.svelte';

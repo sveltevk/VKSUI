@@ -20,6 +20,8 @@
 		width = $splitCol.colRef ? `${$splitCol.colRef.offsetWidth}px` : '';
 	};
 
+	splitCol.subscribe(doResize);
+
 	let oldEvent: () => void;
 
 	const resizeEvent = (contentWindow: Window) => {

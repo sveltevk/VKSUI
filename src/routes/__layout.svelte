@@ -12,7 +12,7 @@
 		const rawName = path.split('/').pop();
 
 		const name = capitalizeFirstLetter(rawName)
-			? capitalizeFirstLetter(rawName) + '— VKSUI'
+			? capitalizeFirstLetter(rawName) + ' — VKSUI'
 			: 'VKSUI';
 
 		const isComponent = path.includes('/components/');
@@ -40,12 +40,14 @@
 </script>
 
 <script lang="ts">
+	import { ConfigProvider, AdaptivityProvider, Platform } from '@sveltevk/vksui';
+	import { WebviewType } from '@sveltevk/vksui/lib/config';
+	import App from '$site/lib/App/App.svelte';
 	import { base } from '$app/paths';
-	import { ConfigProvider } from '@sveltevk/vksui/index';
-	import Sidebar from '$site/lib/Sidebar/Sidebar.svelte';
-	import Header from '$site/lib/Header/Header.svelte';
-	import Article from '$site/lib/Article/Article.svelte';
 	import type { Tree } from '$site/lib/Sidebar/types';
+	import Article from '$site/lib/Article/Article.svelte';
+	import bridge from '@vkontakte/vk-bridge';
+	import { onMount } from 'svelte';
 
 	export let currentPage = {
 		path: '',
@@ -53,6 +55,40 @@
 		name: 'VKSUI',
 		isComponent: false
 	};
+
+	let platform: Platform | undefined = undefined;
+	let webviewType: WebviewType = WebviewType.INTERNAL;
+	let appearance: 'light' | 'dark' = 'light';
+
+	onMount(() => {
+		bridge.send('VKWebAppInit', {});
+		if (bridge.supports('VKWebAppGetLaunchParams')) {
+			bridge.send('VKWebAppGetLaunchParams').then((data) => {
+				if (data.vk_platform !== 'desktop_web') {
+					webviewType = WebviewType.VKAPPS;
+				}
+			});
+		}
+
+		bridge.subscribe((e) => {
+			if (e.detail.type === 'VKWebAppUpdateConfig') {
+				switch (e.detail.data.scheme) {
+					case 'client_light':
+						appearance = 'light';
+						break;
+					case 'client_dark':
+						appearance = 'dark';
+						break;
+					case 'space_gray':
+						appearance = 'dark';
+						break;
+					case 'bright_light':
+						appearance = 'light';
+						break;
+				}
+			}
+		});
+	});
 
 	let tree: Tree[] = [
 		{
@@ -360,26 +396,21 @@
 	<title>{currentPage.name}</title>
 </svelte:head>
 
-<ConfigProvider>
-	<Header {base} {repositoryURL} />
-	<main>
-		<Sidebar {currentPage} {tree} {base} />
-		<Article {currentPage} {repositoryURL}><slot /></Article>
-	</main>
+<ConfigProvider {platform} {webviewType}>
+	<AdaptivityProvider>
+		<App {appearance} {currentPage} {tree} {base}>
+			<Article {currentPage} {repositoryURL}>
+				<slot />
+			</Article>
+		</App>
+	</AdaptivityProvider>
 </ConfigProvider>
 
 <style>
-	main {
-		position: relative;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-		justify-content: center;
-	}
+	:global(.vkui--sizeX-regular),
 	:global(body) {
 		background: var(--content_tint_background);
 		margin: 0;
 		padding: 0;
-		--styleguide_header_height: 56px;
 	}
 </style>

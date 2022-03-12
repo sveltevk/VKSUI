@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Link } from '@sveltevk/vksui/index';
-	import Caption from '@sveltevk/vksui/components/Typography/Caption/Caption.svelte';
+	import { Div, Link, useAdaptivity, ViewWidth, Caption } from '@sveltevk/vksui';
 
 	export let currentPage = {
 		path: '',
@@ -10,9 +9,14 @@
 	};
 
 	export let repositoryURL: string;
+
+	const adaptivity = useAdaptivity();
 </script>
 
-<div class="article">
+<Div
+	class="article"
+	style={$adaptivity.viewWidth >= ViewWidth.SMALL_TABLET ? 'padding: 32px 40px 50px' : undefined}
+>
 	<div class="header">
 		{#if currentPage.isComponent}
 			<Link
@@ -35,31 +39,19 @@
 	<article>
 		<slot />
 	</article>
-</div>
+</Div>
 
 <style>
 	.header {
-		margin-block-start: 32px;
+		margin-block-start: 8px;
 		display: flex;
 		justify-content: space-between;
 	}
+
 	.header :global(.Link) {
 		color: var(--text_secondary);
 	}
-	.article {
-		display: flex;
-		flex-direction: column;
-		padding: 0 40px 50px;
-		max-width: 1360px;
-		width: 100%;
-		min-width: 320px;
-		background: var(--background_content);
-		box-shadow: inset 0 0 0 1px var(--image_border);
-		box-sizing: border-box;
-		border-radius: 8px;
-		margin-bottom: 20px;
-		margin-top: calc(20px + var(--styleguide_header_height));
-	}
+
 	article :global(a:not(.Example a)) {
 		color: var(--accent);
 		text-decoration: none;
@@ -102,5 +94,34 @@
 		border-radius: 16px;
 		box-shadow: inset 0 0 0 1px var(--image_border);
 		max-height: 400px;
+	}
+
+	article > :global(blockquote) {
+		padding: 12px 16px;
+		background: var(--content_warning_background);
+		border-radius: 8px;
+		margin: 0;
+	}
+
+	article > :global(blockquote:not(:first-child)) {
+		margin-top: 16px;
+	}
+
+	article > :global(blockquote:not(:last-child)) {
+		margin-bottom: 16px;
+	}
+
+	article :global(p:not(.Example p)) {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 0;
+	}
+
+	article :global(code:not(pre[class*='language-'] code)) {
+		padding: 0 3px;
+		background: var(--button_secondary_background);
+		border-radius: 4px;
+		font-size: 16px;
+		line-height: 24px;
 	}
 </style>

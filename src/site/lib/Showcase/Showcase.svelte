@@ -153,36 +153,42 @@
 	{/if}
 </div>
 
-<ConfigProvider {contentWindow} {contentDocument} platform={os} {webviewType} {sizeY} {sizeX}>
-	<AppearanceProvider {appearance} let:class={className}>
-		<div
-			bind:this={example}
-			{hidden}
-			class="vkui vkui__root {className}"
-			class:Example={!frame}
-			class:mini
-			class:scroll
-			style={mini || frame ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
-		>
-			{#key hidden}
-				<slot />
-			{/key}
-		</div>
-	</AppearanceProvider>
-</ConfigProvider>
+<div class="Example">
+	<ConfigProvider {contentWindow} {contentDocument} platform={os} {webviewType} {sizeY} {sizeX}>
+		<AppearanceProvider {appearance} let:class={className}>
+			<div
+				bind:this={example}
+				{hidden}
+				class="vkui vkui__root {className}"
+				class:Example__in={!frame}
+				class:mini
+				class:scroll
+				style={mini || frame ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
+			>
+				{#key hidden}
+					<slot />
+				{/key}
+			</div>
+		</AppearanceProvider>
+	</ConfigProvider>
 
-{#if frame}
-	<iframe
-		bind:this={iframe}
-		class="Example"
-		class:mini
-		style={mini ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
-		title="frame"
-	/>
-{/if}
+	{#if frame}
+		<iframe
+			bind:this={iframe}
+			class="Example__in"
+			class:mini
+			style={mini ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
+			title="frame"
+		/>
+	{/if}
+</div>
 
 <style>
 	.Example {
+		width: 100%;
+		overflow-x: auto;
+	}
+	.Example__in {
 		height: 667px;
 		width: 320px;
 		/* overflow-y: auto; */

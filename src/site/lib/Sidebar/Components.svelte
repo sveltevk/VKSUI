@@ -37,7 +37,7 @@
 
 <Search bind:value={search} placeholder="Поиск" style="background:none" />
 {#each searchTree as group}
-	<Group {group} {currentPage} {base} search={search.toLowerCase()} />
+	<Group {group} {currentPage} {base} search={search.toLowerCase()} on:click />
 {:else}
 	<Footer>Ничего не найдено</Footer>
 {/each}

@@ -5,7 +5,8 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import FormField from '../FormField/FormField.svelte';
 
-	import { Icon20Dropdown, Icon24Dropdown } from '@sveltevk/icons';
+	import Icon20Dropdown from '@sveltevk/icons/dist/20/dropdown';
+	import Icon24Dropdown from '@sveltevk/icons/dist/24/dropdown';
 	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
 
 	export let placeholder = '';

@@ -52,6 +52,7 @@
 	<div class="Element">
 		{#each child as el}
 			<SimpleCell
+				on:click
 				class={el.link === currentPage.path ? 'Sidebar__selected' : ''}
 				href="{base}{el.link}"
 			>
