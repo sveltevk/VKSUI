@@ -337,6 +337,10 @@
 						{
 							name: 'CustomSelectOption',
 							link: '/components/Forms/CustomSelectOption'
+						},
+						{
+							name: 'Textarea',
+							link: '/components/Forms/Textarea'
 						}
 					]
 				},

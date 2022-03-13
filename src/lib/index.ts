@@ -111,6 +111,7 @@ export { default as Input } from './components/Forms/Input/Input.svelte';
 export { default as NativeSelect } from './components/Forms/NativeSelect/NativeSelect.svelte';
 export { default as SelectMimicry } from './components/Forms/SelectMimicry/SelectMimicry.svelte';
 export { default as CustomSelectOption } from './components/Forms/CustomSelectOption/CustomSelectOption.svelte';
+export { default as Textarea } from './components/Forms/Textarea/Textarea.svelte';
 export { default as File } from './components/Forms/File/File.svelte';
 
 /**
