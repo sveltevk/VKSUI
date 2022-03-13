@@ -32,7 +32,17 @@
 		<div class="Container" style:background={appearance === 'overlay' ? '#232323' : 'unset'}>
 			{#each ['primary', 'secondary', 'tertiary', 'outline'] as mode}
 				<Div>
-					<Button href={buttonLink} {appearance} {stretched} {mode} {disabled} {size} {loading}>
+					<Button
+						href={buttonLink}
+						{appearance}
+						{stretched}
+						{mode}
+						{disabled}
+						{size}
+						{loading}
+						hasBefore={addBefore}
+						hasAfter={addAfter}
+					>
 						<svelte:fragment slot="before">
 							{#if size === 's'}
 								<Icon12Add />
@@ -51,7 +61,7 @@
 								<Counter>16</Counter>
 							{/if}
 						</svelte:fragment>
-						{buttonText}
+						{#if addText}{buttonText}{/if}
 					</Button>
 				</Div>
 			{/each}
@@ -83,9 +93,9 @@
 			<Checkbox bind:checked={stretched}>stretched</Checkbox>
 			<Checkbox bind:checked={loading}>loading</Checkbox>
 			<Checkbox bind:checked={disabled}>disabled</Checkbox>
-			<!-- <Checkbox disabled={!(addBefore || addAfter)} bind:checked={addText}>add text</Checkbox>
+			<Checkbox disabled={!(addBefore || addAfter)} bind:checked={addText}>add text</Checkbox>
 			<Checkbox disabled={!(addText || addAfter)} bind:checked={addBefore}>add before</Checkbox>
-			<Checkbox disabled={!(addText || addBefore)} bind:checked={addAfter}>add after</Checkbox> -->
+			<Checkbox disabled={!(addText || addBefore)} bind:checked={addAfter}>add after</Checkbox>
 			<Checkbox bind:checked={hasLink}>add href</Checkbox>
 		</FormItem>
 	</div>

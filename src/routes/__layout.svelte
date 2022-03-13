@@ -341,6 +341,10 @@
 						{
 							name: 'Textarea',
 							link: '/components/Forms/Textarea'
+						},
+						{
+							name: 'File',
+							link: '/components/Forms/File'
 						}
 					]
 				},

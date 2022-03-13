@@ -76,6 +76,8 @@
 
 	export let before = '';
 	export let after = '';
+	export let hasBefore = Boolean($$slots.before || before);
+	export let hasAfter = Boolean($$slots.after || after);
 
 	/**
    Значения `commerce`, `destructive`, `overlay_...` будут упразднены в 5.0.0
@@ -98,12 +100,12 @@
 	const adaptivity = useAdaptivity();
 	const platform = usePlatform();
 
-	$: hasBefore = Boolean($$slots.before || before);
-	$: hasAfter = Boolean($$slots.after || after);
+	$: _hasBefore = Boolean($$slots.before || before) && hasBefore;
+	$: _hasAfter = Boolean($$slots.after || after) && hasAfter;
 	$: hasSingleIcon = Boolean(
-		(!$$slots.default && !hasAfter && hasBefore) || (!$$slots.default && hasAfter && !hasBefore)
+		(!$$slots.default && !_hasAfter && _hasBefore) || (!$$slots.default && _hasAfter && !_hasBefore)
 	);
-	$: hasIcons = Boolean(hasBefore || hasAfter);
+	$: hasIcons = Boolean(_hasBefore || _hasAfter);
 
 	$: $$restProps.class = classNames(
 		$$props.class,
@@ -135,7 +137,7 @@
 		<Spinner size="small" class="Button__spinner" />
 	{/if}
 	<span class="Button__in">
-		{#if hasBefore}
+		{#if _hasBefore}
 			<div class="Button__before">
 				<slot name="before">{before}</slot>
 			</div>
@@ -151,7 +153,7 @@
 				<slot />
 			</ButtonTypography>
 		{/if}
-		{#if hasAfter}
+		{#if _hasAfter}
 			<span class="Button__after">
 				<slot name="after">{after}</slot>
 			</span>

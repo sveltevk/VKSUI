@@ -43,6 +43,7 @@
 	{after}
 	{style}
 	disabled={$$restProps.disabled}
+	type="button"
 >
 	<slot name="before" slot="before" />
 	<slot name="after" slot="after" />
