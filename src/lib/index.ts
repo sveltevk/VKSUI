@@ -29,6 +29,12 @@ export { default as Tabbar } from './components/Layout/Tabbar/Tabbar.svelte';
 export { default as TabbarItem } from './components/Layout/TabbarItem/TabbarItem.svelte';
 export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLayout.svelte';
 export { default as HorizontalScroll } from './components/Layout/HorizontalScroll/HorizontalScroll.svelte';
+
+/**
+ * Modal
+ */
+export { default as ModalDismissButton } from './components/Modals/ModalDismissButton/ModalDismissButton.svelte';
+
 /**
  * Advertisement
  */
@@ -90,6 +96,7 @@ export { default as InfoRow } from './components/Blocks/InfoRow/InfoRow.svelte';
 export { default as TabsItem } from './components/Blocks/TabsItem/TabsItem.svelte';
 export { default as Button } from './components/Blocks/Button/Button.svelte';
 export { default as PanelSpinner } from './components/Blocks/PanelSpinner/PanelSpinner.svelte';
+export { default as ModalCardBase } from './components/Blocks/ModalCardBase/ModalCardBase.svelte';
 
 /**
  * Forms

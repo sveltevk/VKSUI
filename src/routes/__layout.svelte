@@ -178,7 +178,16 @@
 					]
 				},
 				{
-					header: 'Block',
+					header: 'Modals',
+					child: [
+						{
+							name: 'ModalDismissButton',
+							link: '/components/Modals/ModalDismissButton'
+						}
+					]
+				},
+				{
+					header: 'Blocks',
 					child: [
 						{
 							name: 'Badge',
@@ -280,6 +289,11 @@
 						{
 							name: 'Separator',
 							link: '/components/Blocks/Separator'
+						},
+
+						{
+							name: 'ModalCardBase',
+							link: '/components/Blocks/ModalCardBase'
 						}
 					]
 				},
