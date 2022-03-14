@@ -12,20 +12,16 @@
 кастомный блок, у которого должны быть стандартные отступы.
 -->
 
-<div {...$$restProps} class={classNames(getClassName('Div', $platform), $$props.class)}>
+<div {...$$restProps} class={classNames($$restProps.class, getClassName('Div', $platform))}>
 	<slot />
 </div>
 
 <style>
+	.Div {
+		padding: 12px 16px;
+	}
+
 	.Div--ios {
 		padding: 12px;
-	}
-
-	.Div--android {
-		padding: 12px 16px;
-	}
-
-	.Div--vkcom {
-		padding: 12px 16px;
 	}
 </style>
