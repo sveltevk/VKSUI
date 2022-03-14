@@ -292,6 +292,10 @@
 						},
 
 						{
+							name: 'Banner',
+							link: '/components/Blocks/Banner'
+						},
+						{
 							name: 'MiniInfoCell',
 							link: '/components/Blocks/MiniInfoCell'
 						},

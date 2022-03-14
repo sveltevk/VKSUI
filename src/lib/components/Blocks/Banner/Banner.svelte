@@ -3,13 +3,16 @@
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import { ANDROID, IOS } from '@sveltevk/vksui/lib/platform';
+	import { ANDROID, IOS, VKCOM } from '@sveltevk/vksui/lib/platform';
 	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
 	import Icon24DismissSubstract from '@sveltevk/icons/dist/24/dismiss_substract';
 	import Icon24DismissDark from '@sveltevk/icons/dist/24/dismiss_dark';
 	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
-	import svelteDiv from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import BannerHeader from './BannerHeader.svelte';
+	import BannerSubheader from './BannerSubheader.svelte';
+	import Text from '../../Typography/Text/Text.svelte';
+	import IconButton from '../IconButton/IconButton.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -34,6 +37,11 @@
 	 * Срабатывает при клике на иконку крестика при `asideMode="dismiss"`.
 	 */
 	// export let onDismiss: MouseEventHandler<HTMLDivElement> = undefined;
+
+	/**
+	 * `aria-label` для кнопки при `asideMode="dismiss". Необходим, чтобы кнопка была доступной.
+	 */
+	export let dismissLabel = 'Скрыть';
 
 	/**
 	 * Содержимое, отображаемое в левой части баннера.
@@ -81,27 +89,30 @@
 	 */
 	export let actions = '';
 
-	$: innerComponent = asideMode === 'expand' ? Tappable : svelteDiv;
-
 	const onDismiss = (e: Event) => {
 		dispatch('dismiss', e);
 	};
 </script>
 
-<div
+<section
 	{...$$restProps}
 	class={classNames(
+		$$restProps.class,
 		getClassName('Banner', $platform),
 		`Banner--md-${mode}`,
 		`Banner--sz-${size}`,
-		{ 'Banner--inverted': mode === 'image' && imageTheme === 'dark' },
-		$$props.class
+		{ 'Banner--inverted': mode === 'image' && imageTheme === 'dark' }
 	)}
 	on:click
 >
-	<svelte:component this={innerComponent} class="Banner__in">
+	<Tappable
+		class="Banner__in"
+		activeMode={$platform === IOS ? 'opacity' : 'background'}
+		disabled={asideMode !== 'expand'}
+		role={asideMode === 'expand' ? 'button' : undefined}
+	>
 		{#if mode === 'image' && ($$slots.background || background)}
-			<div class="Banner__bg">
+			<div aria-hidden="true" class="Banner__bg">
 				<slot name="background">{background}</slot>
 			</div>
 		{/if}
@@ -114,19 +125,19 @@
 
 		<div class="Banner__content">
 			{#if $$slots.header || header}
-				<div class="Banner__header">
+				<BannerHeader {size} component="span" class="Banner__header">
 					<slot name="header">{header}</slot>
-				</div>
+				</BannerHeader>
 			{/if}
 			{#if $$slots.subheader || subheader}
-				<div class="Banner__subheader">
+				<BannerSubheader {size} component="span" class="Banner__subheader">
 					<slot name="subheader">{subheader}</slot>
-				</div>
+				</BannerSubheader>
 			{/if}
 			{#if $$slots.text || text}
-				<div class="Banner__text">
+				<Text weight="regular" class="Banner__text">
 					<slot name="text">{text}</slot>
-				</div>
+				</Text>
 			{/if}
 			{#if $$slots.actions || actions}
 				<div class="Banner__actions">
@@ -135,286 +146,182 @@
 			{/if}
 		</div>
 
-		{#if asideMode === 'expand'}
-			<div class="Banner__expand">
-				<Icon24Chevron />
-			</div>
-		{/if}
+		{#if !!asideMode}
+			<div class="Banner__aside">
+				{#if asideMode === 'expand'}
+					<Icon24Chevron />
+				{/if}
 
-		{#if asideMode === 'dismiss'}
-			<div class="Banner__dismiss">
-				<div class="Banner__dismissIcon" on:click={onDismiss}>
-					{#if $platform === ANDROID}
-						<Icon24Cancel />
-					{/if}
-					{#if $platform === IOS}
-						{#if mode === 'image'}
-							<Icon24DismissDark />
-						{:else}
-							<Icon24DismissSubstract />
+				{#if asideMode === 'dismiss'}
+					<IconButton
+						aria-label={dismissLabel}
+						class="Banner__dismiss"
+						on:click={onDismiss}
+						hoverMode="opacity"
+						hasActive={false}
+					>
+						{#if $platform === ANDROID || $platform === VKCOM}
+							<Icon24Cancel />
 						{/if}
-					{/if}
-				</div>
+						{#if $platform === IOS}
+							{#if mode === 'image'}
+								<Icon24DismissDark />
+							{:else}
+								<Icon24DismissSubstract />
+							{/if}
+						{/if}
+					</IconButton>
+				{/if}
 			</div>
 		{/if}
-	</svelte:component>
+	</Tappable>
 
 	<slot />
-</div>
+</section>
 
 <style>
 	.Banner {
-		color: var(--text_primary);
 		margin: 12px 0;
+		padding: 0 16px;
+		color: var(--text_primary);
 	}
 
 	:global(.Banner__in) {
-		display: flex;
 		position: relative;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		padding: 12px;
+		padding-left: 16px;
+		background-color: var(--content_tint_background);
+		border-radius: 8px;
 		overflow: hidden;
 	}
 
-	:global(.Banner__in.Tappable--active) {
-		opacity: 0.6;
-	}
-
 	:global(.Banner__in::before) {
+		content: '';
 		position: absolute;
 		left: 0;
 		top: 0;
+		display: block;
 		width: 100%;
 		height: 100%;
-		content: '';
-		display: block;
-		border: 1px solid var(--image_border);
-		z-index: 3;
-		box-sizing: border-box;
+		border: var(--thin-border) solid var(--image_border);
 		border-radius: inherit;
 		pointer-events: none;
-	}
-
-	@media (min-resolution: 2dppx) {
-		:global(.Banner__in::before) {
-			border-width: 0.5px;
-		}
-	}
-
-	@media (min-resolution: 3dppx) {
-		:global(.Banner__in::before) {
-			border-width: 0.33px;
-		}
+		box-sizing: border-box;
+		z-index: 2;
 	}
 
 	.Banner__before {
+		position: relative;
 		margin-right: 12px;
+		z-index: 2;
 	}
 
 	.Banner__content {
+		position: relative;
 		flex: 1;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 		min-width: 0;
+		z-index: 2;
 	}
 
-	.Banner__header {
-		font-weight: 600;
+	:global(.Banner__header) {
+		display: block;
 	}
 
-	.Banner__before + .Banner__content .Banner__header {
-		margin-top: 2px;
-	}
-
-	.Banner__subheader {
+	:global(.Banner__subheader) {
+		display: block;
 		color: var(--text_subhead);
-	}
-
-	.Banner__text {
-		font-size: 15px;
-		line-height: 20px;
 	}
 
 	.Banner__bg {
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 100%;
-		height: 100%;
 		z-index: 1;
 	}
 
+	.Banner__bg,
 	.Banner__bg > :global(*) {
 		width: 100%;
 		height: 100%;
 	}
 
-	.Banner__expand {
-		align-self: center;
-		color: var(--icon_tertiary);
-		margin-left: 12px;
-	}
-
-	.Banner__dismiss {
-		width: 28px;
-	}
-
-	.Banner__dismissIcon {
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 4;
-		width: 48px;
-		height: 48px;
+	.Banner__aside {
 		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		align-items: center;
+		justify-content: flex-end;
+		width: 28px;
+		color: var(--icon_tertiary);
+	}
+
+	:global(.Banner__dismiss) {
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
 		align-items: center;
 		justify-content: center;
-		color: var(--icon_tertiary);
-	}
-
-	.Banner__dismissIcon:active {
-		opacity: 0.4;
+		color: var(--icon_secondary);
+		z-index: 3;
 	}
 
 	.Banner__actions {
 		margin-bottom: -6px;
 	}
 
-	.Banner__actions :global(.Button) {
-		margin-top: 12px;
-		margin-right: 16px;
-		margin-bottom: 6px;
-	}
-
-	.Banner__actions :global(.Button--lvl-tertiary) {
-		margin: 4px 16px 2px -16px;
-	}
-
-	.Banner__actions :global(.Button--lvl-tertiary:first-child) {
-		margin-top: 4px;
-	}
-
-	.Banner__actions
-		:global(.Button:not(:global(.Button--lvl-tertiary))
-			+ .Button:not(:global(.Button--lvl-tertiary))) {
-		margin-top: 0;
-	}
-
-	.Banner__actions
-		:global(.Button:not(:global(.Button--lvl-tertiary)))
-		+ :global(.Button--lvl-tertiary) {
+	:global(.Banner__subheader:not(:first-child)),
+	:global(.Banner__text:not(:first-child)) {
 		margin-top: 2px;
-		margin-left: -16px;
-	}
-
-	.Banner__actions :global(.Button--lvl-tertiary + .Button--lvl-tertiary) {
-		margin-top: 2px;
-	}
-
-	/**
- * Size "s"
- */
-
-	.Banner--sz-s .Banner__header {
-		line-height: 20px;
-		font-size: 16px;
-	}
-
-	.Banner--sz-s .Banner__subheader {
-		line-height: 16px;
-		font-size: 13px;
-	}
-
-	.Banner--sz-s .Banner__subheader:not(:first-child),
-	.Banner--sz-s .Banner__text:not(:first-child) {
-		margin-top: 2px;
-	}
-
-	/**
- * Size "m"
- */
-
-	.Banner--sz-m .Banner__header {
-		line-height: 24px;
-		font-size: 20px;
-	}
-
-	.Banner--sz-m .Banner__subheader {
-		line-height: 20px;
-		font-size: 15px;
-	}
-
-	.Banner--sz-m .Banner__subheader:not(:first-child),
-	.Banner--sz-m .Banner__text:not(:first-child) {
-		margin-top: 4px;
-	}
-
-	/**
- * Mode "tint"
- */
-
-	.Banner--md-tint :global(.Banner__in),
-	.Banner--md-tint :global(.Banner__in.Tappable--active) {
-		background-color: var(--content_tint_background);
-	}
-
-	.Banner--md-tint :global(.Banner__in) {
-		padding: 12px;
-	}
-
-	/**
- * Mode "tint" and size "s"
- */
-
-	.Banner--md-tint.Banner--sz-s .Banner__before {
-		margin-right: 8px;
-	}
-
-	.Banner--md-tint.Banner--sz-s .Banner__content {
-		padding-left: 4px;
-	}
-
-	/**
- * Mode "tint" and size "m"
- */
-
-	.Banner--md-tint.Banner--sz-m :global(.Banner__in) {
-		padding: 16px;
 	}
 
 	/**
  * Mode "image"
  */
-
-	.Banner--md-image :global(.Banner__in),
-	.Banner--md-image :global(.Banner__in.Tappable--active) {
+	.Banner--md-image :global(.Banner__in) {
 		background-color: var(--content_tint_background);
-		padding: 12px 16px;
 	}
 
-	.Banner--md-image .Banner__before,
-	.Banner--md-image .Banner__content {
-		position: relative;
-		z-index: 2;
-	}
-
+	.Banner--md-image :global(.Banner__dismiss),
 	.Banner--inverted {
 		color: var(--white);
 	}
 
-	.Banner--inverted .Banner__subheader {
+	:global(.Banner--inverted .Banner__subheader) {
 		color: var(--white);
 		opacity: 0.72;
 	}
 
 	/**
- * Mode "tint" and size "m"
+ * Size "s"
  */
+	.Banner--sz-s .Banner__before {
+		margin-left: -4px;
+	}
 
-	.Banner--md-image.Banner--sz-m :global(.Banner__in) {
+	/**
+ * Size "m"
+ */
+	.Banner--sz-m :global(.Banner__in) {
 		padding: 16px;
+	}
+
+	.Banner--sz-m :global(.Banner__subheader:not(:first-child)),
+	.Banner--sz-m :global(.Banner__text:not(:first-child)) {
+		margin-top: 4px;
 	}
 
 	/**
  * iOS
  */
-
 	.Banner--ios {
 		padding: 0 12px;
 	}
@@ -423,23 +330,8 @@
 		border-radius: 10px;
 	}
 
-	/**
- * Android
- */
-
-	.Banner--android {
-		padding: 0 16px;
-	}
-
-	.Banner--android :global(.Banner__in) {
-		border-radius: 8px;
-	}
-
-	.Banner--android .Banner__dismissIcon {
-		color: var(--icon_secondary);
-	}
-
-	.Banner--android.Banner--md-image .Banner__dismissIcon {
-		color: var(--white);
+	.Banner--ios :global(.Banner__dismiss),
+	.Banner--ios.Banner--md-image :global(.Banner__dismiss) {
+		color: var(--icon_tertiary);
 	}
 </style>
