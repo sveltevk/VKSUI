@@ -30,6 +30,7 @@
 	)}
 	{style}
 	disabled={$$restProps.disabled}
+	hasAfter={Boolean($$slots.after)}
 >
 	<slot name="after" slot="after" />
 	<input use:forwardEvents bind:value {...$$restProps} class="Input__el" />

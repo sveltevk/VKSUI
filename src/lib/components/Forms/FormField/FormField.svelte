@@ -8,6 +8,8 @@
 	export let component = Div;
 	export let disabled = false;
 	export let after = '';
+	export let hasAfter = Boolean($$slots.after || after);
+	$: _hasAfter = Boolean($$slots.after || after) && hasAfter;
 
 	let hover = false;
 
@@ -41,7 +43,7 @@
 	)}
 >
 	<slot />
-	{#if $$slots.after || after}
+	{#if _hasAfter}
 		<div role="presentation" class="FormField__after">
 			<slot name="after">{after}</slot>
 		</div>

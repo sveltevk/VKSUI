@@ -327,6 +327,11 @@
 						},
 
 						{
+							name: 'Input',
+							link: '/components/Forms/Input'
+						},
+
+						{
 							name: 'NativeSelect',
 							link: '/components/Forms/NativeSelect'
 						},
