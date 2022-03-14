@@ -40,7 +40,7 @@
 </script>
 
 <Group>
-	<Search bind:value={search} />
+	<Search bind:value={search} after="" />
 	{#each searchThemes as theme}
 		<SimpleCell>{theme.name}</SimpleCell>
 	{:else}

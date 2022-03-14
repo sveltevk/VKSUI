@@ -96,6 +96,8 @@ export { default as InfoRow } from './components/Blocks/InfoRow/InfoRow.svelte';
 export { default as TabsItem } from './components/Blocks/TabsItem/TabsItem.svelte';
 export { default as Button } from './components/Blocks/Button/Button.svelte';
 export { default as PanelSpinner } from './components/Blocks/PanelSpinner/PanelSpinner.svelte';
+export { default as WriteBar } from './components/Blocks/WriteBar/WriteBar.svelte';
+export { default as WriteBarIcon } from './components/Blocks/WriteBarIcon/WriteBarIcon.svelte';
 export { default as ModalCardBase } from './components/Blocks/ModalCardBase/ModalCardBase.svelte';
 
 /**

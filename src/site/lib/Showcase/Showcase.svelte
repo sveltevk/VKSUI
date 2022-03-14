@@ -18,6 +18,9 @@
 	import { getDOM } from '@sveltevk/vksui/lib/dom';
 	import { noop } from 'svelte/internal';
 	import AppearanceProvider from '@sveltevk/vksui/components/Service/AppearanceProvider/AppearanceProvider.svelte';
+	import SplitCol from '@sveltevk/vksui/components/Layout/SplitCol/SplitCol.svelte';
+	import SplitLayout from '@sveltevk/vksui/components/Layout/SplitLayout/SplitLayout.svelte';
+	import { AppRoot } from '@sveltevk/vksui';
 
 	export let scroll = false;
 	export let mini = false;
@@ -166,7 +169,13 @@
 				style={mini || frame ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
 			>
 				{#key hidden}
-					<slot />
+					<AppRoot>
+						<SplitLayout>
+							<SplitCol>
+								<slot />
+							</SplitCol>
+						</SplitLayout>
+					</AppRoot>
 				{/key}
 			</div>
 		</AppearanceProvider>

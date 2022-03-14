@@ -292,6 +292,15 @@
 						},
 
 						{
+							name: 'WriteBar',
+							link: '/components/Blocks/WriteBar'
+						},
+						{
+							name: 'WriteBarIcon',
+							link: '/components/Blocks/WriteBarIcon'
+						},
+
+						{
 							name: 'ModalCardBase',
 							link: '/components/Blocks/ModalCardBase'
 						}
