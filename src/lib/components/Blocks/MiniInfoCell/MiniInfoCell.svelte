@@ -5,6 +5,7 @@
 	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
 	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
+	import { get_current_component, onMount } from 'svelte/internal';
 
 	/**
 	 * Тип ячейки:
@@ -35,39 +36,44 @@
 
 	const platform = usePlatform();
 
-	let component = mode === 'base' ? Div : Tappable;
+	let isClickable = false;
+	const callbacks = get_current_component().$$.callbacks;
+	onMount(() => (isClickable = callbacks['click'] !== undefined));
+</script>
 
-	$: $$restProps.class = classNames(
+<Tappable
+	component={Div}
+	disabled={!isClickable}
+	role={isClickable ? 'button' : undefined}
+	{...$$restProps}
+	on:click
+	class={classNames(
+		$$restProps.class,
 		getClassName('MiniInfoCell', $platform),
 		{
 			[`MiniInfoCell--md-${mode}`]: mode !== 'base',
 			[`MiniInfoCell--wr-${textWrap}`]: textWrap !== 'nowrap'
 		},
-		`MiniInfoCell--lvl-${textLevel}`,
-		$$props.class
-	);
-</script>
-
-<svelte:component this={component} {...$$restProps} on:click>
-	<div class="MiniInfoCell__icon">
+		`MiniInfoCell--lvl-${textLevel}`
+	)}
+>
+	<span class="MiniInfoCell__icon">
 		<slot name="before" />
-	</div>
+	</span>
 	<Text class="MiniInfoCell__content" weight={mode === 'more' ? 'medium' : 'regular'}>
 		<slot />
 	</Text>
-
 	{#if $$slots.after}
-		<div class="MiniInfoCell__after">
+		<span class="MiniInfoCell__after">
 			<slot name="after" />
-		</div>
+		</span>
 	{/if}
-</svelte:component>
+</Tappable>
 
 <style>
 	:global(.MiniInfoCell) {
 		display: flex;
-		padding-top: 6px;
-		padding-bottom: 6px;
+		padding: 6px 12px;
 	}
 
 	:global(.MiniInfoCell--lvl-primary) {
@@ -79,19 +85,19 @@
 	}
 
 	.MiniInfoCell__icon {
+		margin-right: 12px;
 		color: var(--icon_outline_secondary);
 	}
 
 	:global(.MiniInfoCell__content) {
 		flex: 1;
 		min-width: 0;
-		margin-left: 12px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	:global(.MiniInfoCell--wr-short) :global(.MiniInfoCell__content) {
+	:global(.MiniInfoCell--wr-short .MiniInfoCell__content) {
 		white-space: initial;
 		display: -webkit-box;
 		max-height: 60px;
@@ -99,7 +105,7 @@
 		-webkit-box-orient: vertical;
 	}
 
-	:global(.MiniInfoCell--wr-full) :global(.MiniInfoCell__content) {
+	:global(.MiniInfoCell--wr-full .MiniInfoCell__content) {
 		overflow: inherit;
 		white-space: initial;
 	}
@@ -108,10 +114,6 @@
 		margin-left: 12px;
 		margin-top: -2px;
 		margin-bottom: -2px;
-	}
-
-	.MiniInfoCell__after :global(.UsersStack) {
-		padding: 0;
 	}
 
 	:global(.MiniInfoCell--md-add),
@@ -129,15 +131,9 @@
 		padding-bottom: 10px;
 	}
 
-	/* iOS */
-
-	:global(.MiniInfoCell--ios) {
-		padding-left: 12px;
-		padding-right: 12px;
-	}
-
-	/* Android */
-
+	/**
+ * ANDROID
+ */
 	:global(.MiniInfoCell--android) {
 		padding-left: 16px;
 		padding-right: 16px;

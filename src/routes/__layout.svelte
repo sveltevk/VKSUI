@@ -292,6 +292,10 @@
 						},
 
 						{
+							name: 'MiniInfoCell',
+							link: '/components/Blocks/MiniInfoCell'
+						},
+						{
 							name: 'WriteBar',
 							link: '/components/Blocks/WriteBar'
 						},
