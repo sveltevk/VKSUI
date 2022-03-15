@@ -1,5 +1,7 @@
 <script lang="ts">
 	import classNames from '@sveltevk/vksui/lib/classNames';
+	import Headline from '../../Typography/Headline/Headline.svelte';
+	import Title from '../../Typography/Title/Title.svelte';
 
 	/**
 	 * Заголовок плейсхолдера
@@ -24,7 +26,7 @@
 
 <div
 	{...$$restProps}
-	class={classNames('Placeholder', { 'Placeholder--stretched': stretched }, $$props.class)}
+	class={classNames($$restProps.class, 'Placeholder', { 'Placeholder--stretched': stretched })}
 >
 	<div class="Placeholder__in">
 		{#if $$slots.icon}
@@ -33,14 +35,14 @@
 			</div>
 		{/if}
 		{#if $$slots.header || header}
-			<div class="Placeholder__header">
+			<Title level="2" weight="2" class="Placeholder__header">
 				<slot name="header">{header}</slot>
-			</div>
+			</Title>
 		{/if}
 		{#if $$slots.default}
-			<div class="Placeholder__text">
+			<Headline weight="regular" class="Placeholder__text">
 				<slot />
-			</div>
+			</Headline>
 		{/if}
 		{#if $$slots.action}
 			<div class="Placeholder__action">
@@ -52,7 +54,6 @@
 
 <style>
 	.Placeholder {
-		background: var(--background_content);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -70,6 +71,7 @@
 	}
 
 	.Placeholder__in {
+		max-width: 100%;
 		text-align: center;
 		box-sizing: border-box;
 		padding: 48px 32px;
@@ -82,20 +84,15 @@
 		color: var(--placeholder_icon_foreground_secondary);
 	}
 
-	.Placeholder__header {
-		font-size: 20px;
-		line-height: 24px;
-		font-weight: 500;
+	:global(.Placeholder__header) {
 		color: var(--text_primary);
 	}
 
-	.Placeholder__text {
-		font-size: 16px;
-		line-height: 20px;
+	:global(.Placeholder__text) {
 		color: var(--text_placeholder);
 	}
 
-	.Placeholder__header + .Placeholder__text {
+	:global(.Placeholder__header + .Placeholder__text) {
 		margin-top: 8px;
 	}
 
@@ -104,6 +101,6 @@
 	}
 
 	.Placeholder__action :global(.Button--lvl-tertiary) {
-		margin-top: -8px;
+		top: -8px;
 	}
 </style>

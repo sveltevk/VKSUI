@@ -290,7 +290,10 @@
 							name: 'Separator',
 							link: '/components/Blocks/Separator'
 						},
-
+						{
+							name: 'Placeholder',
+							link: '/components/Blocks/Placeholder'
+						},
 						{
 							name: 'Banner',
 							link: '/components/Blocks/Banner'
