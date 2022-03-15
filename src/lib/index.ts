@@ -51,15 +51,6 @@ export { default as Tappable } from './components/Service/Tappable/Tappable.svel
 export { default as Touch } from './components/Service/Touch/Touch.svelte';
 
 /**
- * Typography
- */
-export { default as Headline } from './components/Typography/Headline/Headline.svelte';
-export { default as Text } from './components/Typography/Text/Text.svelte';
-export { default as Subhead } from './components/Typography/Subhead/Subhead.svelte';
-export { default as Title } from './components/Typography/Title/Title.svelte';
-export { default as Caption } from './components/Typography/Caption/Caption.svelte';
-
-/**
  * Blocks
  */
 export { default as Badge } from './components/Blocks/Badge/Badge.svelte';
@@ -116,6 +107,15 @@ export { default as SelectMimicry } from './components/Forms/SelectMimicry/Selec
 export { default as CustomSelectOption } from './components/Forms/CustomSelectOption/CustomSelectOption.svelte';
 export { default as Textarea } from './components/Forms/Textarea/Textarea.svelte';
 export { default as File } from './components/Forms/File/File.svelte';
+
+/**
+ * Typography
+ */
+export { default as Headline } from './components/Typography/Headline/Headline.svelte';
+export { default as Text } from './components/Typography/Text/Text.svelte';
+export { default as Subhead } from './components/Typography/Subhead/Subhead.svelte';
+export { default as Title } from './components/Typography/Title/Title.svelte';
+export { default as Caption } from './components/Typography/Caption/Caption.svelte';
 
 /**
  * Hooks

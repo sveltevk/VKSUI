@@ -285,7 +285,10 @@
 							name: 'Counter',
 							link: '/components/Blocks/Counter'
 						},
-
+						{
+							name: 'UsersStack',
+							link: '/components/Blocks/UsersStack'
+						},
 						{
 							name: 'Spacing',
 							link: '/components/Blocks/Spacing'
