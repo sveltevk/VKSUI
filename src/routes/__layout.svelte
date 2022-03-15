@@ -287,6 +287,10 @@
 						},
 
 						{
+							name: 'Spacing',
+							link: '/components/Blocks/Spacing'
+						},
+						{
 							name: 'Separator',
 							link: '/components/Blocks/Separator'
 						},

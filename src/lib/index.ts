@@ -63,8 +63,8 @@ export { default as Caption } from './components/Typography/Caption/Caption.svel
  * Blocks
  */
 export { default as Badge } from './components/Blocks/Badge/Badge.svelte';
+export { default as Button } from './components/Blocks/Button/Button.svelte';
 export { default as IconButton } from './components/Blocks/IconButton/IconButton.svelte';
-export { default as MiniInfoCell } from './components/Blocks/MiniInfoCell/MiniInfoCell.svelte';
 export { default as Cell } from './components/Blocks/Cell/Cell.svelte';
 export { default as Switch } from './components/Blocks/Switch/Switch.svelte';
 export { default as Search } from './components/Blocks/Search/Search.svelte';
@@ -80,22 +80,23 @@ export { default as CardScroll } from './components/Blocks/CardScroll/CardScroll
 export { default as Card } from './components/Blocks/Card/Card.svelte';
 export { default as Progress } from './components/Blocks/Progress/Progress.svelte';
 export { default as Spinner } from './components/Blocks/Spinner/Spinner.svelte';
-export { default as Separator } from './components/Blocks/Separator/Separator.svelte';
 export { default as RichCell } from './components/Blocks/RichCell/RichCell.svelte';
 export { default as CellButton } from './components/Blocks/CellButton/CellButton.svelte';
-export { default as Placeholder } from './components/Blocks/Placeholder/Placeholder.svelte';
 export { default as Group } from './components/Blocks/Group/Group.svelte';
 export { default as SimpleCell } from './components/Blocks/SimpleCell/SimpleCell.svelte';
 export { default as Link } from './components/Blocks/Link/Link.svelte';
-export { default as UsersStack } from './components/Blocks/UsersStack/UsersStack.svelte';
 export { default as Div } from './components/Blocks/Div/Div.svelte';
 export { default as Gradient } from './components/Blocks/Gradient/Gradient.svelte';
-export { default as Counter } from './components/Blocks/Counter/Counter.svelte';
-export { default as Banner } from './components/Blocks/Banner/Banner.svelte';
 export { default as InfoRow } from './components/Blocks/InfoRow/InfoRow.svelte';
 export { default as TabsItem } from './components/Blocks/TabsItem/TabsItem.svelte';
-export { default as Button } from './components/Blocks/Button/Button.svelte';
 export { default as PanelSpinner } from './components/Blocks/PanelSpinner/PanelSpinner.svelte';
+export { default as Counter } from './components/Blocks/Counter/Counter.svelte';
+export { default as UsersStack } from './components/Blocks/UsersStack/UsersStack.svelte';
+export { default as Spacing } from './components/Blocks/Spacing/Spacing.svelte';
+export { default as Separator } from './components/Blocks/Separator/Separator.svelte';
+export { default as Placeholder } from './components/Blocks/Placeholder/Placeholder.svelte';
+export { default as Banner } from './components/Blocks/Banner/Banner.svelte';
+export { default as MiniInfoCell } from './components/Blocks/MiniInfoCell/MiniInfoCell.svelte';
 export { default as WriteBar } from './components/Blocks/WriteBar/WriteBar.svelte';
 export { default as WriteBarIcon } from './components/Blocks/WriteBarIcon/WriteBarIcon.svelte';
 export { default as ModalCardBase } from './components/Blocks/ModalCardBase/ModalCardBase.svelte';
