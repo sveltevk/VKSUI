@@ -5,8 +5,8 @@
 	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
 	export let component: 'footer' | 'span' | 'div' = 'div';
-	export let weight: 'regular' | 'medium' | 'semibold' | 'bold';
-	export let level: '1' | '2' | '3' | '4';
+	export let weight: 'regular' | 'medium' | 'semibold' | 'bold' = 'regular';
+	export let level: '1' | '2' | '3' | '4' = '1';
 	export let caps = false;
 
 	const platform = usePlatform();

@@ -55,6 +55,7 @@ export { default as Touch } from './components/Service/Touch/Touch.svelte';
  */
 export { default as Badge } from './components/Blocks/Badge/Badge.svelte';
 export { default as Button } from './components/Blocks/Button/Button.svelte';
+export { default as ButtonGroup } from './components/Blocks/ButtonGroup/ButtonGroup.svelte';
 export { default as IconButton } from './components/Blocks/IconButton/IconButton.svelte';
 export { default as Cell } from './components/Blocks/Cell/Cell.svelte';
 export { default as Switch } from './components/Blocks/Switch/Switch.svelte';

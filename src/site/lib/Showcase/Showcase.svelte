@@ -205,6 +205,7 @@
 		display: block;
 		background: var(--background_content);
 		border-radius: 12px;
+		box-sizing: border-box;
 	}
 
 	.mini {

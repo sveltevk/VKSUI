@@ -703,7 +703,7 @@
  * CMP:
  * RichCell
  */
-	:global(.RichCell__actions .Button + .Button) {
+	:global(.RichCell__actions > .Button + .Button) {
 		margin-left: 8px;
 	}
 </style>

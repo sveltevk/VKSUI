@@ -14,9 +14,34 @@
 	import { getAvatarUrl } from '$site/data/utils';
 
 	const sizes = [24, 28, 32, 36, 40, 44, 48, 56, 64, 72, 80, 88, 96];
-	const getBadgeSize = (s) => (s < 40 ? 12 : s < 56 ? 16 : s < 72 ? 20 : 24);
-	const getOverlaySize = (s) =>
-		s < 28 ? 16 : s < 32 ? 18 : s < 44 ? 20 : s < 56 ? 24 : s < 96 ? 28 : 32;
+	const getBadgeSize = (s) => {
+		switch (true) {
+			case s < 40:
+				return 12;
+			case s < 56:
+				return 16;
+			case s < 72:
+				return 20;
+			default:
+				return 24;
+		}
+	};
+	const getOverlaySize = (s) => {
+		switch (true) {
+			case s < 28:
+				return 16;
+			case s < 32:
+				return 18;
+			case s < 44:
+				return 20;
+			case s < 56:
+				return 24;
+			case s < 96:
+				return 28;
+			default:
+				return 32;
+		}
+	};
 </script>
 
 <Group>

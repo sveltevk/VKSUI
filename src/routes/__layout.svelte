@@ -199,6 +199,11 @@
 							tokenized: true
 						},
 						{
+							name: 'ButtonGroup',
+							link: '/components/Blocks/ButtonGroup',
+							tokenized: true
+						},
+						{
 							name: 'CellButton',
 							link: '/components/Blocks/CellButton'
 						},
