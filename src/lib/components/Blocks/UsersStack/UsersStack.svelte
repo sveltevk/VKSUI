@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import { canUseDOM, onDOMLoaded, useDOM } from '@sveltevk/vksui/lib/dom';
+	import { canUseDOM, useDOM } from '@sveltevk/vksui/lib/dom';
 
 	const masksCreated: Document[] = [];
 
@@ -40,8 +40,6 @@
 </script>
 
 <script lang="ts">
-	import { IOS } from '@sveltevk/vksui/lib/platform';
-	import useBrowserInfo from '@sveltevk/vksui/hooks/useBrowserInfo';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';

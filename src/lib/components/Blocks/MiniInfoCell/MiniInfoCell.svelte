@@ -5,7 +5,7 @@
 	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
 	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-	import { get_current_component, onMount } from 'svelte/internal';
+	import { current_component, onMount } from 'svelte/internal';
 
 	/**
 	 * Тип ячейки:
@@ -37,7 +37,7 @@
 	const platform = usePlatform();
 
 	let isClickable = false;
-	const callbacks = get_current_component().$$.callbacks;
+	const callbacks = current_component.$$.callbacks;
 	onMount(() => (isClickable = callbacks['click'] !== undefined));
 </script>
 

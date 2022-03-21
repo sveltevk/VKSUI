@@ -1,21 +1,22 @@
 <script context="module" lang="ts">
 	import { getSupportedEvents, coordX, coordY, touchEnabled } from '@sveltevk/vksui/lib/touch';
-	import type { VKUITouchEventHander, VKUITouchEvent } from '@sveltevk/vksui/lib/touch';
+	import type { VKUITouchEvent } from '@sveltevk/vksui/lib/touch';
 
 	export interface Gesture {
-		startX?: number;
-		startY?: number;
-		startT?: Date;
-		isPressed?: boolean;
-		isY?: boolean;
-		isX?: boolean;
-		isSlideX?: boolean;
-		isSlideY?: boolean;
-		isSlide?: boolean;
-		shiftX?: number;
-		shiftY?: number;
-		shiftXAbs?: number;
-		shiftYAbs?: number;
+		startX: number;
+		startY: number;
+		startT: Date;
+		duration: number;
+		isPressed: boolean;
+		isY: boolean;
+		isX: boolean;
+		isSlideX: boolean;
+		isSlideY: boolean;
+		isSlide: boolean;
+		shiftX: number;
+		shiftY: number;
+		shiftXAbs: number;
+		shiftYAbs: number;
 	}
 
 	export interface TouchEvent extends Gesture {
@@ -27,49 +28,96 @@
 	export type DragHandler = (e: DragEvent) => void;
 
 	const events = getSupportedEvents();
+
+	const initGesture = (startX: number, startY: number): Gesture => {
+		return {
+			startX,
+			startY,
+			startT: new Date(),
+			duration: 0,
+			isPressed: true,
+			isY: false,
+			isX: false,
+			isSlideX: false,
+			isSlideY: false,
+			isSlide: false,
+			shiftX: 0,
+			shiftY: 0,
+			shiftXAbs: 0,
+			shiftYAbs: 0
+		};
+	};
 </script>
 
 <script lang="ts">
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { canUseDOM, useDOM } from '@sveltevk/vksui/lib/dom';
+	import { useDOM } from '@sveltevk/vksui/lib/dom';
 	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { current_component } from 'svelte/internal';
 
-	const dispatch = createEventDispatcher();
-	const callbacks = current_component.$$.callbacks;
+	interface TouchEventMap {
+		start: TouchEvent;
+		startX: TouchEvent;
+		startY: TouchEvent;
+		move: TouchEvent;
+		moveX: TouchEvent;
+		moveY: TouchEvent;
+		end: TouchEvent;
+		endY: TouchEvent;
+		endX: TouchEvent;
+	}
 
-	const dom = useDOM();
+	interface AllEventMap extends TouchEventMap {
+		enter: MouseEvent;
+		leave: MouseEvent;
+		click: MouseEvent;
+	}
+
+	const dispatch = createEventDispatcher<AllEventMap>();
+	const callbacks = current_component.$$.callbacks;
 
 	export let component = div;
 
+	/**
+	 * Привязать onEnter и onLeave через pointer-events - работает на disabled-инпутах
+	 */
+	export let usePointerHover = false;
 	export let useCapture = false;
+	export let slideThreshold = 5;
+	export let noSlideClick = false;
+
+	export let stopPropagation = false;
 
 	export let container: HTMLElement = undefined;
+
+	const dom = useDOM();
+	let didSlide = false;
 	let gesture: Partial<Gesture> = {};
-	let cancelClick = false;
+
+	const handle = (
+		e: VKUITouchEvent,
+		handers: Array<Extract<keyof TouchEventMap, string> | undefined | false>
+	) => {
+		stopPropagation && e.stopPropagation();
+		handers.forEach((cb) => {
+			const duration = Date.now() - (gesture?.startT?.getTime() ?? 0);
+			cb && dispatch(cb, { ...(gesture as Gesture), duration, originalEvent: e });
+		});
+	};
 
 	onMount(() => {
-		if (canUseDOM) {
-			container.addEventListener(events[0], onStartEvent, {
-				capture: useCapture,
-				passive: false
-			});
-			touchEnabled && subscribe(container);
-		}
+		const listenerParams = { capture: useCapture, passive: false };
+		container.addEventListener(events[0], onStartEvent, listenerParams);
+		container.addEventListener(usePointerHover ? 'pointerenter' : 'mouseenter', onEnter);
+		container.addEventListener(usePointerHover ? 'pointerleave' : 'mouseleave', onLeave);
+		container.addEventListener('click', postGestureClick, true);
 
-		container.addEventListener('mouseenter', onEnter, {
-			capture: useCapture,
-			passive: true
-		});
-		container.addEventListener('mouseleave', onLeave, {
-			capture: useCapture,
-			passive: true
-		});
-	});
-
-	onDestroy(() => {
-		container?.removeEventListener(events[0], onStartEvent);
-		touchEnabled && unsubscribe(container);
+		return () => {
+			container.removeEventListener(events[0], onStartEvent, listenerParams);
+			container.removeEventListener(usePointerHover ? 'pointerenter' : 'mouseenter', onEnter);
+			container.removeEventListener(usePointerHover ? 'pointerleave' : 'mouseleave', onLeave);
+			container.removeEventListener('click', postGestureClick, true);
+		};
 	});
 
 	const onEnter = (e: MouseEvent) => {
@@ -83,34 +131,28 @@
 	/**
 	 * Обработчик событий touchstart
 	 */
-	const onStartEvent: VKUITouchEventHander = (e: VKUITouchEvent) => {
-		gesture = {
-			startX: coordX(e),
-			startY: coordY(e),
-			startT: new Date(),
-			isPressed: true
-		};
+	const onStartEvent = (e: VKUITouchEvent) => {
+		gesture = initGesture(coordX(e), coordY(e));
 
-		// Вызываем нужные колбеки из props
-		const outputEvent = {
-			...gesture,
-			originalEvent: e
-		};
-
-		dispatch('start', outputEvent);
-
-		dispatch('startX', outputEvent);
-
-		dispatch('startY', outputEvent);
-
-		!touchEnabled && subscribe($dom.document);
+		handle(e, ['start', 'startX', 'startY']);
+		// 1 line, 2 bad specs, 2 workarounds:
+		subscribe(
+			touchEnabled
+				? // Touch events fire on initial target, and won't bubble if its removed
+				  // see: #235, #1968, https://stackoverflow.com/a/45760014
+				  (e.target as HTMLElement)
+				: // Mouse events fire on the element under pointer, so we lose move / end
+				  // if pointer goes outside container.
+				  // Can be fixed by PointerEvents' setPointerCapture later
+				  $dom.document
+		);
 	};
 
 	/**
 	 * Обработчик событий touchmove
 	 */
-	const onMoveEvent: VKUITouchEventHander = (e: VKUITouchEvent) => {
-		const { isPressed, isX, isY, startX, startY } = gesture;
+	const onMoveEvent = (e: VKUITouchEvent) => {
+		const { isPressed, isX, isY, startX = 0, startY = 0 } = gesture;
 
 		if (isPressed) {
 			// смещения
@@ -123,44 +165,36 @@
 
 			// Если определяем мультитач, то прерываем жест
 			if (!!e.touches && e.touches.length > 1) {
-				return onEndEvent(e);
+				return onEnd(e);
 			}
 
 			// если мы ещё не определились
 			if (!isX && !isY) {
-				let willBeX = shiftXAbs >= 5 && shiftXAbs > shiftYAbs;
-				let willBeY = shiftYAbs >= 5 && shiftYAbs > shiftXAbs;
-				let willBeSlidedX = (willBeX && !!callbacks.moveX) || !!callbacks.move;
-				let willBeSlidedY = (willBeY && !!callbacks.moveY) || !!callbacks.move;
+				const willBeX = shiftXAbs >= slideThreshold && shiftXAbs > shiftYAbs;
+				const willBeY = shiftYAbs >= slideThreshold && shiftYAbs > shiftXAbs;
+				const willBeSlidedX = willBeX && (!!callbacks.moveX || !!callbacks.move);
+				const willBeSlidedY = willBeY && (!!callbacks.moveY || !!callbacks.move);
 
-				gesture.isY = willBeY;
-				gesture.isX = willBeX;
-				gesture.isSlideX = willBeSlidedX;
-				gesture.isSlideY = willBeSlidedY;
-				gesture.isSlide = willBeSlidedX || willBeSlidedY;
+				Object.assign(gesture, {
+					isY: willBeY,
+					isX: willBeX,
+					isSlideX: willBeSlidedX,
+					isSlideY: willBeSlidedY,
+					isSlide: willBeSlidedX || willBeSlidedY
+				});
 			}
 
 			if (gesture.isSlide) {
-				gesture.shiftX = shiftX;
-				gesture.shiftY = shiftY;
-				gesture.shiftXAbs = shiftXAbs;
-				gesture.shiftYAbs = shiftYAbs;
+				Object.assign(gesture, {
+					shiftX,
+					shiftY,
+					shiftXAbs,
+					shiftYAbs
+				});
 
-				// Вызываем нужные колбеки из props
-				const outputEvent: TouchEvent = {
-					...gesture,
-					originalEvent: e
-				};
-
-				dispatch('move', outputEvent);
-
-				if (gesture.isSlideX) {
-					dispatch('moveX', outputEvent);
-				}
-
-				if (gesture.isSlideY) {
-					dispatch('moveY', outputEvent);
-				}
+				// FIXME: проверить почему isSlideY && 'endY' это "" | "endY"
+				// @ts-ignore
+				handle(e, ['move', gesture.isSlideX && 'moveX', gesture.isSlideY && 'moveY']);
 			}
 		}
 	};
@@ -168,52 +202,52 @@
 	/**
 	 * Обработчик событий touchend, touchcancel
 	 */
-	const onEndEvent: VKUITouchEventHander = (e: VKUITouchEvent) => {
+	const onEnd = (e: VKUITouchEvent) => {
 		const { isPressed, isSlide, isSlideX, isSlideY } = gesture;
 
 		if (isPressed) {
-			// Вызываем нужные колбеки из props
-			const outputEvent: TouchEvent = {
-				...gesture,
-				originalEvent: e
-			};
-
-			dispatch('end', outputEvent);
-
-			if (isSlideY) {
-				dispatch('endY', outputEvent);
-			}
-
-			if (isSlideX) {
-				dispatch('endX', outputEvent);
-			}
+			// FIXME: проверить почему isSlideY && 'endY' это "" | "endY"
+			// @ts-ignore
+			handle(e, ['end', isSlideY && 'endY', isSlideX && 'endX']);
 		}
 
-		const target = e.target as HTMLElement;
-
-		// Если закончили жест на ссылке, выставляем флаг для отмены перехода
-		cancelClick = target.tagName === 'A' && isSlide;
+		didSlide = Boolean(isSlide);
 		gesture = {};
 
-		!touchEnabled && unsubscribe($dom.document);
+		// Если это был тач-евент, симулируем отмену hover
+		if (touchEnabled) {
+			onLeave(e);
+		}
+
+		unsubscribe();
 	};
 
+	let subscriber: HTMLElement | Document | undefined = undefined;
 	const subscribe = (element: HTMLElement | Document) => {
+		unsubscribe();
+		subscriber = element;
+
 		const listenerParams = { capture: useCapture, passive: false };
-		element?.addEventListener(events[1], onMoveEvent, listenerParams);
-		element?.addEventListener(events[2], onEndEvent, listenerParams);
-		element?.addEventListener(events[3], onEndEvent, listenerParams);
+		subscriber?.addEventListener(events[1], onMoveEvent, listenerParams);
+		subscriber?.addEventListener(events[2], onEnd, listenerParams);
+		subscriber?.addEventListener(events[3], onEnd, listenerParams);
 	};
 
-	const unsubscribe = (element: HTMLElement | Document) => {
+	const unsubscribe = () => {
+		if (!subscriber) {
+			return;
+		}
+
 		// Здесь нужен последний аргумент с такими же параметрами, потому что
 		// некоторые браузеры на странных вендорах типа Meizu не удаляют обработчик.
 		// https://github.com/VKCOM/VKUI/issues/444
 		const listenerParams = { capture: useCapture, passive: false };
-		element?.removeEventListener(events[1], onMoveEvent, listenerParams);
-		element?.removeEventListener(events[2], onEndEvent, listenerParams);
-		element?.removeEventListener(events[3], onEndEvent, listenerParams);
+		subscriber?.removeEventListener(events[1], onMoveEvent, listenerParams);
+		subscriber?.removeEventListener(events[2], onEnd, listenerParams);
+		subscriber?.removeEventListener(events[3], onEnd, listenerParams);
 	};
+
+	onDestroy(unsubscribe);
 
 	/**
 	 * Обработчик событий dragstart
@@ -229,16 +263,21 @@
 	/**
 	 * Обработчик клика по компоненту
 	 * Отменяет переход по вложенной ссылке, если был зафиксирован свайп
-	 *
-	 * @param {Object} e Браузерное событие
-	 * @returns {void}
 	 */
-	const onClick = (e: MouseEvent): void => {
-		if (cancelClick) {
-			cancelClick = false;
+	const postGestureClick = (e: MouseEvent) => {
+		if (!didSlide) {
+			return dispatch('click', e);
+		}
+		// eslint-disable-next-line no-restricted-properties
+		if ((e.target as HTMLElement).closest('a')) {
 			e.preventDefault();
 		}
-		dispatch('click', e);
+		if (noSlideClick) {
+			e.stopPropagation();
+		} else {
+			dispatch('click', e);
+		}
+		didSlide = false;
 	};
 </script>
 
@@ -255,12 +294,7 @@ Touch – это компонент для удобной работы с pointe
 	this={component}
 	{...$$restProps}
 	bind:this_={container}
-	on:click={onClick}
 	on:dragstart={onDragStart}
-	on:mouseleave={() => dispatch('leave')}
-	on:pointerleave={() => dispatch('leave')}
-	on:mouseenter={() => dispatch('enter')}
-	on:pointerenter={() => dispatch('enter')}
 >
 	<slot />
 </svelte:component>
