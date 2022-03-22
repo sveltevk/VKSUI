@@ -186,6 +186,10 @@
 						},
 
 						{
+							name: 'ScreenSpinner',
+							link: '/components/Popouts/ScreenSpinner'
+						},
+						{
 							name: 'Snackbar',
 							link: '/components/Popouts/Snackbar'
 						}

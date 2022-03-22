@@ -1,17 +1,11 @@
 export function portal(el: HTMLElement, target: HTMLElement | null) {
 	let targetEl: HTMLElement;
 	async function update(newTarget: HTMLElement | null) {
-		if (newTarget instanceof HTMLElement) {
-			targetEl = newTarget;
-		} else if (newTarget === null) {
+		if (newTarget === null) {
 			return;
-		} else {
-			throw new TypeError(
-				`Unknown portal target type: ${
-					newTarget === null ? 'null' : typeof newTarget
-				}. Allowed types: HTMLElement.`
-			);
 		}
+
+		targetEl = newTarget;
 		targetEl.appendChild(el);
 		el.hidden = false;
 	}

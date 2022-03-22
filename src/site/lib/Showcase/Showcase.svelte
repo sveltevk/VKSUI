@@ -25,6 +25,7 @@
 	export let scroll = false;
 	export let mini = false;
 	export let frame = false;
+	export let noLayout = false;
 
 	// Frame:
 	let iframe: HTMLIFrameElement;
@@ -169,13 +170,17 @@
 				style={mini || frame ? '' : `width:${windowWidth}px;height:${windowHeight}px;`}
 			>
 				{#key hidden}
-					<AppRoot>
-						<SplitLayout>
-							<SplitCol>
-								<slot />
-							</SplitCol>
-						</SplitLayout>
-					</AppRoot>
+					{#if noLayout}
+						<slot />
+					{:else}
+						<AppRoot>
+							<SplitLayout>
+								<SplitCol>
+									<slot />
+								</SplitCol>
+							</SplitLayout>
+						</AppRoot>
+					{/if}
 				{/key}
 			</div>
 		</AppearanceProvider>

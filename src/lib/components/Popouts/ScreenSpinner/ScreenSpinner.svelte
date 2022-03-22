@@ -6,6 +6,9 @@
 	import PopoutWrapper from '../PopoutWrapper/PopoutWrapper.svelte';
 
 	const platform = usePlatform();
+
+	export let style = '';
+	$: $$restProps.class = '';
 </script>
 
 <!-- 
@@ -15,36 +18,21 @@
 -->
 
 <PopoutWrapper
-	class={classNames(getClassName('ScreenSpinner', $platform), $$props.class)}
-	style={$$props.style}
+	hasMask={false}
+	class={classNames($$props.class, getClassName('ScreenSpinner', $platform))}
+	{style}
 >
 	<div class="ScreenSpinner__container">
-		<Spinner size="large" {...$$restProps} />
+		<Spinner size="large" class="ScreenSpinner__spinner" {...$$restProps} />
 	</div>
 </PopoutWrapper>
 
 <style>
-	:global(.ScreenSpinner .PopoutWrapper__mask) {
-		background: none;
-	}
-
 	:global(.ScreenSpinner) {
-		animation: screen-spinner-intro 0.3s ease;
+		animation: vkui-screen-spinner-intro 0.3s ease;
 	}
 
-	:global(.ScreenSpinner--ios) .ScreenSpinner__container {
-		width: 88px;
-		height: 88px;
-		background: var(--modal_card_background);
-		box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 0 96px 0 rgba(0, 0, 0, 0.16);
-		border-radius: 10px;
-	}
-
-	:global(.ScreenSpinner--ios) .ScreenSpinner__container :global(.Spinner) {
-		color: var(--overlay_status_icon);
-	}
-
-	:global(.ScreenSpinner--android) .ScreenSpinner__container {
+	.ScreenSpinner__container {
 		width: 88px;
 		height: 88px;
 		background: var(--tabbar_background);
@@ -52,11 +40,17 @@
 		border-radius: 8px;
 	}
 
-	:global(.ScreenSpinner--android) .ScreenSpinner__container :global(.Spinner) {
-		color: var(--icon_outline_secondary);
+	:global(.ScreenSpinner--ios) .ScreenSpinner__container {
+		background: var(--modal_card_background);
+		box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 0 96px 0 rgba(0, 0, 0, 0.16);
+		border-radius: 10px;
 	}
 
-	@keyframes screen-spinner-intro {
+	:global(.ScreenSpinner--ios .ScreenSpinner__spinner) {
+		color: var(--overlay_status_icon);
+	}
+
+	@keyframes vkui-screen-spinner-intro {
 		from {
 			opacity: 0;
 		}
