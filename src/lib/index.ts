@@ -33,6 +33,7 @@ export { default as HorizontalScroll } from './components/Layout/HorizontalScrol
 /**
  * Popouts
  */
+export { default as PopoutWrapper } from './components/Popouts/PopoutWrapper/PopoutWrapper.svelte';
 export { default as Snackbar } from './components/Popouts/Snackbar/Snackbar.svelte';
 
 /**

@@ -181,6 +181,11 @@
 					header: 'Popouts',
 					child: [
 						{
+							name: 'PopoutWrapper',
+							link: '/components/Popouts/PopoutWrapper'
+						},
+
+						{
 							name: 'Snackbar',
 							link: '/components/Popouts/Snackbar'
 						}

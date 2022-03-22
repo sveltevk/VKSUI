@@ -1,18 +1,32 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { ANDROID } from '@sveltevk/vksui/lib/platform';
+	import { IOS } from '@sveltevk/vksui/lib/platform';
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
+	import { onMount } from 'svelte';
+	import { useDOM } from '@sveltevk/vksui/lib/dom';
 
 	export let hasMask = true;
+	export let fixed = true;
 	export let alignY: 'top' | 'center' | 'bottom' = 'center';
 	export let alignX: 'left' | 'center' | 'right' = 'center';
 	export let closing = false;
 
-	let opened = false;
+	let opened = !hasMask;
 
 	const platform = usePlatform();
+
+	const dom = useDOM();
+	onMount(() => {
+		const options = {
+			passive: false
+		};
+		const listener = (e: TouchEvent) => e.preventDefault();
+
+		$dom.window?.addEventListener('touchmove', listener, options);
+		return () => $dom.window?.removeEventListener('touchmove', listener);
+	});
 </script>
 
 <!-- 
@@ -32,20 +46,23 @@
 <div
 	{...$$restProps}
 	class={classNames(
+		$$props.class,
 		getClassName('PopoutWrapper', $platform),
 		`PopoutWrapper--v-${alignY}`,
 		`PopoutWrapper--h-${alignX}`,
-		{ 'PopoutWrapper--closing': closing, 'PopoutWrapper--opened': opened },
-		$$props.class
+		{
+			'PopoutWrapper--closing': closing,
+			'PopoutWrapper--opened': opened,
+			'PopoutWrapper--fixed': fixed,
+			'PopoutWrapper--masked': hasMask
+		}
 	)}
-	transition:fade={{ duration: $platform === ANDROID ? 200 : 300 }}
+	transition:fade={{ duration: $platform === IOS ? 300 : 200 }}
 	on:introend={() => (opened = true)}
 >
-	{#if hasMask}
-		<div class="PopoutWrapper__mask" />
-	{/if}
 	<div class="PopoutWrapper__container">
-		<slot />
+		<div class="PopoutWrapper__overlay" on:click />
+		<div class="PopoutWrapper__content"><slot /></div>
 	</div>
 </div>
 
@@ -67,18 +84,31 @@
 		pointer-events: none;
 	}
 
-	.PopoutWrapper--closing .PopoutWrapper__mask {
-		opacity: 0;
+	.PopoutWrapper--fixed {
+		position: fixed;
 	}
 
-	.PopoutWrapper__mask {
-		opacity: 1;
-		width: 100%;
-		height: 100%;
-		position: absolute;
+	.PopoutWrapper__overlay {
+		position: fixed;
 		left: 0;
 		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		animation: vkui-animation-full-fade-in 0.2s ease;
+	}
+
+	.PopoutWrapper--closing .PopoutWrapper__overlay {
+		opacity: 0;
+		transition: opacity 0.2s var(--android-easing);
+	}
+
+	.PopoutWrapper--masked .PopoutWrapper__overlay {
 		background: rgba(0, 0, 0, 0.4);
+	}
+
+	.PopoutWrapper--fixed .PopoutWrapper__overlay {
+		position: absolute;
 	}
 
 	.PopoutWrapper__container {
@@ -87,7 +117,18 @@
 		position: relative;
 		display: flex;
 		box-sizing: border-box;
+	}
+
+	.PopoutWrapper__content {
+		display: flex;
+		justify-content: center;
+		width: 100%;
 		z-index: 2;
+		pointer-events: none;
+	}
+
+	.PopoutWrapper__content > * {
+		pointer-events: auto;
 	}
 
 	.PopoutWrapper--v-center .PopoutWrapper__container {
@@ -118,27 +159,15 @@
  * iOS version
  */
 
-	.PopoutWrapper--ios .PopoutWrapper__mask {
-		animation: animation-full-fade-in 0.3s ease;
+	.PopoutWrapper--ios .PopoutWrapper__overlay {
+		animation-duration: 0.3s;
 	}
 
-	.PopoutWrapper--ios.PopoutWrapper--closing .PopoutWrapper__mask {
+	.PopoutWrapper--ios.PopoutWrapper--closing .PopoutWrapper__overlay {
 		transition: opacity 0.3s var(--ios-easing);
 	}
 
-	/**
- * Android version
- */
-
-	.PopoutWrapper--android .PopoutWrapper__mask {
-		animation: animation-full-fade-in 0.2s ease;
-	}
-
-	.PopoutWrapper--android.PopoutWrapper--closing .PopoutWrapper__mask {
-		transition: opacity 0.2s var(--android-easing);
-	}
-
-	@keyframes animation-full-fade-in {
+	@keyframes vkui-animation-full-fade-in {
 		from {
 			opacity: 0;
 		}
