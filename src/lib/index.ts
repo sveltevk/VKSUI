@@ -31,6 +31,11 @@ export { default as FixedLayout } from './components/Layout/FixedLayout/FixedLay
 export { default as HorizontalScroll } from './components/Layout/HorizontalScroll/HorizontalScroll.svelte';
 
 /**
+ * Popouts
+ */
+export { default as Snackbar } from './components/Popouts/Snackbar/Snackbar.svelte';
+
+/**
  * Modal
  */
 export { default as ModalDismissButton } from './components/Modals/ModalDismissButton/ModalDismissButton.svelte';
@@ -45,6 +50,7 @@ export { default as PromoBanner } from './components/Advertisement/PromoBanner/P
  */
 export { default as AppRoot } from './components/Layout/AppRoot/AppRoot.svelte';
 export { default as AdaptivityProvider } from './components/Service/AdaptivityProvider/AdaptivityProvider.svelte';
+export { default as AppearanceProvider } from './components/Service/AppearanceProvider/AppearanceProvider.svelte';
 export { default as ConfigProvider } from './components/Service/ConfigProvider/ConfigProvider.svelte';
 export { default as SSRWrapper } from './components/Service/SSRWrapper/SSRWrapper.svelte';
 export { default as Tappable } from './components/Service/Tappable/Tappable.svelte';

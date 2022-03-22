@@ -178,6 +178,15 @@
 					]
 				},
 				{
+					header: 'Popouts',
+					child: [
+						{
+							name: 'Snackbar',
+							link: '/components/Popouts/Snackbar'
+						}
+					]
+				},
+				{
 					header: 'Modals',
 					child: [
 						{
