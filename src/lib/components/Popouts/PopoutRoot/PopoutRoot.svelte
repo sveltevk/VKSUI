@@ -3,6 +3,7 @@
 	import { ViewHeight, ViewWidth } from '@sveltevk/vksui/lib/adaptivity';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import { portal } from '@sveltevk/vksui/lib/portal';
+	import { noop } from 'svelte/internal';
 	import { useAppRoot } from '../../Layout/AppRoot/AppRootContext.svelte';
 
 	export let isPopout = Boolean($$slots.popout);
@@ -13,6 +14,23 @@
 		$adaptivity.viewWidth >= ViewWidth.SMALL_TABLET &&
 		($adaptivity.hasMouse || $adaptivity.viewHeight >= ViewHeight.MEDIUM);
 
+	const appPortal = (el: HTMLElement, target: HTMLElement) => {
+		if ($appRoot.portalRoot && $appRoot.mode !== 'full') {
+			return { ...portal(el, target) };
+		}
+
+		el.hidden = false;
+		async function update(newTarget: HTMLElement | null) {
+			newTarget.hidden = false;
+		}
+
+		update(target);
+		return {
+			update,
+			noop
+		};
+	};
+
 	const appRoot = useAppRoot();
 </script>
 
@@ -20,7 +38,7 @@
 	<slot />
 	{#if isPopout}
 		<div
-			use:portal={$appRoot.portalRoot}
+			use:appPortal={$appRoot.portalRoot}
 			hidden
 			class:PopoutRoot--absolute={isDesktop}
 			class:PopoutRoot__popout={!isDesktop}

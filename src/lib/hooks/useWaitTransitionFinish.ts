@@ -1,11 +1,13 @@
 import { transitionEvent } from '../lib/supportEvents';
 
+type TransitionEndHandler = (e?: TransitionEvent) => void;
+
 export const useWaitTransitionFinish = () => {
 	let timeoutRef: ReturnType<typeof setTimeout> | null = null;
 
 	const waitTransitionFinish = (
 		element: HTMLElement | null,
-		eventHandler: VoidFunction,
+		eventHandler: TransitionEndHandler,
 		durationFallback: number
 	) => {
 		if (element) {

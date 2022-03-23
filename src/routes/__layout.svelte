@@ -186,6 +186,10 @@
 						},
 
 						{
+							name: 'Alert',
+							link: '/components/Popouts/Alert'
+						},
+						{
 							name: 'ScreenSpinner',
 							link: '/components/Popouts/ScreenSpinner'
 						},

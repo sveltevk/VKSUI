@@ -1,17 +1,18 @@
 <script lang="ts" context="module">
+	export type ButtonMode =
+		| 'primary'
+		| 'secondary'
+		| 'tertiary'
+		| 'outline'
+		| 'commerce'
+		| 'destructive'
+		| 'overlay_primary'
+		| 'overlay_secondary'
+		| 'overlay_outline';
+
 	interface ResolvedButtonAppearance {
 		resolvedAppearance: 'accent' | 'positive' | 'negative' | 'neutral' | 'overlay' | undefined;
-		resolvedMode:
-			| 'primary'
-			| 'secondary'
-			| 'tertiary'
-			| 'outline'
-			| 'commerce'
-			| 'destructive'
-			| 'overlay_primary'
-			| 'overlay_secondary'
-			| 'overlay_outline'
-			| undefined;
+		resolvedMode: ButtonMode | undefined;
 	}
 
 	function resolveButtonAppearance(
@@ -79,10 +80,7 @@
 	export let hasBefore = Boolean($$slots.before || before);
 	export let hasAfter = Boolean($$slots.after || after);
 
-	/**
-   Значения `commerce`, `destructive`, `overlay_...` будут упразднены в 5.0.0
-   */
-	export let mode: ResolvedButtonAppearance['resolvedMode'] = 'primary';
+	export let mode: ButtonMode = 'primary';
 	export let appearance: ResolvedButtonAppearance['resolvedAppearance'] = undefined;
 	export let size: 's' | 'm' | 'l' = 's';
 	export let stretched = false;

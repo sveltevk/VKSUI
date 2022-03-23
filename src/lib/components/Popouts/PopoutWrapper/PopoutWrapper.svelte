@@ -127,7 +127,7 @@
 		pointer-events: none;
 	}
 
-	.PopoutWrapper__content > * {
+	.PopoutWrapper__content > :global(*) {
 		pointer-events: auto;
 	}
 

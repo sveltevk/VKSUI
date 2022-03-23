@@ -34,6 +34,7 @@ export { default as HorizontalScroll } from './components/Layout/HorizontalScrol
  * Popouts
  */
 export { default as PopoutWrapper } from './components/Popouts/PopoutWrapper/PopoutWrapper.svelte';
+export { default as Alert } from './components/Popouts/Alert/Alert.svelte';
 export { default as ScreenSpinner } from './components/Popouts/ScreenSpinner/ScreenSpinner.svelte';
 export { default as Snackbar } from './components/Popouts/Snackbar/Snackbar.svelte';
 
