@@ -269,6 +269,11 @@
 						},
 
 						{
+							name: 'RichCell',
+							link: '/components/Blocks/RichCell'
+						},
+
+						{
 							name: 'Footer',
 							link: '/components/Blocks/Footer'
 						},

@@ -7,6 +7,7 @@
 	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
 	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
+	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 
 	/**
 	 * Контейнер для текста под `children`.
@@ -41,9 +42,16 @@
 	export let multiline = false;
 
 	const platform = usePlatform();
-	$: $$restProps.class = classNames($$props.class, getClassName('RichCell', $platform), {
-		'RichCell--mult': multiline
-	});
+	const adaptivity = useAdaptivity();
+
+	$: $$restProps.class = classNames(
+		$$props.class,
+		getClassName('RichCell', $platform),
+		{
+			'RichCell--mult': multiline
+		},
+		`RichCell--sizeY-${$adaptivity.sizeY}`
+	);
 </script>
 
 <Tappable {...$$restProps} on:click component={$$restProps.href ? a : Div}>
@@ -68,7 +76,7 @@
 			</Text>
 		{/if}
 		{#if $$slots.caption || caption}
-			<Subhead class="RichCell__caption">
+			<Subhead component="span" class="RichCell__caption">
 				<slot name="caption">{caption}</slot>
 			</Subhead>
 		{/if}
@@ -97,7 +105,7 @@
 		color: var(--text_primary);
 	}
 
-	:global(.FormItem) :global(.RichCell) {
+	:global(.FormItem .RichCell) {
 		width: 100%;
 		box-sizing: content-box;
 		margin: 0 calc(-1 * var(--formitem_padding));
