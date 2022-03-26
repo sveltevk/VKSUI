@@ -14,11 +14,14 @@
 	 */
 	export let align: 'start' | 'center' = 'center';
 
+	export let root: HTMLElement = null;
+
 	const platform = usePlatform();
 	const adaptivity = useAdaptivity();
 </script>
 
 <div
+	bind:this={root}
 	{...$$restProps}
 	class={classNames(
 		$$restProps.class,

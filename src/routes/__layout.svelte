@@ -267,12 +267,19 @@
 							name: 'SimpleCell',
 							link: '/components/Blocks/SimpleCell'
 						},
+						{
+							name: 'Cell',
+							link: '/components/Blocks/Cell'
+						},
 
 						{
 							name: 'RichCell',
 							link: '/components/Blocks/RichCell'
 						},
-
+						{
+							name: 'List',
+							link: '/components/Blocks/List'
+						},
 						{
 							name: 'Footer',
 							link: '/components/Blocks/Footer'

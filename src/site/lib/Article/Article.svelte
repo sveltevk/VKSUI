@@ -121,7 +121,7 @@
 		margin-bottom: 8px;
 	}
 
-	article :global(code:not(pre[class*='language-'] code)) {
+	article :global(code:not(pre[class*='language-'] code):not(.Example code)) {
 		padding: 0 3px;
 		background: var(--button_secondary_background);
 		border-radius: 4px;

@@ -110,13 +110,13 @@
 		container.addEventListener(events[0], onStartEvent, listenerParams);
 		container.addEventListener(usePointerHover ? 'pointerenter' : 'mouseenter', onEnter);
 		container.addEventListener(usePointerHover ? 'pointerleave' : 'mouseleave', onLeave);
-		container.addEventListener('click', postGestureClick, true);
+		container.addEventListener('click', postGestureClick, { capture: true });
 
 		return () => {
 			container.removeEventListener(events[0], onStartEvent, listenerParams);
 			container.removeEventListener(usePointerHover ? 'pointerenter' : 'mouseenter', onEnter);
 			container.removeEventListener(usePointerHover ? 'pointerleave' : 'mouseleave', onLeave);
-			container.removeEventListener('click', postGestureClick, true);
+			container.removeEventListener('click', postGestureClick, { capture: true });
 		};
 	});
 
