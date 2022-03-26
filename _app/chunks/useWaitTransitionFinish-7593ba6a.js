@@ -1,0 +1,1 @@
+import{t as i}from"./File.svelte_svelte_type_style_lang-897cf515.js";const r=()=>{let t=null;return{waitTransitionFinish:(n,s,o)=>{n&&(i.supported&&i.name?(n.removeEventListener(i.name,s),n.addEventListener(i.name,s)):(t&&clearTimeout(t),t=setTimeout(s,o)))}}};export{r as u};
