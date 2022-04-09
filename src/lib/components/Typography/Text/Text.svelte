@@ -35,15 +35,10 @@
 </Div>
 ```
 -->
-{#if component === 'span'}
-	<span {...$$restProps}>
-		<slot />
-	</span>
-{:else}
-	<div {...$$restProps}>
-		<slot />
-	</div>
-{/if}
+
+<svelte:element this={component} {...$$restProps}>
+	<slot />
+</svelte:element>
 
 <style>
 	.Text {

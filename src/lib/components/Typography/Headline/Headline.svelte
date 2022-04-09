@@ -4,7 +4,7 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
-	export let component: string = undefined;
+	export let component = 'h3';
 	export let weight: 'regular' | 'medium' | 'semibold';
 
 	const platform = usePlatform();
@@ -36,19 +36,9 @@
 ```
 -->
 
-{#if component === 'span'}
-	<span {...$$restProps}>
-		<slot />
-	</span>
-{:else if $platform === ANDROID}
-	<h3 {...$$restProps}>
-		<slot />
-	</h3>
-{:else}
-	<h4 {...$$restProps}>
-		<slot />
-	</h4>
-{/if}
+<svelte:element this={component} {...$$restProps}>
+	<slot />
+</svelte:element>
 
 <style>
 	.Headline {

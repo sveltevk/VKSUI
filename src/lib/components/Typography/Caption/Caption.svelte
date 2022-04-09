@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from '@sveltevk/vksui/lib/classNames';
 
-	export let component: 'footer' | 'span' | 'div' = 'div';
+	export let component = 'span';
 	export let weight: '1' | '2' | '3' = undefined;
 	export let level: '1' | '2' | '3' | '4' = '1';
 	export let caps = false;
@@ -15,19 +15,9 @@
 	);
 </script>
 
-{#if component === 'span'}
-	<span {...$$restProps}>
-		<slot />
-	</span>
-{:else if component === 'footer'}
-	<footer {...$$restProps}>
-		<slot />
-	</footer>
-{:else}
-	<div {...$$restProps}>
-		<slot />
-	</div>
-{/if}
+<svelte:element this={component} {...$$restProps}>
+	<slot />
+</svelte:element>
 
 <style>
 	/*
