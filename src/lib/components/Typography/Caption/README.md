@@ -1,9 +1,5 @@
 # Caption
 
-Упрощения в Android-версии (происходят автоматически):
-
-- `semibold` превращается в `medium`
-
 ## Пример реализации
 
 ```svelte mini
@@ -12,27 +8,22 @@
 </script>
 
 <div style:padding="20px">
-	<Caption level="1" weight="regular" style="margin-bottom:16px">Caption 1 regular</Caption>
-	<Caption level="1" weight="medium" style="margin-bottom:16px">Caption 1 medium</Caption>
-	<Caption level="1" weight="semibold" style="margin-bottom:16px">Caption 1 semibold</Caption>
-	<Caption level="1" weight="semibold" caps style="margin-bottom:16px">
-		Caption CAPS 1 semibold
-	</Caption>
-	<Caption level="2" weight="regular" style="margin-bottom:16px">Caption 2 regular</Caption>
-	<Caption level="2" weight="medium" style="margin-bottom:16px">Caption 2 medium</Caption>
-	<Caption level="2" weight="semibold" style="margin-bottom:16px">Caption 2 semibold</Caption>
-	<Caption level="2" weight="semibold" caps style="margin-bottom:16px">
-		Caption CAPS 2 semibold
-	</Caption>
-	<Caption level="3" weight="regular" style="margin-bottom:16px">Caption 3 regular</Caption>
-	<Caption level="3" weight="semibold" caps style="margin-bottom:16px">
-		Caption CAPS 3 semibold
-	</Caption>
-	<Caption level="4" weight="regular" style="margin-bottom:16px">Caption 4 regular</Caption>
-	<Caption level="4" weight="bold" caps>Caption CAPS 4 bold</Caption>
+	<Caption level="1" style="margin-bottom:16px">Caption 1</Caption>
+	<Caption level="2" style="margin-bottom:16px">Caption 2</Caption>
+	<Caption level="3">Caption 3</Caption>
 </div>
 ```
 
-```
+## Кастомизация
 
+Есть возможность переопределить жирность.
+
+## Пример реализации
+
+```svelte mini
+<div style:padding="20px">
+	<Caption level="1" weight="1" style="margin-bottom:16px">Caption 1 weight 1</Caption>
+	<Caption level="1" weight="2" style="margin-bottom:16px">Caption 1 weight 2</Caption>
+	<Caption level="1" weight="3">Caption 1 weight 3</Caption>
+</div>
 ```

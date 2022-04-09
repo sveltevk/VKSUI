@@ -1,22 +1,12 @@
 <script lang="ts">
-	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
-	import Icon16Done from '@sveltevk/icons/dist/16/done';
-	import Icon24Reorder from '@sveltevk/icons/dist/24/reorder';
-	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
-	import Icon24ReorderIos from '@sveltevk/icons/dist/24/reorder_ios';
-
-	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
-	import Touch from '@sveltevk/vksui/components/Service/Touch/Touch.svelte';
 	import label from '@sveltevk/vksui/components/Elements/label/label.svelte';
 	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID, IOS, VKCOM } from '@sveltevk/vksui/lib/platform';
 	import { onDestroy, createEventDispatcher } from 'svelte';
-	import { useDOM } from '@sveltevk/vksui/lib/dom';
 	import Removable from '../Removable/Removable.svelte';
 	import SimpleCell from '../SimpleCell/SimpleCell.svelte';
 	import CellCheckbox from './CellCheckbox.svelte';

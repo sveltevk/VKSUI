@@ -442,7 +442,8 @@
 						},
 						{
 							name: 'Caption',
-							link: '/components/Typography/Caption'
+							link: '/components/Typography/Caption',
+							tokenized: true
 						}
 					]
 				},

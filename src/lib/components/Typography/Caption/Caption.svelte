@@ -1,53 +1,19 @@
 <script lang="ts">
-	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
-	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
 	export let component: 'footer' | 'span' | 'div' = 'div';
-	export let weight: 'regular' | 'medium' | 'semibold' | 'bold' = 'regular';
+	export let weight: '1' | '2' | '3' = undefined;
 	export let level: '1' | '2' | '3' | '4' = '1';
 	export let caps = false;
 
-	const platform = usePlatform();
-
-	let captionWeight = weight;
-
-	if ($platform === ANDROID && weight === 'semibold') {
-		captionWeight = 'medium';
-	}
-
 	$: $$restProps.class = classNames(
-		getClassName('Caption', $platform),
-		`Caption--w-${captionWeight}`,
+		$$props.class,
+		'Caption',
 		`Caption--l-${level}`,
-		{ 'Caption--caps': caps },
-		$$props.class
+		caps && 'Caption--caps',
+		weight && `Caption--w-${weight}`
 	);
 </script>
-
-<!-- 
-@component
-Упрощения в Android-версии (происходят автоматически):
-* `semibold` превращается в `medium`
-
-```jsx
-<Div>
-  <Caption level="1" weight="regular" style="margin-bottom: 16px">Caption 1 regular</Caption>
-  <Caption level="1" weight="medium" style="margin-bottom: 16px">Caption 1 medium</Caption>
-  <Caption level="1" weight="semibold" style="margin-bottom: 16px">Caption 1 semibold</Caption>
-  <Caption level="1" weight="semibold" caps style="margin-bottom: 16px">Caption CAPS 1 semibold</Caption>
-  <Caption level="2" weight="regular" style="margin-bottom: 16px">Caption 2 regular</Caption>
-  <Caption level="2" weight="medium" style="margin-bottom: 16px">Caption 2 medium</Caption>
-  <Caption level="2" weight="semibold" style="margin-bottom: 16px">Caption 2 semibold</Caption>
-  <Caption level="2" weight="semibold" caps style="margin-bottom: 16px">Caption CAPS 2 semibold</Caption>
-  <Caption level="3" weight="regular" style="margin-bottom: 16px">Caption 3 regular</Caption>
-  <Caption level="3" weight="semibold" caps style="margin-bottom: 16px">Caption CAPS 3 semibold</Caption>
-  <Caption level="4" weight="regular" style="margin-bottom: 16px">Caption 4 regular</Caption>
-  <Caption level="4" weight="bold" caps>Caption CAPS 4 bold</Caption>
-</Div>
-```
--->
 
 {#if component === 'span'}
 	<span {...$$restProps}>
@@ -64,43 +30,81 @@
 {/if}
 
 <style>
+	/*
+	* В следующей версии библиотеки Caption 1 должен превратиться в Footnote, Caption 2 — в Caption 1 и так далее.
+	* В токенах это обновление уже есть.
+	* TODO переехать на новый нейминг в 5.0.0. Заменить Caption 1 на Footnote, а остальные Caption поднять на один уровень наверх.
+	*/
+
+	.Caption {
+		display: block;
+		margin: 0;
+	}
+
 	.Caption--caps {
 		text-transform: uppercase;
 	}
 
 	.Caption--l-1 {
-		font-size: 13px;
-		line-height: 16px;
+		font-size: var(--vkui--font_footnote--font_size--regular);
+		line-height: var(--vkui--font_footnote--line_height--regular);
+		font-weight: var(--vkui--font_footnote--font_weight--regular);
+	}
+
+	.Caption--l-1.Caption--caps {
+		font-size: var(--vkui--font_footnote_caps--font_size--regular);
+		line-height: var(--vkui--font_footnote_caps--line_height--regular);
+		font-weight: var(--vkui--font_footnote_caps--font_weight--regular);
 	}
 
 	.Caption--l-2 {
-		font-size: 12px;
-		line-height: 14px;
+		font-size: var(--vkui--font_caption1--font_size--regular);
+		line-height: var(--vkui--font_caption1--line_height--regular);
+		font-weight: var(--vkui--font_caption1--font_weight--regular);
+	}
+
+	.Caption--l-2.Caption--caps {
+		font-size: var(--vkui--font_caption1_caps--font_size--regular);
+		line-height: var(--vkui--font_caption1_caps--line_height--regular);
+		font-weight: var(--vkui--font_caption1_caps--font_weight--regular);
 	}
 
 	.Caption--l-3 {
-		font-size: 11px;
-		line-height: 14px;
+		font-size: var(--vkui--font_caption2--font_size--regular);
+		line-height: var(--vkui--font_caption2--line_height--regular);
+		font-weight: var(--vkui--font_caption2--font_weight--regular);
+	}
+
+	.Caption--l-3.Caption--caps {
+		font-size: var(--vkui--font_caption2_caps--font_size--regular);
+		line-height: var(--vkui--font_caption2_caps--line_height--regular);
+		font-weight: var(--vkui--font_caption2_caps--font_weight--regular);
 	}
 
 	.Caption--l-4 {
-		font-size: 9px;
-		line-height: 12px;
+		font-size: var(--vkui--font_caption3--font_size--regular);
+		line-height: var(--vkui--font_caption3--line_height--regular);
+		font-weight: var(--vkui--font_caption3--font_weight--regular);
 	}
 
-	.Caption--w-regular {
-		font-weight: 400;
+	.Caption--l-4.Caption--caps {
+		font-size: var(--vkui--font_caption3_caps--font_size--regular);
+		line-height: var(--vkui--font_caption3_caps--line_height--regular);
+		font-weight: var(--vkui--font_caption3_caps--font_weight--regular);
 	}
 
-	.Caption--w-medium {
-		font-weight: 500;
+	.Caption.Caption--w-1 {
+		/* Мы утяжеляем селеткор, чтобы перебить селекторы .Caption--caps */
+		font-weight: var(--vkui--font_weight_accent1);
 	}
 
-	.Caption--w-semibold {
-		font-weight: 600;
+	.Caption.Caption--w-2 {
+		/* Мы утяжеляем селеткор, чтобы перебить селекторы .Caption--caps */
+		font-weight: var(--vkui--font_weight_accent2);
 	}
 
-	.Caption--w-bold {
-		font-weight: 700;
+	.Caption.Caption--w-3 {
+		/* Мы утяжеляем селеткор, чтобы перебить селекторы .Caption--caps */
+		font-weight: var(--vkui--font_weight_accent3);
 	}
 </style>
