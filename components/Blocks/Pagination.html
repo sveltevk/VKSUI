@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="VKSUI library" />
+		<link rel="icon" href="/VKSUI/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>Pagination — VKSUI</title>
+	<link rel="stylesheet" href="/VKSUI/_app/assets/pages/__layout.svelte-80f21bce.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/File.svelte_svelte_type_style_lang-d393988f.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/Showcase-51838312.css">
+	<link rel="stylesheet" href="/VKSUI/_app/assets/APIDocs-490422f4.css">
+	<link rel="modulepreload" href="/VKSUI/_app/start-78fc3968.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/vendor-049c144f.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/__layout.svelte-f82ac64b.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/File.svelte_svelte_type_style_lang-5c39484a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Panel-7fc4cd06.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/PanelHeader-639a0959.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Separator-f8448e3e.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Text-5f1b3577.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Touch-effea633.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/PanelHeaderButton-83bb87bf.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Tappable-eb98bdc2.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Title-6cca5263.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/PanelHeaderClose-82a96737.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Group-8d982b5c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Caption-1e0031a3.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Link-dc66ead1.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/SimpleCell-4daca535.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Headline-b403c9e5.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Subhead-1bb50062.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Header-fe904d76.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Icon28TokenizedOutline-60c6d39f.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Footer-ad963df6.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Search-862d281c.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/IconButton-1d48d505.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Div-1279fe0f.js">
+	<link rel="modulepreload" href="/VKSUI/_app/pages/components/Blocks/Pagination.svelte-a7a8be42.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Showcase-44e4d600.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Button-8c244495.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Spinner-91b12e18.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Checkbox-ddc022ad.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/label-8787ed33.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormItem-5abc3e35.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Removable-4da0099a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/Input-db2538b4.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/FormField-e9c37b5a.js">
+	<link rel="modulepreload" href="/VKSUI/_app/chunks/APIDocs-7485e507.js">
+	</head>
+	<body>
+		<div class="vkui vkui__root">
+
+
+
+
+
+
+<div class="vkuibright_light vkui--vkBase--light AppRoot AppRoot--no-mouse svelte-1y959sv"><div class="SplitLayout SplitLayout--android PopoutRoot svelte-kv3azb"><div class="PanelHeader PanelHeader--android PanelHeader--vis PanelHeader--no-left PanelHeader--no-right PanelHeader--fixed PanelHeader--sizeX-compact"><div data-tooltip-container="fixed" class="FixedLayout FixedLayout--android FixedLayout--top PanelHeader__fixed svelte-4gt3zs" style=""><div class="FixedLayout__in"><div class="PanelHeader__in" data-tooltip-container="fixed"><div class="PanelHeader__left"></div>
+	<div class="PanelHeader__content"><span class="PanelHeader__content-in"></span></div>
+	<div class="PanelHeader__right"></div></div></div>
+</div>
+	
+</div>
+			
+	<div class="Doc SplitLayout__inner SplitLayout__inner--header svelte-12lh0hf">
+
+			<div class="SplitCol svelte-1y7eiql" style="max-width: 1360px;"><div class="Panel Panel--android Panel--compact Panel--sizeX-compact svelte-7y6wk0">
+
+<div class="Panel__in" data-tooltip-container="true">
+		<div class="Panel__in-before svelte-7y6wk0"></div>
+		<div class="PanelHeader PanelHeader--android PanelHeader--vis PanelHeader--sep PanelHeader--fixed PanelHeader--sizeX-compact"><div data-tooltip-container="fixed" class="FixedLayout FixedLayout--android FixedLayout--top PanelHeader__fixed svelte-4gt3zs" style=""><div class="FixedLayout__in"><div class="PanelHeader__in" data-tooltip-container="fixed"><div class="PanelHeader__left">
+
+<button class="PanelHeaderButton PanelHeaderButton--android PanelHeaderButton--notPrimitive Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--menu_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#menu_outline_28" style="fill: currentColor;"></use></svg></div>
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button>
+							</div>
+	<div class="PanelHeader__content"><span class="PanelHeader__content-in">@sveltevk/vksui</span></div>
+	<div class="PanelHeader__right">
+
+<button slot="right" class="PanelHeaderButton PanelHeaderButton--android PanelHeaderButton--notPrimitive Tappable Tappable--android Tappable--sizeX-compact"><div role="presentation" class="Icon Icon--28 Icon--w-28 Icon--h-28 Icon--moon_outline_28 "><svg viewBox="0 0 28 28" width="28" height="28" style="display:block"><use xlink:href="#moon_outline_28" style="fill: currentColor;"></use></svg></div>
+	
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></button></div></div></div>
+</div>
+	
+
+<div class="Separator Separator--android PanelHeader__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</div>
+
+					
+
+					
+
+<section class="Group Group--android Group--sizeX-compact Group--plain svelte-15ipv0f"><div class="Group__inner svelte-15ipv0f">
+		
+
+<div class="article Div Div--android svelte-1objkvf"><div class="header svelte-1k4harm">
+
+<a href="https://github.com/sveltevk/VKSUI/tree/master/src/lib/components/Blocks/Pagination/Pagination.svelte" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery"><div class="Caption Caption--l-1 Caption--w-regular svelte-150pc0p">GitHub</div>
+</a>
+		
+
+<a href="https://github.com/sveltevk/VKSUI/edit/master/src/lib/components/Blocks/Pagination/README.md" target="_blank" rel="noopener noreferrer" class="Link Link--android svelte-4piery"><div class="Caption Caption--l-1 Caption--w-regular svelte-150pc0p">Редактировать страницу</div>
+</a></div>
+	<article class="svelte-1k4harm"><h1 id="pagination">Pagination</h1>
+<p>Чаще всего используется в больших списках или таблицах, для более понятного структурирования и деления информации.</p>
+<p>По умолчанию многоточие показывается когда кол-во страниц <code>&gt; 7</code>. Чтобы повлиять на это поведение, существуют параметры <code>siblingCount</code> и <code>boundaryCount</code>.
+К примеру, если выставить <code>siblingCount={0}</code> или <code>boundaryCount={0}</code>, то многоточие появится уже при <code>&gt; 5</code>.
+Если выставить и <code>siblingCount={0}</code>, и <code>boundaryCount={0}</code>, то <code>&gt; 4</code>.</p>
+<blockquote><p>При ширине <code>&lt; 380px</code> рекомендуется отключать <code>siblingCount</code> передав в него значение <code>0</code>.</p></blockquote>
+<h2 id="отличия-от-vkui">Отличия от VKUI</h2>
+<p>Свойство <code>currentPage</code> изменяется внутри компонента.</p>
+<h2 id="usepagination"><code>usePagination</code></h2>
+<p>Для полной кастомизации можно использовать хук <code>usePagination()</code>. Возвращает массив типа <code>[1, 2, 3, 4, 5, &#39;end-ellipsis&#39;, 8]</code>. Принимает почти те же параметры, что и <code>Pagination</code>.</p>
+
+
+<div class="fixable svelte-3bec25"><div class="svelte-3bec25">platform:
+		<select><option value="android">android</option><option value="ios">ios</option><option value="vkcom">vkcom</option></select></div>
+	<div class="svelte-3bec25">appearance:
+		<select><option value="light">light</option><option value="dark">dark</option></select></div>
+	</div>
+
+<div class="Example svelte-3bec25">
+
+<div  class="vkui vkui__root vkuibright_light vkui--vkBase--light svelte-3bec25 Example__in mini" style=""><div class="vkuibright_light vkui--vkBase--light AppRoot AppRoot--no-mouse svelte-1y959sv"><div class="SplitLayout SplitLayout--android PopoutRoot svelte-kv3azb">
+	<div class="SplitLayout__inner svelte-12lh0hf"><div class="SplitCol svelte-1y7eiql" style=""><div class="RootContainer"><div class="DemoContainer">
+<nav class="Pagination svelte-1vujdql" role="navigation" aria-label="Навигация по страницам"><ul class="Pagination__list svelte-1vujdql"><li class="Pagination__prevButtonContainer svelte-1vujdql">
+
+<button disabled aria-label="Перейти на предыдущую страницу" onClick="() => {
+    if (!isLastPage) {
+      currentPage = currentPage - 1;
+      dispatch("change", currentPage);
+    }
+  }" class="Button Button--sz-l Button--lvl-tertiary Button--clr-accent Button--aln-center Button--sizeY-compact Button--stretched Button--with-icon Button--singleIcon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in"><div class="Button__before"><div role="presentation" slot="before" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--chevron_compact_left_24 "><svg viewBox="0 0 16 24" width="24" height="24" style="display:block"><use xlink:href="#chevron_compact_left_24" style="fill: currentColor;"></use></svg></div></div>
+		
+		</span>
+	
+	
+	</button></li>
+		
+			<li>
+
+<div tabIndex="0" role="button" aria-disabled="false" class="Pagination__page Pagination__page--sizeY-compact Pagination__page--current Tappable Tappable--android Tappable--sizeX-compact" data-page="1" aria-current aria-label="1 страница">1
+					
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></div>
+				</li>
+			<li>
+
+<div tabIndex="0" role="button" aria-disabled="false" class="Pagination__page Pagination__page--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact" data-page="2" aria-label="Перейти на 2 страницу">2
+					
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></div>
+				</li>
+			<li>
+
+<div tabIndex="0" role="button" aria-disabled="false" class="Pagination__page Pagination__page--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact" data-page="3" aria-label="Перейти на 3 страницу">3
+					
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></div>
+				</li>
+			<li><div class="Pagination__page Pagination__page--type-ellipsis Pagination__page--sizeY-compact svelte-1vujdql">...
+					</div>
+				</li>
+			<li>
+
+<div tabIndex="0" role="button" aria-disabled="false" class="Pagination__page Pagination__page--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact" data-page="123" aria-label="Перейти на 123 страницу">123
+					
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></div>
+				</li>
+		<li class="Pagination__nextButtonContainer svelte-1vujdql">
+
+<button aria-label="Перейти на следующую страницу" class="Button Button--sz-l Button--lvl-tertiary Button--clr-accent Button--aln-center Button--sizeY-compact Button--stretched Button--with-icon Button--singleIcon Tappable Tappable--android Tappable--sizeX-compact">
+	<span class="Button__in">
+		
+		<span class="Button__after"><div role="presentation" slot="after" class="Icon Icon--24 Icon--w-24 Icon--h-24 Icon--chevron_compact_right_24 "><svg viewBox="0 0 16 24" width="24" height="24" style="display:block"><use xlink:href="#chevron_compact_right_24" style="fill: currentColor;"></use></svg></div></span></span>
+	
+	
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible  FocusVisible--outside"></span></button></li></ul>
+</nav></div>
+		number
+	<div style="min-width: 200px;">
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">sizeY</h5>
+		<select><option value="compact">compact</option><option value="regular">regular</option></select>
+		
+</label>
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">prop[currentPage]</h5>
+		
+
+<div class="Input Input--android Input--sizeY-compact FormField FormField--android FormField--sizeY-compact" style=""><input type="number" min="1" max="123" class="Input__el svelte-pq5z6x" value="1">
+	
+	<div role="presentation" class="FormField__border"></div></div>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">prop[siblingCount]</h5>
+		
+
+<div class="Input Input--android Input--sizeY-compact FormField FormField--android FormField--sizeY-compact" style=""><input type="number" min="0" class="Input__el svelte-pq5z6x" value="0">
+	
+	<div role="presentation" class="FormField__border"></div></div>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">prop[boundaryCount]</h5>
+		
+
+<div class="Input Input--android Input--sizeY-compact FormField FormField--android FormField--sizeY-compact" style=""><input type="number" min="0" class="Input__el svelte-pq5z6x" value="1">
+	
+	<div role="presentation" class="FormField__border"></div></div>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">prop[totalPages]</h5>
+		
+
+<div class="Input Input--android Input--sizeY-compact FormField FormField--android FormField--sizeY-compact" style=""><input type="number" min="1" class="Input__el svelte-pq5z6x" value="123">
+	
+	<div role="presentation" class="FormField__border"></div></div>
+		
+</label>
+		
+
+
+
+
+<label class="FormItem FormItem--android FormItem--default FormItem--sizeY-compact FormItem--withTop svelte-fp7f3b"><h5 class="FormItem__top Subhead Subhead--sizeY-compact Subhead--w-undefined svelte-1j3e1cx">prop[disabled]</h5>
+		
+
+
+<label tabIndex="0" role="button" class="Checkbox Checkbox--android Checkbox--sizeY-compact Tappable Tappable--android Tappable--sizeX-compact" style=""><input type="checkbox" class="Checkbox__input svelte-1wrc2qy">
+	<div class="Checkbox__container svelte-1wrc2qy"><div class="Checkbox__icon Checkbox__icon--on svelte-1wrc2qy"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--check_box_on_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#check_box_on_20" style="fill: currentColor;"></use></svg></div></div>
+		<div class="Checkbox__icon Checkbox__icon--off svelte-1wrc2qy"><div role="presentation" class="Icon Icon--20 Icon--w-20 Icon--h-20 Icon--check_box_off_20 "><svg viewBox="0 0 20 20" width="20" height="20" style="display:block"><use xlink:href="#check_box_off_20" style="fill: currentColor;"></use></svg></div></div>
+		
+<div class="Text Text--android Text--w-regular Checkbox__content svelte-1ncu6iw"><div class="Checkbox__children svelte-1wrc2qy">disabled</div>
+			</div></div>
+	
+	<span aria-hidden="true" class="Tappable__hoverShadow svelte-jwr959"></span>
+	<span aria-hidden="true" class="svelte-mxwvzm FocusVisible FocusVisible--inside"></span></label>
+		
+</label></div></div>
+
+<style>.RootContainer {
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.DemoContainer {
+		flex-grow: 2;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+</style>
+</div></div>
+	
+	
+</div></div></div>
+
+	
+</div>
+<h2 id="код">Код</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Pagination<span class="token punctuation">,</span> AdaptivityProvider<span class="token punctuation">,</span> FormItem<span class="token punctuation">,</span> Checkbox<span class="token punctuation">,</span> Input <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@sveltevk/vksui'</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// state</span>
+	<span class="token keyword">let</span> sizeY <span class="token operator">=</span> <span class="token string">'compact'</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> currentPage <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> siblingCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> boundaryCount <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> totalPages <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>RootContainer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>AdaptivityProvider</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>sizeY<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>DemoContainer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Pagination</span> <span class="token attr-name"><span class="token namespace">bind:</span>currentPage</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>siblingCount<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>boundaryCount<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>totalPages<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>disabled<span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+		<span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token keyword">typeof</span> currentPage<span class="token punctuation">&#125;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>AdaptivityProvider</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name"><span class="token namespace">style:</span>min-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>200px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sizeY<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name"><span class="token namespace">bind:</span>value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>sizeY<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">#each</span> <span class="token language-javascript"><span class="token punctuation">[</span><span class="token string">'compact'</span><span class="token punctuation">,</span> <span class="token string">'regular'</span><span class="token punctuation">]</span> </span><span class="token keyword">as</span> <span class="token language-javascript">name<span class="token punctuation">&#125;</span></span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token language-javascript"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+				<span class="token each"><span class="token punctuation">&#123;</span><span class="token keyword">/each</span><span class="token punctuation">&#125;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prop[currentPage]<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Input</span>
+				<span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span>
+				<span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>currentPage<span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name"><span class="token namespace">on:</span>change=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>currentPage <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+				<span class="token attr-name">max=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>totalPages<span class="token punctuation">&#125;</span></span>
+			<span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prop[siblingCount]<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Input</span>
+				<span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span>
+				<span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>siblingCount<span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name"><span class="token namespace">on:</span>change=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>siblingCount <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+			<span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prop[boundaryCount]<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Input</span>
+				<span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span>
+				<span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>boundaryCount<span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name"><span class="token namespace">on:</span>change=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>boundaryCount <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+			<span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prop[totalPages]<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Input</span>
+				<span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span>
+				<span class="token attr-name">value=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>totalPages<span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name"><span class="token namespace">on:</span>change=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>totalPages <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span>
+				<span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+			<span class="token punctuation">/></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormItem</span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prop[disabled]<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Checkbox</span> <span class="token attr-name"><span class="token namespace">bind:</span>checked=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>disabled<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Checkbox</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormItem</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.RootContainer</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+		<span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+		<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+		<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token selector">.DemoContainer</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">flex-grow</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+		<span class="token property">padding-top</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+		<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<h2>Свойства</h2>
+
+	<div class="Table svelte-18l4ucz"><table class="svelte-18l4ucz"><thead><tr><th class="svelte-18l4ucz">Name</th>
+					<th class="svelte-18l4ucz">Type</th>
+					<th class="svelte-18l4ucz">Default</th>
+					<th class="svelte-18l4ucz">Description</th></tr></thead>
+			<tbody><tr><td class="token attr-name svelte-18l4ucz">currentPage</td>
+						<td class="token attr-value svelte-18l4ucz">number</td>
+						<td class="svelte-18l4ucz"><code>1</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Текущая страница.<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">siblingCount</td>
+						<td class="token attr-value svelte-18l4ucz">number</td>
+						<td class="svelte-18l4ucz"><code>1</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Кол-во всегда видимых страниц по краям текущей страницы.<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">boundaryCount</td>
+						<td class="token attr-value svelte-18l4ucz">number</td>
+						<td class="svelte-18l4ucz"><code>1</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Кол-во всегда видимых страниц в начале и в конце.<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">totalPages</td>
+						<td class="token attr-value svelte-18l4ucz">number</td>
+						<td class="svelte-18l4ucz"><code>1</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Общее кол-во страниц.<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">disabled</td>
+						<td class="token attr-value svelte-18l4ucz">boolean</td>
+						<td class="svelte-18l4ucz"><code>false</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Блокировка всех кнопок.<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">prevButtonAriaLabel</td>
+						<td class="token attr-value svelte-18l4ucz">string</td>
+						<td class="svelte-18l4ucz"><code>&#39;Перейти на предыдущую страницу&#39;</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Переобределение `aria-label` для кнопки навигации назад.
+По умолчанию используется текст на "ru_RU".<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">nextButtonAriaLabel</td>
+						<td class="token attr-value svelte-18l4ucz">string</td>
+						<td class="svelte-18l4ucz"><code>&#39;Перейти на следующую страницу&#39;</code></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Переобределение `aria-label` для кнопки навигации вперёд.
+По умолчанию используется текст на "ru_RU".<!-- HTML_TAG_END --></td>
+					</tr><tr><td class="token attr-name svelte-18l4ucz">getPageAriaLabel</td>
+						<td class="token attr-value svelte-18l4ucz"></td>
+						<td class="svelte-18l4ucz"></td>
+						<td class="svelte-18l4ucz"><!-- HTML_TAG_START -->Функция для переопределния и/или локализации `aria-label` атрибута.
+По умолчанию используется текст на "ru_RU".<!-- HTML_TAG_END --></td>
+					</tr></tbody></table></div>
+
+<blockquote><p><b>Этот компонент использует <code>$$restProps</code></b></p>
+		<p>Все прочие свойства будут переданы базовому элементу <code>nav</code></p>
+		<p><a href="https://svelte.dev/docs#template-syntax-attributes-and-props" target="_blank" rel="noopener noreferrer">Подробнее</a></p></blockquote>
+
+
+
+<h2>События</h2>
+
+	<div class="Table svelte-18l4ucz"><table class="svelte-18l4ucz"><thead><tr><th class="svelte-18l4ucz">Name</th></tr></thead>
+			<tbody><tr><td class="token attr-name svelte-18l4ucz">on:change</td>
+					</tr></tbody></table></div></article>
+</div>
+		</div>
+
+	
+
+<div class="Separator Separator--android Group__separator svelte-x9cuz" aria-hidden="true"><div class="Separator__in svelte-x9cuz"></div>
+</div>
+</section>
+		<div class="Panel__in-after svelte-7y6wk0"></div></div>
+</div>
+</div></div>
+	
+	
+</div></div>
+
+
+		<script type="module" data-hydrate="4m5eg8">
+		import { start } from "/VKSUI/_app/start-78fc3968.js";
+		start({
+			target: document.querySelector('[data-hydrate="4m5eg8"]').parentNode,
+			paths: {"base":"/VKSUI","assets":"/VKSUI"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/VKSUI/_app/pages/__layout.svelte-f82ac64b.js"),
+						import("/VKSUI/_app/pages/components/Blocks/Pagination.svelte-a7a8be42.js")
+				],
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>
