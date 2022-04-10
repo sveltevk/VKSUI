@@ -62,7 +62,6 @@
 	 * Длительность показа active-состояния
 	 */
 	export let activeEffectDelay: number = ACTIVE_EFFECT_DELAY;
-	export let disabled = false;
 	export let stopPropagation = false;
 	export let component = div;
 	/**
@@ -109,8 +108,8 @@
 	let childHover = false;
 	let _hovered = false;
 
-	$: hovered = _hovered && !disabled;
-	$: _hasActive = _hasActive && !childHover && !disabled;
+	$: hovered = _hovered && !$$props.disabled;
+	$: _hasActive = _hasActive && !childHover && !$$props.disabled;
 	$: _hasHover = deviceHasHover && hasHover && !childHover;
 	$: isCustomElement = component !== a && component !== button;
 	$: isPresetHoverMode = ['opacity', 'background'].includes(hoverMode);
@@ -269,13 +268,13 @@
 <Touch
 	on:enter={() => (_hovered = true)}
 	on:leave={() => (_hovered = false)}
-	tabIndex={isCustomElement && !disabled ? 0 : undefined}
+	tabIndex={isCustomElement && !$$props.disabled ? 0 : undefined}
 	role={isCustomElement ? role : undefined}
-	aria-disabled={isCustomElement ? disabled : undefined}
+	aria-disabled={isCustomElement ? $$props.disabled : undefined}
 	bind:container
-	on:start={disabled ? undefined : onStart}
-	on:move={disabled ? undefined : onMove}
-	on:end={disabled ? undefined : onEnd}
+	on:start={$$props.disabled ? undefined : onStart}
+	on:move={$$props.disabled ? undefined : onMove}
+	on:end={$$props.disabled ? undefined : onEnd}
 	on:click
 	{component}
 	{...$$restProps}
@@ -296,7 +295,7 @@
 			aria-hidden="true"
 			class="Tappable__hoverShadow"
 		/>{/if}
-	{#if !disabled}
+	{#if !$$props.disabled}
 		<FocusVisible mode={_focusVisibleMode} />
 	{/if}
 </Touch>

@@ -360,6 +360,11 @@
 						{
 							name: 'ModalCardBase',
 							link: '/components/Blocks/ModalCardBase'
+						},
+						{
+							name: 'Pagination',
+							link: '/components/Blocks/Pagination',
+							tokenized: true
 						}
 					]
 				},

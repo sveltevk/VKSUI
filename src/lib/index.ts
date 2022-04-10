@@ -101,6 +101,7 @@ export { default as MiniInfoCell } from './components/Blocks/MiniInfoCell/MiniIn
 export { default as WriteBar } from './components/Blocks/WriteBar/WriteBar.svelte';
 export { default as WriteBarIcon } from './components/Blocks/WriteBarIcon/WriteBarIcon.svelte';
 export { default as ModalCardBase } from './components/Blocks/ModalCardBase/ModalCardBase.svelte';
+export { default as Pagination } from './components/Blocks/Pagination/Pagination.svelte';
 
 /**
  * Forms
@@ -132,6 +133,7 @@ export { default as Caption } from './components/Typography/Caption/Caption.svel
  */
 export { usePlatform } from './hooks/usePlatform';
 export { useAdaptivity } from './hooks/useAdaptivity';
+export { usePagination } from './hooks/usePagination';
 
 /**
  * Utils
