@@ -1,0 +1,10 @@
+@import './bright_light.css';
+@import './space_gray.css';
+@import './vkcom_light.css';
+@import './vkcom_dark.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkBase/cssVars/declarations/onlyVariablesLocal.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkBaseDark/cssVars/declarations/onlyVariablesLocalIncremental.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkIOS/cssVars/declarations/onlyVariablesLocalIncremental.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkIOSDark/cssVars/declarations/onlyVariablesLocalIncremental.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkCom/cssVars/declarations/onlyVariablesLocalIncremental.css';
+@import '../../../node_modules/@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariablesLocalIncremental.css';

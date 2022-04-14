@@ -22,6 +22,8 @@
 	} from '@sveltevk/vksui';
 	import Icon16Done from '@sveltevk/icons/dist/16/done';
 
+	import { getAvatarUrl } from '$site/data/utils';
+
 	let text = '';
 	let snackbar = null;
 

@@ -17,10 +17,13 @@
 ```svelte
 <script>
 	import { ConfigProvider, Button } from '@sveltevk/vksui';
+	import '@sveltevk/vksui/styles/themes.css';
 </script>
 
 <ConfigProvider platform="vkcom" appearance="light">
-	<Button />
+	<AppRoot>
+		<Button />
+	</AppRoot>
 </ConfigProvider>
 ```
 
@@ -43,6 +46,27 @@
 позволит кастомизировать не только цвета, но и скругления, размеры, отступы и тени.
 
 Компоненты поддерживающие токены, обозначаются иконкой <Icon28TokenizedOutline class="icon-tokenized" fill="var(--accent)" title="Компонент поддерживает vkui-tokens"  /> .
+
+Пример использования
+
+```svelte
+<script>
+	import { ConfigProvider, Button } from '@sveltevk/vksui';
+	/*
+	 * В vkui-tokens нет значений токенов из Appearance. Предполагается, что
+	 * если разработчик использует vkui-tokens, то файлы со значениями он подключает
+	 * самостоятельно.
+	 */
+	import '@vkontakte/vkui-tokens/themes/vkCom/cssVars/declarations/onlyVariables.css';
+	import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariablesLocal.css';
+</script>
+
+<ConfigProvider platform="vkcom" appearance="light">
+	<AppRoot>
+		<Button />
+	</AppRoot>
+</ConfigProvider>
+```
 
 <style>
 	:global(.icon-tokenized),

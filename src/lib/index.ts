@@ -1,17 +1,6 @@
 import './styles/constants.css';
 import './styles/animations.css';
 import './styles/common.css';
-import './fonts/fonts.css';
-import './styles/bright_light.css';
-import './styles/space_gray.css';
-import './styles/vkcom_light.css';
-import './styles/vkcom_dark.css';
-import '@vkontakte/vkui-tokens/themes/vkBase/cssVars/declarations/onlyVariables.css';
-import '@vkontakte/vkui-tokens/themes/vkBaseDark/cssVars/declarations/onlyVariablesLocal.css';
-import '@vkontakte/vkui-tokens/themes/vkIOS/cssVars/declarations/onlyVariablesLocal.css';
-import '@vkontakte/vkui-tokens/themes/vkIOSDark/cssVars/declarations/onlyVariablesLocal.css';
-import '@vkontakte/vkui-tokens/themes/vkCom/cssVars/declarations/onlyVariablesLocal.css';
-import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariablesLocal.css';
 
 /**
  * Layout

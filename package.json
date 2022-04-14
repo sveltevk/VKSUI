@@ -64,6 +64,6 @@
 		"@sveltevk/icons": "^1.145.2",
 		"@vkontakte/vk-bridge": "^2.5.3",
 		"@vkontakte/vkjs": "^0.22.2",
-		"@vkontakte/vkui-tokens": "^4.5.1"
+		"@vkontakte/vkui-tokens": "^4.7.0"
 	}
 }

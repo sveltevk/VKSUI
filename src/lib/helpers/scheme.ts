@@ -4,6 +4,22 @@ import { VKCOM } from '../lib/platform';
 import type { PlatformType } from '../lib/platform';
 
 export enum Scheme {
+	/**
+	 * @deprecated будет удалено в 5.0.0
+	 * версия оставлена для совместимости со старыми версиями клиентов
+	 */
+	DEPRECATED_CLIENT_LIGHT = 'client_light',
+	/**
+	 * @deprecated будет удалено в 5.0.0
+	 * версия оставлена для совместимости со старыми версиями клиентов
+	 */
+	DEPRECATED_CLIENT_DARK = 'client_dark',
+	/**
+	 * @deprecated будет удалено в 5.0.0
+	 * версия оставлена для совместимости с vkcom, когда там была только одна схема
+	 */
+	VKCOM = 'vkcom',
+
 	BRIGHT_LIGHT = 'bright_light',
 	SPACE_GRAY = 'space_gray',
 	VKCOM_LIGHT = 'vkcom_light',
@@ -12,6 +28,7 @@ export enum Scheme {
 
 export type AppearanceScheme =
 	| AppearanceSchemeType
+	| Scheme.VKCOM
 	| Scheme.VKCOM_DARK
 	| Scheme.VKCOM_LIGHT
 	| 'inherit';
@@ -34,6 +51,7 @@ export function normalizeScheme({
 	if (scheme === 'inherit') {
 		return scheme;
 	}
+
 	if (platform === VKCOM && (scheme === Scheme.BRIGHT_LIGHT || scheme === Scheme.SPACE_GRAY)) {
 		return Scheme.VKCOM_LIGHT;
 	}

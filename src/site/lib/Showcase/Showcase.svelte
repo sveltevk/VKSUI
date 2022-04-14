@@ -158,7 +158,15 @@
 </div>
 
 <div class="Example">
-	<ConfigProvider {contentWindow} {contentDocument} platform={os} {webviewType} {sizeY} {sizeX}>
+	<ConfigProvider
+		scheme="inherit"
+		{contentWindow}
+		{contentDocument}
+		platform={os}
+		{webviewType}
+		{sizeY}
+		{sizeX}
+	>
 		<AppearanceProvider {appearance} let:class={className}>
 			<div
 				bind:this={example}

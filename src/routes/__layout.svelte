@@ -1,5 +1,7 @@
 <script context="module" lang="ts">
 	import './prism.css';
+	import '@sveltevk/vksui/styles/themes.css';
+	import '@sveltevk/vksui/fonts/fonts.css';
 	import type { Load } from '@sveltejs/kit';
 
 	const capitalizeFirstLetter = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
@@ -97,11 +99,11 @@
 				{
 					name: 'О VKSUI',
 					link: '/'
+				},
+				{
+					name: 'Быстрый старт',
+					link: '/quickStart'
 				}
-				// {
-				// 	name: 'Быстрый старт',
-				// 	link: '/quickStart'
-				// }
 			]
 		},
 		{
@@ -497,6 +499,10 @@
 					link: '/icons'
 				},
 				{
+					name: 'Шрифты',
+					link: '/fonts'
+				},
+				{
 					name: 'Дизайн',
 					link: '/design'
 				},
@@ -516,9 +522,9 @@
 	<title>{currentPage.name}</title>
 </svelte:head>
 
-<ConfigProvider {platform} {webviewType}>
+<ConfigProvider {platform} {appearance} {webviewType}>
 	<AdaptivityProvider>
-		<App {appearance} {currentPage} {tree} {base}>
+		<App bind:appearance {currentPage} {tree} {base}>
 			<Article {currentPage} {repositoryURL}>
 				<slot />
 			</Article>

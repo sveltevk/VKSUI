@@ -34,7 +34,6 @@
 		<div class="DemoContainer">
 			<Pagination bind:currentPage {siblingCount} {boundaryCount} {totalPages} {disabled} />
 		</div>
-		{typeof currentPage}
 	</AdaptivityProvider>
 	<div style:min-width="200px">
 		<FormItem top="sizeY">

@@ -5,35 +5,30 @@
 	import { getScheme } from '../../../helpers/getScheme';
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import { ContextKey } from '@sveltevk/vksui/lib/config';
-	import { Platform, type PlatformType } from '@sveltevk/vksui/lib/platform';
+	import { Platform } from '@sveltevk/vksui/lib/platform';
 	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 
-	const generateVKUITokensClassName = (platform: string, appearance: string): string => {
-		let tokensPlatform: string;
-		switch (platform) {
-			case Platform.ANDROID:
-				tokensPlatform = 'vkBase';
-				break;
-			case Platform.IOS:
-				tokensPlatform = 'vkIOS';
-				break;
-			case Platform.VKCOM:
-				tokensPlatform = 'vkCom';
-				break;
-			default:
-				tokensPlatform = platform;
+	export const generateVKUITokensClassNames = (platform: string, appearance: string): string[] => {
+		let classNames = ['vkui--vkBase--light'];
+
+		if (appearance === 'dark') {
+			classNames.push('vkui--vkBase--dark');
 		}
 
-		return `vkui--${tokensPlatform}--${appearance}`;
-	};
+		switch (platform) {
+			case Platform.ANDROID:
+				break;
+			case Platform.IOS:
+				classNames.push(`vkui--vkIOS--${appearance}`);
+				break;
+			case Platform.VKCOM:
+				classNames.push(`vkui--vkCom--${appearance}`);
+				break;
+			default:
+				classNames.push(`vkui--${platform}--${appearance}`);
+		}
 
-	export const generateAppearanceClass = (platform: PlatformType, appearance: AppearanceType) => {
-		const scheme = getScheme({
-			platform: platform,
-			appearance
-		});
-
-		return `vkui${scheme} ${generateVKUITokensClassName(platform, appearance)}`;
+		return classNames;
 	};
 </script>
 
@@ -49,7 +44,7 @@
 			appearance
 		});
 
-	$: className = `vkui${_scheme} ${generateVKUITokensClassName($platform, appearance)}`;
+	$: className = `vkui${_scheme} ${generateVKUITokensClassNames($platform, appearance).join(' ')}`;
 
 	let wScheme = writable(_scheme);
 	let wAppearance = writable(appearance);
