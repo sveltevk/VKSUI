@@ -68,7 +68,6 @@ yarn add @sveltevk/vksui @sveltevk/icons @vkontakte/vk-bridge
 		SplitCol,
 		View,
 		Panel,
-		PanelHeader,
 		Group,
 		Header,
 		SimpleCell,

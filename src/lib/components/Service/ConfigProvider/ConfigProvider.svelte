@@ -12,7 +12,7 @@
 	import AdaptivityProvider from '../AdaptivityProvider/AdaptivityProvider.svelte';
 	import type { SizeType, ViewWidth } from '@sveltevk/vksui/lib/adaptivity';
 	import AppearanceProvider, {
-		generateVKUITokensClassNames
+		generateVKUITokensClassName
 	} from '../AppearanceProvider/AppearanceProvider.svelte';
 	import { getDOM, useDOM } from '@sveltevk/vksui/lib/dom';
 	import { normalizeScheme, Scheme, type AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
@@ -92,13 +92,13 @@
 	const realScheme = useSchemeDetector($dom.document?.body, normalizedScheme);
 	$: derivedAppearance = deriveAppearance(realScheme);
 
-	let VKUITokensClassNames = [];
+	let VKUITokensClassName = '';
 	$: {
-		VKUITokensClassNames && $dom.document?.body.classList.remove(...VKUITokensClassNames);
-		VKUITokensClassNames = generateVKUITokensClassNames(platform, derivedAppearance);
-		$dom.document?.body.classList.add(...VKUITokensClassNames);
+		VKUITokensClassName && $dom.document?.body.classList.remove(VKUITokensClassName);
+		VKUITokensClassName = generateVKUITokensClassName(platform, derivedAppearance);
+		$dom.document?.body.classList.add(VKUITokensClassName);
 	}
-	onDestroy(() => $dom.document?.body.classList.remove(...VKUITokensClassNames));
+	onDestroy(() => $dom.document?.body.classList.remove(VKUITokensClassName));
 
 	let wIsWebView = writable(isWebView);
 	let wWebviewType = writable(webviewType);
