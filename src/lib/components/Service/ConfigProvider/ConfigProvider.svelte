@@ -61,8 +61,8 @@
 	const dom = useDOM();
 
 	$: normalizedScheme = normalizeScheme({
-		scheme,
 		platform,
+		scheme,
 		appearance
 	});
 
@@ -89,7 +89,7 @@
 		return inherit ? getScheme() : _scheme;
 	}
 
-	const realScheme = useSchemeDetector($dom.document?.body, normalizedScheme);
+	$: realScheme = useSchemeDetector($dom.document?.body, normalizedScheme);
 	$: derivedAppearance = deriveAppearance(realScheme);
 
 	let VKUITokensClassName = '';

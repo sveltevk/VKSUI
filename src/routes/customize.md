@@ -17,7 +17,7 @@
 ```svelte
 <script>
 	import { ConfigProvider, Button } from '@sveltevk/vksui';
-	import '@sveltevk/vksui/styles/themes.css';
+	import '@sveltevk/vksui/styles/themes';
 </script>
 
 <ConfigProvider platform="vkcom" appearance="light">

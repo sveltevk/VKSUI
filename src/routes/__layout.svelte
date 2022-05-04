@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	import './prism.css';
-	import '@sveltevk/vksui/styles/themes.css';
+	import '@sveltevk/vksui/styles/themes';
 	import '@sveltevk/vksui/fonts/fonts.css';
 	import '@fontsource/jetbrains-mono';
 	import type { Load } from '@sveltejs/kit';

@@ -291,9 +291,9 @@
     "@typescript-eslint/types" "5.13.0"
     eslint-visitor-keys "^3.0.0"
 
-"@vkontakte/appearance@https://github.com/VKCOM/Appearance#9.39.1":
+"@vkontakte/appearance@https://github.com/VKCOM/Appearance#9.40.5":
   version "1.0.0"
-  resolved "https://github.com/VKCOM/Appearance#8d816db5046f2046d551351ffd5ac7cd606e9974"
+  resolved "https://github.com/VKCOM/Appearance#e1bc981a807085aedc9ae6fb144d39ac6f481af6"
 
 "@vkontakte/vk-bridge@^2.5.3":
   version "2.5.3"

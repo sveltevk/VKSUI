@@ -45,7 +45,7 @@ yarn add @sveltevk/vksui @sveltevk/icons @vkontakte/vk-bridge
 ```svelte
 <script>
 	import { ConfigProvider, AdaptivityProvider } from '@sveltevk/vksui';
-	import '@sveltevk/vksui/styles/themes.css';
+	import '@sveltevk/vksui/styles/themes';
 
 	import AppLayout from './AppLayout.svelte';
 </script>

@@ -1,0 +1,11 @@
+import './bright_light.css';
+import './space_gray.css';
+import './vkcom_light.css';
+import './vkcom_dark.css';
+import '@vkontakte/vkui-tokens/themes/vkBase/cssVars/declarations/onlyVariables.css';
+import '@vkontakte/vkui-tokens/themes/vkBase/cssVars/declarations/onlyVariablesLocal.css';
+import '@vkontakte/vkui-tokens/themes/vkBaseDark/cssVars/declarations/onlyVariablesLocal.css';
+import '@vkontakte/vkui-tokens/themes/vkIOS/cssVars/declarations/onlyVariablesLocal.css';
+import '@vkontakte/vkui-tokens/themes/vkIOSDark/cssVars/declarations/onlyVariablesLocal.css';
+import '@vkontakte/vkui-tokens/themes/vkCom/cssVars/declarations/onlyVariablesLocal.css';
+import '@vkontakte/vkui-tokens/themes/vkComDark/cssVars/declarations/onlyVariablesLocal.css';

@@ -1,6 +1,6 @@
 {
 	"name": "@sveltevk/vksui",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"license": "MIT",
 	"description": "VKSUI library",
 	"homepage": "https://sveltevk.github.io/VKSUI",
@@ -38,7 +38,7 @@
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
-		"@vkontakte/appearance": "https://github.com/VKCOM/Appearance#9.39.1",
+		"@vkontakte/appearance": "https://github.com/VKCOM/Appearance#9.40.5",
 		"concurrently": "^7.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
