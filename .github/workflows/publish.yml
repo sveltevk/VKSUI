@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish
 on:
   push:
     tags:
@@ -27,3 +27,13 @@ jobs:
         run: cd package && yarn publish && cd ..
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build docs 🏗️
+        run: yarn build
+
+      - name: Publishing docs
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: false

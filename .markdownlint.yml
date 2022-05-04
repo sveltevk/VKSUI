@@ -1,3 +1,4 @@
 ---
 no-hard-tabs: false
 line_length: false
+no-emphasis-as-heading: false
