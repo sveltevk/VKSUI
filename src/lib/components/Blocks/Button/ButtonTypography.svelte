@@ -44,11 +44,11 @@
 			<slot />
 		</Subhead>
 	{:else if platform === VKCOM}
-		<Caption weight="regular" level="1" {...$$restProps}>
+		<Caption weight="3" level="1" {...$$restProps}>
 			<slot />
 		</Caption>
 	{:else if isCompact}
-		<Caption weight="medium" level="1" {...$$restProps}>
+		<Caption weight="3" level="1" {...$$restProps}>
 			<slot />
 		</Caption>
 	{:else}

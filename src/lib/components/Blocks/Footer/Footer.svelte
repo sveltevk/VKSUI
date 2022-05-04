@@ -8,7 +8,7 @@
 Подвал для списков.
 -->
 
-<Caption level="1" weight="regular" component="footer" class={classNames('Footer', $$props.class)}>
+<Caption level="1" weight="3" component="footer" class={classNames('Footer', $$props.class)}>
 	<slot />
 </Caption>
 

@@ -100,7 +100,7 @@
 		{/each}
 		{#if canShowOthers}
 			<Caption
-				weight="medium"
+				weight="2"
 				level="1"
 				class="UsersStack__photo UsersStack__photo--others"
 				aria-hidden="true"

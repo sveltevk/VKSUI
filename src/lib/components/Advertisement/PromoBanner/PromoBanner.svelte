@@ -58,11 +58,11 @@
 
 <div class={classNames(getClassName('PromoBanner', $platform), $$props.class)}>
 	<div class="PromoBanner__head">
-		<Caption weight="regular" level="1" class="PromoBanner__label">
+		<Caption weight="3" level="1" class="PromoBanner__label">
 			{bannerData.advertisingLabel || 'Advertisement'}
 		</Caption>
 		{#if ageRestrictions != null}
-			<Caption weight="regular" level="1" class="PromoBanner__age">
+			<Caption weight="3" level="1" class="PromoBanner__age">
 				{ageRestrictions}+
 			</Caption>
 		{/if}

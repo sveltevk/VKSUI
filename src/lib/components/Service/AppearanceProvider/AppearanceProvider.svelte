@@ -9,7 +9,7 @@
 	import type { AppearanceScheme } from '@sveltevk/vksui/helpers/scheme';
 
 	export const generateVKUITokensClassName = (platform: string, appearance: string): string => {
-		let tokensPlatform;
+		let tokensPlatform: string;
 		switch (platform) {
 			case Platform.ANDROID:
 				tokensPlatform = 'vkBase';

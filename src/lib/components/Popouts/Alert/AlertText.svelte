@@ -7,11 +7,11 @@
 </script>
 
 {#if platform === VKCOM}
-	<Caption class="Alert__text" level="1" weight="regular">
+	<Caption class="Alert__text" level="1" weight="3">
 		<slot />
 	</Caption>
 {:else if platform === IOS}
-	<Caption class="Alert__text" level="2" weight="regular">
+	<Caption class="Alert__text" level="2" weight="3">
 		<slot />
 	</Caption>
 {:else if platform === ANDROID}

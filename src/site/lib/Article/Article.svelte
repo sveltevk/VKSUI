@@ -22,7 +22,7 @@
 			<Link
 				href="{repositoryURL}/tree/master/src/lib{currentPage.capitalize}.svelte"
 				target="_blank"
-				rel="noopener noreferrer"><Caption weight="1" level="1">GitHub</Caption></Link
+				rel="noopener noreferrer"><Caption weight="3" level="1">GitHub</Caption></Link
 			>
 		{:else}
 			<div />
@@ -33,7 +33,7 @@
 				: '/routes' + (currentPage.path || '/index') + '.md'}"
 			target="_blank"
 			rel="noopener noreferrer"
-			><Caption weight="1" level="1">Редактировать страницу</Caption>
+			><Caption weight="3" level="1">Редактировать страницу</Caption>
 		</Link>
 	</div>
 	<article>

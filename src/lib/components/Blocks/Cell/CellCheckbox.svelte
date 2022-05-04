@@ -11,8 +11,8 @@
 	import Icon24CheckCircleOn from '@sveltevk/icons/dist/24/check_circle_on';
 
 	export let style = '';
-	export let value;
-	export let checked;
+	export let value: string;
+	export let checked: boolean;
 
 	const platform = usePlatform();
 

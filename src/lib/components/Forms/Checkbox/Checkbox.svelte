@@ -52,7 +52,7 @@
 		<CheckboxContent platform={$platform} sizeY={$adaptivity.sizeY}>
 			<div class="Checkbox__children"><slot /></div>
 			{#if $$slots.description || description}
-				<Caption level="1" component="span" weight="regular" class="Checkbox__description">
+				<Caption level="1" component="span" weight="3" class="Checkbox__description">
 					<slot name="description">{description}</slot>
 				</Caption>
 			{/if}

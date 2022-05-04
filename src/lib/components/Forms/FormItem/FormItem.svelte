@@ -64,7 +64,7 @@
 				{/if}
 				<slot />
 				{#if $$slots.bottom || bottom}
-					<Caption level="1" weight="regular" class="FormItem__bottom">
+					<Caption level="1" weight="3" class="FormItem__bottom">
 						<slot name="bottom">{bottom}</slot>
 					</Caption>
 				{/if}
@@ -78,7 +78,7 @@
 		{/if}
 		<slot />
 		{#if $$slots.bottom || bottom}
-			<Caption level="1" weight="regular" class="FormItem__bottom">
+			<Caption level="1" weight="3" class="FormItem__bottom">
 				<slot name="bottom">{bottom}</slot>
 			</Caption>
 		{/if}

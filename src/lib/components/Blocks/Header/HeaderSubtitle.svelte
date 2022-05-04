@@ -8,5 +8,5 @@
 {#if mode === 'secondary'}
 	<Subhead {...$$restProps}><slot /></Subhead>
 {:else}
-	<Caption weight="regular" level="1" {...$$restProps}><slot /></Caption>
+	<Caption weight="3" level="1" {...$$restProps}><slot /></Caption>
 {/if}

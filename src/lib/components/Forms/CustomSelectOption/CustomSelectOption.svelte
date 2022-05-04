@@ -39,7 +39,7 @@
 	<div class="CustomSelectOption__main">
 		<div class="CustomSelectOption__children"><slot /></div>
 		{#if description}
-			<Caption level="1" weight="regular" class="CustomSelectOption__description">
+			<Caption level="1" weight="3" class="CustomSelectOption__description">
 				{description}
 			</Caption>
 		{/if}

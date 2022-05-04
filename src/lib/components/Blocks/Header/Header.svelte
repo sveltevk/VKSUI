@@ -38,7 +38,7 @@
 			{#if $$slots.indicator || typeof indicator !== 'undefined'}
 				<Caption
 					class="Header__indicator"
-					weight={mode === 'primary' || mode === 'secondary' ? 'medium' : 'regular'}
+					weight={mode === 'primary' || mode === 'secondary' ? '2' : '3'}
 					level="1"
 				>
 					<slot name="indicator">

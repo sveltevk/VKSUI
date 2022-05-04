@@ -13,16 +13,16 @@
 	{#if mode === 'primary' || mode === 'tertiary'}
 		<Title weight="1" level="3" {...$$restProps}><slot /></Title>
 	{:else if mode === 'secondary'}
-		<Caption level="1" weight="semibold" caps {...$$restProps}><slot /></Caption>
+		<Caption level="1" weight="1" caps {...$$restProps}><slot /></Caption>
 	{/if}
 {:else if platform === Platform.VKCOM}
 	{#if mode === 'primary'}
 		<Headline weight="regular" {...$$restProps}><slot /></Headline>
 	{:else if mode === 'secondary' || mode === 'tertiary'}
-		<Caption level="1" weight="regular" {...$$restProps}><slot /></Caption>
+		<Caption level="1" weight="3" {...$$restProps}><slot /></Caption>
 	{/if}
 {:else if mode === 'primary' || mode === 'tertiary'}
 	<Headline weight="medium" {...$$restProps}><slot /></Headline>
 {:else if mode === 'secondary'}
-	<Caption level="1" weight="medium" caps {...$$restProps}><slot /></Caption>
+	<Caption level="1" weight="2" caps {...$$restProps}><slot /></Caption>
 {/if}

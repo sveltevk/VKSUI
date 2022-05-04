@@ -8,9 +8,7 @@
 </script>
 
 {#if size === 's'}
-	<Caption level="2" weight={platform === VKCOM ? 'medium' : 'regular'} {...$$restProps}
-		><slot /></Caption
-	>
+	<Caption level="2" weight={platform === VKCOM ? '2' : '3'} {...$$restProps}><slot /></Caption>
 {:else}
 	<Text weight="medium" {...$$restProps}><slot /></Text>
 {/if}

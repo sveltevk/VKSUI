@@ -51,7 +51,7 @@
 		<slot name="header" />
 		<slot />
 		{#if $$slots.description || description !== ''}
-			<Caption class="Group__description" weight="regular" level="1">
+			<Caption class="Group__description" weight="3" level="1">
 				<slot name="description">{description}</slot>
 			</Caption>
 		{/if}

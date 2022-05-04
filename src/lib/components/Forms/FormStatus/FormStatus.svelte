@@ -27,7 +27,7 @@
 		>
 	{/if}
 	{#if $$slots.default}
-		<Caption level="1" weight="regular" class="FormStatus__content"><slot /></Caption>
+		<Caption level="1" weight="3" class="FormStatus__content"><slot /></Caption>
 	{/if}
 </div>
 
