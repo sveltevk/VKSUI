@@ -55,6 +55,11 @@
     mdast-util-find-and-replace "^1.0.0"
     unist-util-visit "^2.0.3"
 
+"@fontsource/jetbrains-mono@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-4.5.8.tgz#cd1613ec7ca4ab4a7f3e4b07a2eeb4ae9e89611b"
+  integrity sha512-Wp2oUcXNFqw7pwEZdstZLv09v8lWhMscuSbmPU8VpdxPpC+kbQb6u0sOF/wZX/GZcwJHZyXBaZan0iia16r30Q==
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"

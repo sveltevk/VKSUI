@@ -61,6 +61,7 @@
 	"type": "module",
 	"dependencies": {
 		"@babel/runtime": "^7.17.2",
+		"@fontsource/jetbrains-mono": "^4.5.8",
 		"@sveltevk/icons": "^1.145.2",
 		"@vkontakte/vk-bridge": "^2.5.3",
 		"@vkontakte/vkjs": "^0.22.2",

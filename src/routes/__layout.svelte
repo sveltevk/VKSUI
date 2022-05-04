@@ -2,6 +2,7 @@
 	import './prism.css';
 	import '@sveltevk/vksui/styles/themes.css';
 	import '@sveltevk/vksui/fonts/fonts.css';
+	import '@fontsource/jetbrains-mono';
 	import type { Load } from '@sveltejs/kit';
 
 	const capitalizeFirstLetter = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
