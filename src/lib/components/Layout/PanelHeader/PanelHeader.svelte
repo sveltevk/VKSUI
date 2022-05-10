@@ -42,7 +42,6 @@
 			'PanelHeader--trnsp': transparent,
 			'PanelHeader--shadow': needShadow,
 			'PanelHeader--vis': visor,
-			'PanelHeader--sep': separator && visor,
 			'PanelHeader--vkapps': $webviewType === WebviewType.VKAPPS && !isInsideModal,
 			'PanelHeader--no-left': !$$slots.left,
 			'PanelHeader--no-right': !$$slots.right,
@@ -66,8 +65,12 @@
 			<slot name="right" slot="right" />
 		</PanelHeaderIn>
 	{/if}
-	{#if separator && visor && $platform !== VKCOM}
-		<Separator class="PanelHeader__separator" expanded={$adaptivity.sizeX === SizeType.REGULAR} />
+	{#if separator && visor}
+		<Separator
+			class="PanelHeader__separator"
+			expanded={$adaptivity.sizeX === SizeType.REGULAR && $platform !== VKCOM}
+			wide={$platform === VKCOM}
+		/>
 	{/if}
 </div>
 
@@ -313,11 +316,23 @@
 		top: calc(var(--panelheader_height_vkcom) + var(--safe-area-inset-top));
 	}
 
-	:global(.PanelHeader--vkcom.PanelHeader--sep .PanelHeader__in) {
+	/* TODO: v5.0.0 новая адаптивность */
+	:global(.PanelHeader--vkcom.PanelHeader--sizeX-regular:not(.ModalPageHeader__in)
+			.PanelHeader__in) {
 		border-top-left-radius: 8px;
 		border-top-right-radius: 8px;
 		box-shadow: 0 0 0 var(--thin-border) var(--input_border) inset;
 		border-bottom: none;
+	}
+
+	:global(.PanelHeader--vkcom.PanelHeader--sizeX-regular:not(.ModalPageHeader__in)::after) {
+		position: absolute;
+		left: var(--thin-border);
+		right: var(--thin-border);
+		bottom: 0;
+		height: var(--thin-border);
+		background-color: var(--header_background);
+		content: '';
 	}
 
 	:global(.PanelHeader--vkcom .PanelHeader__content) {
