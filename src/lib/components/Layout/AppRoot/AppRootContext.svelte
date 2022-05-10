@@ -7,9 +7,9 @@
 	}
 	const AppRootContextKey = 'vkui_AppRootContext';
 
-	export const useAppRoot = (): Writable<AppRootContextInterface> => {
+	export function useAppRoot(): Writable<AppRootContextInterface> {
 		return getContext(AppRootContextKey) || writable({ portalRoot: null });
-	};
+	}
 </script>
 
 <script lang="ts">

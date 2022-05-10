@@ -424,6 +424,10 @@
 						{
 							name: 'File',
 							link: '/components/Forms/File'
+						},
+						{
+							name: 'SegmentedControl',
+							link: '/components/Forms/SegmentedControl'
 						}
 					]
 				},

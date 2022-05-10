@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
+	import { useKeyboardInputTracker } from '@sveltevk/vksui/hooks/useKeyboardInputTracker';
 	import { SizeType } from '@sveltevk/vksui/lib/adaptivity';
 
 	import classNames from '@sveltevk/vksui/lib/classNames';
@@ -18,7 +19,7 @@
 	export let mode: 'partial' | 'embedded' | 'full' = 'full';
 	export let scroll: 'global' | 'contain' = 'global';
 
-	const isKeyboardInputActive = false; // TODO: useKeyboardInputTracker
+	const isKeyboardInputActive = useKeyboardInputTracker(); // TODO: useKeyboardInputTracker
 	let rootRef: HTMLDivElement | null = null;
 	let portalRoot: HTMLDivElement | null = null;
 	const dom = useDOM();
@@ -81,7 +82,7 @@
 		value={{
 			appRoot: rootRef,
 			portalRoot: portalRoot,
-			keyboardInput: isKeyboardInputActive,
+			keyboardInput: $isKeyboardInputActive,
 			mode
 		}}
 	>
@@ -101,7 +102,7 @@
 			value={{
 				appRoot: rootRef,
 				portalRoot: portalRoot,
-				keyboardInput: isKeyboardInputActive,
+				keyboardInput: $isKeyboardInputActive,
 				mode
 			}}
 		>

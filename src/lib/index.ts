@@ -103,6 +103,9 @@ export { default as SelectMimicry } from './components/Forms/SelectMimicry/Selec
 export { default as CustomSelectOption } from './components/Forms/CustomSelectOption/CustomSelectOption.svelte';
 export { default as Textarea } from './components/Forms/Textarea/Textarea.svelte';
 export { default as File } from './components/Forms/File/File.svelte';
+export { default as SegmentedControl } from './components/Forms/SegmentedControl/SegmentedControl.svelte';
+export { type SegmentedControlValue } from './components/Forms/SegmentedControl/SegmentedControl.svelte';
+export { default as SegmentedControlOption } from './components/Forms/SegmentedControlOption/SegmentedControlOption.svelte';
 
 /**
  * Typography

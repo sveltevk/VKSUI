@@ -34,7 +34,7 @@
 располагать в форме без оборачивания в `FormItem`.
 -->
 
-<label
+<div
 	{...$$restProps}
 	bind:this={rootEl}
 	class={classNames(
@@ -83,7 +83,7 @@
 			</Caption>
 		{/if}
 	{/if}
-</label>
+</div>
 
 <style>
 	.FormItem {
