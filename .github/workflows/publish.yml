@@ -24,7 +24,7 @@ jobs:
         run: yarn package
 
       - name: Publish Package  📦
-        run: cd package && yarn publish && cd ..
+        run: yarn publish ./package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

@@ -111,6 +111,10 @@
 {/if}
 
 <style>
+	@import '../../../styles/constants.css';
+	@import '../../../styles/animations.css';
+	@import '../../../styles/common.css';
+
 	:global(.vkui__root--embedded) {
 		transform: translate3d(0, 0, 0);
 		overflow-x: hidden;
