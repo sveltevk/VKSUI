@@ -100,6 +100,10 @@
 	}
 	onDestroy(() => $dom.document?.body.classList.remove(VKUITokensClassName));
 
+	// color-scheme
+	$: $dom.document?.documentElement.style.setProperty('color-scheme', appearance);
+	onDestroy(() => $dom.document?.documentElement.style.removeProperty('color-scheme'));
+
 	let wIsWebView = writable(isWebView);
 	let wWebviewType = writable(webviewType);
 	let wApp = writable(app);
