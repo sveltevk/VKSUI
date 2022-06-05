@@ -39,5 +39,5 @@
 {#each searchTree as group}
 	<Group {group} {currentPage} {base} search={search.toLowerCase()} on:click />
 {:else}
-	<Footer>Ничего не найдено</Footer>
+	<Footer role="statusbar">Ничего не найдено</Footer>
 {/each}
