@@ -49,11 +49,11 @@
 	}
 
 	.header :global(.Link) {
-		color: var(--text_secondary);
+		color: var(--vkui--color_text_secondary);
 	}
 
 	article :global(a:not(.Example a)) {
-		color: var(--accent);
+		color: var(--vkui--color_text_accent);
 		text-decoration: none;
 		border: 0;
 		background: none;
@@ -87,19 +87,19 @@
 	}
 
 	article > :global(pre[class*='language-']) {
-		background: var(--background_content);
+		background: var(--vkui--color_background_content);
 		overflow: auto;
 		margin: 0.8rem 0 2.4rem;
 		padding: 20px;
 		border-radius: 16px;
-		box-shadow: inset 0 0 0 1px var(--image_border);
+		box-shadow: inset 0 0 0 1px var(--vkui--color_image_border_alpha);
 		max-height: 400px;
 		font-family: 'JetBrains Mono';
 	}
 
 	article > :global(blockquote) {
 		padding: 12px 16px;
-		background: var(--content_warning_background);
+		background: var(--vkui--color_background_warning);
 		border-radius: 8px;
 		margin: 0;
 	}
@@ -124,7 +124,7 @@
 
 	article :global(code:not(pre[class*='language-'] code):not(.Example code)) {
 		padding: 0 3px;
-		background: var(--button_secondary_background);
+		background: var(--vkui--color_background_secondary_alpha);
 		border-radius: 4px;
 		font-size: 16px;
 		line-height: 24px;

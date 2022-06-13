@@ -105,7 +105,7 @@
 	.Table {
 		width: 100%;
 		overflow-x: auto;
-		border: 1px solid var(--separator_alternate);
+		border: 1px solid var(--vkui--color_separator_secondary);
 		border-radius: 8px;
 	}
 
@@ -115,11 +115,11 @@
 	}
 
 	.Table th {
-		background: var(--background_light);
+		background: var(--vkui--color_background_tertiary);
 		text-align: left;
 		padding: 16px;
 		white-space: nowrap;
-		color: var(--text_subhead);
+		color: var(--vkui--color_text_subhead);
 		font-weight: 400;
 		margin: 0;
 		font-size: 15px;
@@ -131,7 +131,7 @@
 	}
 
 	.Table td {
-		border-top: 1px solid var(--separator_alternate);
+		border-top: 1px solid var(--vkui--color_separator_secondary);
 		margin: 0;
 		font-size: 16px;
 		line-height: 24px;

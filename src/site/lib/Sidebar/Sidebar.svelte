@@ -42,6 +42,6 @@
 
 <style>
 	:global(.Sidebar__selected) {
-		background: var(--background_hover);
+		background: var(--vkui--color_transparent--hover);
 	}
 </style>

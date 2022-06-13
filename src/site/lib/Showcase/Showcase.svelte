@@ -214,9 +214,9 @@
 		height: 667px;
 		width: 320px;
 		/* overflow-y: auto; */
-		border: 1px solid var(--background_highlighted);
+		box-shadow: inset 0 0 0 1px var(--vkui--color_image_border_alpha);
 		display: block;
-		background: var(--background_content);
+		background: var(--vkui--color_background_content);
 		border-radius: 12px;
 		box-sizing: border-box;
 	}
@@ -241,6 +241,6 @@
 	}
 
 	.vkui__root {
-		background: var(--background_content);
+		background: var(--vkui--color_background_content);
 	}
 </style>

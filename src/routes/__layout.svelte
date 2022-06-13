@@ -541,7 +541,7 @@
 <style>
 	:global(.vkui--sizeX-regular),
 	:global(body) {
-		background: var(--content_tint_background);
+		background: var(--vkui--color_background_secondary);
 		margin: 0;
 		padding: 0;
 	}
