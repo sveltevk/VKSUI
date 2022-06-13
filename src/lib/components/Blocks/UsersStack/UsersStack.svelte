@@ -110,7 +110,7 @@
 		{/if}
 	</div>
 	{#if $$slots.default}
-		<Subhead component="span" class="UsersStack__text">
+		<Subhead Element="span" class="UsersStack__text">
 			<slot />
 		</Subhead>
 	{/if}

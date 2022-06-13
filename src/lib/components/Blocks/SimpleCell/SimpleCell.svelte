@@ -6,12 +6,10 @@
 	import { IOS } from '@sveltevk/vksui/lib/platform';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
 	import Icon24Chevron from '@sveltevk/icons/dist/24/chevron';
-	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import SimpleCellTypography from './SimpleCellTypography.svelte';
 	import Subhead from '../../Typography/Subhead/Subhead.svelte';
 
-	export let component = Div;
+	export let Element = 'div';
 
 	export let href: string | undefined = undefined;
 
@@ -52,7 +50,7 @@ SimpleCell — это упрощенная и улучшенная с точки
 Всё это влияет на скорость её отрисовки, особенно если идёт речь о сотнях экземпляров.
 -->
 
-<Tappable {...$$restProps} {href} {disabled} on:click component={href ? a : component}>
+<Tappable {...$$restProps} {href} {disabled} on:click Element={href ? 'a' : Element}>
 	<slot name="before" />
 	<div class="SimpleCell__main">
 		<div class="SimpleCell__content">
@@ -68,7 +66,7 @@ SimpleCell — это упрощенная и улучшенная с точки
 			{/if}
 		</div>
 		{#if $$slots.description || description}
-			<Subhead component="span" class="SimpleCell__description">
+			<Subhead Element="span" class="SimpleCell__description">
 				<slot name="description">{description}</slot>
 			</Subhead>
 		{/if}

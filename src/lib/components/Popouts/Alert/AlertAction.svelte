@@ -5,11 +5,9 @@
 
 	import { ANDROID, IOS, type Platform } from '@sveltevk/vksui/lib/platform';
 	import Button, { type ButtonMode } from '../../Blocks/Button/Button.svelte';
-	import A from '../../Elements/a/a.svelte';
-	import _button from '../../Elements/button/button.svelte';
 	import Tappable from '../../Service/Tappable/Tappable.svelte';
 
-	export let component = _button;
+	export let Element = 'button';
 	export let href = '';
 	export let target = '';
 	export let mode: 'cancel' | 'destructive' | 'default' = 'default';
@@ -29,7 +27,7 @@
 
 {#if platform === IOS}
 	<Tappable
-		component={href ? A : component}
+		Element={href ? 'a' : Element}
 		class={classNames('Alert__action', `Alert__action--${mode}`)}
 		on:click
 		{href}
@@ -43,7 +41,7 @@
 		mode={_mode}
 		size="m"
 		on:click
-		{component}
+		{Element}
 		{href}
 		{target}
 	>

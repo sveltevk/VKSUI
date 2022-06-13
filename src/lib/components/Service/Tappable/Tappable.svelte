@@ -6,9 +6,6 @@
 	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 	import { getOffsetRect } from '@sveltevk/vksui/lib/offset';
 	import Touch from '../Touch/Touch.svelte';
-	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
-	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
 	// import type { TouchEventHandler, TouchEvent } from '../Touch/Touch.svelte';
 	import { coordX, coordY } from '@sveltevk/vksui/lib/touch';
 	import type { FocusVisibleMode } from '../FocusVisible/FocusVisible.svelte';
@@ -63,7 +60,7 @@
 	 */
 	export let activeEffectDelay: number = ACTIVE_EFFECT_DELAY;
 	export let stopPropagation = false;
-	export let component = div;
+	export let Element = 'div';
 	/**
 	 * Указывает, должен ли компонент реагировать на hover-состояние
 	 */
@@ -111,7 +108,7 @@
 	$: hovered = _hovered && !$$props.disabled;
 	$: _hasActive = _hasActive && !childHover && !$$props.disabled;
 	$: _hasHover = deviceHasHover && hasHover && !childHover;
-	$: isCustomElement = component !== a && component !== button;
+	$: isCustomElement = Element !== 'a' && Element !== 'button';
 	$: isPresetHoverMode = ['opacity', 'background'].includes(hoverMode);
 	$: isPresetActiveMode = ['opacity', 'background'].includes(activeMode);
 	// TODO: $: isPresetFocusVisibleMode = ['inside', 'outside'].includes(focusVisibleMode);
@@ -276,7 +273,7 @@
 	on:move={$$props.disabled ? undefined : onMove}
 	on:end={$$props.disabled ? undefined : onEnd}
 	on:click
-	{component}
+	{Element}
 	{...$$restProps}
 >
 	<slot />

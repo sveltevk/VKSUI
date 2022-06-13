@@ -3,7 +3,6 @@
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Button from '@sveltevk/vksui/components/Blocks/Button/Button.svelte';
-	import label from '@sveltevk/vksui/components/Elements/label/label.svelte';
 
 	export let before = '';
 	export let after = '';
@@ -35,7 +34,7 @@
 <Button
 	{align}
 	class={classNames(getClassName('File', $platform), $$props.class)}
-	component={label}
+	Element="label"
 	{stretched}
 	{mode}
 	size={controlSize}

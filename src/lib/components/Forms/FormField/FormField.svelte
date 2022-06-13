@@ -2,10 +2,9 @@
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 
-	export let component = Div;
+	export let Element = 'div';
 	export let disabled = false;
 	export let after = '';
 	export let hasAfter = Boolean($$slots.after || after);
@@ -28,7 +27,7 @@
 </script>
 
 <svelte:component
-	this={component}
+	this={Element}
 	{...$$restProps}
 	on:click
 	on:mouseover={handleMouseEnter}

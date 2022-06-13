@@ -2,7 +2,7 @@
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 
-	export let component = 'h5';
+	export let Element = 'h5';
 	export let weight: '1' | '2' | '3' = undefined;
 
 	const adaptivity = useAdaptivity();
@@ -15,7 +15,7 @@
 	);
 </script>
 
-<svelte:element this={component} {...$$restProps}>
+<svelte:element this={Element} {...$$restProps}>
 	<slot />
 </svelte:element>
 

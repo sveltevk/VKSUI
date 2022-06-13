@@ -4,7 +4,7 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
-	export let component = 'h3';
+	export let Element = 'h3';
 	export let weight: 'regular' | 'medium' | 'semibold';
 
 	const platform = usePlatform();
@@ -36,7 +36,7 @@
 ```
 -->
 
-<svelte:element this={component} {...$$restProps}>
+<svelte:element this={Element} {...$$restProps}>
 	<slot />
 </svelte:element>
 

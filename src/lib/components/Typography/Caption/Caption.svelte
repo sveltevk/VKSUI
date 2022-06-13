@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from '@sveltevk/vksui/lib/classNames';
 
-	export let component = 'span';
+	export let Element = 'span';
 	export let weight: '1' | '2' | '3' = undefined;
 	export let level: '1' | '2' | '3' | '4' = '1';
 	export let caps = false;
@@ -15,7 +15,7 @@
 	);
 </script>
 
-<svelte:element this={component} {...$$restProps}>
+<svelte:element this={Element} {...$$restProps}>
 	<slot />
 </svelte:element>
 

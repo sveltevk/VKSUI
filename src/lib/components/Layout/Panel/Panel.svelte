@@ -25,7 +25,7 @@
 		$$props.class
 	)}
 >
-	<Touch component={TooltipContainer} class="Panel__in">
+	<Touch Component={TooltipContainer} class="Panel__in">
 		{#if $platform === IOS}
 			<div class="Panel__fade" />
 		{/if}

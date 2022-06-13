@@ -6,7 +6,7 @@
 		mode: 'cancel' | 'destructive' | 'default';
 		href?: string;
 		target?: string;
-		component?: typeof Div;
+		Element?: string;
 	}
 </script>
 
@@ -19,7 +19,6 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID, VKCOM } from '@sveltevk/vksui/lib/platform';
 	import { createEventDispatcher } from 'svelte';
-	import type Div from '../../Elements/div/div.svelte';
 	import ModalDismissButton from '../../Modals/ModalDismissButton/ModalDismissButton.svelte';
 	import FocusTrap from '../../Service/FocusTrap/FocusTrap.svelte';
 	import PopoutWrapper from '../PopoutWrapper/PopoutWrapper.svelte';
@@ -115,7 +114,7 @@
 		<footer class="Alert__actions">
 			{#each actions as action}
 				<AlertAction
-					component={action.component}
+					Element={action.Element}
 					href={action.href}
 					target={action.target}
 					mode={action.mode}

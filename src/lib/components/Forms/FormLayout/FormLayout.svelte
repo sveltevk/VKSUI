@@ -2,9 +2,8 @@
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import Form from '@sveltevk/vksui/components/Elements/form/form.svelte';
 
-	export let component = Form;
+	export let Element = 'form';
 
 	const platform = usePlatform();
 </script>
@@ -15,8 +14,8 @@
 по enter.
 -->
 
-<svelte:component
-	this={component}
+<svelte:element
+	this={Element}
 	{...$$restProps}
 	on:submit
 	class={classNames(getClassName('FormLayout', $platform), $$props.class)}
@@ -24,10 +23,10 @@
 	<div class="FormLayout__container">
 		<slot />
 	</div>
-	{#if component === Form}
+	{#if Element === 'form'}
 		<input type="submit" class="FormLayout__submit" value="" />
 	{/if}
-</svelte:component>
+</svelte:element>
 
 <style>
 	:global(.FormLayout) {

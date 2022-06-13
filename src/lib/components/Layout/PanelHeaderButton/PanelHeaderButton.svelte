@@ -3,8 +3,6 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID, IOS, VKCOM } from '@sveltevk/vksui/lib/platform';
 	import { classNames } from '@vkontakte/vkjs';
-	import A from '../../Elements/a/a.svelte';
-	import Button from '../../Elements/button/button.svelte';
 	import Tappable from '../../Service/Tappable/Tappable.svelte';
 	import ButtonTypography from './ButtonTypography.svelte';
 
@@ -40,7 +38,7 @@
 	{...$$restProps}
 	on:click
 	{hoverMode}
-	component={$$restProps.href ? A : Button}
+	Element={$$restProps.href ? 'a' : 'button'}
 	activeEffectDelay={200}
 	{activeMode}
 	class={classNames($$restProps.class, getClassName('PanelHeaderButton', $platform), {

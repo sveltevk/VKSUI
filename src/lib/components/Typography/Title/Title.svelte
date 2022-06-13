@@ -1,11 +1,9 @@
 <script lang="ts">
 	import classNames from '@sveltevk/vksui/lib/classNames';
 
-	export let component: string = undefined;
 	export let level: '1' | '2' | '3' = '1';
+	export let Element: string = 'h' + level;
 	export let weight: '1' | '2' | '3' = undefined;
-
-	$: component = component ?? 'h' + level;
 
 	$: $$restProps.class = classNames($$props.class, 'Title', `Title--l-${level}`, {
 		[`Title--w-${weight}`]: !!weight
@@ -41,7 +39,7 @@
 ```
 -->
 
-<svelte:element this={component} {...$$restProps}>
+<svelte:element this={Element} {...$$restProps}>
 	<slot />
 </svelte:element>
 

@@ -3,8 +3,6 @@
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
-	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
 	import Subhead from '@sveltevk/vksui/components/Typography/Subhead/Subhead.svelte';
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
@@ -54,7 +52,7 @@
 	);
 </script>
 
-<Tappable {...$$restProps} on:click component={$$restProps.href ? a : Div}>
+<Tappable {...$$restProps} on:click Element={$$restProps.href ? 'a' : 'div'}>
 	<slot name="before" />
 	<div class="RichCell__in">
 		<!-- Этот after будет скрыт из верстки. Он нужен для CSS -->
@@ -76,7 +74,7 @@
 			</Text>
 		{/if}
 		{#if $$slots.caption || caption}
-			<Subhead component="span" class="RichCell__caption">
+			<Subhead Element="span" class="RichCell__caption">
 				<slot name="caption">{caption}</slot>
 			</Subhead>
 		{/if}

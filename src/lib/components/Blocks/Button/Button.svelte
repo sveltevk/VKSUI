@@ -65,15 +65,13 @@
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
-	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import Spinner from '../Spinner/Spinner.svelte';
 	import ButtonTypography from './ButtonTypography.svelte';
 	import { getContext } from 'svelte';
 	import { ContextKey } from '@sveltevk/vksui/lib/config';
 	import type { Writable } from 'svelte/store';
 
-	export let component = button;
+	export let Element = 'button';
 
 	export let before = '';
 	export let after = '';
@@ -125,7 +123,7 @@
 
 <Tappable
 	{...$$restProps}
-	component={$$restProps.href ? a : component}
+	Element={$$restProps.href ? 'a' : Element}
 	on:click
 	focusVisibleMode="outside"
 	hoverMode={hasNewTokens ? 'Button--hover' : 'background'}
