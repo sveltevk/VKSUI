@@ -15,7 +15,7 @@
 		<slot />
 	</Caption>
 {:else if platform === ANDROID}
-	<Headline class="Alert__text" weight="regular">
+	<Headline class="Alert__text" weight="3">
 		<slot />
 	</Headline>
 {/if}

@@ -18,7 +18,7 @@
 
 <Headline
 	{...$$restProps}
-	weight="regular"
+	weight="3"
 	class={classNames(getClassName('InfoRow', $platform), $$props.class)}
 >
 	{#if $$slots.header || header}

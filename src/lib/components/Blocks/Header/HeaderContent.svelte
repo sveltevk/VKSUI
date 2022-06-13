@@ -17,12 +17,12 @@
 	{/if}
 {:else if platform === Platform.VKCOM}
 	{#if mode === 'primary'}
-		<Headline weight="regular" {...$$restProps}><slot /></Headline>
+		<Headline weight="3" {...$$restProps}><slot /></Headline>
 	{:else if mode === 'secondary' || mode === 'tertiary'}
 		<Caption level="1" weight="3" {...$$restProps}><slot /></Caption>
 	{/if}
 {:else if mode === 'primary' || mode === 'tertiary'}
-	<Headline weight="medium" {...$$restProps}><slot /></Headline>
+	<Headline weight="2" {...$$restProps}><slot /></Headline>
 {:else if mode === 'secondary'}
 	<Caption level="1" weight="2" caps {...$$restProps}><slot /></Caption>
 {/if}

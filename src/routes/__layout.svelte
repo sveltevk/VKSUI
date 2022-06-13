@@ -441,7 +441,8 @@
 						},
 						{
 							name: 'Headline',
-							link: '/components/Typography/Headline'
+							link: '/components/Typography/Headline',
+							tokenized: true
 						},
 						{
 							name: 'Text',

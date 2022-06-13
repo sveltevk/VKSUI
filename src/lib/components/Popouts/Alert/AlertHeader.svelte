@@ -7,7 +7,7 @@
 </script>
 
 {#if platform === VKCOM}
-	<Headline class="Alert__header" weight="medium">
+	<Headline class="Alert__header" weight="2">
 		<slot />
 	</Headline>
 {:else if platform === IOS}

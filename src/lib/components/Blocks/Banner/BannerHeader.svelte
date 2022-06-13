@@ -8,5 +8,5 @@
 {#if size === 'm'}
 	<Title level="2" weight="2" {...$$restProps}><slot /></Title>
 {:else}
-	<Headline weight="medium" {...$$restProps}><slot /></Headline>
+	<Headline weight="2" {...$$restProps}><slot /></Headline>
 {/if}

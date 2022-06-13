@@ -63,7 +63,7 @@
 			</Title>
 		{/if}
 		{#if $$slots.subheader || subheader}
-			<Headline weight="regular" class="ModalCardBase__subheader">
+			<Headline weight="3" class="ModalCardBase__subheader">
 				<slot name="subheader">{subheader}</slot>
 			</Headline>
 		{/if}

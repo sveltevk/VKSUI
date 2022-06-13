@@ -12,7 +12,7 @@
 {#if sizeY === SizeType.COMPACT}
 	<Text Element="span" weight="regular" {...$$restProps}><slot /></Text>
 {:else if platform === ANDROID}
-	<Headline Element="span" weight="regular" {...$$restProps}><slot /></Headline>
+	<Headline Element="span" weight="3" {...$$restProps}><slot /></Headline>
 {:else}
 	<Title component="span" level="3" weight="3" {...$$restProps}><slot /></Title>
 {/if}

@@ -17,7 +17,7 @@
 	</Text>
 {:else}
 	<!-- {:else if platform === ANDROID} -->
-	<Headline {...$$restProps} weight="regular">
+	<Headline {...$$restProps} weight="3">
 		<slot />
 	</Headline>
 {/if}

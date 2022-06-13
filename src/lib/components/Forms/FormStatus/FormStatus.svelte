@@ -22,9 +22,7 @@
 	class={classNames($$props.class, getClassName('FormStatus', $platform), `FormStatus--${mode}`)}
 >
 	{#if $$slots.header || header}
-		<Headline weight="medium" class="FormStatus__header"
-			><slot name="header">{header}</slot></Headline
-		>
+		<Headline weight="2" class="FormStatus__header"><slot name="header">{header}</slot></Headline>
 	{/if}
 	{#if $$slots.default}
 		<Caption level="1" weight="3" class="FormStatus__content"><slot /></Caption>

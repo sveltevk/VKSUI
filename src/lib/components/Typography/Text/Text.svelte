@@ -26,14 +26,6 @@
 @component
 Упрощения в Android-версии (происходят автоматически):
 * `semibold` превращается в `medium`
-
-```jsx
-<Div>
-  <Text weight="regular" style="margin-bottom: 16px">Text regular</Text>
-  <Text weight="medium" style="margin-bottom: 16px">Text medium</Text>
-  <Text weight="semibold" style="margin-bottom: 16px">Text semibold</Text>
-</Div>
-```
 -->
 
 <svelte:element this={Element} {...$$restProps}>

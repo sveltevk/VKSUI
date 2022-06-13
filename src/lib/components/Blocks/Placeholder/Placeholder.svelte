@@ -40,7 +40,7 @@
 			</Title>
 		{/if}
 		{#if $$slots.default}
-			<Headline weight="regular" class="Placeholder__text">
+			<Headline weight="3" class="Placeholder__text">
 				<slot />
 			</Headline>
 		{/if}

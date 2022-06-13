@@ -51,7 +51,7 @@
 			<span class="Select__title"><slot>{placeholder}</slot></span>
 		</Text>
 	{:else}
-		<Headline Element="div" weight="regular" class="Select__container">
+		<Headline Element="div" weight="3" class="Select__container">
 			<span class="Select__title"><slot>{placeholder}</slot></span>
 		</Headline>
 	{/if}

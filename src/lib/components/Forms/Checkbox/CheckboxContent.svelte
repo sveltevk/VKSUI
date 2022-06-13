@@ -11,5 +11,5 @@
 {#if platform === VKCOM || sizeY === SizeType.COMPACT}
 	<Text class="Checkbox__content" weight="regular" Element="div"><slot /></Text>
 {:else}
-	<Headline class="Checkbox__content" weight="regular" Element="div"><slot /></Headline>
+	<Headline class="Checkbox__content" weight="3" Element="div"><slot /></Headline>
 {/if}
