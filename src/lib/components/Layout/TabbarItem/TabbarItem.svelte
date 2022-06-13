@@ -3,9 +3,6 @@
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { Platform } from '@sveltevk/vksui/lib/platform';
-	import A from '../../Elements/a/a.svelte';
-	import Button from '../../Elements/button/button.svelte';
-	import Div from '../../Elements/div/div.svelte';
 	import Tappable from '../../Service/Tappable/Tappable.svelte';
 
 	export let selected = false;
@@ -20,7 +17,7 @@
 </script>
 
 <svelte:component
-	this={href ? A : Button}
+	this={href ? 'a' : 'button'}
 	{...$$restProps}
 	on:click
 	{href}
@@ -31,7 +28,7 @@
 >
 	<Tappable
 		role="presentation"
-		component={Div}
+		Element={'div'}
 		{disabled}
 		activeMode={$platform === Platform.IOS ? 'TabbarItem__tappable--active' : 'background'}
 		activeEffectDelay={$platform === Platform.IOS ? 0 : 300}

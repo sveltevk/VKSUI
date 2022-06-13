@@ -1,7 +1,4 @@
 <script lang="ts">
-	import label from '@sveltevk/vksui/components/Elements/label/label.svelte';
-	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
-
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
@@ -46,7 +43,7 @@
 	export let disabled = false;
 	export let value: string = undefined;
 
-	export let component = Div;
+	export let Element = 'div';
 	// TODO: проброс всякого в SimpleCell
 
 	/**
@@ -102,7 +99,7 @@
 			{...$$restProps}
 			class="Cell__content"
 			disabled={simpleCellDisabled}
-			component={selectable ? label : component}
+			Element={selectable ? 'label' : Element}
 		>
 			<svelte:fragment slot="before">
 				{#if draggable && ($platform === ANDROID || $platform === VKCOM)}
@@ -149,7 +146,7 @@
 			{...$$restProps}
 			class="Cell__content"
 			disabled={simpleCellDisabled}
-			component={selectable ? label : component}
+			Element={selectable ? 'label' : Element}
 		>
 			<svelte:fragment slot="before">
 				{#if draggable && ($platform === ANDROID || $platform === VKCOM)}

@@ -52,7 +52,6 @@
 <script lang="ts">
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { useDOM } from '@sveltevk/vksui/lib/dom';
-	import div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { current_component } from 'svelte/internal';
 
 	interface TouchEventMap {
@@ -76,7 +75,8 @@
 	const dispatch = createEventDispatcher<AllEventMap>();
 	const callbacks = current_component.$$.callbacks;
 
-	export let component = div;
+	export let Element = 'div';
+	export let Component = undefined;
 
 	/**
 	 * Привязать onEnter и onLeave через pointer-events - работает на disabled-инпутах
@@ -289,12 +289,16 @@ Touch – это компонент для удобной работы с pointe
 
 Компонент используется во многих других компонентах библиотеки (Cell, Slider, Gallery, Tappable).
 -->
-
-<svelte:component
-	this={component}
-	{...$$restProps}
-	bind:this_={container}
-	on:dragstart={onDragStart}
->
-	<slot />
-</svelte:component>
+{#if Component}
+	<svelte:component
+		this={Component}
+		{...$$restProps}
+		bind:this_={container}
+		on:dragstart={onDragStart}
+		><slot />
+	</svelte:component>
+{:else}
+	<svelte:element this={Element} {...$$restProps} bind:this={container} on:dragstart={onDragStart}
+		><slot />
+	</svelte:element>
+{/if}

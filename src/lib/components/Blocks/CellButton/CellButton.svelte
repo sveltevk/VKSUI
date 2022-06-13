@@ -2,11 +2,9 @@
 	import { usePlatform } from '@sveltevk/vksui/hooks/usePlatform';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import button from '@sveltevk/vksui/components/Elements/button/button.svelte';
-	import a from '@sveltevk/vksui/components/Elements/a/a.svelte';
 	import SimpleCell from '../SimpleCell/SimpleCell.svelte';
 
-	export let component = button;
+	export let Element = 'button';
 
 	export let before = '';
 
@@ -20,7 +18,7 @@
 	{...$$restProps}
 	stopPropagation
 	on:click
-	component={$$restProps.href ? a : component}
+	Element={$$restProps.href ? 'a' : Element}
 	class={classNames(
 		getClassName('CellButton', $platform),
 		`CellButton--${mode}`,

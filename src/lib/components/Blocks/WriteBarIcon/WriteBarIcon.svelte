@@ -14,7 +14,6 @@
 	import Icon24Send from '@sveltevk/icons/dist/24/send';
 	import Icon28CheckCircleOutline from '@sveltevk/icons/dist/28/check_circle_outline';
 	import Counter from '../Counter/Counter.svelte';
-	import Button from '../../Elements/button/button.svelte';
 
 	/**
 	 * Предустановленные типы кнопок в WriteBar для отрисовки иконки в зависимости от платформы.
@@ -62,7 +61,7 @@
 	aria-label={ariaLabel}
 	{...$$restProps}
 	on:click
-	component={Button}
+	Element={'button'}
 	hasHover={false}
 	activeMode="WriteBarIcon__active"
 	class={classNames($$restProps.class, getClassName('WriteBarIcon', $platform), {

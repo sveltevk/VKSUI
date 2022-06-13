@@ -9,12 +9,11 @@
 <script lang="ts">
 	import { useGlobalEventListener } from '@sveltevk/vksui/hooks/useGlobalEventListener';
 
-	import Div from '../../Elements/div/div.svelte';
 	import { useAppRoot } from '../../Layout/AppRoot/AppRootContext.svelte';
 
 	const dispatch = createEventDispatcher();
 
-	export let component = Div;
+	export let Element = 'div';
 	export let restoreFocus = true;
 	export let timeout = 0;
 
@@ -112,6 +111,6 @@
 	});
 </script>
 
-<svelte:component this={component} bind:this_={ref} on:click {...$$restProps}>
+<svelte:element this={Element} bind:this={ref} on:click {...$$restProps}>
 	<slot />
-</svelte:component>
+</svelte:element>

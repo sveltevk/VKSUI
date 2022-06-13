@@ -4,11 +4,9 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { IOS } from '@sveltevk/vksui/lib/platform';
 	import { classNames } from '@vkontakte/vkjs';
-	import A from '../../Elements/a/a.svelte';
-	import Button from '../../Elements/button/button.svelte';
 	import Tappable from '../../Service/Tappable/Tappable.svelte';
 
-	export let component = Button;
+	export let Element = 'button';
 
 	const platform = usePlatform();
 	const adaptivity = useAdaptivity();
@@ -24,7 +22,7 @@
 <Tappable
 	{...$$restProps}
 	on:click
-	component={$$restProps.href ? A : component}
+	Element={$$restProps.href ? 'a' : Element}
 	activeEffectDelay={200}
 	activeMode={$platform === IOS ? 'opacity' : 'IconButton--active'}
 >

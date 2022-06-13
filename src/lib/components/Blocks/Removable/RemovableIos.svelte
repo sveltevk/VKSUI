@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
 
-	import Button from '../../Elements/button/button.svelte';
 	import Tappable from '../../Service/Tappable/Tappable.svelte';
 	import IconButton from '../IconButton/IconButton.svelte';
 
@@ -59,7 +58,7 @@
 	<span class="Removable__offset" aria-hidden="true" />
 
 	<Tappable
-		component={Button}
+		Element={'button'}
 		hasActive={false}
 		hasHover={false}
 		{disabled}

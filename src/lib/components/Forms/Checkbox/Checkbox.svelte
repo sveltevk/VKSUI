@@ -12,7 +12,6 @@
 	import Tappable, { ACTIVE_EFFECT_DELAY } from '../../Service/Tappable/Tappable.svelte';
 	import { classNames } from '@vkontakte/vkjs';
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
-	import Label from '../../Elements/label/label.svelte';
 
 	export let description = '';
 	export let style = '';
@@ -23,7 +22,7 @@
 </script>
 
 <Tappable
-	component={Label}
+	Element={'label'}
 	class={classNames(
 		$$restProps.class,
 		getClassName('Checkbox', $platform),
@@ -52,7 +51,7 @@
 		<CheckboxContent platform={$platform} sizeY={$adaptivity.sizeY}>
 			<div class="Checkbox__children"><slot /></div>
 			{#if $$slots.description || description}
-				<Caption level="1" component="span" weight="3" class="Checkbox__description">
+				<Caption level="1" Element="span" weight="3" class="Checkbox__description">
 					<slot name="description">{description}</slot>
 				</Caption>
 			{/if}

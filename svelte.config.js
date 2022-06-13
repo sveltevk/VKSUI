@@ -35,7 +35,11 @@ const config = {
 				__version__: JSON.stringify(process.env.npm_package_version)
 			},
 			optimizeDeps: {
-				include: ['svg-baker-runtime/browser-sprite.js', 'svg-baker-runtime/browser-symbol.js']
+				include: [
+					'svg-baker-runtime/browser-sprite.js',
+					'svg-baker-runtime/browser-symbol.js',
+					'@fontsource/jetbrains-mono'
+				]
 			},
 			plugins: [sveld()],
 			resolve: {

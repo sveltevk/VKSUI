@@ -4,7 +4,6 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import Text from '@sveltevk/vksui/components/Typography/Text/Text.svelte';
 	import Tappable from '@sveltevk/vksui/components/Service/Tappable/Tappable.svelte';
-	import Div from '@sveltevk/vksui/components/Elements/div/div.svelte';
 	import { current_component, onMount } from 'svelte/internal';
 
 	/**
@@ -42,7 +41,6 @@
 </script>
 
 <Tappable
-	component={Div}
 	disabled={!isClickable}
 	role={isClickable ? 'button' : undefined}
 	{...$$restProps}

@@ -2,7 +2,7 @@
 	import { useAdaptivity } from '@sveltevk/vksui/hooks/useAdaptivity';
 	import classNames from '@sveltevk/vksui/lib/classNames';
 
-	export let component: string = undefined;
+	export let Element = 'h5';
 	export let weight: '1' | '2' | '3' = undefined;
 
 	const adaptivity = useAdaptivity();
@@ -15,15 +15,9 @@
 	);
 </script>
 
-{#if component === 'span'}
-	<span {...$$restProps}>
-		<slot />
-	</span>
-{:else}
-	<h5 {...$$restProps}>
-		<slot />
-	</h5>
-{/if}
+<svelte:element this={Element} {...$$restProps}>
+	<slot />
+</svelte:element>
 
 <style>
 	.Subhead {

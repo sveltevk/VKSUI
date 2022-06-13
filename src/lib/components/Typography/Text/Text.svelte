@@ -4,7 +4,7 @@
 	import getClassName from '@sveltevk/vksui/lib/getClassName';
 	import { ANDROID } from '@sveltevk/vksui/lib/platform';
 
-	export let component = 'span';
+	export let Element = 'span';
 	export let weight: 'regular' | 'medium' | 'semibold' = 'regular';
 
 	const platform = usePlatform();
@@ -35,15 +35,10 @@
 </Div>
 ```
 -->
-{#if component === 'span'}
-	<span {...$$restProps}>
-		<slot />
-	</span>
-{:else}
-	<div {...$$restProps}>
-		<slot />
-	</div>
-{/if}
+
+<svelte:element this={Element} {...$$restProps}>
+	<slot />
+</svelte:element>
 
 <style>
 	.Text {

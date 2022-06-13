@@ -47,11 +47,11 @@
 >
 	<DropdownIcon slot="after" />
 	{#if $platform === VKCOM || $adaptivity.sizeY === SizeType.COMPACT}
-		<Text component="div" weight="regular" class="Select__container">
+		<Text Element="div" weight="regular" class="Select__container">
 			<span class="Select__title"><slot>{placeholder}</slot></span>
 		</Text>
 	{:else}
-		<Headline component="div" weight="regular" class="Select__container">
+		<Headline Element="div" weight="regular" class="Select__container">
 			<span class="Select__title"><slot>{placeholder}</slot></span>
 		</Headline>
 	{/if}
