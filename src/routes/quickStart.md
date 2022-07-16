@@ -66,7 +66,6 @@ yarn add @sveltevk/vksui @sveltevk/icons @vkontakte/vk-bridge
 		SplitLayout,
 		PanelHeader,
 		SplitCol,
-		View,
 		Panel,
 		Group,
 		Header,
@@ -82,16 +81,14 @@ yarn add @sveltevk/vksui @sveltevk/icons @vkontakte/vk-bridge
 	<SplitLayout>
 		<PanelHeader slot="header" separator={false} />
 		<SplitCol spaced={$adaptivity.viewWidth > ViewWidth.MOBILE}>
-			<View activePanel="main">
-				<Panel id="main">
-					<PanelHeader>VKUI</PanelHeader>
-					<Group>
-						<Header mode="secondary">Items</Header>
-						<SimpleCell>Hello</SimpleCell>
-						<SimpleCell>World</SimpleCell>
-					</Group>
-				</Panel>
-			</View>
+			<Panel>
+				<PanelHeader>VKUI</PanelHeader>
+				<Group>
+					<Header mode="secondary">Items</Header>
+					<SimpleCell>Hello</SimpleCell>
+					<SimpleCell>World</SimpleCell>
+				</Group>
+			</Panel>
 		</SplitCol>
 	</SplitLayout>
 </AppRoot>
@@ -99,4 +96,4 @@ yarn add @sveltevk/vksui @sveltevk/icons @vkontakte/vk-bridge
 
 Ваше приложение готово!
 
-Теперь можно добавлять более сложные компоненты, новые экраны и настроить переходы между ними.
+<!-- Теперь можно добавлять более сложные компоненты, новые экраны и настроить переходы между ними. -->
